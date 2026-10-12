@@ -55,9 +55,11 @@ Plusieurs modèles +/- grands, on peut aussi en personnaliser
 Option A — Analyser des images
 
 -> Tu fournis une photo et YOLO retourne les objets détectés. C'est le plus simple pour une première démonstration.
+
 Option B — Analyser une vidéo ou une webcam
 
 -> YOLO traite les images successives. Tu peux afficher les rectangles, compter les objets ou déclencher des alertes.
+
 Option C — Entraîner ton propre modèle
 
 -> Tu lui apprends à reconnaître des classes spécifiques en utilisant des images annotées. C'est généralement l'option la plus intéressante pour démontrer le travail réalisé dans un projet étudiant.
