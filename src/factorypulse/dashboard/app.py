@@ -1,11 +1,12 @@
 """Interface Streamlit de consultation du replay synthétique FactoryPulse.
 
 L'interface affiche des données de démonstration, et non des mesures en direct.
-La logique de lecture et de préparation des événements se trouve dans
-``readers.py`` afin de pouvoir être testée sans exécuter Streamlit.
+Les calculs métier restent dans ``readers.py``; ce module organise les données
+et les transmet aux fonctions qui affichent chaque section du dashboard.
 """
 import json
-from datetime import timedelta
+from datetime import datetime, timedelta
+from typing import Any
 
 from factorypulse.dashboard.readers import (
     build_incidents,
@@ -18,38 +19,30 @@ from factorypulse.shared.contracts import parse_utc
 from factorypulse.shared.paths import project_root
 
 
-def main() -> None:
-    """Charge les données puis affiche les indicateurs du replay sélectionné."""
-    try:
-        import streamlit as st
-        import pandas as pd
-    except ImportError as exc:
-        raise SystemExit('Installer les dépendances : pip install -e ".[dashboard,dev]"') from exc
-
-    st.set_page_config(page_title="FactoryPulse | Labo", page_icon="🏭", layout="wide")
-    st.title("🏭 FactoryPulse")
-    st.info(
-        "REPLAY SYNTHÉTIQUE — ces données ne proviennent pas de capteurs en direct. "
-        "Les horodatages sont ceux du replay, jamais ceux de l'ordinateur."
-    )
-
-    # Une erreur de configuration ou de lecture doit être visible plutôt que
-    # de présenter un dashboard partiel comme si son contenu était complet.
+def _load_dashboard_data(st: Any) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Lit la configuration et les événements, en affichant les erreurs."""
     try:
         root = project_root()
         config = json.loads(
             (root / "config" / "factorypulse.json").read_text(encoding="utf-8")
         )
-        all_events = load_dashboard_events()
+        events = load_dashboard_events()
     except (OSError, ValueError, KeyError, TypeError) as exc:
         st.error(f"Impossible de charger la configuration ou les fixtures : {exc}")
         st.stop()
+    return config, events
 
-    # Le curseur parcourt l'intervalle déclaré dans la configuration. Toutes
-    # les sections suivantes utilisent la même position de replay.
+
+def _select_replay_events(
+    st: Any,
+    config: dict[str, Any],
+    all_events: list[dict[str, Any]],
+) -> tuple[datetime, list[dict[str, Any]]]:
+    """Affiche le curseur et renvoie les événements visibles à cet instant."""
     replay_start = parse_utc(config["replay"]["start_utc"])
     replay_end = parse_utc(config["replay"]["as_of_utc"])
     replay_duration_s = int((replay_end - replay_start).total_seconds())
+
     offset_s = st.slider(
         "Position dans le replay",
         min_value=0,
@@ -59,15 +52,19 @@ def main() -> None:
         help="Déplacez le curseur pour rejouer l'état connu à cet instant.",
     )
     as_of = replay_start + timedelta(seconds=offset_s)
-    as_of_text = as_of.strftime("%Y-%m-%dT%H:%M:%SZ")
     replay_events = events_at(all_events, as_of)
-    stale_after_s = config["thresholds"]["heartbeat_stale_after_s"]
-
+    as_of_text = as_of.strftime("%Y-%m-%dT%H:%M:%SZ")
     st.caption(
         f"Horloge du replay : **{as_of_text}** · "
         f"{len(replay_events):,} événements connus à cet instant"
     )
+    return as_of, replay_events
 
+
+def _get_station_events(
+    replay_events: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Sépare les événements M01 et Q01 pour les sections du dashboard."""
     telemetry = [
         event for event in replay_events
         if event["station_id"] == "M01" and event["event_type"] == "telemetry"
@@ -76,16 +73,25 @@ def main() -> None:
         event for event in replay_events
         if event["station_id"] == "Q01" and event["event_type"] == "inspection"
     ]
-    # Le jeu contient déjà des inspections dédupliquées par event_id : chaque
-    # pièce représente donc une inspection unique, pas une ligne de transport.
+    return telemetry, inspections
+
+
+def _render_overview(
+    st: Any,
+    telemetry: list[dict[str, Any]],
+    inspections: list[dict[str, Any]],
+    replay_events: list[dict[str, Any]],
+    as_of: datetime,
+    stale_after_s: int,
+) -> dict[str, dict[str, Any]]:
+    """Affiche les indicateurs principaux et renvoie l'état des nœuds."""
+    machine = machine_status(replay_events)
+    nodes = station_health(replay_events, as_of, stale_after_s)
     latest_telemetry = max(
         telemetry,
         key=lambda event: parse_utc(event["timestamp_utc"]),
         default=None,
     )
-    machine = machine_status(replay_events)
-    nodes = station_health(replay_events, as_of, stale_after_s)
-    pass_count = sum(event["payload"]["verdict"] == "PASS" for event in inspections)
 
     st.subheader("Vue d'ensemble")
     metrics = st.columns(4)
@@ -93,6 +99,7 @@ def main() -> None:
     metrics[1].metric("État machine", machine["machine_state"])
     metrics[2].metric("État capteur", machine["sensor_state"])
     metrics[3].metric("Inspections Q01 uniques", f"{len(inspections):,}")
+
     if latest_telemetry:
         st.caption(f"Dernière mesure M01 : {latest_telemetry['timestamp_utc']}")
     else:
@@ -101,7 +108,11 @@ def main() -> None:
         f"État machine et état du capteur proviennent de la dernière télémétrie. "
         f"Un signe de vie est périmé après {stale_after_s} s."
     )
+    return nodes
 
+
+def _render_node_health(st: Any, nodes: dict[str, dict[str, Any]]) -> None:
+    """Affiche l'état et le dernier signe de vie de chaque nœud."""
     st.subheader("Disponibilité des nœuds")
     node_columns = st.columns(3)
     for column, station in zip(node_columns, ("M01", "Q01", "SERVER")):
@@ -110,50 +121,78 @@ def main() -> None:
         last_seen = node["last_seen_utc"] or "Aucun signe de vie"
         column.caption(f"Dernier signe de vie : {last_seen}")
 
-    st.subheader("Télémétrie M01")
-    if telemetry:
-        # Pandas conserve les valeurs nulles comme manquantes; on ne les
-        # remplace pas par zéro, car cela fausserait les courbes.
-        telemetry_frame = pd.DataFrame([
-            {
-                "UTC": parse_utc(event["timestamp_utc"]),
-                "Température (°C)": event["payload"]["temperature_c"],
-                "Vibration RMS (g)": event["payload"]["vibration_rms_g"],
-            }
-            for event in telemetry
-        ]).set_index("UTC")
-        temperature, vibration = st.columns(2)
-        temperature.markdown("**Température (°C)**")
-        temperature.line_chart(telemetry_frame[["Température (°C)"]])
-        temperature.caption(
-            f"Seuil d'alerte pédagogique : > {config['thresholds']['temperature_c_gt']} °C"
-        )
-        vibration.markdown("**Vibration RMS (g)**")
-        vibration.line_chart(telemetry_frame[["Vibration RMS (g)"]])
-        vibration.caption(
-            f"Seuil d'alerte pédagogique : > "
-            f"{config['thresholds']['vibration_rms_g_gt']} g"
-        )
-        st.caption("Les valeurs manquantes restent absentes dans les séries.")
-    else:
-        st.info("Aucune télémétrie disponible à cette position du replay.")
 
-    st.subheader("Inspections Q01")
-    verdict_counts = {
-        verdict: sum(event["payload"]["verdict"] == verdict for event in inspections)
-        for verdict in ("PASS", "REJECT", "UNKNOWN")
+def _render_telemetry(
+    st: Any,
+    pd: Any,
+    telemetry: list[dict[str, Any]],
+    config: dict[str, Any],
+) -> None:
+    """Affiche les courbes de température et de vibration RMS de M01."""
+    st.subheader("Télémétrie M01")
+    if not telemetry:
+        st.info("Aucune télémétrie disponible à cette position du replay.")
+        return
+
+    # Pandas conserve les valeurs nulles comme manquantes; les remplacer par
+    # zéro fausserait les courbes et le sens des mesures.
+    telemetry_frame = pd.DataFrame([
+        {
+            "UTC": parse_utc(event["timestamp_utc"]),
+            "Température (°C)": event["payload"]["temperature_c"],
+            "Vibration RMS (g)": event["payload"]["vibration_rms_g"],
+        }
+        for event in telemetry
+    ]).set_index("UTC")
+
+    temperature, vibration = st.columns(2)
+    temperature.markdown("**Température (°C)**")
+    temperature.line_chart(telemetry_frame[["Température (°C)"]])
+    temperature.caption(
+        f"Seuil d'alerte pédagogique : > "
+        f"{config['thresholds']['temperature_c_gt']} °C"
+    )
+    vibration.markdown("**Vibration RMS (g)**")
+    vibration.line_chart(telemetry_frame[["Vibration RMS (g)"]])
+    vibration.caption(
+        f"Seuil d'alerte pédagogique : > "
+        f"{config['thresholds']['vibration_rms_g_gt']} g"
+    )
+    st.caption("Les valeurs manquantes restent absentes dans les séries.")
+
+
+def _count_verdicts(
+    inspections: list[dict[str, Any]],
+) -> dict[str, int]:
+    """Compte les résultats PASS, REJECT et UNKNOWN des inspections."""
+    verdicts = ("PASS", "REJECT", "UNKNOWN")
+    return {
+        verdict: sum(
+            event["payload"]["verdict"] == verdict for event in inspections
+        )
+        for verdict in verdicts
     }
+
+
+def _render_inspections(st: Any, pd: Any, inspections: list[dict[str, Any]]) -> None:
+    """Affiche les compteurs et le tableau filtrable des inspections Q01."""
+    st.subheader("Inspections Q01")
+    verdict_counts = _count_verdicts(inspections)
     verdict_columns = st.columns(3)
     verdict_columns[0].metric("PASS", verdict_counts["PASS"])
     verdict_columns[1].metric("REJECT", verdict_counts["REJECT"])
     verdict_columns[2].metric("UNKNOWN", verdict_counts["UNKNOWN"])
-    st.caption(f"Pièces conformes : {pass_count} / {len(inspections)} inspections uniques.")
+    st.caption(
+        f"Pièces conformes : {verdict_counts['PASS']} / "
+        f"{len(inspections)} inspections uniques."
+    )
+
     verdict_filter = st.selectbox(
         "Filtrer les inspections",
         ("Toutes", "PASS", "REJECT", "UNKNOWN"),
     )
-    # Le filtre affecte le tableau détaillé uniquement; les compteurs ci-dessus
-    # restent ceux de l'ensemble des inspections visibles dans le replay.
+    # Le filtre porte seulement sur le tableau; les compteurs gardent tous les
+    # verdicts présents dans le replay courant.
     visible_inspections = [
         event for event in inspections
         if verdict_filter == "Toutes" or event["payload"]["verdict"] == verdict_filter
@@ -172,30 +211,80 @@ def main() -> None:
         for event in visible_inspections
     ]
     if inspection_rows:
-        st.dataframe(pd.DataFrame(inspection_rows), use_container_width=True, hide_index=True)
+        st.dataframe(
+            pd.DataFrame(inspection_rows),
+            use_container_width=True,
+            hide_index=True,
+        )
     else:
         st.info("Aucune inspection ne correspond à ce filtre à cet instant du replay.")
 
+
+def _render_incidents(
+    st: Any,
+    pd: Any,
+    replay_events: list[dict[str, Any]],
+    as_of: datetime,
+    stale_after_s: int,
+) -> None:
+    """Affiche les incidents et leurs identifiants d'événements de preuve."""
     st.subheader("Incidents et alertes")
     incidents = build_incidents(replay_events, as_of, stale_after_s)
-    if incidents:
-        # Les identifiants affichés permettent de retrouver les événements
-        # bruts qui justifient chaque incident.
-        incident_rows = [
-            {
-                "Station": incident["station_id"],
-                "Niveau": incident["level"],
-                "Détail": incident["detail"],
-                "Début UTC": incident["first_seen_utc"],
-                "Dernier événement UTC": incident["last_seen_utc"],
-                "Occurrences": incident["occurrences"],
-                "event_id sources": ", ".join(incident["evidence_event_ids"]),
-            }
-            for incident in incidents
-        ]
-        st.dataframe(pd.DataFrame(incident_rows), use_container_width=True, hide_index=True)
-    else:
+    if not incidents:
         st.success("Aucun incident ni avertissement enregistré jusqu'à cet instant.")
+        return
+
+    incident_rows = [
+        {
+            "Station": incident["station_id"],
+            "Niveau": incident["level"],
+            "Détail": incident["detail"],
+            "Début UTC": incident["first_seen_utc"],
+            "Dernier événement UTC": incident["last_seen_utc"],
+            "Occurrences": incident["occurrences"],
+            "event_id sources": ", ".join(incident["evidence_event_ids"]),
+        }
+        for incident in incidents
+    ]
+    st.dataframe(
+        pd.DataFrame(incident_rows),
+        use_container_width=True,
+        hide_index=True,
+    )
+
+
+def main() -> None:
+    """Initialise Streamlit puis orchestre les sections du dashboard."""
+    try:
+        import streamlit as st
+        import pandas as pd
+    except ImportError as exc:
+        raise SystemExit('Installer les dépendances : pip install -e ".[dashboard,dev]"') from exc
+
+    st.set_page_config(page_title="FactoryPulse | Labo", page_icon="🏭", layout="wide")
+    st.title("🏭 FactoryPulse")
+    st.info(
+        "REPLAY SYNTHÉTIQUE — ces données ne proviennent pas de capteurs en direct. "
+        "Les horodatages sont ceux du replay, jamais ceux de l'ordinateur."
+    )
+
+    config, all_events = _load_dashboard_data(st)
+    as_of, replay_events = _select_replay_events(st, config, all_events)
+    telemetry, inspections = _get_station_events(replay_events)
+    stale_after_s = config["thresholds"]["heartbeat_stale_after_s"]
+
+    nodes = _render_overview(
+        st,
+        telemetry,
+        inspections,
+        replay_events,
+        as_of,
+        stale_after_s,
+    )
+    _render_node_health(st, nodes)
+    _render_telemetry(st, pd, telemetry, config)
+    _render_inspections(st, pd, inspections)
+    _render_incidents(st, pd, replay_events, as_of, stale_after_s)
 
     st.caption(
         "Les lignes affichées sont des événements synthétiques dédupliqués par event_id. "
