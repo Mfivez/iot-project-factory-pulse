@@ -95,10 +95,13 @@ from ultralytics import YOLO
 
 model = YOLO("yolo26n.pt")
 
+# stream=True => les résultats sont traités progressivement
+# au lieu de conserver les séquences en mémoire
 model.predict(
     source=0,       # Webcam par défaut
     conf=0.4,
-    show=True
+    show=True,
+    stream=True
 )
 ```
 
