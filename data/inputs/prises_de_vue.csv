@@ -1,0 +1,7 @@
+file,scene,expected_class,expected_marker,target_verdict
+01_bouteille_verte.jpg,Une bouteille avec une pastille verte,bottle,green,PASS
+02_tasse_verte.jpg,Une tasse avec une pastille verte,cup,green,PASS
+03_bouteille_rouge.jpg,Une bouteille avec une pastille rouge,bottle,red,REJECT
+04_tasse_rouge.jpg,Une tasse avec une pastille rouge,cup,red,REJECT
+05_bouteille_sans_repere.jpg,Une bouteille sans repère visible,bottle,unknown,UNKNOWN
+06_scene_vide.jpg,"Le fond vide, sans bouteille ni tasse",unknown,unknown,UNKNOWN

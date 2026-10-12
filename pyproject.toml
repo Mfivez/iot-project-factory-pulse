@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "factorypulse-lab"
+version = "0.1.0"
+description = "Monorepo pedagogique Industrie 4.0: monitoring, vision, supervision, diagnostic IA."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Equipe FactoryPulse"}]
+dependencies = []
+
+[project.optional-dependencies]
+monitoring = []
+vision = ["ultralytics>=8.3", "opencv-python>=4.8"]
+dashboard = ["streamlit>=1.35", "pandas>=2.1"]
+agent = ["mcp>=1.0"]
+edge = ["gpiozero>=2.0", "smbus2>=0.4"]
+mqtt = ["paho-mqtt>=2.0"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"

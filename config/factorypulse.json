@@ -1,0 +1,46 @@
+{
+  "contract_version": "FP-LAB-1.1",
+  "data_origin": "Jeu pédagogique intégralement synthétique, sans relevé matériel ni inférence YOLO réelle.",
+  "replay": {
+    "start_utc": "2026-10-12T09:00:00Z",
+    "end_utc": "2026-10-12T09:05:59Z",
+    "as_of_utc": "2026-10-12T09:05:59Z",
+    "sample_period_s": 1
+  },
+  "thresholds": {
+    "temperature_c_gt": 60.0,
+    "vibration_rms_g_gt": 0.2,
+    "consecutive_samples": 3,
+    "max_sample_gap_s": 1.5,
+    "heartbeat_stale_after_s": 15
+  },
+  "vision": {
+    "model": "yolo26n.pt",
+    "allowed_classes": [
+      "bottle",
+      "cup"
+    ],
+    "confidence_min": 0.5,
+    "verdicts": [
+      "PASS",
+      "REJECT",
+      "UNKNOWN"
+    ]
+  },
+  "stations": {
+    "M01": {
+      "role": "Ventilateur ou moteur instrumenté",
+      "node_id": "PI-M01",
+      "temperature_sensor_ref": null,
+      "accelerometer_ref": null
+    },
+    "Q01": {
+      "role": "Inspection pédagogique",
+      "node_id": "PI-Q01"
+    },
+    "SERVER": {
+      "role": "Collecte et supervision"
+    }
+  },
+  "safety": "Les seuils ne sont pas des limites matérielles. Aucun essai réel de surchauffe ou de déséquilibrage. Pas de câblage sans références exactes."
+}
