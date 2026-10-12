@@ -96,9 +96,9 @@ def _render_overview(
     st.subheader("Vue d'ensemble")
     metrics = st.columns(4)
     metrics[0].metric("Mesures M01", f"{len(telemetry):,}")
-    metrics[1].metric("État machine", machine["machine_state"])
-    metrics[2].metric("État capteur", machine["sensor_state"])
-    metrics[3].metric("Inspections Q01 uniques", f"{len(inspections):,}")
+    metrics[1].metric("Inspections Q01 uniques", f"{len(inspections):,}")
+    metrics[2].metric("État machine", machine["machine_state"])
+    metrics[3].metric("État capteur", machine["sensor_state"])
 
     if latest_telemetry:
         st.caption(f"Dernière mesure M01 : {latest_telemetry['timestamp_utc']}")
