@@ -97,7 +97,7 @@ def test_machine_sensor_and_node_statuses_remain_distinct():
     ]
     as_of = datetime(2026, 10, 12, 9, 1, tzinfo=timezone.utc)
 
-    status = machine_status(events)
+    status = machine_status(events, as_of, stale_after_s=15)
     nodes = station_health(events, as_of, stale_after_s=15)
 
     assert status["machine_state"] == "STOPPED"

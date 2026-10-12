@@ -9,6 +9,7 @@ from typing import Any
 from factorypulse.shared.contracts import parse_utc
 from factorypulse.shared.jsonl import read_jsonl, dedupe_events
 from factorypulse.shared.paths import fixture_path
+from factorypulse.shared.status import summarize_station
 
 
 # Charger les quatre fichiers donne au dashboard une vue cohérente du replay :
@@ -82,39 +83,25 @@ def station_health(
     sa provenance.
     """
     stations = ("M01", "Q01", "SERVER")
-    health_by_station = {
-        station: [
-            event for event in events
-            if event["station_id"] == station
-            and event["event_type"] == "health"
-            and parse_utc(event["timestamp_utc"]) <= as_of
-        ]
-        for station in stations
-    }
     result = {}
-    for station, health_events in health_by_station.items():
-        if not health_events:
-            result[station] = {
-                "state": "UNKNOWN",
-                "last_seen_utc": None,
-                "event_id": None,
-            }
-            continue
-        latest = max(health_events, key=lambda event: parse_utc(event["timestamp_utc"]))
-        last_seen = parse_utc(latest["timestamp_utc"])
-        # La fraîcheur est évaluée par rapport au curseur de replay, pas à
-        # datetime.now(), ce qui rend le résultat rejouable et déterministe.
-        stale = (as_of - last_seen).total_seconds() > stale_after_s
+    for station in stations:
+        summary = summarize_station(events, station, as_of, stale_after_s)
+        latest = summary["health_event"]
         result[station] = {
-            "state": "OFFLINE" if stale else latest["payload"]["service_state"],
-            "last_seen_utc": latest["timestamp_utc"],
-            "event_id": latest["event_id"],
-            "event": latest,
+            "state": summary["node_state"],
+            "last_seen_utc": (
+                latest["timestamp_utc"] if latest is not None else None
+            ),
+            "event_id": latest["event_id"] if latest is not None else None,
         }
+        if latest is not None:
+            result[station]["event"] = latest
     return result
 
 
-def machine_status(events: list[dict[str, Any]]) -> dict[str, Any]:
+def machine_status(
+    events: list[dict[str, Any]], as_of: datetime, stale_after_s: int
+) -> dict[str, Any]:
     """Résume la dernière télémétrie sans confondre trois états différents.
 
     ``machine_state`` décrit si la machine est RUNNING ou STOPPED.
@@ -126,20 +113,16 @@ def machine_status(events: list[dict[str, Any]]) -> dict[str, Any]:
     preuve et à son horodatage. En l'absence de télémétrie, les états sont
     ``UNKNOWN`` plutôt que supposés.
     """
-    telemetry = [
-        event for event in events
-        if event["station_id"] == "M01" and event["event_type"] == "telemetry"
-    ]
-    if not telemetry:
-        return {"machine_state": "UNKNOWN", "sensor_state": "UNKNOWN", "event": None}
-    latest = max(telemetry, key=lambda event: parse_utc(event["timestamp_utc"]))
-    quality = latest["payload"]["data_quality"]
+    summary = summarize_station(
+        events,
+        "M01",
+        as_of,
+        stale_after_s,
+    )
     return {
-        "machine_state": latest["payload"]["machine_state"],
-        # Une valeur de capteur manquante est un problème de données, pas une
-        # mesure égale à zéro ni une indication que la machine est arrêtée.
-        "sensor_state": "DATA_ISSUE" if quality != "OK" else "OK",
-        "event": latest,
+        "machine_state": summary["machine_state"],
+        "sensor_state": summary["sensor_state"],
+        "event": summary["telemetry_event"],
     }
 
 

@@ -85,7 +85,7 @@ def _render_overview(
     stale_after_s: int,
 ) -> dict[str, dict[str, Any]]:
     """Affiche les indicateurs principaux et renvoie l'état des nœuds."""
-    machine = machine_status(replay_events)
+    machine = machine_status(replay_events, as_of, stale_after_s)
     nodes = station_health(replay_events, as_of, stale_after_s)
     latest_telemetry = max(
         telemetry,

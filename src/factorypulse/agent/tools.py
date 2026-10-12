@@ -11,9 +11,10 @@ from datetime import datetime
 from collections.abc import Callable
 from typing import Any
 
-from factorypulse.shared.contracts import ContractError, STATIONS, parse_utc
+from factorypulse.shared.contracts import STATIONS, parse_utc
 from factorypulse.shared.jsonl import dedupe_events, read_jsonl
 from factorypulse.shared.paths import fixture_path, project_root
+from factorypulse.shared.status import summarize_station
 
 
 _FIXTURE_NAMES = ("m01.jsonl", "q01.jsonl", "systeme.jsonl", "logs.jsonl")
@@ -131,27 +132,21 @@ def get_status(station_id: str, at_utc: str) -> dict[str, Any]:
     requested_at = parse_utc(at_utc)
     config = _load_config()
     as_of, warnings = _cap_to_replay(requested_at, _replay_limit(config))
-
-    station_events = [
-        event for event in _load_events()
-        if event["station_id"] == station_id
-        and parse_utc(event["timestamp_utc"]) <= as_of
-    ]
-    telemetry = [
-        event for event in station_events if event["event_type"] == "telemetry"
-    ]
-    health = [event for event in station_events if event["event_type"] == "health"]
-    latest_telemetry = telemetry[-1] if telemetry else None
-    latest_health = health[-1] if health else None
+    station_summary = summarize_station(
+        _load_events(),
+        station_id,
+        as_of,
+        config["thresholds"]["heartbeat_stale_after_s"],
+    )
+    latest_telemetry = station_summary["telemetry_event"]
+    latest_health = station_summary["health_event"]
+    data_age_s = station_summary["data_age_s"]
+    machine_state = station_summary["machine_state"]
+    node_state = station_summary["node_state"]
 
     if latest_telemetry is None:
         warnings.append(f"Aucune télémétrie disponible pour {station_id}.")
-        data_age_s = None
-        machine_state = "UNKNOWN"
     else:
-        telemetry_at = parse_utc(latest_telemetry["timestamp_utc"])
-        data_age_s = (as_of - telemetry_at).total_seconds()
-        machine_state = latest_telemetry["payload"]["machine_state"]
         data_quality = latest_telemetry["payload"]["data_quality"]
         if data_quality != "OK":
             warnings.append(
@@ -165,21 +160,12 @@ def get_status(station_id: str, at_utc: str) -> dict[str, Any]:
             )
 
     if latest_health is None:
-        node_state = "UNKNOWN"
         warnings.append(f"Aucun signe de vie disponible pour {station_id}.")
-    else:
-        health_at = parse_utc(latest_health["timestamp_utc"])
-        health_age_s = (as_of - health_at).total_seconds()
-        if health_age_s > config["thresholds"]["heartbeat_stale_after_s"]:
-            node_state = "OFFLINE"
-            warnings.append(
-                f"Le dernier signe de vie de {station_id} est périmé "
-                f"({health_age_s:g} s)."
-            )
-        else:
-            # service_state décrit le service qui publie le heartbeat; ce champ
-            # n'est jamais utilisé comme substitut de machine_state.
-            node_state = latest_health["payload"]["service_state"]
+    elif node_state == "OFFLINE":
+        warnings.append(
+            f"Le dernier signe de vie de {station_id} est périmé "
+            f"({station_summary['health_age_s']:g} s)."
+        )
 
     status_events = [
         event for event in (latest_telemetry, latest_health)

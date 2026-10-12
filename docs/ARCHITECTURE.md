@@ -20,7 +20,7 @@ flowchart TD
 - `vision` : images, objets, couleurs, inspection, Q01.
 - `dashboard` : affichage humain, déduplication, suivi de replay.
 - `agent` : fonctions strictement bornées de consultation, hypothèses justifiées.
-- `shared` : validation, lecture/écriture et schémas communs.
+- `shared` : validation, lecture/écriture, schémas et calculs purs de statut utilisés par le dashboard et l'agent.
 - `transport` : adaptateurs MQTT, sans logique métier.
 
 ## Déploiement cible (non implémenté)
