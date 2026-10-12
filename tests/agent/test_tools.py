@@ -245,3 +245,12 @@ def test_range_tools_reject_invalid_or_reversed_ranges():
         tools.get_logs("M02", "2026-10-12T09:00:00Z", "2026-10-12T09:00:01Z")
     with pytest.raises(ValueError):
         tools.get_inspections("2026-10-12T09:00:00", "2026-10-12T09:00:01Z")
+
+
+@pytest.mark.parametrize("tool_name", ["get_history", "get_logs", "get_inspections"])
+def test_range_tools_reject_start_before_authorized_replay(tool_name):
+    args = [] if tool_name == "get_inspections" else ["M01"]
+    with pytest.raises(ValueError, match="début du replay"):
+        getattr(tools, tool_name)(
+            *args, "2026-10-12T08:59:59Z", "2026-10-12T09:00:01Z"
+        )

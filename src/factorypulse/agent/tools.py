@@ -64,6 +64,12 @@ def _replay_limit(config: dict[str, Any]) -> datetime:
     return parse_utc(config["replay"]["as_of_utc"])
 
 
+def _validate_replay_start(value: datetime, config: dict[str, Any]) -> None:
+    """Refuse une consultation antérieure aux données autorisées du replay."""
+    if value < parse_utc(config["replay"]["start_utc"]):
+        raise ValueError("La date demandée précède le début du replay")
+
+
 def _cap_to_replay(
     requested_end: datetime,
     replay_end: datetime,
@@ -131,6 +137,7 @@ def get_status(station_id: str, at_utc: str) -> dict[str, Any]:
     _validate_station(station_id)
     requested_at = parse_utc(at_utc)
     config = _load_config()
+    _validate_replay_start(requested_at, config)
     as_of, warnings = _cap_to_replay(requested_at, _replay_limit(config))
     station_summary = summarize_station(
         _load_events(),
@@ -198,6 +205,7 @@ def get_history(station_id: str, from_utc: str, to_utc: str) -> dict[str, Any]:
         raise ValueError("from_utc doit être antérieur ou égal à to_utc")
 
     config = _load_config()
+    _validate_replay_start(start, config)
     end, warnings = _cap_to_replay(requested_end, _replay_limit(config))
     if start > end:
         warnings.append("L'intervalle commence après la fin du replay; aucun événement retourné.")
@@ -236,6 +244,7 @@ def get_logs(station_id: str, from_utc: str, to_utc: str) -> dict[str, Any]:
         raise ValueError("from_utc doit être antérieur ou égal à to_utc")
 
     config = _load_config()
+    _validate_replay_start(start, config)
     end, warnings = _cap_to_replay(requested_end, _replay_limit(config))
     if start > end:
         warnings.append("L'intervalle commence après la fin du replay; aucun événement retourné.")
@@ -269,6 +278,7 @@ def get_inspections(from_utc: str, to_utc: str) -> dict[str, Any]:
         raise ValueError("from_utc doit être antérieur ou égal à to_utc")
 
     config = _load_config()
+    _validate_replay_start(start, config)
     end, warnings = _cap_to_replay(requested_end, _replay_limit(config))
     if start > end:
         warnings.append("L'intervalle commence après la fin du replay; aucun événement retourné.")

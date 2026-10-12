@@ -2,7 +2,7 @@
 
 **Monorepo pédagogique Industrie 4.0** : trois équipes développent en parallèle la surveillance machine, la vision et le dashboard. Un module transversal prépare le diagnostic IA en lecture seule.
 
-> **Statut : squelette de départ, pas application industrielle terminée.** Les mesures et inspections fournies dans `data/` sont **synthétiques**. Aucun capteur, modèle YOLO, serveur MCP ni commande moteur n'est connecté dans cette version.
+> **Statut : modules en cours d'intégration.** Le dashboard de replay et les quatre outils de consultation de l'agent sont implémentés. La vision propose des démonstrations webcam YOLO/OpenCV, encore sans export d'inspections JSONL. Les mesures et inspections fournies dans `data/` sont **synthétiques** ; les règles M01, le diagnostic IA, MCP, MQTT et l'acquisition physique restent à développer.
 
 ## 1. Qui développe quoi ?
 
@@ -54,6 +54,17 @@ python -m factorypulse.vision.main
 ```
 
 Ces deux dernières commandes inspectent les **entrées existantes**, elles ne réalisent pas encore l'analyse métier.
+
+Pour les démonstrations vision, avec l'extra `vision` installé et une webcam disponible :
+
+```bash
+python -m factorypulse.vision.main --webcam   # YOLO : objets et couleurs
+python -m factorypulse.vision.main --colors   # OpenCV : rouge et vert
+```
+
+La caméra démarre uniquement avec l'une de ces options. YOLO peut télécharger
+ses poids au premier lancement. Ces démonstrations ne produisent pas encore
+les décisions `PASS`/`REJECT`/`UNKNOWN` ni le fichier `data/outputs/q01.jsonl`.
 
 Pour le dashboard (si les dépendances ont été installées) :
 

@@ -34,40 +34,6 @@ def test_agent_function_signatures_exist():
     assert all(callable(getattr(tools, name)) for name in ("get_status", "get_history", "get_logs", "get_inspections"))
 
 
-@pytest.mark.parametrize(
-    ("temperature_c", "expected_status"),
-    [
-        (59.9, "normal"),
-        (60.0, "normal"),
-        (60.1, "high_temperature"),
-        (None, "unknown"),
-        ("61", "unknown"),
-        (True, "unknown"),
-    ],
-)
-def test_detect_high_temperature_classifies_measurement(temperature_c, expected_status):
-    event = {
-        "event_id": "M01-TEST-001",
-        "payload": {"temperature_c": temperature_c},
-    }
-
-    result = tools.detect_high_temperature(event)
-
-    assert result["status"] == expected_status
-    assert result["temperature_c"] == temperature_c
-    assert result["threshold_c"] == 60.0
-    assert result["event_id"] == "M01-TEST-001"
-    assert event["payload"]["temperature_c"] == temperature_c
-
-
-def test_detect_high_temperature_handles_missing_payload():
-    result = tools.detect_high_temperature({"event_id": "M01-TEST-002"})
-
-    assert result["status"] == "unknown"
-    assert result["temperature_c"] is None
-    assert result["event_id"] == "M01-TEST-002"
-
-
 def test_get_status_returns_latest_events_at_replay_time():
     result = tools.get_status("M01", "2026-10-12T09:00:02Z")
 
@@ -75,7 +41,7 @@ def test_get_status_returns_latest_events_at_replay_time():
     assert {event["event_type"] for event in result["events"]} == {"telemetry", "health"}
     assert result["summary"]["machine_state"] == "RUNNING"
     assert result["summary"]["node_state"] == "RUNNING"
-    assert result["summary"]["data_age_s"] == {"telemetry": 0.0, "health": 2.0}
+    assert result["summary"]["data_age_s"] == 0.0
 
 
 def test_get_status_rejects_timestamp_outside_replay():

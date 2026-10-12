@@ -1,5 +1,7 @@
 """Détection webcam avec YOLO et estimation de la couleur dominante."""
 
+from __future__ import annotations
+
 import cv2
 from cv2.typing import MatLike
 import numpy as np
@@ -58,16 +60,6 @@ def get_dominant_color(
     return "rose", (180, 105, 255)
 
 
-# Le modèle de segmentation fournit les classes détectées et leurs masques.
-print("Chargement du modèle YOLO...", flush=True)
-model = YOLO("yolo26n-seg.pt")
-print("Modèle YOLO chargé.", flush=True)
-
-# La caméra est ouverte au chargement du module et réutilisée par la boucle.
-cap = cv2.VideoCapture(0)
-if not cap.isOpened():
-    raise RuntimeError("Impossible d'ouvrir la webcam.")
-
 # Seules ces classes sont conservées et affichées en français.
 object_labels = {
     "apple": "Pomme",
@@ -88,7 +80,14 @@ object_labels = {
 
 def detect_objects(*args, **kwargs):
     """Point d'extension YOLO (installation optionnelle sur PC)."""
+    # Importer ce module ne charge aucun poids et n'ouvre aucune caméra.
+    print("Chargement du modèle YOLO...", flush=True)
+    model = YOLO("yolo26n-seg.pt")
+    print("Modèle YOLO chargé.", flush=True)
+    cap = cv2.VideoCapture(0)
     try:
+        if not cap.isOpened():
+            raise RuntimeError("Impossible d'ouvrir la webcam.")
         while True:
             ret, frame = cap.read()
             if not ret:
