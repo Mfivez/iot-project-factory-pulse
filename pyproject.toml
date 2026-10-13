@@ -15,7 +15,7 @@ dependencies = [
 
 [project.optional-dependencies]
 monitoring = []
-vision = ["ultralytics>=8.3", "opencv-python>=4.8"]
+vision = ["ultralytics>=8.3", "opencv-python>=4.8,<5"]
 dashboard = ["streamlit>=1.35", "pandas>=2.1"]
 agent = ["mcp>=2.3,<3"]
 edge = ["gpiozero>=2.0", "smbus2>=0.4"]
