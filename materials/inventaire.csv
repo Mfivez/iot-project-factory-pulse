@@ -1,0 +1,16 @@
+id,designation,quantite_annoncee,quantite_confirmee,fabricant,reference_exacte,poste_envisage,statut,photos,documents,observations
+PI3,Raspberry Pi 3B,environ 10,,,,M01 / réserve,ANNONCE_NON_VERIFIE,,,Quantité et modèle à constater
+PI4,Raspberry Pi 4B,2,,,,Q01 / intégration,ANNONCE_NON_VERIFIE,,,Affectation à confirmer
+PC,PC de développement,non précisée,,,,Vision / dashboard,ANNONCE_NON_VERIFIE,,,Configuration et disponibilité à relever
+TEMP,Capteurs de température,plusieurs,,,,M01,ANNONCE_NON_VERIFIE,,,Créer une fiche par référence et exemplaire retenu
+ACC,Accéléromètre,non précisée,,,,M01,ANNONCE_NON_VERIFIE,,,Module et interface à identifier
+MOT,Moteur,non précisée,,,,M01,ANNONCE_NON_VERIFIE,,,Référence et caractéristiques à relever
+VENT,Ventilateur,non précisée,,,,M01,ANNONCE_NON_VERIFIE,,,Vérifier s'il s'agit du même ensemble que le moteur
+IR,Détecteur infrarouge,non précisée,,,,Q01,ANNONCE_NON_VERIFIE,,,Fonction mouvement ou passage à confirmer
+HUSKY,Kit HUSKYLENS,non précisée,,,,Q01,ANNONCE_NON_VERIFIE,,,Modèle et contenu du kit à vérifier
+RACK,Rack et accessoires,non précisée,,,,Commun,ANNONCE_NON_VERIFIE,,,Inventorier les supports réellement disponibles
+RES,Résistances,non précisée,,,,Commun,ANNONCE_NON_VERIFIE,,,Valeurs et usages à déterminer après identification des modules
+ALIM,Alimentations,,,,,Commun,A_RECHERCHER,,,Présence et compatibilité à vérifier pour chaque appareil
+SD,Cartes SD,,,,,Raspberry,A_RECHERCHER,,,Présence et contenu existant à vérifier
+CAM,Caméra pour le PC ou le poste Q01,,,,,Q01,A_RECHERCHER,,,Disponibilité et interface non confirmées
+CAB,Câbles et accessoires de connexion,,,,,Commun,A_RECHERCHER,,,Identifier les câbles de données et les accessoires manquants
