@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'win32'",
@@ -755,6 +755,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "mcp" },
+    { name = "pytest" },
 ]
 
 [package.optional-dependencies]
@@ -790,6 +791,7 @@ requires-dist = [
     { name = "opencv-python", marker = "extra == 'vision'", specifier = ">=4.8,<5" },
     { name = "paho-mqtt", marker = "extra == 'mqtt'", specifier = ">=2.0" },
     { name = "pandas", marker = "extra == 'dashboard'", specifier = ">=2.1" },
+    { name = "pytest", specifier = ">=9.1.1" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
     { name = "smbus2", marker = "extra == 'edge'", specifier = ">=0.4" },
     { name = "streamlit", marker = "extra == 'dashboard'", specifier = ">=1.35" },
