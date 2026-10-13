@@ -10,6 +10,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
 
 import cv2
 
@@ -91,7 +92,7 @@ class DetectionHistoryExporter:
         file_timestamp = timestamp_dt.strftime("%Y%m%dT%H%M%S%f")[:-3] + "Z"
 
         self.capture_dir.mkdir(parents=True, exist_ok=True)
-        capture_name = f"capture_{file_timestamp}.jpg"
+        capture_name = f"capture_{file_timestamp}_{uuid4().hex[:8]}.jpg"
         capture_path = self.capture_dir / capture_name
         relative_image_path = "data/images/captures/" + capture_name
 
@@ -101,7 +102,6 @@ class DetectionHistoryExporter:
             return None
 
         event: dict[str, Any] = {
-            "id": self._next_id,
             "timestamp": timestamp_iso,
             "object_type": object_type,
             "color": color,
@@ -112,6 +112,7 @@ class DetectionHistoryExporter:
         }
 
         with self._lock:
+            event["id"] = self._next_id
             self.history_path.parent.mkdir(parents=True, exist_ok=True)
             with self.history_path.open("a", encoding="utf-8") as file_obj:
                 file_obj.write(self._serialise_event(event))
@@ -119,6 +120,61 @@ class DetectionHistoryExporter:
                 os.fsync(file_obj.fileno())
             self._next_id += 1
 
+        return event
+
+    def export_image_result(
+        self,
+        *,
+        frame,
+        detections: list[dict[str, Any]],
+        input_image_path: str | Path,
+    ) -> dict[str, Any] | None:
+        """Exporte une image fixe en un JPEG annoté et une seule ligne JSONL."""
+        timestamp_dt = datetime.now(timezone.utc)
+        timestamp_iso = timestamp_dt.strftime(
+            "%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+        file_timestamp = timestamp_dt.strftime("%Y%m%dT%H%M%S%f")[:-3] + "Z"
+
+        self.capture_dir.mkdir(parents=True, exist_ok=True)
+        capture_name = f"capture_{file_timestamp}_{uuid4().hex[:8]}.jpg"
+        capture_path = self.capture_dir / capture_name
+        relative_image_path = "data/images/captures/" + capture_name
+        if not cv2.imwrite(str(capture_path), frame):
+            LOGGER.warning("Impossible d'écrire la capture %s.", capture_path)
+            return None
+
+        copied_detections = [
+            {
+                "object_type": str(item.get("object_type", "")),
+                "color": item.get("color"),
+                "confidence": (
+                    None if item.get("confidence") is None
+                    else float(item["confidence"])
+                ),
+            }
+            for item in detections
+        ]
+        first_detection = copied_detections[0] if len(copied_detections) == 1 else {}
+        event: dict[str, Any] = {
+            "timestamp": timestamp_iso,
+            "object_type": first_detection.get("object_type", "multiple" if copied_detections else None),
+            "color": first_detection.get("color"),
+            "image_path": relative_image_path,
+            "input_image_path": str(input_image_path),
+            "confidence": first_detection.get("confidence"),
+            "source": "image_upload",
+            "detections": copied_detections,
+            "anomaly": None,
+        }
+
+        with self._lock:
+            event["id"] = self._next_id
+            self.history_path.parent.mkdir(parents=True, exist_ok=True)
+            with self.history_path.open("a", encoding="utf-8") as file_obj:
+                file_obj.write(self._serialise_event(event))
+                file_obj.flush()
+                os.fsync(file_obj.fileno())
+            self._next_id += 1
         return event
 
 

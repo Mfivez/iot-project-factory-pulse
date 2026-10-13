@@ -89,3 +89,32 @@ def test_stable_tracker_emits_one_event_per_second_for_same_object(tmp_path):
     events = (tmp_path / "data" /
               "history.jsonl").read_text(encoding="utf-8").strip().splitlines()
     assert len(events) == 2
+
+
+def test_image_result_exports_one_jpeg_and_one_jsonl_event(tmp_path):
+    exporter = DetectionHistoryExporter(base_dir=tmp_path)
+    frame = np.zeros((120, 160, 3), dtype=np.uint8)
+    input_path = tmp_path / "input" / "source photo.png"
+    input_path.parent.mkdir()
+    input_path.write_bytes(b"source image")
+
+    event = exporter.export_image_result(
+        frame=frame,
+        detections=[
+            {"object_type": "bottle", "color": "red", "confidence": 0.95},
+            {"object_type": "cup", "color": "blue", "confidence": 0.81},
+        ],
+        input_image_path=input_path,
+    )
+
+    history_lines = (tmp_path / "data" / "history.jsonl").read_text(
+        encoding="utf-8"
+    ).splitlines()
+    captures = list((tmp_path / "data" / "images" / "captures").glob("*.jpg"))
+    assert len(history_lines) == 1
+    assert len(captures) == 1
+    assert json.loads(history_lines[0]) == event
+    assert event["source"] == "image_upload"
+    assert event["input_image_path"] == str(input_path.resolve())
+    assert event["object_type"] == "multiple"
+    assert len(event["detections"]) == 2

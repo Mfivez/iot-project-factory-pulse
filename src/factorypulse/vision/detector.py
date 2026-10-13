@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import sys
 from pathlib import Path
 from typing import Any, cast
 
@@ -248,10 +249,10 @@ def draw_face_detections(
         )
 
 
-def process_frame(
+def analyze_frame(
     frame: MatLike, model: YOLO, face_detector: cv2.CascadeClassifier
-) -> MatLike:
-    """Applique YOLO puis ajoute les boîtes d'objets et de visages."""
+) -> tuple[MatLike, list[dict[str, Any]]]:
+    """Analyse une image et retourne son rendu annoté et ses objets détectés."""
     predictions = cast(
         list[Results],
         model.predict(
@@ -264,19 +265,85 @@ def process_frame(
     output, object_detections = collect_object_detections(
         frame, predictions[0])
     draw_face_detections(frame, output, face_detector)
+    return output, object_detections
+
+
+def process_frame(
+    frame: MatLike,
+    model: YOLO,
+    face_detector: cv2.CascadeClassifier,
+    source: str = "webcam_0",
+) -> MatLike:
+    """Analyse une image de caméra et suit les objets stables dans l'historique."""
+    output, object_detections = analyze_frame(frame, model, face_detector)
     _DETECTION_TRACKER.track(
         frame=output,
         detections=object_detections,
-        source="webcam_0",
+        source=source,
     )
     return output
 
 
-def run_webcam(model: YOLO, face_detector: cv2.CascadeClassifier) -> None:
-    """Lit et affiche les images de la webcam jusqu'à l'appui sur Q."""
-    camera = cv2.VideoCapture(CAMERA_INDEX)
+def track_camera_frame(
+    frame: MatLike,
+    detections: list[dict[str, Any]],
+    source: str,
+) -> None:
+    """Enregistre le suivi temporel d'une frame de caméra."""
+    _DETECTION_TRACKER.track(frame=frame, detections=detections, source=source)
+
+
+def process_image(
+    image_path: str | Path,
+    model: YOLO,
+    face_detector: cv2.CascadeClassifier,
+) -> MatLike:
+    """Analyse une image fixe et exporte une seule capture et une seule ligne JSONL."""
+    input_path = Path(image_path).expanduser().resolve()
+    frame = cv2.imread(str(input_path))
+    if frame is None:
+        raise ValueError(f"Impossible de lire l'image : {input_path}")
+
+    return process_image_frame(frame, model, face_detector, str(input_path))
+
+
+def process_image_frame(
+    frame: MatLike,
+    model: YOLO,
+    face_detector: cv2.CascadeClassifier,
+    input_image_path: str | Path,
+) -> MatLike:
+    """Analyse des pixels fournis et exporte une unique capture et un événement."""
+    output, detections = analyze_frame(frame, model, face_detector)
+    event = _HISTORIAN.export_image_result(
+        frame=output,
+        detections=detections,
+        input_image_path=input_image_path,
+    )
+    if event is None:
+        raise RuntimeError("Impossible d'enregistrer le résultat de l'image.")
+    return output
+
+
+def open_camera(camera_index: int) -> cv2.VideoCapture:
+    """Ouvre un index précis, en privilégiant AVFoundation sur macOS."""
+    backend = cv2.CAP_AVFOUNDATION if sys.platform == "darwin" else cv2.CAP_ANY
+    camera = cv2.VideoCapture(camera_index, backend)
     if not camera.isOpened():
-        raise RuntimeError(f"Impossible d'ouvrir la webcam {CAMERA_INDEX}.")
+        camera.release()
+        raise RuntimeError(f"Impossible d'ouvrir la caméra d'index {camera_index}.")
+    return camera
+
+
+def run_webcam(
+    model: YOLO,
+    face_detector: cv2.CascadeClassifier,
+    camera_index: int = CAMERA_INDEX,
+    source: str | None = None,
+) -> None:
+    """Lit et affiche les images de la webcam jusqu'à l'appui sur Q."""
+    camera = open_camera(camera_index)
+    source_name = source or f"webcam_{camera_index}"
 
     try:
         while True:
@@ -285,7 +352,7 @@ def run_webcam(model: YOLO, face_detector: cv2.CascadeClassifier) -> None:
                 raise RuntimeError(
                     "Impossible de lire une image depuis la webcam.")
 
-            output = process_frame(frame, model, face_detector)
+            output = process_frame(frame, model, face_detector, source=source_name)
             cv2.imshow("Détection objets et visages", output)
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
@@ -298,11 +365,11 @@ def detect_objects() -> None:
     """Point d'entrée explicite pour la démo webcam."""
     print("Chargement des modèles...", flush=True)
     model = YOLO(MODEL_PATH)
-    camera = cv2.VideoCapture(CAMERA_INDEX)
-    if not camera.isOpened():
-        camera.release()
+    try:
+        camera = open_camera(CAMERA_INDEX)
+    except RuntimeError:
         cv2.destroyAllWindows()
-        raise RuntimeError(f"Impossible d'ouvrir la webcam {CAMERA_INDEX}.")
+        raise
 
     face_detector: cv2.CascadeClassifier | None = None
     print("Modèles chargés.", flush=True)

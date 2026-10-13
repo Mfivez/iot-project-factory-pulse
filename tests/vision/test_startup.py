@@ -1,4 +1,4 @@
-"""Le socle peut lire les photos attendues sans dépendances ni caméra."""
+"""L'entrée vision reste importable avant le choix explicite d'une source."""
 import subprocess
 import sys
 import runpy
@@ -11,11 +11,11 @@ import pytest
 from factorypulse.vision import main as vision_main
 
 
-def test_inventory_runs_without_importing_optional_vision_dependencies():
+def test_importing_entrypoint_does_not_load_optional_vision_dependencies():
     source = Path(vision_main.__file__).resolve().parents[2]
     script = """
 import importlib.abc
-import runpy
+import importlib
 import sys
 
 class NoVisionDependencies(importlib.abc.MetaPathFinder):
@@ -25,14 +25,14 @@ class NoVisionDependencies(importlib.abc.MetaPathFinder):
 
 sys.meta_path.insert(0, NoVisionDependencies())
 sys.path.insert(0, sys.argv.pop())
-runpy.run_module('factorypulse.vision.main', run_name='__main__')
+importlib.import_module('factorypulse.vision.main')
 """
     result = subprocess.run(
         [sys.executable, "-I", "-c", script, str(source)],
         capture_output=True, text=True, timeout=15,
     )
     assert result.returncode == 0, result.stderr
-    assert result.stdout.count("A FAIRE ") + result.stdout.count("OK   ") == 6
+    assert result.stdout == ""
 
 
 @pytest.mark.parametrize(
@@ -53,12 +53,28 @@ def test_camera_demos_require_an_explicit_option(monkeypatch, flag, module, func
     assert calls == [flag]
 
 
+def test_default_startup_launches_input_choice_ui(monkeypatch):
+    calls = []
+    fake_module = SimpleNamespace(launch_ui=lambda: calls.append("ui"))
+    monkeypatch.setitem(sys.modules, "factorypulse.vision.ui", fake_module)
+    monkeypatch.setattr(sys, "argv", ["vision"])
+
+    vision_main.main()
+
+    assert calls == ["ui"]
+
+
 @pytest.mark.parametrize("camera_opens", [False, True])
 def test_detector_import_is_passive_and_failed_capture_is_released(monkeypatch, camera_opens):
     camera = Mock()
     camera.isOpened.return_value = camera_opens
     camera.read.return_value = (False, None)
-    cv2 = SimpleNamespace(VideoCapture=Mock(return_value=camera), destroyAllWindows=Mock())
+    cv2 = SimpleNamespace(
+        VideoCapture=Mock(return_value=camera),
+        destroyAllWindows=Mock(),
+        CAP_AVFOUNDATION=1200,
+        CAP_ANY=0,
+    )
     yolo = Mock()
     modules = {
         "cv2": cv2,
@@ -75,10 +91,10 @@ def test_detector_import_is_passive_and_failed_capture_is_released(monkeypatch, 
     yolo.assert_not_called()
     cv2.VideoCapture.assert_not_called()
 
-    with pytest.raises(RuntimeError, match="webcam"):
+    with pytest.raises(RuntimeError, match="caméra|webcam"):
         detector["detect_objects"]()
 
     yolo.assert_called_once_with("yolo26n-seg.pt")
-    cv2.VideoCapture.assert_called_once_with(0)
+    cv2.VideoCapture.assert_called_once_with(0, 1200)
     camera.release.assert_called_once_with()
     cv2.destroyAllWindows.assert_called_once_with()

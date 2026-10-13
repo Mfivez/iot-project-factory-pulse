@@ -6,14 +6,14 @@
 
 ## 1. Qui développe quoi ?
 
-| Partie | Équipe | Mission |
-|---|---|---|
-| `src/factorypulse/monitoring/` | 1 | Température, vibrations, anomalies, futur Raspberry M01 |
-| `src/factorypulse/vision/` | 2 | YOLO, OpenCV, futur HUSKYLENS, inspection Q01 |
-| `src/factorypulse/dashboard/` | 3 | Streamlit, événements, indicateurs et alertes |
-| `src/factorypulse/agent/` | Transversal | Outils de lecture et futur diagnostic/MCP |
-| `src/factorypulse/shared/` | Commun | Contrat JSONL et utilitaires validés |
-| `src/factorypulse/transport/` | Intégration | MQTT ultérieurement |
+| Partie                         | Équipe      | Mission                                                 |
+| ------------------------------ | ----------- | ------------------------------------------------------- |
+| `src/factorypulse/monitoring/` | 1           | Température, vibrations, anomalies, futur Raspberry M01 |
+| `src/factorypulse/vision/`     | 2           | YOLO, OpenCV, futur HUSKYLENS, inspection Q01           |
+| `src/factorypulse/dashboard/`  | 3           | Streamlit, événements, indicateurs et alertes           |
+| `src/factorypulse/agent/`      | Transversal | Outils de lecture et futur diagnostic/MCP               |
+| `src/factorypulse/shared/`     | Commun      | Contrat JSONL et utilitaires validés                    |
+| `src/factorypulse/transport/`  | Intégration | MQTT ultérieurement                                     |
 
 Chaque dossier contient un **`AGENTS.md`** ; lire celui de la racine puis celui du module pour travailler avec Codex.
 
@@ -58,13 +58,20 @@ Ces deux dernières commandes inspectent les **entrées existantes**, elles ne r
 Pour les démonstrations vision, avec l'extra `vision` installé et une webcam disponible :
 
 ```bash
-python -m factorypulse.vision.main --webcam   # YOLO : objets et couleurs
-python -m factorypulse.vision.main --colors   # OpenCV : rouge et vert
+python -m factorypulse.vision.main            # UI : choisir caméra ou image
+python -m factorypulse.vision.main --webcam    # YOLO : webcam directement
+python -m factorypulse.vision.main --colors    # OpenCV : rouge et vert
 ```
 
-La caméra démarre uniquement avec l'une de ces options. YOLO peut télécharger
-ses poids au premier lancement. Ces démonstrations ne produisent pas encore
-les décisions `PASS`/`REJECT`/`UNKNOWN` ni le fichier `data/outputs/q01.jsonl`.
+L'UI propose le sélecteur de caméra du navigateur (périphérique choisi par son
+identifiant réel, sans supposer que l'ordre AVFoundation correspond aux index
+OpenCV) et un sélecteur de fichier image. La vidéo passe par WebRTC pour éviter
+les reruns Streamlit périodiques. Autoriser l'accès caméra dans le navigateur.
+Une image fixe produit un seul JPEG annoté dans `data/images/captures/` et une
+seule ligne dans `data/history.jsonl`, avec la source et le nom du fichier
+importé. YOLO peut télécharger ses poids au premier lancement. Ces
+démonstrations ne produisent pas encore les décisions `PASS`/`REJECT`/`UNKNOWN`
+ni `data/outputs/q01.jsonl`.
 
 Pour le dashboard (si les dépendances ont été installées) :
 
