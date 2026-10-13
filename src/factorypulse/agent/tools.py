@@ -11,7 +11,7 @@ from datetime import datetime
 from collections.abc import Callable
 from typing import Any
 
-from factorypulse.shared.contracts import STATIONS, parse_utc
+from factorypulse.shared.contracts import ContractError, STATIONS, parse_utc
 from factorypulse.shared.jsonl import dedupe_events, read_jsonl
 from factorypulse.shared.paths import fixture_path, project_root
 from factorypulse.shared.status import summarize_station
@@ -111,6 +111,63 @@ def _limited_response(
     return {
         "as_of_utc": _format_utc(as_of),
         "events": events[:limit],
+        "warnings": warnings,
+    }
+
+
+def get_latest_temperature_exceedance(at_utc: str) -> dict:
+    """Retourne la dernière télémétrie M01 au-dessus du seuil configuré."""
+    # Valide l'instant demandé pour ne parcourir que des dates UTC du replay.
+    try:
+        at_dt = parse_utc(at_utc)
+    except (ContractError, TypeError) as exc:
+        raise ValueError("at_utc doit être une date ISO 8601 UTC terminée par Z") from exc
+
+    # Charge les bornes du replay afin de refuser une date extérieure aux données disponibles.
+    config_path = project_root() / "config" / "factorypulse.json"
+    with config_path.open("r", encoding="utf-8") as config_file:
+        config = json.load(config_file)
+    replay = config["replay"]
+    temperature_threshold_c = config["thresholds"]["temperature_c_gt"]
+    replay_start = parse_utc(replay["start_utc"])
+    replay_end = parse_utc(replay["end_utc"])
+    replay_as_of = parse_utc(replay["as_of_utc"])
+    if at_dt < replay_start or at_dt > replay_end or at_dt > replay_as_of:
+        raise ValueError("at_utc est en dehors des bornes disponibles du replay")
+
+    # Lit les télémétries M01 et conserve celles datées au plus tard à l'instant demandé.
+    telemetry = [
+        event
+        for event in read_jsonl(fixture_path("m01.jsonl"))
+        if event["station_id"] == "M01"
+        and event["event_type"] == "telemetry"
+        and parse_utc(event["timestamp_utc"]) <= at_dt
+    ]
+
+    # Garde les mesures connues strictement supérieures au seuil lu dans la configuration.
+    exceedances = [
+        event for event in telemetry
+        if event["payload"]["temperature_c"] is not None
+        and event["payload"]["temperature_c"] > temperature_threshold_c
+    ]
+
+    # Choisit l'événement le plus récent; les dates sont comparées en UTC.
+    latest_event = max(
+        exceedances,
+        key=lambda event: parse_utc(event["timestamp_utc"]),
+        default=None,
+    )
+
+    # Renvoie le timestamp et le payload originaux, ainsi que l'événement source comme preuve.
+    warnings = [] if latest_event is not None else [
+        f"Aucune température supérieure à {temperature_threshold_c} °C jusqu'à cet instant du replay."
+    ]
+    return {
+        "as_of_utc": at_utc,
+        "threshold_c": temperature_threshold_c,
+        "event": latest_event,
+        "timestamp_utc": latest_event["timestamp_utc"] if latest_event else None,
+        "payload": latest_event["payload"] if latest_event else None,
         "warnings": warnings,
     }
 

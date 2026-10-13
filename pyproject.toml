@@ -9,13 +9,15 @@ description = "Monorepo pedagogique Industrie 4.0: monitoring, vision, supervisi
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Equipe FactoryPulse"}]
-dependencies = []
+dependencies = [
+    "mcp>=2.3.0",
+]
 
 [project.optional-dependencies]
 monitoring = []
 vision = ["ultralytics>=8.3", "opencv-python>=4.8"]
 dashboard = ["streamlit>=1.35", "pandas>=2.1"]
-agent = ["mcp>=1.0"]
+agent = ["mcp>=2.3,<3"]
 edge = ["gpiozero>=2.0", "smbus2>=0.4"]
 mqtt = ["paho-mqtt>=2.0"]
 dev = ["pytest>=8.0"]

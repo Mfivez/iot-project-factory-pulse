@@ -684,6 +684,9 @@ wheels = [
 name = "factorypulse-lab"
 version = "0.1.0"
 source = { editable = "." }
+dependencies = [
+    { name = "mcp" },
+]
 
 [package.optional-dependencies]
 agent = [
@@ -711,7 +714,8 @@ vision = [
 [package.metadata]
 requires-dist = [
     { name = "gpiozero", marker = "extra == 'edge'", specifier = ">=2.0" },
-    { name = "mcp", marker = "extra == 'agent'", specifier = ">=1.0" },
+    { name = "mcp", specifier = ">=2.3.0" },
+    { name = "mcp", marker = "extra == 'agent'", specifier = ">=2.3,<3" },
     { name = "opencv-python", marker = "extra == 'vision'", specifier = ">=4.8" },
     { name = "paho-mqtt", marker = "extra == 'mqtt'", specifier = ">=2.0" },
     { name = "pandas", marker = "extra == 'dashboard'", specifier = ">=2.1" },

@@ -1,3 +1,5 @@
+import json
+
 from factorypulse.monitoring.main import preview_csv
 from factorypulse.vision.main import inspect_manifest
 from factorypulse.shared.paths import project_root, fixture_path
@@ -31,7 +33,30 @@ def test_fixture_path_whitelist():
 
 
 def test_agent_function_signatures_exist():
-    assert all(callable(getattr(tools, name)) for name in ("get_status", "get_history", "get_logs", "get_inspections"))
+    assert all(callable(getattr(tools, name)) for name in ("get_status", "get_history", "get_logs", "get_inspections", "get_latest_temperature_exceedance"))
+
+
+def test_get_latest_temperature_exceedance_returns_event_and_payload():
+    result = tools.get_latest_temperature_exceedance("2026-10-12T09:05:59Z")
+    with (project_root() / "config" / "factorypulse.json").open(encoding="utf-8") as config_file:
+        configured_threshold = json.load(config_file)["thresholds"]["temperature_c_gt"]
+
+    assert result["event"] is not None
+    assert result["timestamp_utc"] == result["event"]["timestamp_utc"]
+    assert result["payload"] == result["event"]["payload"]
+    assert result["threshold_c"] == configured_threshold
+    assert result["payload"]["temperature_c"] > configured_threshold
+    assert result["event"]["event_id"]
+    assert result["warnings"] == []
+
+
+def test_get_latest_temperature_exceedance_reports_no_match():
+    result = tools.get_latest_temperature_exceedance("2026-10-12T09:00:00Z")
+
+    assert result["event"] is None
+    assert result["timestamp_utc"] is None
+    assert result["payload"] is None
+    assert result["warnings"]
 
 
 def test_get_status_returns_latest_events_at_replay_time():
