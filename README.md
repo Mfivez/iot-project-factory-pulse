@@ -78,7 +78,7 @@ Le dashboard montre **les fixtures de replay**, pas des capteurs en direct. Ne j
 
 - `data/inputs/machine.csv` : 300 mesures synthétiques M01, dont des données manquantes.
 - `data/inputs/acceleration_xyz.csv` : exercice facultatif de calcul RMS à partir des axes.
-- `data/inputs/prises_de_vue.csv` : les **six photos à réaliser** par l'équipe 2 ; aucune image fournie.
+- `data/inputs/prises_de_vue.csv` : les six scènes de l'équipe 2 ; [six images synthétiques de test](data/images/README.md) sont fournies dans `data/images/`.
 - `data/fixtures/m01.jsonl` : exemple de traitement machine.
 - `data/fixtures/q01.jsonl` : 6 inspections uniques + 1 doublon exact volontaire.
 - `data/fixtures/systeme.jsonl` et `logs.jsonl` : santé système et logs simulés.
