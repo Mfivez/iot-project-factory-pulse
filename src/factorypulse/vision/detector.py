@@ -1,13 +1,19 @@
 """Détection webcam des objets et des visages."""
 
+from __future__ import annotations
+
+import logging
+from pathlib import Path
+from typing import Any, cast
+
 import cv2
-from cv2.data import haarcascades
 from cv2.typing import MatLike
 import numpy as np
 from numpy.typing import NDArray
-from typing import cast
 from ultralytics import YOLO
 from ultralytics.engine.results import Results
+
+from factorypulse.vision.history import DetectionHistoryExporter, StableDetectionTracker
 
 MODEL_PATH = "yolo26n-seg.pt"
 CAMERA_INDEX = 0
@@ -29,6 +35,10 @@ OBJECT_LABELS = {
     "carrot": "Carotte",
     "hot dog": "Hot-dog",
 }
+
+LOGGER = logging.getLogger(__name__)
+_HISTORIAN = DetectionHistoryExporter()
+_DETECTION_TRACKER = StableDetectionTracker(_HISTORIAN)
 
 
 def get_dominant_color(
@@ -83,9 +93,17 @@ def get_dominant_color(
 
 def load_face_detector() -> cv2.CascadeClassifier:
     """Charge le classifieur Haar fourni avec OpenCV."""
-    detector = cv2.CascadeClassifier(
-        haarcascades + "haarcascade_frontalface_default.xml"
-    )
+    if not hasattr(cv2, "CascadeClassifier"):
+        raise RuntimeError("Impossible de charger le détecteur de visages.")
+
+    cascade_dir = getattr(getattr(cv2, "data", None), "haarcascades", None)
+    if cascade_dir:
+        cascade_path = str(Path(cascade_dir) /
+                           "haarcascade_frontalface_default.xml")
+    else:
+        cascade_path = "haarcascade_frontalface_default.xml"
+
+    detector = cv2.CascadeClassifier(cascade_path)
     if detector.empty():
         raise RuntimeError("Impossible de charger le détecteur de visages.")
     return detector
@@ -125,7 +143,7 @@ def draw_object_detection(
     detection_index: int,
     coordinates: tuple[int, int, int, int],
     frame_shape: tuple[int, int],
-) -> None:
+) -> tuple[str, tuple[int, int, int]]:
     """Estime la couleur et dessine une boîte annotée pour un objet."""
     object_mask = get_object_mask(
         result, detection_index, coordinates, frame_shape)
@@ -143,24 +161,24 @@ def draw_object_detection(
         box_color,
         2,
     )
+    return color_name, box_color
 
 
-def draw_object_detections(frame: MatLike, result: Results) -> MatLike:
-    """Dessine chaque objet reconnu avec sa classe et sa couleur estimée."""
+def collect_object_detections(frame: MatLike, result: Results) -> tuple[MatLike, list[dict[str, Any]]]:
+    """Dessine chaque objet reconnu et retourne ses attributs pour l'historique."""
     height, width = frame.shape[:2]
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     output = frame.copy()
+    object_detections: list[dict[str, Any]] = []
 
     if result.boxes is None:
-        return output
+        return output, object_detections
 
-    # L'index relie chaque boîte au masque de segmentation correspondant.
     detection_index = 0
     for box in result.boxes:
         current_index = detection_index
         detection_index += 1
 
-        # On ignore les objets dont la classe n'est pas dans la liste des labels.
         class_id = int(box.cls[0])
         class_name = result.names[class_id]
         if class_name not in OBJECT_LABELS:
@@ -173,7 +191,9 @@ def draw_object_detections(frame: MatLike, result: Results) -> MatLike:
             int(raw_coordinates[2]),
             int(raw_coordinates[3]),
         )
-        draw_object_detection(
+        confidence = float(box.conf[0]) if box.conf is not None and len(
+            box.conf) > 0 else None
+        color_name, _ = draw_object_detection(
             output,
             hsv_frame,
             result,
@@ -182,7 +202,20 @@ def draw_object_detections(frame: MatLike, result: Results) -> MatLike:
             coordinates,
             (height, width),
         )
+        object_detections.append(
+            {
+                "object_type": class_name,
+                "color": color_name,
+                "confidence": confidence,
+            }
+        )
 
+    return output, object_detections
+
+
+def draw_object_detections(frame: MatLike, result: Results) -> MatLike:
+    """Dessine chaque objet reconnu avec sa classe et sa couleur estimée."""
+    output, _ = collect_object_detections(frame, result)
     return output
 
 
@@ -228,8 +261,14 @@ def process_frame(
             stream=False,
         ),
     )
-    output = draw_object_detections(frame, predictions[0])
+    output, object_detections = collect_object_detections(
+        frame, predictions[0])
     draw_face_detections(frame, output, face_detector)
+    _DETECTION_TRACKER.track(
+        frame=output,
+        detections=object_detections,
+        source="webcam_0",
+    )
     return output
 
 
@@ -255,13 +294,39 @@ def run_webcam(model: YOLO, face_detector: cv2.CascadeClassifier) -> None:
         cv2.destroyAllWindows()
 
 
-def main() -> None:
-    """Initialise les modèles et démarre la capture vidéo."""
+def detect_objects() -> None:
+    """Point d'entrée explicite pour la démo webcam."""
     print("Chargement des modèles...", flush=True)
     model = YOLO(MODEL_PATH)
-    face_detector = load_face_detector()
+    camera = cv2.VideoCapture(CAMERA_INDEX)
+    if not camera.isOpened():
+        camera.release()
+        cv2.destroyAllWindows()
+        raise RuntimeError(f"Impossible d'ouvrir la webcam {CAMERA_INDEX}.")
+
+    face_detector: cv2.CascadeClassifier | None = None
     print("Modèles chargés.", flush=True)
-    run_webcam(model, face_detector)
+    try:
+        while True:
+            success, frame = camera.read()
+            if not success:
+                raise RuntimeError(
+                    "Impossible de lire une image depuis la webcam.")
+            if face_detector is None:
+                face_detector = load_face_detector()
+
+            output = process_frame(frame, model, face_detector)
+            cv2.imshow("Détection objets et visages", output)
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                break
+    finally:
+        camera.release()
+        cv2.destroyAllWindows()
+
+
+def main() -> None:
+    """Initialise les modèles et démarre la capture vidéo."""
+    detect_objects()
 
 
 if __name__ == "__main__":
