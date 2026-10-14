@@ -15,6 +15,9 @@ from factorypulse.shared.contracts import ContractError, STATIONS, parse_utc
 from factorypulse.shared.jsonl import dedupe_events, read_jsonl
 from factorypulse.shared.paths import fixture_path, project_root
 from factorypulse.shared.status import summarize_station
+from factorypulse.agent.rag import ALLOWED_CATEGORIES, get_collection
+
+_DOC_SEARCH_LIMIT = 20
 
 
 _FIXTURE_NAMES = ("m01.jsonl", "q01.jsonl", "systeme.jsonl", "logs.jsonl")
@@ -355,3 +358,84 @@ def get_inspections(from_utc: str, to_utc: str) -> dict[str, Any]:
         if not selected:
             warnings.append(f"Aucune inspection Q01 trouvée dans cet intervalle.")
     return _limited_response(end, selected, _INSPECTION_LIMIT, warnings)
+
+def search_tech_docs(
+    query: str,
+    category: str | None = None,
+    top_k: int = 5,
+) -> dict[str, Any]:
+    """Recherche sémantique multilingue dans la documentation technique FactoryPulse.
+
+    Args:
+        query: Question ou termes techniques (en FR, EN, NL, DE, etc.).
+        category: Filtre optionnel parmi les catégories autorisées
+                  (docs, fiches_materiel, fiches_techniques, montages, essais, modeles, vision).
+        top_k: Nombre maximal d'extraits à retourner (1 à 20).
+
+    Returns:
+        Un dictionnaire sérialisable contenant les extraits classés par pertinence,
+        leurs métadonnées sources (preuves) et d'éventuels avertissements.
+    """
+    if not isinstance(query, str) or not query.strip():
+        raise ValueError("query doit être une chaîne non vide")
+
+    if category is not None and category not in ALLOWED_CATEGORIES:
+        raise ValueError(
+            f"category non autorisée : {category!r}. "
+            f"Attendu parmi : {sorted(ALLOWED_CATEGORIES)}"
+        )
+
+    if not isinstance(top_k, int) or top_k < 1:
+        raise ValueError("top_k doit être un entier supérieur ou égal à 1")
+
+    warnings: list[str] = []
+    effective_k = min(top_k, _DOC_SEARCH_LIMIT)
+    if top_k > _DOC_SEARCH_LIMIT:
+        warnings.append(f"top_k plafonné à {_DOC_SEARCH_LIMIT} résultats.")
+
+    collection = get_collection()
+    if collection.count() == 0:
+        warnings.append(
+            "La base documentaire ChromaDB est vide. "
+            "Exécutez le script d'ingestion (scripts/ingest_docs.py)."
+        )
+        return {
+            "query": query,
+            "category": category,
+            "matches": [],
+            "warnings": warnings,
+        }
+
+    where_filter = {"category": category} if category else None
+    results = collection.query(
+        query_texts=[query.strip()],
+        n_results=min(effective_k, collection.count()),
+        where=where_filter,
+    )
+
+    matches: list[dict[str, Any]] = []
+    ids_list = results.get("ids", [[]])[0]
+    docs_list = results.get("documents", [[]])[0]
+    metas_list = results.get("metadatas", [[]])[0]
+    dists_list = results.get("distances", [[]])[0]
+
+    for chunk_id, content, meta, dist in zip(ids_list, docs_list, metas_list, dists_list):
+        matches.append({
+            "chunk_id": chunk_id,
+            "source": meta.get("source"),
+            "filename": meta.get("filename"),
+            "category": meta.get("category"),
+            "chunk_index": meta.get("chunk_index"),
+            "similarity_score": round(1.0 - float(dist), 4),
+            "content": content,
+        })
+
+    if not matches:
+        warnings.append("Aucun extrait pertinent trouvé pour cette requête.")
+
+    return {
+        "query": query,
+        "category": category,
+        "matches": matches,
+        "warnings": warnings,
+    }

@@ -1,51 +1,60 @@
-# Conteneurisation du Serveur MCP FactoryPulse
+# Conteneurisation du Serveur MCP FactoryPulse (avec RAG & ChromaDB)
 
-Ce document décrit comment construire, exécuter et intégrer le **serveur MCP FactoryPulse** dans un conteneur Docker indépendant.
+Ce document décrit comment construire, exécuter et intégrer le **serveur MCP FactoryPulse** dans un conteneur Docker indépendant intégrant le moteur de recherche documentaire RAG multilingue sous ChromaDB.
 
 ---
 
 ## 1. Vue d'ensemble
 
-Le serveur MCP (`factorypulse.agent.mcp_server`) expose les outils de diagnostic en lecture seule du laboratoire d'atelier :
-- `get_status(station_id, at_utc)`
-- `get_history(station_id, from_utc, to_utc)`
-- `get_logs(station_id, from_utc, to_utc)`
-- `get_inspections(from_utc, to_utc)`
-- `get_latest_temperature_exceedance(at_utc)`
+Le serveur MCP (`factorypulse.agent.mcp_server`) expose six outils de diagnostic en lecture seule du laboratoire d'atelier :
+- `get_status(station_id, at_utc)` : état synthétique d'une station à un instant du replay.
+- `get_history(station_id, from_utc, to_utc)` : télémétries bornées dans un intervalle UTC.
+- `get_logs(station_id, from_utc, to_utc)` : logs de la station et logs serveur la ciblant.
+- `get_inspections(from_utc, to_utc)` : contrôles qualité Q01 dédupliqués.
+- `get_latest_temperature_exceedance(at_utc)` : dernier dépassement de température configuré.
+- `search_tech_docs(query, category=None, top_k=5)` : recherche sémantique multilingue dans la documentation technique (RAG ChromaDB).
 
 ### Principes de sécurité et d'isolation
 - **Utilisateur non-root (`factorypulse:1000`)** : le conteneur s'exécute sans privilèges administrateur.
-- **Lecture seule** : aucun accès en écriture, aucune commande shell ni accès réseau machine (conforme à `AGENTS.md`).
-- **Données montées en lecture seule (`:ro`)** : les fixtures de données (`data/fixtures`) et la configuration (`config/factorypulse.json`) restent isolées.
+- **Lecture seule** : aucun accès en écriture sur les données de l'atelier, aucune commande shell ni accès réseau machine (conforme à `AGENTS.md`).
+- **Isolation des données** : les fixtures de données (`data/fixtures`) et la configuration (`config/factorypulse.json`) sont montées en lecture seule (`:ro`).
+- **Persistance vectorielle** : la base ChromaDB est isolée dans un volume persistant Docker (`chroma-data`), évitant les verrous de fichiers SQLite sur les systèmes de fichiers partagés Windows/WSL2.
+- **100% Autonome & Offline** : le modèle multilingue SentenceTransformers (`paraphrase-multilingual-MiniLM-L12-v2`) est préchargé dans l'image lors du build Docker. Aucune connexion internet n'est requise à l'exécution.
 - **Transports supportés** : `streamable-http` (par défaut sur le port TCP `8766`) et `stdio` (pour les clients exécutant directement le conteneur).
 
 ---
 
-## 2. Fichiers créés
+## 2. Fichiers créés et configurés
 
 | Fichier | Rôle |
 |---|---|
-| `Dockerfile` | Image Debian-slim multi-architecture avec Python 3.11, dépendance `mcp`, utilisateur non-root et healthcheck |
-| `.dockerignore` | Exclusion des venvs, caches, tests et fichiers non nécessaires pour une image légère et propre |
-| `docker-compose.yml` | Fichier d'orchestration pour lancer le conteneur en une seule commande |
+| `Dockerfile` | Image Debian-slim avec Python 3.11, PyTorch CPU, ChromaDB, SentenceTransformers, MCP, utilisateur non-root, préchargement du modèle et pré-indexation |
+| `.dockerignore` | Exclusion des venvs, caches et fichiers temporaires tout en préservant `docs/` et `materials/` pour l'indexation RAG |
+| `docker-compose.yml` | Orchestration avec volume persistant `chroma-data` et montages pour ré-indexation à chaud |
 | `docs/DOCKER_MCP.md` | Ce guide d'utilisation et d'intégration |
 
 ---
 
 ## 3. Utilisation avec Docker Compose (Recommandé)
 
-### Démarrer le serveur
+### 3.1. Démarrer le serveur
 ```bash
 docker compose up -d --build
 ```
 
-### Vérifier le statut et les logs
+### 3.2. Vérifier le statut et les logs
 ```bash
 docker compose ps
 docker compose logs -f
 ```
 
-### Arrêter le serveur
+### 3.3. Ré-indexer les documents techniques dans le conteneur
+Si vous ajoutez ou modifiez des fichiers dans `docs/` ou `materials/` :
+```bash
+docker compose exec mcp-server python scripts/ingest_docs.py
+```
+
+### 3.4. Arrêter le serveur
 ```bash
 docker compose down
 ```
@@ -61,11 +70,18 @@ docker build -t factorypulse-mcp-server:latest .
 
 ### 4.2. Lancement en mode réseau (Streamable-HTTP / TCP)
 ```bash
+# Création du volume persistant pour ChromaDB
+docker volume create chroma-data
+
+# Lancement du conteneur avec fixtures, ChromaDB et documentation
 docker run -d \
   --name factorypulse-mcp \
   -p 8766:8766 \
   -v ./config:/app/config:ro \
   -v ./data/fixtures:/app/data/fixtures:ro \
+  -v chroma-data:/data/chromadb \
+  -v ./docs:/app/docs:ro \
+  -v ./materials:/app/materials:ro \
   factorypulse-mcp-server:latest
 ```
 
@@ -99,8 +115,9 @@ MCP_URL=http://<IP_DU_SERVEUR>:8766/mcp .venv/Scripts/python tests/agent/test_mc
 
 Le test valide :
 1. La connexion HTTP au serveur MCP.
-2. La découverte de la liste des 5 outils.
+2. La découverte de la liste des 6 outils (`get_status`, `get_history`, `get_logs`, `get_inspections`, `get_latest_temperature_exceedance`, `search_tech_docs`).
 3. L'exécution réelle de l'outil `get_status(station_id='M01', at_utc='2026-10-12T09:00:02Z')`.
+4. L'exécution d'une recherche documentaire RAG avec `search_tech_docs(query='contrat de données JSONL', top_k=3)`.
 
 ---
 
@@ -149,5 +166,9 @@ Si vous préférez que Claude lance automatiquement le conteneur à la demande :
 | `MCP_TRANSPORT` | `streamable-http` | Protocole utilisé : `streamable-http`, `sse` ou `stdio` |
 | `MCP_HOST` | `0.0.0.0` | Adresse d'écoute (obligatoire `0.0.0.0` dans le conteneur) |
 | `MCP_PORT` | `8766` | Port TCP d'écoute du serveur HTTP |
-| `FACTORYPULSE_ROOT`| `/app` | Chemin racine pour charger `config/` et `data/fixtures/` |
+| `FACTORYPULSE_ROOT`| `/app` | Chemin racine pour charger `config/`, `data/fixtures/` et les sources documentaires |
+| `FACTORYPULSE_CHROMA_PATH` | `/data/chromadb` | Emplacement persistant de la base vectorielle ChromaDB |
+| `HF_HOME` | `/opt/hf-cache` | Répertoire de stockage du modèle d'embedding SentenceTransformers préchargé |
+| `HF_HUB_OFFLINE` | `1` | Verrouille HuggingFace en mode local (aucune requête réseau externe) |
+| `TRANSFORMERS_OFFLINE` | `1` | Verrouille Transformers en mode local |
 | `PYTHONUNBUFFERED` | `1` | Affiche immédiatement les logs sans mise en tampon |

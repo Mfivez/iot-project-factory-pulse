@@ -129,6 +129,14 @@ def get_latest_temperature_exceedance(at_utc: str) -> dict:
     """Trouver le dépassement de température configuré le plus récent jusqu'à at_utc."""
     return tools.get_latest_temperature_exceedance(at_utc)
 
+@mcp.tool()
+def search_tech_docs(
+    query: str,
+    category: str | None = None,
+    top_k: int = 5,
+    ) -> dict:
+    """Rechercher dans la documentation technique multilingue (matériel, procédures, datasheets, montages)."""
+    return tools.search_tech_docs(query=query, category=category, top_k=top_k)
 
 if __name__ == "__main__":
     config = get_mcp_config(load_env=True)

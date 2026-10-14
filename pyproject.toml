@@ -10,8 +10,11 @@ readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Equipe FactoryPulse"}]
 dependencies = [
+    "chromadb>=1.5.9",
     "mcp>=2.3.0",
+    "pypdf>=6.20.1",
     "pytest>=9.1.1",
+    "sentence-transformers>=6.1.0",
 ]
 
 [project.optional-dependencies]
