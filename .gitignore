@@ -23,11 +23,13 @@ data/outputs/*
 !data/outputs/.gitkeep
 data/images/*
 !data/images/README.md
+data/chromadb/*
 *.pt
 *.onnx
 *.engine
 *.tflite
 runs/
+iot-project-factory-pulse.zip
 
 # OS
 .DS_Store

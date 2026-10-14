@@ -20,6 +20,7 @@ tests/
 # Données générées et sorties
 data/outputs/
 data/raw/
+data/chromadb/
 
 # Fichiers système et IDE
 .vscode/
@@ -32,9 +33,8 @@ data/raw/
 build/
 dist/
 *.egg-info/
+iot-project-factory-pulse.zip
 
-# Documentation volumineuse (README.md est conservé car requis par pyproject.toml)
-docs/
-materials/
+# Fichiers de présentation et tests racine (les dossiers docs/ et materials/ sont conservés pour le RAG)
 PRESENTATION_*.md
 test_*.py
