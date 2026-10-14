@@ -1,0 +1,641 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head >
+    <meta  charset="utf-8"><meta  name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta  name="apple-mobile-web-app-capable" content="yes"><meta  data-hid="robots" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta  data-hid="keywords" name="keywords" content="voice recorder module, Arduino voice recorder, DIY audio recording, compact sound module, audio playback module, microcontroller-compatible voice module, high-fidelity audio recording, interactive project sound module, educational tools voice recorder, STEM projects audio solutions"><meta  data-hid="description" name="description" content="Explore the Gravity: Voice Recorder Module -WTR096 V2.0, featuring single-button operation, microcontroller compatibility, and high-quality audio output. Perfect for Arduino projects, educational demos, and prototypes needing sound alerts. Discover tutorials, specs, and project ideas. Start enhancing your projects today!"><meta  data-hid="og:locale" property="og:locale" content="en_US"><meta  data-hid="og:type" property="og:type" content="website"><meta  data-hid="og:title" property="og:title" content="Gravity: Voice Recorder Module -WTR096 V2.0 | Enhance Your Arduino Projects with Sound"><meta  data-hid="og:description" property="og:description" content="?️ Elevate your DIY and educational projects with the Gravity: Voice Recorder Module -WTR096 V2.0! Compact, versatile, and easy-to-use, it&#x27;s perfect for adding high-quality audio to Arduino setups. Discover how to integrate sound effortlessly into your projects today!"><meta  data-hid="og:url" property="og:url" content="https://wiki.dfrobot.com/sen0197/"><meta  data-hid="og:site_name" property="og:site_name" content="DFRobot Wiki"><meta  data-hid="og:image" property="og:image" content="https://dfimg.dfrobot.com/enshop/image/data/SEN0197/SEN0197_Main_01_1200x630.jpg.webp"><meta  data-hid="og:image:alt" property="og:image:alt" content="Overview of Gravity: Voice Recorder Module"><meta  data-hid="twitter:card" property="twitter:card" content="summary_large_image"><meta  data-hid="twitter:site" property="twitter:site" content="@wiki"><meta  data-hid="twitter:creator" property="twitter:creator" content="@wiki"><meta  data-hid="twitter:title" property="twitter:title" content="Gravity: Voice Recorder Module -WTR096 V2.0 | Enhance Your Arduino Projects with Sound"><meta  data-hid="twitter:description" property="twitter:description" content="?️ Elevate your DIY and educational projects with the Gravity: Voice Recorder Module -WTR096 V2.0! Compact, versatile, and easy-to-use, it&#x27;s perfect for adding high-quality audio to Arduino setups. Discover how to integrate sound effortlessly into your projects today!"><meta  data-hid="twitter:image" property="twitter:image" content="https://dfimg.dfrobot.com/enshop/image/data/SEN0197/SEN0197_Main_01_1200x630.jpg.webp"><meta  data-hid="twitter:image:alt" property="twitter:image:alt" content="Overview of Gravity: Voice Recorder Module"><title>Gravity: Voice Recorder Module -WTR096 V2.0 | Compact &amp; Versatile Audio Solutions | DFRobot Wiki</title><base href="/"><link  rel="canonical" href="https://wiki.dfrobot.com/sen0197/"><link  rel="stylesheet" href="/css/pc.css"><link  rel="stylesheet" href="/libs/swiper/swiper-bundle.min.css"><style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">.v-application a { color: #1976d2; }
+.v-application .primary {
+  background-color: #1976d2 !important;
+  border-color: #1976d2 !important;
+}
+.v-application .primary--text {
+  color: #1976d2 !important;
+  caret-color: #1976d2 !important;
+}
+.v-application .primary.lighten-5 {
+  background-color: #c7fdff !important;
+  border-color: #c7fdff !important;
+}
+.v-application .primary--text.text--lighten-5 {
+  color: #c7fdff !important;
+  caret-color: #c7fdff !important;
+}
+.v-application .primary.lighten-4 {
+  background-color: #a8e0ff !important;
+  border-color: #a8e0ff !important;
+}
+.v-application .primary--text.text--lighten-4 {
+  color: #a8e0ff !important;
+  caret-color: #a8e0ff !important;
+}
+.v-application .primary.lighten-3 {
+  background-color: #8ac5ff !important;
+  border-color: #8ac5ff !important;
+}
+.v-application .primary--text.text--lighten-3 {
+  color: #8ac5ff !important;
+  caret-color: #8ac5ff !important;
+}
+.v-application .primary.lighten-2 {
+  background-color: #6aaaff !important;
+  border-color: #6aaaff !important;
+}
+.v-application .primary--text.text--lighten-2 {
+  color: #6aaaff !important;
+  caret-color: #6aaaff !important;
+}
+.v-application .primary.lighten-1 {
+  background-color: #488fef !important;
+  border-color: #488fef !important;
+}
+.v-application .primary--text.text--lighten-1 {
+  color: #488fef !important;
+  caret-color: #488fef !important;
+}
+.v-application .primary.darken-1 {
+  background-color: #005eb6 !important;
+  border-color: #005eb6 !important;
+}
+.v-application .primary--text.text--darken-1 {
+  color: #005eb6 !important;
+  caret-color: #005eb6 !important;
+}
+.v-application .primary.darken-2 {
+  background-color: #00479b !important;
+  border-color: #00479b !important;
+}
+.v-application .primary--text.text--darken-2 {
+  color: #00479b !important;
+  caret-color: #00479b !important;
+}
+.v-application .primary.darken-3 {
+  background-color: #003180 !important;
+  border-color: #003180 !important;
+}
+.v-application .primary--text.text--darken-3 {
+  color: #003180 !important;
+  caret-color: #003180 !important;
+}
+.v-application .primary.darken-4 {
+  background-color: #001e67 !important;
+  border-color: #001e67 !important;
+}
+.v-application .primary--text.text--darken-4 {
+  color: #001e67 !important;
+  caret-color: #001e67 !important;
+}
+.v-application .secondary {
+  background-color: #424242 !important;
+  border-color: #424242 !important;
+}
+.v-application .secondary--text {
+  color: #424242 !important;
+  caret-color: #424242 !important;
+}
+.v-application .secondary.lighten-5 {
+  background-color: #c1c1c1 !important;
+  border-color: #c1c1c1 !important;
+}
+.v-application .secondary--text.text--lighten-5 {
+  color: #c1c1c1 !important;
+  caret-color: #c1c1c1 !important;
+}
+.v-application .secondary.lighten-4 {
+  background-color: #a6a6a6 !important;
+  border-color: #a6a6a6 !important;
+}
+.v-application .secondary--text.text--lighten-4 {
+  color: #a6a6a6 !important;
+  caret-color: #a6a6a6 !important;
+}
+.v-application .secondary.lighten-3 {
+  background-color: #8b8b8b !important;
+  border-color: #8b8b8b !important;
+}
+.v-application .secondary--text.text--lighten-3 {
+  color: #8b8b8b !important;
+  caret-color: #8b8b8b !important;
+}
+.v-application .secondary.lighten-2 {
+  background-color: #727272 !important;
+  border-color: #727272 !important;
+}
+.v-application .secondary--text.text--lighten-2 {
+  color: #727272 !important;
+  caret-color: #727272 !important;
+}
+.v-application .secondary.lighten-1 {
+  background-color: #595959 !important;
+  border-color: #595959 !important;
+}
+.v-application .secondary--text.text--lighten-1 {
+  color: #595959 !important;
+  caret-color: #595959 !important;
+}
+.v-application .secondary.darken-1 {
+  background-color: #2c2c2c !important;
+  border-color: #2c2c2c !important;
+}
+.v-application .secondary--text.text--darken-1 {
+  color: #2c2c2c !important;
+  caret-color: #2c2c2c !important;
+}
+.v-application .secondary.darken-2 {
+  background-color: #171717 !important;
+  border-color: #171717 !important;
+}
+.v-application .secondary--text.text--darken-2 {
+  color: #171717 !important;
+  caret-color: #171717 !important;
+}
+.v-application .secondary.darken-3 {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+.v-application .secondary--text.text--darken-3 {
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+.v-application .secondary.darken-4 {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+.v-application .secondary--text.text--darken-4 {
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+.v-application .accent {
+  background-color: #82b1ff !important;
+  border-color: #82b1ff !important;
+}
+.v-application .accent--text {
+  color: #82b1ff !important;
+  caret-color: #82b1ff !important;
+}
+.v-application .accent.lighten-5 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.v-application .accent--text.text--lighten-5 {
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+.v-application .accent.lighten-4 {
+  background-color: #f8ffff !important;
+  border-color: #f8ffff !important;
+}
+.v-application .accent--text.text--lighten-4 {
+  color: #f8ffff !important;
+  caret-color: #f8ffff !important;
+}
+.v-application .accent.lighten-3 {
+  background-color: #daffff !important;
+  border-color: #daffff !important;
+}
+.v-application .accent--text.text--lighten-3 {
+  color: #daffff !important;
+  caret-color: #daffff !important;
+}
+.v-application .accent.lighten-2 {
+  background-color: #bce8ff !important;
+  border-color: #bce8ff !important;
+}
+.v-application .accent--text.text--lighten-2 {
+  color: #bce8ff !important;
+  caret-color: #bce8ff !important;
+}
+.v-application .accent.lighten-1 {
+  background-color: #9fccff !important;
+  border-color: #9fccff !important;
+}
+.v-application .accent--text.text--lighten-1 {
+  color: #9fccff !important;
+  caret-color: #9fccff !important;
+}
+.v-application .accent.darken-1 {
+  background-color: #6596e2 !important;
+  border-color: #6596e2 !important;
+}
+.v-application .accent--text.text--darken-1 {
+  color: #6596e2 !important;
+  caret-color: #6596e2 !important;
+}
+.v-application .accent.darken-2 {
+  background-color: #467dc6 !important;
+  border-color: #467dc6 !important;
+}
+.v-application .accent--text.text--darken-2 {
+  color: #467dc6 !important;
+  caret-color: #467dc6 !important;
+}
+.v-application .accent.darken-3 {
+  background-color: #2364aa !important;
+  border-color: #2364aa !important;
+}
+.v-application .accent--text.text--darken-3 {
+  color: #2364aa !important;
+  caret-color: #2364aa !important;
+}
+.v-application .accent.darken-4 {
+  background-color: #004c90 !important;
+  border-color: #004c90 !important;
+}
+.v-application .accent--text.text--darken-4 {
+  color: #004c90 !important;
+  caret-color: #004c90 !important;
+}
+.v-application .error {
+  background-color: #ff5252 !important;
+  border-color: #ff5252 !important;
+}
+.v-application .error--text {
+  color: #ff5252 !important;
+  caret-color: #ff5252 !important;
+}
+.v-application .error.lighten-5 {
+  background-color: #ffe4d5 !important;
+  border-color: #ffe4d5 !important;
+}
+.v-application .error--text.text--lighten-5 {
+  color: #ffe4d5 !important;
+  caret-color: #ffe4d5 !important;
+}
+.v-application .error.lighten-4 {
+  background-color: #ffc6b9 !important;
+  border-color: #ffc6b9 !important;
+}
+.v-application .error--text.text--lighten-4 {
+  color: #ffc6b9 !important;
+  caret-color: #ffc6b9 !important;
+}
+.v-application .error.lighten-3 {
+  background-color: #ffa99e !important;
+  border-color: #ffa99e !important;
+}
+.v-application .error--text.text--lighten-3 {
+  color: #ffa99e !important;
+  caret-color: #ffa99e !important;
+}
+.v-application .error.lighten-2 {
+  background-color: #ff8c84 !important;
+  border-color: #ff8c84 !important;
+}
+.v-application .error--text.text--lighten-2 {
+  color: #ff8c84 !important;
+  caret-color: #ff8c84 !important;
+}
+.v-application .error.lighten-1 {
+  background-color: #ff6f6a !important;
+  border-color: #ff6f6a !important;
+}
+.v-application .error--text.text--lighten-1 {
+  color: #ff6f6a !important;
+  caret-color: #ff6f6a !important;
+}
+.v-application .error.darken-1 {
+  background-color: #df323b !important;
+  border-color: #df323b !important;
+}
+.v-application .error--text.text--darken-1 {
+  color: #df323b !important;
+  caret-color: #df323b !important;
+}
+.v-application .error.darken-2 {
+  background-color: #bf0025 !important;
+  border-color: #bf0025 !important;
+}
+.v-application .error--text.text--darken-2 {
+  color: #bf0025 !important;
+  caret-color: #bf0025 !important;
+}
+.v-application .error.darken-3 {
+  background-color: #9f0010 !important;
+  border-color: #9f0010 !important;
+}
+.v-application .error--text.text--darken-3 {
+  color: #9f0010 !important;
+  caret-color: #9f0010 !important;
+}
+.v-application .error.darken-4 {
+  background-color: #800000 !important;
+  border-color: #800000 !important;
+}
+.v-application .error--text.text--darken-4 {
+  color: #800000 !important;
+  caret-color: #800000 !important;
+}
+.v-application .info {
+  background-color: #2196f3 !important;
+  border-color: #2196f3 !important;
+}
+.v-application .info--text {
+  color: #2196f3 !important;
+  caret-color: #2196f3 !important;
+}
+.v-application .info.lighten-5 {
+  background-color: #d4ffff !important;
+  border-color: #d4ffff !important;
+}
+.v-application .info--text.text--lighten-5 {
+  color: #d4ffff !important;
+  caret-color: #d4ffff !important;
+}
+.v-application .info.lighten-4 {
+  background-color: #b5ffff !important;
+  border-color: #b5ffff !important;
+}
+.v-application .info--text.text--lighten-4 {
+  color: #b5ffff !important;
+  caret-color: #b5ffff !important;
+}
+.v-application .info.lighten-3 {
+  background-color: #95e8ff !important;
+  border-color: #95e8ff !important;
+}
+.v-application .info--text.text--lighten-3 {
+  color: #95e8ff !important;
+  caret-color: #95e8ff !important;
+}
+.v-application .info.lighten-2 {
+  background-color: #75ccff !important;
+  border-color: #75ccff !important;
+}
+.v-application .info--text.text--lighten-2 {
+  color: #75ccff !important;
+  caret-color: #75ccff !important;
+}
+.v-application .info.lighten-1 {
+  background-color: #51b0ff !important;
+  border-color: #51b0ff !important;
+}
+.v-application .info--text.text--lighten-1 {
+  color: #51b0ff !important;
+  caret-color: #51b0ff !important;
+}
+.v-application .info.darken-1 {
+  background-color: #007cd6 !important;
+  border-color: #007cd6 !important;
+}
+.v-application .info--text.text--darken-1 {
+  color: #007cd6 !important;
+  caret-color: #007cd6 !important;
+}
+.v-application .info.darken-2 {
+  background-color: #0064ba !important;
+  border-color: #0064ba !important;
+}
+.v-application .info--text.text--darken-2 {
+  color: #0064ba !important;
+  caret-color: #0064ba !important;
+}
+.v-application .info.darken-3 {
+  background-color: #004d9f !important;
+  border-color: #004d9f !important;
+}
+.v-application .info--text.text--darken-3 {
+  color: #004d9f !important;
+  caret-color: #004d9f !important;
+}
+.v-application .info.darken-4 {
+  background-color: #003784 !important;
+  border-color: #003784 !important;
+}
+.v-application .info--text.text--darken-4 {
+  color: #003784 !important;
+  caret-color: #003784 !important;
+}
+.v-application .success {
+  background-color: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+.v-application .success--text {
+  color: #4caf50 !important;
+  caret-color: #4caf50 !important;
+}
+.v-application .success.lighten-5 {
+  background-color: #dcffd6 !important;
+  border-color: #dcffd6 !important;
+}
+.v-application .success--text.text--lighten-5 {
+  color: #dcffd6 !important;
+  caret-color: #dcffd6 !important;
+}
+.v-application .success.lighten-4 {
+  background-color: #beffba !important;
+  border-color: #beffba !important;
+}
+.v-application .success--text.text--lighten-4 {
+  color: #beffba !important;
+  caret-color: #beffba !important;
+}
+.v-application .success.lighten-3 {
+  background-color: #a2ff9e !important;
+  border-color: #a2ff9e !important;
+}
+.v-application .success--text.text--lighten-3 {
+  color: #a2ff9e !important;
+  caret-color: #a2ff9e !important;
+}
+.v-application .success.lighten-2 {
+  background-color: #85e783 !important;
+  border-color: #85e783 !important;
+}
+.v-application .success--text.text--lighten-2 {
+  color: #85e783 !important;
+  caret-color: #85e783 !important;
+}
+.v-application .success.lighten-1 {
+  background-color: #69cb69 !important;
+  border-color: #69cb69 !important;
+}
+.v-application .success--text.text--lighten-1 {
+  color: #69cb69 !important;
+  caret-color: #69cb69 !important;
+}
+.v-application .success.darken-1 {
+  background-color: #2d9437 !important;
+  border-color: #2d9437 !important;
+}
+.v-application .success--text.text--darken-1 {
+  color: #2d9437 !important;
+  caret-color: #2d9437 !important;
+}
+.v-application .success.darken-2 {
+  background-color: #00791e !important;
+  border-color: #00791e !important;
+}
+.v-application .success--text.text--darken-2 {
+  color: #00791e !important;
+  caret-color: #00791e !important;
+}
+.v-application .success.darken-3 {
+  background-color: #006000 !important;
+  border-color: #006000 !important;
+}
+.v-application .success--text.text--darken-3 {
+  color: #006000 !important;
+  caret-color: #006000 !important;
+}
+.v-application .success.darken-4 {
+  background-color: #004700 !important;
+  border-color: #004700 !important;
+}
+.v-application .success--text.text--darken-4 {
+  color: #004700 !important;
+  caret-color: #004700 !important;
+}
+.v-application .warning {
+  background-color: #fb8c00 !important;
+  border-color: #fb8c00 !important;
+}
+.v-application .warning--text {
+  color: #fb8c00 !important;
+  caret-color: #fb8c00 !important;
+}
+.v-application .warning.lighten-5 {
+  background-color: #ffff9e !important;
+  border-color: #ffff9e !important;
+}
+.v-application .warning--text.text--lighten-5 {
+  color: #ffff9e !important;
+  caret-color: #ffff9e !important;
+}
+.v-application .warning.lighten-4 {
+  background-color: #fffb82 !important;
+  border-color: #fffb82 !important;
+}
+.v-application .warning--text.text--lighten-4 {
+  color: #fffb82 !important;
+  caret-color: #fffb82 !important;
+}
+.v-application .warning.lighten-3 {
+  background-color: #ffdf67 !important;
+  border-color: #ffdf67 !important;
+}
+.v-application .warning--text.text--lighten-3 {
+  color: #ffdf67 !important;
+  caret-color: #ffdf67 !important;
+}
+.v-application .warning.lighten-2 {
+  background-color: #ffc24b !important;
+  border-color: #ffc24b !important;
+}
+.v-application .warning--text.text--lighten-2 {
+  color: #ffc24b !important;
+  caret-color: #ffc24b !important;
+}
+.v-application .warning.lighten-1 {
+  background-color: #ffa72d !important;
+  border-color: #ffa72d !important;
+}
+.v-application .warning--text.text--lighten-1 {
+  color: #ffa72d !important;
+  caret-color: #ffa72d !important;
+}
+.v-application .warning.darken-1 {
+  background-color: #db7200 !important;
+  border-color: #db7200 !important;
+}
+.v-application .warning--text.text--darken-1 {
+  color: #db7200 !important;
+  caret-color: #db7200 !important;
+}
+.v-application .warning.darken-2 {
+  background-color: #bb5900 !important;
+  border-color: #bb5900 !important;
+}
+.v-application .warning--text.text--darken-2 {
+  color: #bb5900 !important;
+  caret-color: #bb5900 !important;
+}
+.v-application .warning.darken-3 {
+  background-color: #9d4000 !important;
+  border-color: #9d4000 !important;
+}
+.v-application .warning--text.text--darken-3 {
+  color: #9d4000 !important;
+  caret-color: #9d4000 !important;
+}
+.v-application .warning.darken-4 {
+  background-color: #802700 !important;
+  border-color: #802700 !important;
+}
+.v-application .warning--text.text--darken-4 {
+  color: #802700 !important;
+  caret-color: #802700 !important;
+}</style><script  src="/common/md5.min.js" ssr="true"></script><script  src="/common/jquery-2.1.1.min.js" ssr="true"></script><script  src="https://www.googletagmanager.com/gtag/js?id=G-KEFMZ0P9J0" ssr="false" async></script><script  src="/libs/gtag.js" ssr="false" async></script><script  type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://wiki.dfrobot.com/SEN0197/#article","headline":"Gravity: Voice Recorder Module -WTR096 V2.0 | Compact &amp; Versatile Audio Solutions | DFRobot Wiki","description":"Gravity: Voice Recorder Module -WTR096 V2.0 is perfect for enhancing Arduino projects with high-quality audio. Easy integration and durable design.","keywords":["voice recorder module"," Arduino voice recorder"," DIY audio recording"," compact sound module"," audio playback module"," microcontroller-compatible voice module"," high-fidelity audio recording"," interactive project sound module"," educational tools voice recorder"," STEM projects audio solutions"],"image":{"@id":"https://wiki.dfrobot.com/SEN0197/#mainimage"},"dateModified":"2025-12-01","author":{"@id":"https://wiki.dfrobot.com/#organization"},"publisher":{"@id":"https://wiki.dfrobot.com/#organization"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".wiki-introduction .desc"]},"subjectOf":[{"@type":"DigitalDocument","name":"SVG","url":"https://dfimg.dfrobot.com/wiki/17505/SEN0197_gravity-voice-recorder-module_svg_V1.0.svg","fileFormat":"image/svg+xml"},{"@type":"DigitalDocument","name":"Schematics","url":"https://dfimg.dfrobot.com/wiki/17505/SEN0197_gravity-voice-recorder-module_schematics_v1.0.pdf","fileFormat":"application/pdf"},{"@type":"SoftwareSourceCode","name":"1. Example Code for Arduino-Voice Playback Trigger","description":"The article guides readers through setting up a voice playback trigger using Arduino. It covers hardware and software preparation, the wiring process, and provides sample code to implement voice recording and playback functionality."},{"@type":"CreativeWork","name":"Best Collection of 10 micro:bit Robot and IoT Projects to Try in 2023","author":{"@type":"Person","name":"RiverTrue"},"url":"https://community.dfrobot.com/makelog-313402.html"}],"mainEntity":{"@type":"ItemList","name":"Wiki Sections","itemListElement":[{"@type":"ListItem","position":1,"url":"https://wiki.dfrobot.com/SEN0197/#docs","name":"Docs"},{"@type":"ListItem","position":2,"url":"https://wiki.dfrobot.com/SEN0197/#tech_specs","name":"Tech Specs"},{"@type":"ListItem","position":3,"url":"https://wiki.dfrobot.com/SEN0197/#projects","name":"Projects"}]},"about":{"@type":"Thing","name":"Gravity: Voice Recorder Module (WTR096 V2.0, 20s, 16KHz)","sku":"SEN0197","@id":"https://www.dfrobot.com/product-1507.html#product","image":{"@id":"https://wiki.dfrobot.com/SEN0197/#mainimage"},"offers":{"@type":"Offer","price":4.9,"priceCurrency":"USD"},"isPartOf":{"@type":"CreativeWorkSeries","@id":"https://wiki.dfrobot.com/SEN0197/#series","name":"Gravity: Voice Recorder Module"},"hasCertification":[]}},{"@type":"CollectionPage","@id":"https://wiki.dfrobot.com/SEN0197/#webpage","url":"https://wiki.dfrobot.com/SEN0197/","name":"","mainEntity":{"@id":"https://wiki.dfrobot.com/SEN0197#article"},"breadcrumb":{"@id":"https://wiki.dfrobot.com/SEN0197/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://wiki.dfrobot.com/SEN0197/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"wiki","item":"https://wiki.dfrobot.com/"},{"@type":"ListItem","position":2,"name":"Sensors","item":"https://wiki.dfrobot.com/category-36/"},{"@type":"ListItem","position":3,"name":"Sound Sensors","item":"https://wiki.dfrobot.com/category-63/"},{"@type":"ListItem","position":4,"name":"SEN0197","item":"https://wiki.dfrobot.com/sen0197/"}]},{"@type":"ImageObject","@id":"https://wiki.dfrobot.com/SEN0197/#mainimage","contentUrl":"https://dfimg.dfrobot.com/enshop/image/data/SEN0197/SEN0197_Main_01_360x240.jpg.webp","creditText":"DFRobot","creator":{"@type":"Organization","name":"DFRobot"},"publisher":{"@type":"Organization","@id":"https://wiki.dfrobot.com/#organization"}}]}</script><script  src="/dfrobotshop/lib/dfpclib.js" ssr="true"></script><noscript  data-hid="facebook-no-script"><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=517401871764527&ev=PageView&noscript=1" /></noscript><link rel="preload" href="/_nuxt/819275d.js" as="script"><link rel="preload" href="/_nuxt/bc9ed79.js" as="script"><link rel="preload" href="/_nuxt/css/f8e0a27.css" as="style"><link rel="preload" href="/_nuxt/bb93122.js" as="script"><link rel="preload" href="/_nuxt/css/628cafc.css" as="style"><link rel="preload" href="/_nuxt/c9a8dec.js" as="script"><link rel="preload" href="/_nuxt/css/b0fcb67.css" as="style"><link rel="preload" href="/_nuxt/a387eb4.js" as="script"><link rel="stylesheet" href="/_nuxt/css/f8e0a27.css"><link rel="stylesheet" href="/_nuxt/css/628cafc.css"><link rel="stylesheet" href="/_nuxt/css/b0fcb67.css">
+  </head>
+  <body >
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div data-viewtype="pc" class="wiki-second-page sku-page"><div data-theme="pc" data-fetch-key="data-v-d71158b6:0" class="headFrame" data-v-d71158b6><div data-fetch-key="data-v-0d8b5951:0" data-v-0d8b5951 data-v-d71158b6><!----> <!----> <!----></div> <!----> <div class="head" data-v-d71158b6><div class="df-container" data-v-d71158b6><div class="logo" data-v-d71158b6><a href="https://www.dfrobot.com/" data-v-d71158b6><img src="/dfrobotshop/images/pc/logo.png" alt="logo" data-v-d71158b6></a></div> <div class="navigate" data-v-d71158b6><a href="javascript:;" data-v-d71158b6><button data-v-d71158b6>Store<i class="icon iconfont icon-downarrow2" data-v-d71158b6></i></button></a> <a href="https://community.dfrobot.com/" data-v-d71158b6>Community</a><a href="https://www.dfrobot.com/forum/" data-v-d71158b6>Forum</a><a href="https://wiki.dfrobot.com/" data-v-d71158b6>Wiki</a><a href="https://www.dfrobot.com/blog" data-v-d71158b6>Blog</a><a href="https://learn.dfrobot.com/" data-v-d71158b6>Learn</a></div> <div class="options" data-v-d71158b6><div class="search" data-v-d71158b6><button data-v-d71158b6><i class="icon iconfont icon-search" data-v-d71158b6></i></button></div> <div data-theme="pc" class="warehouse" data-v-d71158b6><!----> <!----> <!----></div> <div class="currency" data-v-d71158b6><button data-v-d71158b6>$USD</button> <ul class="dropdownMenu" style="display:none;" data-v-d71158b6><li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>$USD</a></li><li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>EUR€</a></li><li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>£GBP</a></li></ul></div> <div class="wishlist" data-v-d71158b6><button data-v-d71158b6><i class="icon iconfont icon-hart" data-v-d71158b6></i></button></div> <div data-theme="pc" class="miniCart" data-v-adbdabb8 data-v-d71158b6><button data-v-adbdabb8><span data-v-adbdabb8></span> <i class="icon iconfont icon-gouwuche1" data-v-adbdabb8></i></button> <!----></div> <div class="user" data-v-d71158b6><button class="headImg" data-v-d71158b6><img src="/dfrobotshop/images/pc/nologinhead.png" alt="userhead" data-v-d71158b6></button> <ul class="dropdownMenu" style="display:none;" data-v-d71158b6><li class="name" data-v-d71158b6><b data-v-d71158b6>.</b> <span data-v-d71158b6><i class="icon iconfont icon-VIPicon" data-v-d71158b6></i>VIP</span></li> <li data-v-d71158b6><a href="https://www.dfrobot.com/account/" data-v-d71158b6>My Account</a></li> <li data-v-d71158b6><a href="https://www.dfrobot.com/account/order" data-v-d71158b6>Order History</a></li> <li data-v-d71158b6><a href="https://www.dfrobot.com/account/vip" data-v-d71158b6>VIP Benefits</a></li> <li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>Logout</a></li></ul></div></div></div> <!----> <!----></div> <!----></div> <div class="fullwidth-2-columns"><div data-theme="pc" class="menu"><div class="menu-sticky-block"><div class="search-input-box"><i class="iconfont search icon-search1"></i> <input type="text" placeholder="Search" value=""></div> <a href="/category-63/" class="nav-back"><i class="iconfont icon-arrow-left"></i>
+      Sensors
+    </a> <div class="menu-title">Sound Sensors</div> <div class="menu-list type_2"><!----> <ul><a href="/sen0539-en/"><b>Gravity: DF2301Q Offline Voice Recognition Sensor</b><span>(SKU: SEN0539-EN)</span></a><a href="/dfr0034/"><b>Gravity: Analog Sound Sensor</b><span>(SKU: DFR0034)</span></a><a href="/sen0232/"><b>Gravity: Analog Sound Level Sensor</b><span>(SKU: SEN0232)</span></a><a href="/dfr0760/"><b>Gravity: Text to Speech Voice Synthesizer Module V2.0</b><span>(SKU: DFR0760)</span></a><a href="/sen0197/" class="active"><b>Gravity: Voice Recorder Module</b><span>(SKU: SEN0197)</span></a><a href="/dfr0745/"><b>Fermion: Voice Recorder Module</b><span>(SKU: DFR0745)</span></a><a href="/dfr0699/"><b>Gravity: I2C Voice Recorder and Playback with Speech Synthesis Module</b><span>(SKU: DFR0699)</span></a><a href="/bos0009/"><b>BOSON Sound Sensor i9</b><span>(SKU: BOS0009)</span></a><a href="/bos0020/"><b>BOSON Buzzer Module o5</b><span>(SKU: BOS0020)</span></a><a href="/bos0022/"><b>BOSON Voice Recorder Module o7</b><span>(SKU: BOS0022)</span></a></ul> <!----></div></div></div> <div class="full"><div class="full-container"><ul data-theme="pc" class="breadcrumb"><li><i class="iconfont icon-home2"></i> <a href="/">wiki</a></li><li><!----> <a href="/category-36/">Sensors</a></li><li><!----> <a href="/category-63/">Sound Sensors</a></li><li><!----> <span>SEN0197</span></li></ul> <div class="wiki-introduction"><div class="text"><h1>Gravity: Voice Recorder Module</h1> <p>SKU: SEN0197</p> <div class="desc"><p>
+                  This is the latest voice recorder module with integrated record and play functions. Easily record by pressing the button, speaking, then releasing. It supports 20 seconds of total playback. Connect an 8Ω 3W or external active speaker for output. It also has a 3-pin digital interface to link with Arduino-compatible microcontrollers as a playback trigger.
+                </p></div></div> <div class="view"><img src="https://dfimg.dfrobot.com/enshop/image/data/SEN0197/SEN0197_Main_01_360x240.jpg.webp" alt="Overview of Gravity: Voice Recorder Module"> <button><i class="iconfont icon-cart1"></i>Buy now</button></div></div> <div class="download-resources"><p>Downloadable Resources</p> <ul><a href="https://dfimg.dfrobot.com/wiki/17505/SEN0197_gravity-voice-recorder-module_svg_V1.0.svg" target="_blank" download="SEN0197_SVG"><i class="iconfont icon-SVG_nor"></i> SVG
+                </a> <!----><a href="https://dfimg.dfrobot.com/wiki/17505/SEN0197_gravity-voice-recorder-module_schematics_v1.0.pdf" target="_blank" download="SEN0197_Schematics"><i class="iconfont icon-Schematics_nor"></i> Schematics
+                </a> <!----></ul></div> <div class="category-select-tab"><li class="selected">Docs</li><li>Tech Specs</li><li>Projects</li></div> <div class="wiki-content docs"><div data-theme="pc" class="docs-navi depth-1"><div class="folder"><a href="/sen0197/docs/18294" target="_blank" class="wiki-title doc"><b>1. Example Code for Arduino-Voice Playback Trigger</b><i class="iconfont icon-subscribe"></i> <p class="wiki-desc">The article guides readers through setting up a voice playback trigger using Arduino. It covers hardware and software preparation, the wiring process, and provides sample code to implement voice recording and playback functionality.</p></a> </div></div> <div style="display:none;"><div><h3>Specification</h3>
+<div class="table-box"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating voltage</td>
+<td>3.3~5V</td>
+</tr>
+<tr>
+<td>Recording time</td>
+<td>20 seconds</td>
+</tr>
+<tr>
+<td>Sampling frequency</td>
+<td>16KHz</td>
+</tr>
+<tr>
+<td>Repeatable recording times</td>
+<td>100,000</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>37<i>35 mm/ 1.46</i>1.38 inches</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Pinout</h3>
+<p><img src="https://img.dfrobot.com.cn/wikicn/5ea64bf6cf1d8c7738ad2881/b866419f50e865e96e466427cd3b8e84.png" alt="SEN0197 Gravity: Voice Recorder Module Board Overview" title="SEN0197 Gravity: Voice Recorder Module Board Overview"></p>
+<div class="table-box"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Features</strong></td>
+</tr>
+<tr>
+<td>SPK1</td>
+<td>Speaker (Supports 8Ω@3W speaker)</td>
+</tr>
+<tr>
+<td>SPK2</td>
+<td>Active Speaker</td>
+</tr>
+<tr>
+<td>PLAY</td>
+<td>Play button (this function button uses edge triggering, that is, you only need to press the button once to automatically play the entire recording)</td>
+</tr>
+<tr>
+<td>REC</td>
+<td>Recording button (Press and hold the REC button to record, it will beep once when recording starts and twice when recording ends)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Indicator light description: When recording, the LED is always yellow, and the LED goes out when it is finished; when playing, the LED is always yellow, and the LED goes out when it is finished</p>
+</div></div> <div data-theme="pc" class="docs-navi depth-0" style="display:none;"></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"><a data-theme="pc" href="https://community.dfrobot.com/makelog-313402.html" target="_blank" class="project-card"><img src="https://dfimg.dfrobot.com/60d184c4aa9508d63a4149e4/community/155b2616260ae312591873f700c98efb_325x230.png.webp" alt="thumb"> <div class="project-info"><b>Best Collection of 10 micro:bit Robot and IoT Projects to Try in 2023</b> <p></p> <div class="author"><div class="img-box"><img src="https://dfimg.dfrobot.com/60d184c4aa9508d63a4149e4/community/17fe4a0bc0375c5e92ecefc0270ba1b8_34x34.jpg.webp" alt="author"></div> <span>RiverTrue</span> <span>Nov 08, 2024</span></div></div></a> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"></div></div> <!----> <div data-theme="pc" class="helpful-survey"><div class="begining-survey"><p>Was this article helpful?</p> <div class="buttons"><button><i class="iconfont icon-thumbs-up"></i></button> <button><i class="iconfont icon-thumbs-down"></i></button></div></div> <div class="further-survey"></div> <!----></div></div></div></div> <div data-theme="pc" class="scroll-top" style="opacity:0;"><i class="iconfont icon-uparrow"></i>
+  TOP
+</div> <footer data-theme="pc"><div class="df-container con xs"><div class="nav"><div class="left"><span><b>Information</b> <a href="https://www.dfrobot.com/about-us">About Us</a><a href="https://www.dfrobot.com/warranty">Warranty</a><a href="https://www.dfrobot.com/privacy-policy">Terms &amp; Conditions</a><a href="https://www.dfrobot.com/shipping">Shipping</a><a href="https://www.dfrobot.com/payment">Payment</a><a href="https://www.dfrobot.com/faq">FAQ</a></span><span><b>Customer Service</b> <a href="https://www.dfrobot.com/distributor">DFRobot Distributors</a><a href="https://www.dfrobot.com/contact-us">Contact Us</a><a href="https://www.dfrobot.com/site-map">Site Map</a></span><span><b>My Account</b> <a href="https://www.dfrobot.com/affiliates">Affiliates</a><a href="https://www.dfrobot.com/special.html">Specials</a></span></div> <div class="right"><a href="https://www.dfrobot.com/"><img src="/dfrobotshop/images/pc/logo.png" alt="logo"></a> <div class="subscribe"><b>Sign up for exclusive offers!</b> <form id="mc-embedded-subscribe-form" action="//DFRobot.us16.list-manage.com/subscribe/post?u=e384b3074873a648e7d3237cc&id=316955a8ff" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="novalidate" class="validate"><div id="mc_embed_signup_scroll" class="footer_scroll"><input id="subscribeEmail" type="email" value name="EMAIL" placeholder="Your email address" required="required" class="email"> <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_e384b3074873a648e7d3237cc_316955a8ff" tabindex="-1" value></div> <button id="subscribeBtn" aria-label="subscribe" type="submit" name="subscribe"><i class="icon iconfont icon-fangxiangyi"></i></button></div></form></div> <div class="like"><b>Like us on</b> <span><a href="https://www.facebook.com/DFrobot" title="dfrobot facebook" target="_blank"><i class="icon iconfont icon-facebook1"></i></a> <a href="https://twitter.com/dfrobotcn" title="dfrobot twitter" target="_blank"><i class="icon iconfont icon-twitter"></i></a> <a href="https://discord.com/invite/wr4szfVUZ7" title="dfrobot discord" target="_blank"><i class="icon iconfont icon-discord"></i></a> <a href="https://www.linkedin.com/company/dfrobot" title="dfrobot linkedin" target="_blank"><i class="icon iconfont icon-linkedin"></i></a> <a href="https://www.youtube.com/user/DFROBOTCN" title="dfrobot youtube" target="_blank"><i class="icon iconfont icon-YouTube"></i></a> <a href="https://www.tiktok.com/@dfrobot_official" title="dfrobot tiktok" target="_blank"><i class="icon iconfont icon-douyin-icon"></i></a></span></div></div></div> <div class="copyright">Copyright © 2025 DFRobot. All rights reserved.</div></div></footer> <!----></div></div></div></div><script>window.__NUXT__=(function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,_,$,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay,az,aA,aB,aC,aD,aE,aF,aG,aH,aI,aJ,aK,aL,aM,aN,aO,aP,aQ,aR,aS,aT,aU,aV,aW,aX,aY,aZ,a_,a$,ba,bb,bc,bd,be,bf,bg,bh,bi,bj,bk,bl,bm,bn,bo,bp,bq,br,bs,bt,bu,bv,bw,bx){aD.id="16535";aD.thumb="https:\u002F\u002Fdfimg.dfrobot.com\u002F60d184c4aa9508d63a4149e4\u002Fcommunity\u002F155b2616260ae312591873f700c98efb.png";aD.source="project";aD.title=aE;aD.desc=aF;aD.authorName=aG;aD.authorImg="https:\u002F\u002Fdfimg.dfrobot.com\u002F60d184c4aa9508d63a4149e4\u002Fcommunity\u002F17fe4a0bc0375c5e92ecefc0270ba1b8.jpg";aD.authorUrl="https:\u002F\u002Fcommunity.dfrobot.com\u002Fuser-7304.html";aD.showTime="Nov 08, 2024";aD.url=aH;bh[0]={description:a,link:"\u002Fnew-products.html",submenu:[],title:"New Products"};bh[1]={description:a,link:a,submenu:[{description:"A Mountable Spatial Tracking Module for Apple Vision Pro Developers",link:"\u002Fproduct-3157.html",title:"seeMote Cap"},{description:"A micro x86 compute module for ON-DEVICE AI",link:"\u002Fproduct-3149.html",title:"LattePanda Mu Ultra"},{description:"Control your visionOS app with a physical device you can anchor digital content to.",link:"\u002Fproduct-3136.html",title:"seeMote Cube"},{description:"6 TOPS LLM MCP AI Vision Sensor (20+ Models, Deploy Custom Models)",link:"\u002Fproduct-2995.html",title:"Huskylens 2"},{description:"AI learning device designed for education",link:"\u002Ftopic-314.html",title:"UNIHIKER"},{description:"A Palm-Sized X86 Single Board Computer Powered by the Intel N150",link:"\u002Fproduct-2989.html",title:"LattePanda IOTA"},{description:bi,link:bj,title:"ESP32"},{description:bk,link:bl,title:bm},{description:bn,link:bo,title:bp},{description:"Compatible with 1V\u002F2V\u002F3V\u002F5V\u002F9V\u002F12V\u002F18V solar panels ",link:"\u002Fproduct-1712.html",title:"Solar Power Manager"},{description:"mmwave sensor, ultrasonic sensor, lightning distance sensor, infrared proximity sensor",link:bq,title:br}],title:"Featured"};bh[2]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-284.html",title:n},{description:"NVIDIA Jetson Orin, ESP32-CAM, other boards based on ARM and RISC-V AI processor",link:"\u002Ftopic-284-184.html",title:"AI Development Boards"},{description:"Language learning voice recognition sensor, AI vision sensor, AI vision camera",link:"\u002Ftopic-284-36.html",title:"AI Sensors"},{description:"NVIDIA Jetson Orin \u002F Nano \u002F Xavier carrier boards, OpenMV Cam shields",link:"\u002Ftopic-284-156.html",title:"AI Modules"},{description:"Jetson Nano accessories and other smart tools",link:"\u002Ftopic-284-66.html",title:"AI Prototyping & Accessories"},{description:a,link:"\u002Ftopic-284-140.html",title:"AI Kits"}],title:"AI Hardware"};bh[3]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-277.html",title:n},{description:"Arduino UNO R4 \u002F R3, Arduino Mega 2560, Arduino Leonardo, Arduino Nano and other boards compatible with Arduino",link:"\u002Ftopic-277-184.html",title:"Arduino Development Boards"},{description:"mmwave sensor, voice recognition sensor, ultrasonic sensor, gas sensor and other sensors compatible with Arduino",link:"\u002Ftopic-277-36.html",title:"Arduino Sensors"},{description:"MP3 player, IO Expansion Shield, DAC module, LCD display module, NB-IoT \u002F LTE \u002F GNSS \u002F GPRS \u002F GPS Expansion Shield",link:"\u002Ftopic-277-156.html",title:"Arduino Modules"},{description:"Arduino beginner kit with detailed tutorials, arduino sensor kit, arduino robot kit, arduino coding kit",link:"\u002Ftopic-277-140.html",title:"Arduino Kits"},{description:"Prototyping shields, cables, connectors, USB power supply, battery holder",link:"\u002Ftopic-277-66.html",title:"Arduino Prototyping & Accessories"}],title:"Arduino"};bh[4]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-184.html",title:n},{description:"Raspberry Pi, LattePanda, NVIDIA, ARM",link:"\u002Fcategory-311.html",title:"Single Board Computer"},{description:bs,link:"\u002Fcategory-188.html",title:bt},{description:"x86 Windows \u002F Linux single board computer, server, compute module",link:"\u002Fcategory-186.html",title:"LattePanda Dev Board"},{description:"NVIDIA Jetson Orin Nano, NVIDIA Jetson AGX Orin",link:"\u002Fcategory-268.html",title:"NVIDIA"},{description:"UNIHIKER, Raspberry Pi CM 5, ROCK Pi",link:"\u002Fcategory-294.html",title:"ARM"},{description:"Arduino, ESP32 & ESP8266, micro:bit",link:"\u002Fcategory-312.html",title:"MCU"},{description:"Development boards compatible with Arduino: DFRduino , Beetle, Romeo, Bluno, Xboard",link:"\u002Fcategory-185.html",title:"Arduino Board"},{description:bu,link:"\u002Fcategory-271.html",title:"ESP32 & ESP8266"},{description:"A pocket-sized computer designed to inspire creative thinking in children",link:"\u002Fcategory-257.html",title:bv},{description:"PYNQ-Z2, Calliope, Particle, Maixduino, CurieCore",link:"\u002Fcategory-52.html",title:V}],title:C};bh[5]={description:a,link:a,submenu:[{description:bi,link:bj,title:n},{description:"Low power consumption microcontroller intentionally designed for IoT projects",link:"\u002Ftopic-302.html",title:"FireBeetle"},{description:"IoT hardwares and IoT home automation devices",link:"\u002Ftopic-276.html",title:"Internet of Things - IoT"},{description:bu,link:"\u002Ftopic-302-184.html",title:C},{description:"Sensors compatible with ESP32",link:"\u002Ftopic-302-36.html",title:o},{description:"IO Shield, OLED Display, LoRa Radio, LED Matrix, Terminal Block Board for FireBeetle ESP32",link:"\u002Ftopic-302-156.html",title:t},{description:"Hackster & DFRobot AI \u002F IoT \u002F Environmental Sensor Starter EEDU Kit",link:"\u002Ftopic-302-140.html",title:W},{description:"Prototyping board, Enclosure for FireBeetle, Patch Test Hook",link:"\u002Ftopic-302-66.html",title:u}],title:"ESP32 \u002F ESP8266"};bh[6]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-278.html",title:n},{description:"LattePanda Mu, LattePanda Sigma, LattePanda 3 Delta, LattePanda 2 Alpha \u002F Delta, LattePanda V1",link:"\u002Ftopic-278-184.html",title:"LattePanda Boards"},{description:"Carrier Board for LattePanda Mu, touch display, UPS hat, network card for LattePanda",link:"\u002Ftopic-278-156.html",title:t},{description:"Cases, streaming cable, cooler, heat sink, power cable, power supply for LattePanda",link:"\u002Ftopic-278-66.html",title:"LattePanda Accessories"},{description:"Camera, GPS receiver for LattePanda",link:"\u002Ftopic-278-36.html",title:o},{description:"LattePanda Mu evaluation kit, LattePanda board with case & streaming cable & touch display kit",link:"\u002Ftopic-278-140.html",title:"LattePanda Kits"}],title:"LattePanda"};bh[7]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-156.html",title:n},{description:"DC \u002F Stepper \u002F Brushless \u002F Geared \u002F TT motor and motor driver, servo, relay module, peristaltic pump",link:"\u002Fcategory-51.html",title:"Motors & Actuators & Drivers"},{description:"3G\u002F4G\u002F5G, Lora, WiFi, Bluetooth, NB-IoT, Ethernet, GSM\u002FGPRS\u002FGPS, Serial, CANBUS & OBD, RFID, Infra Red, Radio (RF), Xbee \u002F Zigbee",link:"\u002Fcategory-45.html",title:"Communications"},{description:"DFPlayer, mini MP3 player, speaker module, audio analyzer module, digital buzzer, audio amplifier",link:"\u002Fcategory-259.html",title:"Audio"},{description:"IO Expansion Shield, UPS HAT, Carrier Board for Arduino \u002F Raspberry Pi \u002F micro:bit \u002F LattePanda",link:"\u002Fcategory-269.html",title:"IO Expansion Shields & HATs"},{description:"eDP touch display, IPS display, DSI touchscreen, capacitive touch panel, LED matrix, OLED display, LEDs",link:"\u002Fcategory-53.html",title:"LCDs\u002FLEDs\u002FE-ink\u002FDisplays"},{description:"ADC Module, DAC Module",link:"\u002Fcategory-261.html",title:"AD\u002FDA Converter"},{description:"Real-time clock module",link:"\u002Fcategory-232.html",title:"RTC Modules"},{description:"MicroSD card module, 16GB 32GB 64GB 128GB MicroSD memory card",link:"\u002Fcategory-213.html",title:"Storage Modules"},{description:"Solar power manager, battery holder, DC-DC buck converter, wireless charging module",link:"\u002Fcategory-70.html",title:"Power Modules"},{description:"GamePad, joystick, sensor adapter",link:"\u002Fcategory-215.html",title:V}],title:t};bh[8]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-66.html",title:n},{description:"6DoF spatial tracking and input accessories for Apple Vision Pro",link:"\u002Fcategory-324.html",title:"Spatial Anchors"},{description:"Heatsink, cooling fan, DIN rail mount bracket, VESA mounting kit",link:"\u002Fcategory-96.html",title:"Accessories"},{description:"Buttons, headers, LEDs, resistors, capacitors, diodes & transistors, crystals",link:"\u002Fcategory-219.html",title:"Electronics"},{description:"Case for Raspberry Pi, LattePanda, micro:bit, Arduino UNO, Jetson Nano",link:"\u002Fcategory-303.html",title:"Enclosure&Case"},{description:"Power supply, solar panel, AA batteries holder",link:"\u002Fcategory-92.html",title:"Power"},{description:"Jumper wires, power cables, USB data cables, gravity module cables, audio & video cables, Ethernet cable",link:"\u002Fcategory-86.html",title:"Cables and Wires"},{description:"micro:Maqueen mechanic, robot gripper, rubber wheels, mecanum wheels, screw",link:"\u002Fcategory-46.html",title:"Mechanics"},{description:"Electric solenoid lock, hot plate preheater, straight\u002Fcross screwdriver",link:"\u002Fcategory-43.html",title:"Tools"},{description:"Bread board self adhesive, prototyping shield for arduino, flexible single sided protoBoard",link:"\u002Fcategory-67.html",title:"Breadboards & Protoboards"},{description:"Soldering station, soldering starter tools, soldering iron welding tool kit",link:"\u002Fcategory-115.html",title:"Soldering"},{description:"Wireless keyboard for Raspberry Pi and LattePanda",link:"\u002Fcategory-270.html",title:"Keyboards"},{description:"Electroluminecent wire",link:"\u002Fcategory-132.html",title:"EL Wires"}],title:u};bh[9]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-272.html",title:n},{description:bs,link:"\u002Ftopic-272-184.html",title:"Raspberry Pi Boards"},{description:"Heatsink, cooling case, power supply and cables for Raspberry Pi",link:"\u002Ftopic-272-66.html",title:u},{description:"Touch display, relay module, UPS HAT, expansion board for Raspberry Pi",link:"\u002Ftopic-272-156.html",title:t},{description:"Raspberry Pi 5 and 4B Starter Kit",link:"\u002Ftopic-272-140.html",title:"Raspberry Pi Kits"},{description:"Sensors compatible with Raspberry Pi, such as camera, ultrasonic sensor, etc.",link:"\u002Ftopic-272-36.html",title:o}],title:bt};bh[10]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-279.html",title:n},{description:"Robot control board with motor driver",link:"\u002Ftopic-279-184.html",title:C},{description:"LiDAR, ToF laser range scanner, ultrasonic distance sensor, camera, DOF sensor",link:"\u002Ftopic-279-36.html",title:o},{description:"Motor, motor driver, digital servo, clutch servo, DC-DC converter",link:"\u002Ftopic-279-156.html",title:t},{description:"micro:bit programming robot platform, mobile robot platform, robotic arm",link:"\u002Ftopic-279-140.html",title:W},{description:"micro:Maqueen Mechanic, rubber wheel, mecanum wheel, battery holder",link:"\u002Ftopic-279-66.html",title:u}],title:"Robotics"};bh[11]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-36.html",title:"All Sensors"},{description:"Sensors with standard interface, plug-and-play, no soldering required, with color coded pin headers & cables",link:"\u002Ftopic-282.html",title:"Gravity Sensors"},{description:"High-quality and open-source breakout boards with small size and flexible wiring method",link:"\u002Ftopic-292.html",title:"Fermion Breakout"},{description:"24GHz and 60GHz radar modules compatible with Home Assistant, ESPHome, and Arduino",link:"\u002Fcategory-321.html",title:"mmWave Radar Sensors"},{description:"AI vision sensor, gesture sensor, fingerprint sensor, touch sensor",link:"\u002Fcategory-76.html",title:"Interactive Sensors"},{description:bk,link:bl,title:bm},{description:bn,link:bo,title:bp},{description:"Sensors for soil moisture, pH, EC, and NPK in smart agriculture.",link:"\u002Fcategory-322.html",title:"Soil Sensors"},{description:"Solid state liDAR, laser range scanner, ToF LiDAR, single-point ranging LiDAR",link:"\u002Fcategory-313.html",title:"LiDAR"},{description:"IR positioning camera, ambient light sensor, 3D ToF sensor, camera module, RGB color sensor, QR code scanner",link:"\u002Fcategory-58.html",title:"Light & Imaging Sensors"},{description:"mmWave, human presence detection sensor, PIR sensor, vibration sensor, tilt sensor",link:"\u002Fcategory-204.html",title:"Motion Sensors"},{description:"Soil moisture sensor, DHT\u002FSHT\u002FAHT temperature & humidity sensor, BME688 environmental sensor",link:"\u002Fcategory-64.html",title:"Temperature & Humidity Sensor"},{description:"Sensors for weather stations, air, UV, light, wind, and climate data.",link:"\u002Fcategory-323.html",title:"Environmental Sensors"},{description:"Ultrasonic sensor, lightning distance sensor, infrared proximity sensor",link:bq,title:br},{description:"Voice recognition sensor, text to speech, voice synthesizer module, voice recorder module",link:"\u002Fcategory-63.html",title:w},{description:"AC current sensor, digital wattmeter, LED current meter",link:"\u002Fcategory-201.html",title:"Current Sensors"},{description:"DOF sensor, triple axis accelerometer, 6-axis accelerometer, 9-axis sensor",link:"\u002Fcategory-65.html",title:"IMU Sensors"},{description:"Heart rate monitor sensor, EMG\u002FECG\u002FPPG sensor",link:"\u002Fcategory-199.html",title:"e-Health Sensors"},{description:"Digital weight sensor",link:"\u002Fcategory-200.html",title:"Weight Sensors"},{description:"Triple axis magnetometer sensor, hall sensor",link:"\u002Fcategory-60.html",title:"Magnetic Sensors"},{description:"Barometric pressure sensor, differential pressure sensor, air pressure sensor",link:"\u002Fcategory-229.html",title:"Pressure Sensors"},{description:"Thin film pressure sensor, flexiforce pressure sensor",link:"\u002Fcategory-202.html",title:"Flex Sensors"},{description:"Rotary encoder, TT Motor encoder, 360 degree hall angle sensor",link:"\u002Fcategory-301.html",title:"Encoders"},{description:"USB GPS receiver compatible with Raspberry Pi \u002F LattePanda \u002F Jetson Nano",link:"\u002Fcategory-57.html",title:"GPS"},{description:"Push button, LED button, magnetic switch, LED switch",link:"\u002Fcategory-205.html",title:"Switches & Buttons"},{description:"Analog slide position sensor, analog rotation potentiometer sensor",link:"\u002Fcategory-203.html",title:"Potentiometer"},{description:"9 PCS \u002F 27 PCS \u002F 37 PCS sensor set for Arduino and Raspberry Pi",link:"\u002Fcategory-227.html",title:"Sensor Set"},{description:"Geiger counter module, analog signal isolator, soil NPK measure sensor",link:"\u002Fcategory-230.html",title:V}],title:"Sensor"};bh[12]={description:a,link:a,submenu:[{description:"Arduino and micro:bit kits with detailed tutorials",link:"\u002Ftopic-280.html",title:bw},{description:"Educational robot platform for micro:bit and micro:bit accessories",link:"\u002Ftopic-281.html",title:bv},{description:"micro:bit robots for hands-on STEM",link:"\u002Ftopic-319.html",title:"Maqueen"},{description:"Modularized electronic building blocks designed for young inventors and STEM educators",link:"\u002Ftopic-283.html",title:"Boson"},{description:"micro:bit, UNIHIKER",link:"\u002Ftopic-280-184.html",title:C},{description:"Huskylens, Lark weather station, sensor set for Arduino",link:"\u002Ftopic-280-36.html",title:o},{description:"micro:bit accessories, science data acquisition module",link:"\u002Ftopic-280-156.html",title:t},{description:"Arduino beginner kit, micro:bit educational programming robot kit",link:"\u002Ftopic-280-140.html",title:W},{description:"micro:Maqueen mechanic, UNIHIKER silicone case",link:"\u002Ftopic-280-66.html",title:u}],title:bw};bx.USD={symbol:"$",code:U,name:"$USD",rate:d};bx.EUR={symbol:"€",code:"EUR",name:"EUR€",rate:.85254949};bx.GBP={symbol:"£",code:"GBP",name:"£GBP",rate:.74400586};return {layout:g,data:[{viewType:v,sku:l,breadcrumbs:[{href:Y,text:g},{href:"\u002Fcategory-36\u002F",text:o},{href:Z,text:w},{href:_,text:l}],menu:{type:$,now:{text:w,href:a},back:{text:o,href:Z},content:[{id:"21151",material_id:j,title:aa,subject:"sen0539-en\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1765246484,sku:"SEN0539-EN",user_id:p,product:a,default_sort:51,sort_order_plus:b,_score:f,stock_name_status:m,product_id:2665,product_name:"Gravity: Offline Voice Recognition Module (121 Built-in Commands, 17 Custom Commands, I2C\u002FUART)",category_names:"All Products,Arduino,Artificial Intelligence Hardware,Sensors,Sound Sensors",product_type:i,category_category_ids:"36 63 277 284",tag:"voice recognition sensor arduino, arduino voice recognition, ai voice recognition, recognition speech, speech recognition sensor, offline speech recognition, python speech recognition, Gravity",pm_tag:a,text:aa,href:"\u002FSEN0539-EN\u002F",active:c},{id:"17133",material_id:j,title:ab,subject:"dfr0034\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764819948,sku:"DFR0034",user_id:p,product:a,default_sort:413,sort_order_plus:b,_score:f,stock_name_status:m,product_id:83,product_name:"Gravity: Analog Sound Sensor for Arduino",category_names:x,product_type:i,category_category_ids:y,tag:"analog,sound sensor,DFR0034,MIC,arduino, Gravity, Sound",pm_tag:"Gravity.Brand,PH2.0.Interface,M.SL,Sound Sensors.PF,C++.PL,Environments.Scenario,Arduino IDE.IDE,5V.WV,Mind+.IDE,Pin.Interface,3.3V.WV",text:ab,href:"\u002FDFR0034\u002F",active:c},{id:"18670",material_id:j,title:ac,subject:"sen0232\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764671370,sku:"SEN0232",user_id:p,product:a,default_sort:481,sort_order_plus:b,_score:f,stock_name_status:m,product_id:1663,product_name:"Gravity: Analog Sound Level Meter",category_names:x,product_type:i,category_category_ids:y,tag:"SEN0232, Sound, loudness, noise, environment, decibel, db, sound level, sound pressure,Gravity",pm_tag:"Sound Sensors.PF,Analog.ToS,3.3V.WV,M.SL,5V.WV,PH2.0.Interface,Environments.Scenario,Arduino IDE.IDE,Gravity.Brand,C++.PL",text:ac,href:"\u002FSEN0232\u002F",active:c},{id:"18673",material_id:j,title:ad,subject:"dfr0760\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764671372,sku:"DFR0760",user_id:7132,product:a,default_sort:1282,sort_order_plus:b,_score:f,stock_name_status:m,product_id:2234,product_name:"Gravity: Text to Speech Voice Synthesizer Module V2.0 for Arduino and ESP32 (Support English \u002F Chinese)",category_names:ae,product_type:i,category_category_ids:af,tag:"DFR0760, Speech, Synthesis, Sound, Broadcast, Conversation, XFS5152, arduino speech synthesis, text to speech module, text to speech module arduino, arduino speech synthesis, XFS5152 speech synthesis module",pm_tag:"Other Modules.PF,Gravity.Brand,Audio.TT,M+.SL",text:ad,href:"\u002FDFR0760\u002F",active:c},{id:"17505",material_id:j,title:z,subject:"sen0197\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764586450,sku:l,user_id:p,product:a,default_sort:ag,sort_order_plus:b,_score:f,stock_name_status:m,product_id:E,product_name:A,category_names:x,product_type:i,category_category_ids:y,tag:ah,pm_tag:ai,text:z,href:"\u002FSEN0197\u002F",active:h},{id:"20491",material_id:j,title:aj,subject:"dfr0745\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1765026635,sku:"DFR0745",user_id:p,product:a,default_sort:2859,sort_order_plus:b,_score:f,stock_name_status:m,product_id:2185,product_name:"Fermion: Voice Recorder Module (Breakout)",category_names:"All Products,Arduino,Fermion,Sensors,Sound Sensors",product_type:i,category_category_ids:"36 63 277 292",tag:"DFR0745, Recording, Voice, Music, Playback, Audio, Sound, Fermion",pm_tag:"Prototyping.Scenario,5V.WV,C++.PL,MP.SL,UART.ToS,3.3V.WV,Breakout.FF,Type C.Interface,Fermion.Brand,Sound Sensors.PF,Arduino IDE.IDE",text:aj,href:"\u002FDFR0745\u002F",active:c},{id:"20211",material_id:j,title:ak,subject:"dfr0699\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764845087,sku:"DFR0699",user_id:p,product:a,default_sort:3435,sort_order_plus:b,_score:f,stock_name_status:m,product_id:2359,product_name:"Gravity: I2C Voice Recorder Module EDU",category_names:ae,product_type:i,category_category_ids:af,tag:"DFR0699, Voice Recorder, Sound Sensors, Arduino, Voice interaction, Speech synthesis, DFR0699, Voice Recorder, Sound Sensors, Arduino, Voice interaction, Speech synthesis",pm_tag:"3.3V.WV,I2C.ToS,K12.Age,Workshop.Scenario,Project.Scenario,Gravity.Brand,5V.WV,PH2.0.Interface,C++.PL,Class.Scenario,Audio Modules.PF,M+.SL,Mind+.PL",text:ak,href:"\u002FDFR0699\u002F",active:c},{id:"18657",material_id:j,title:al,subject:"bos0009\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764671364,sku:"BOS0009",user_id:7160,product:a,default_sort:5495,sort_order_plus:b,_score:f,stock_name_status:F,product_id:3035,product_name:"Boson: Sound Sensor i9",category_names:G,product_type:i,category_category_ids:H,tag:"BOSON sound sensor, analog sound module, Arduino microphone, ambient sound detection, DIY sound switch, audio sensor module",pm_tag:a,text:al,href:"\u002FBOS0009\u002F",active:c},{id:"19299",material_id:j,title:am,subject:"bos0020\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764754877,sku:"BOS0020",user_id:p,product:a,default_sort:5536,sort_order_plus:b,_score:f,stock_name_status:F,product_id:3043,product_name:"BOSON: Buzzer Module o5",category_names:G,product_type:i,category_category_ids:H,tag:"BOSON Buzzer Module o5, digital buzzer, sound making module, DFRobot BOSON, PH2.0 interface, audio indicator, Arduino buzzer module, micro:bit sound, programmable buzzer, alarm module, interactive audio hardware, electronic toys",pm_tag:a,text:am,href:"\u002FBOS0020\u002F",active:c},{id:"19313",material_id:j,title:an,subject:"bos0022\u002F",type:g,platform:k,status:d,show:d,orderBy:b,addtime:1764754886,sku:"BOS0022",user_id:p,product:a,default_sort:5554,sort_order_plus:b,_score:f,stock_name_status:F,product_id:3045,product_name:"BOSON: Voice Recorder Module o7",category_names:G,product_type:i,category_category_ids:H,tag:"BOSON Voice Recorder Module o7, voice recording module, audio recorder sensor, DFRobot BOSON, 10s audio recording, digital sound module, micro:bit audio, Arduino voice recorder, answering machine prototype, interactive audio hardware, PH2.0 interface, maker education gifts",pm_tag:a,text:an,href:"\u002FBOS0022\u002F",active:c}]},categorySelects:[{text:ao,value:"docs",selected:h,show:h,hasMore:f},{text:ap,value:"tech_specs",selected:c,show:h},{text:aq,value:"projects",selected:c,show:h}],wikiData:{cad:{draftName:"SEN0197_gravity-voice-recorder-module_cad_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},ce:{draftName:"SEN0197_gravity-voice-recorder-module_ce_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},content:"### Specification\n\n| Parameter               | Value                  |\n|-------------------------|------------------------|\n| Operating voltage       | 3.3~5V                 |\n| Recording time          | 20 seconds             |\n| Sampling frequency      | 16KHz                  |\n| Repeatable recording times | 100,000              |\n| Dimensions              | 37*35 mm\u002F 1.46*1.38 inches |\n\n### Pinout\n\n\n![SEN0197 Gravity: Voice Recorder Module Board Overview](https:\u002F\u002Fimg.dfrobot.com.cn\u002Fwikicn\u002F5ea64bf6cf1d8c7738ad2881\u002Fb866419f50e865e96e466427cd3b8e84.png \"SEN0197 Gravity: Voice Recorder Module Board Overview\")\n\n\n|          |                                               |\n| -------- | --------------------------------------------- |\n| **Name** | **Features**                                  |\n| SPK1     | Speaker (Supports 8Ω@3W speaker)              |\n| SPK2     | Active Speaker                                |\n| PLAY     | Play button (this function button uses edge triggering, that is, you only need to press the button once to automatically play the entire recording)                                   |\n| REC      | Recording button (Press and hold the REC button to record, it will beep once when recording starts and twice when recording ends) |\n\nIndicator light description: When recording, the LED is always yellow, and the LED goes out when it is finished; when playing, the LED is always yellow, and the LED goes out when it is finished",datasheet:{draftName:"SEN0197_gravity-voice-recorder-module_datasheet_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},desc:"This is the latest voice recorder module with integrated record and play functions. Easily record by pressing the button, speaking, then releasing. It supports 20 seconds of total playback. Connect an 8Ω 3W or external active speaker for output. It also has a 3-pin digital interface to link with Arduino-compatible microcontrollers as a playback trigger.",dimension:{draftName:"SEN0197_gravity-voice-recorder-module_dimension_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},driver:{draftName:"SEN0197_gravity-voice-recorder-module_driver_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},en71:{draftName:"SEN0197_gravity-voice-recorder-module_en71_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},fcc:{draftName:"SEN0197_gravity-voice-recorder-module_fcc_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},gitHub:a,ic:{draftName:"SEN0197_gravity-voice-recorder-module_ic_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},kc:{draftName:"SEN0197_gravity-voice-recorder-module_kc_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},layout:{draftName:"SEN0197_gravity-voice-recorder-module_layout_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},library:{draftName:"SEN0197_gravity-voice-recorder-module_library_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},ogDesc:I,ogTitle:J,pName:"gravity-voice-recorder-module",pfas:{draftName:"SEN0197_gravity-voice-recorder-module_pfas_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},rcm:{draftName:"SEN0197_gravity-voice-recorder-module_rcm_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},reach:{draftName:"SEN0197_gravity-voice-recorder-module_reach_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},rohs:{draftName:"SEN0197_gravity-voice-recorder-module_rohs_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},schematics:{draftName:"SEN0197_gravity-voice-recorder-module_schematics_v1.0",fileName:"sen0197-sch.pdf",fileSize:"685KB",fileUrl:K,pass:h,select:e,time:1767750021369,urlData:[]},seoDesc:ar,seoKey:as,seoTitle:L,show:d,sku:l,stpFiles:{draftName:"SEN0197_gravity-voice-recorder-module_stpfile_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},structuredDesc:at,subjectUrl:a,svg:{draftName:"SEN0197_gravity-voice-recorder-module_svg_V1.0",fileName:"Voice_Recorder.svg",fileSize:"1.09MB",fileUrl:M,pass:h,select:e,time:1767750065359,urlData:[]},telec:{draftName:"SEN0197_gravity-voice-recorder-module_telec_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},title:z,type:g,ukca:{draftName:"SEN0197_gravity-voice-recorder-module_ukca_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},weee:{draftName:"SEN0197_gravity-voice-recorder-module_weee_",fileName:a,fileSize:a,fileUrl:a,pass:c,select:e,time:a,urlData:[]},id:17505,updatetime:"2025-12-01 18:54:12"},techSpecs:"\u003Ch3\u003ESpecification\u003C\u002Fh3\u003E\n\u003Cdiv class=\"table-box\"\u003E\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EParameter\u003C\u002Fth\u003E\n\u003Cth\u003EValue\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EOperating voltage\u003C\u002Ftd\u003E\n\u003Ctd\u003E3.3~5V\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003ERecording time\u003C\u002Ftd\u003E\n\u003Ctd\u003E20 seconds\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003ESampling frequency\u003C\u002Ftd\u003E\n\u003Ctd\u003E16KHz\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003ERepeatable recording times\u003C\u002Ftd\u003E\n\u003Ctd\u003E100,000\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EDimensions\u003C\u002Ftd\u003E\n\u003Ctd\u003E37\u003Ci\u003E35 mm\u002F 1.46\u003C\u002Fi\u003E1.38 inches\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\u003C\u002Fdiv\u003E\n\u003Ch3\u003EPinout\u003C\u002Fh3\u003E\n\u003Cp\u003E\u003Cimg src=\"https:\u002F\u002Fimg.dfrobot.com.cn\u002Fwikicn\u002F5ea64bf6cf1d8c7738ad2881\u002Fb866419f50e865e96e466427cd3b8e84.png\" alt=\"SEN0197 Gravity: Voice Recorder Module Board Overview\" title=\"SEN0197 Gravity: Voice Recorder Module Board Overview\"\u003E\u003C\u002Fp\u003E\n\u003Cdiv class=\"table-box\"\u003E\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003E\u003C\u002Fth\u003E\n\u003Cth\u003E\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Cstrong\u003EName\u003C\u002Fstrong\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003E\u003Cstrong\u003EFeatures\u003C\u002Fstrong\u003E\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003ESPK1\u003C\u002Ftd\u003E\n\u003Ctd\u003ESpeaker (Supports 8Ω@3W speaker)\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003ESPK2\u003C\u002Ftd\u003E\n\u003Ctd\u003EActive Speaker\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EPLAY\u003C\u002Ftd\u003E\n\u003Ctd\u003EPlay button (this function button uses edge triggering, that is, you only need to press the button once to automatically play the entire recording)\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EREC\u003C\u002Ftd\u003E\n\u003Ctd\u003ERecording button (Press and hold the REC button to record, it will beep once when recording starts and twice when recording ends)\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\u003C\u002Fdiv\u003E\n\u003Cp\u003EIndicator light description: When recording, the LED is always yellow, and the LED goes out when it is finished; when playing, the LED is always yellow, and the LED goes out when it is finished\u003C\u002Fp\u003E\n",downloadResources:[{text:au,link:M,icon:"icon-SVG_nor",download:h},{text:av,link:K,icon:"icon-Schematics_nor",download:h}],certifications:[],product:{product:{attribute:{black_friday_event_tags:"[{\"name\":\"Black Friday 2025\",\"sort_order\":653},{\"name\":\"enjoy discounts on the GLOBAL website\",\"sort_order\":741},{\"name\":\"Others GLOBAL\",\"sort_order\":741},{\"name\":\"enjoy discounts on the USA-1 website\",\"sort_order\":653},{\"name\":\"Others USA-1\",\"sort_order\":653}]",description:"A voice recorder module with record\u002Fplay functions, 10-second playback, connects to speakers, Arduino-compatible, operates at 5V, and dimensions 37x35 mm.",meta_description:"Compact Gravity voice recorder module with 20s audio storage, 16KHz sampling, and 3-pin digital interface for embedded playback and alerts.",meta_keywords:aw,og_description:"Compact embedded voice recorder module with 20-second recording capacity, 16KHz sampling, 3-pin digital interface, and support for 8Ω 3W speakers.",og_title:"Gravity: Voice Recorder Module (20s Audio, 16KHz Playback)",structured_description:"Voice recorder module with 20s audio storage and 16KHz playback for embedded and interactive electronics projects.",summary:"Voice recorder module with 20-second audio storage and digital-triggered playback for interactive embedded electronics.",title:"Gravity: Voice Recorder Module 20s 16KHz - DFRobot"},available_for_sale:"Yes",black_friday_event_tags:[{name:"Black Friday 2025",sort_order:N},{name:"enjoy discounts on the GLOBAL website",sort_order:ax},{name:"Others GLOBAL",sort_order:ax},{name:"enjoy discounts on the USA-1 website",sort_order:N},{name:"Others USA-1",sort_order:N}],category:a,category_category_ids:y,category_names:x,cdy_type:a,create_time:1470758400,customer_group_id:8,date_added:ay,date_available:ay,date_modified:"2026-10-11T23:46:03Z",date_updated:"2026-10-13T09:55:02Z",default_sort:ag,discontinued_product:a,discount:b,discount9:3.5,display_price:az,ean:a,for_search_category_names:"products gravity sensors sound all",for_search_meta_keyword:"gravity electronics recorder playback embedded second voice audio 16khz 20 digital sensor for arduino module recording sound interactive",for_search_model:"sen0197",for_search_pm_tag:"digital.tos arduino ide.ide c++.pl sound sensors.pf m.sl hobby.scenario gravity.brand mind+.ide 5v.wv",for_search_product_name:"16khz) gravity: voice recorder module (wtr096 v2.0 20s",for_search_tag:"sound isd1820 voice gravity sen0197 audio record tape",height:O,href:"https:\u002F\u002Fwww.dfrobot.com\u002Fproduct-1507.html",image:"https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002Fimage\u002Fdata\u002FSEN0197\u002FSEN0197_Main_01.jpg",image_alt:P,isbn:a,jan:a,landing_tag:a,length:O,length_class_id:d,local_warehouse_quantity:157,location:"Shanghai",main_category_category_id:"36",manufacturer:Q,manufacturer_id:11,maxquantity:b,meta_keyword:aw,minimum:d,model:l,mpn:a,name:A,original_price:az,pm_tag:ai,points:aA,price:r,product_90_quantity:B,product_90_times:B,product_90_times_rank:843,product_90_uv:29717,product_90_uv_rank:981,product_attributes:"{\"black_friday_event_tags\":\"[{\\\"name\\\":\\\"Black Friday 2025\\\",\\\"sort_order\\\":653},{\\\"name\\\":\\\"enjoy discounts on the GLOBAL website\\\",\\\"sort_order\\\":741},{\\\"name\\\":\\\"Others GLOBAL\\\",\\\"sort_order\\\":741},{\\\"name\\\":\\\"enjoy discounts on the USA-1 website\\\",\\\"sort_order\\\":653},{\\\"name\\\":\\\"Others USA-1\\\",\\\"sort_order\\\":653}]\",\"description\":\"A voice recorder module with record\u002Fplay functions, 10-second playback, connects to speakers, Arduino-compatible, operates at 5V, and dimensions 37x35 mm.\",\"meta_description\":\"Compact Gravity voice recorder module with 20s audio storage, 16KHz sampling, and 3-pin digital interface for embedded playback and alerts.\",\"meta_keywords\":\"Gravity voice recorder module, voice recording module, audio playback module, embedded sound recorder, 16KHz audio module, 20 second voice recorder, digital audio module, sound sensor module, module for Arduino, interactive audio electronics\",\"og_description\":\"Compact embedded voice recorder module with 20-second recording capacity, 16KHz sampling, 3-pin digital interface, and support for 8Ω 3W speakers.\",\"og_title\":\"Gravity: Voice Recorder Module (20s Audio, 16KHz Playback)\",\"structured_description\":\"Voice recorder module with 20s audio storage and 16KHz playback for embedded and interactive electronics projects.\",\"summary\":\"Voice recorder module with 20-second audio storage and digital-triggered playback for interactive embedded electronics.\",\"title\":\"Gravity: Voice Recorder Module 20s 16KHz - DFRobot\"}",product_id:E,product_name:A,product_type:i,quantity:b,quantity_USA_1:aB,quantity_status:"InStock",quantity_status_USA_1:"Only",sale_sort:B,sales:b,score:b,shipping:aC,sku:l,sort_order:100,sort_order_plus:b,source:aC,special:r,special9:b,special_end:a,special_end_time:b,special_priority:b,special_start_time:b,status:d,stock_name_status:m,stock_status:m,stock_status_id:5,stock_us:d,subtract:d,tag:ah,tax_class_id:b,terminal_maximum:b,terminal_minimum:d,terminal_reward:aA,time_left_special:-1791891023,upc:a,upload_file:a,us_warehouse_quantity:aB,video_link:a,video_thumb:a,viewed:40446,vimeo_link:a,weight:f,weight_class_id:$,width:O},price_info:{product_id:E,origin_price:r,anniversary_discounted_sub_average_price:b,special_sub_average_price:b,tiered_sub_average_price:b,vip_sub_average_price:b,coupon_sub_average_price:b,special_price:b,tiered_price:b,origin_quantity:d,anniversary_discounted_quantity:b,special_quantity:b,tiered_quantity:b,vip_quantity:d,coupon_quantity:b,package_sub_average_price:b,item_total_price:r,item_subtotal_price:r,distributor_discount_sub_average_price:b,distributor_discount_quantity:b,product_weight:.016,product_sku:l,add_on_deal_sub_average_price:b,add_on_deal_quantity:b}},inSkuWhiteList:c,projects:[aD],tutorials:[],courses:[],contributions:[],blogs:[],displayedCourses:[],displayedProjects:[aD],displayedContributions:[],displayedBlogs:[],docs:[{desc:aI,develop:a,id:aJ,modify:c,modifyTime:"2026-01-07 00:00:00",name:R,reference:b,shortTitle:R,subject:"sen0197\u002Fdocs\u002F18294",tasks:[],title:R,wikiid:aJ,text:aK,isDir:c,href:"\u002Fsen0197\u002Fdocs\u002F18294",target:s,docIndex:d,children:[],expand:c,active:c,class:"doc"}],faqs:[],faqLink:"\u002Fforum\u002F",seo_tdk:{title:L,description:ar,keywords:as},seo_schema:{type:"application\u002Fld+json",json:{"@context":"https:\u002F\u002Fschema.org","@graph":[{"@type":"TechArticle","@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#article",headline:L,description:at,keywords:["voice recorder module"," Arduino voice recorder"," DIY audio recording"," compact sound module"," audio playback module"," microcontroller-compatible voice module"," high-fidelity audio recording"," interactive project sound module"," educational tools voice recorder"," STEM projects audio solutions"],image:{"@id":S},dateModified:"2025-12-01",author:{"@id":T},publisher:{"@id":T},speakable:{"@type":"SpeakableSpecification",cssSelector:[".wiki-introduction .desc"]},subjectOf:[{"@type":aL,name:au,url:M,fileFormat:"image\u002Fsvg+xml"},{"@type":aL,name:av,url:K,fileFormat:"application\u002Fpdf"},{"@type":"SoftwareSourceCode",name:aK,url:aF,description:aI},{"@type":"CreativeWork",name:aE,author:{"@type":"Person",name:aG},url:aH}],mainEntity:{"@type":"ItemList",name:"Wiki Sections",itemListElement:[{"@type":q,position:d,url:"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#docs",name:ao},{"@type":q,position:aM,url:"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#tech_specs",name:ap},{"@type":q,position:aN,url:"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#projects",name:aq}]},about:{"@type":"Thing",name:A,sku:l,"@id":"https:\u002F\u002Fwww.dfrobot.com\u002Fproduct-1507.html#product",image:{"@id":S},offers:{"@type":"Offer",price:r,priceCurrency:U},isPartOf:{"@type":"CreativeWorkSeries","@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#series",name:z},hasCertification:[]}},{"@type":"CollectionPage","@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#webpage",url:"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F",name:a,mainEntity:{"@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197#article"},breadcrumb:{"@id":aO}},{"@type":"BreadcrumbList","@id":aO,itemListElement:[{"@type":q,position:d,name:g,item:aP},{"@type":q,position:aM,name:o,item:"https:\u002F\u002Fwiki.dfrobot.com\u002Fcategory-36\u002F"},{"@type":q,position:aN,name:w,item:"https:\u002F\u002Fwiki.dfrobot.com\u002Fcategory-63\u002F"},{"@type":q,position:B,name:l,item:aQ}]},{"@type":"ImageObject","@id":S,contentUrl:"https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002Fimage\u002Fdata\u002FSEN0197\u002FSEN0197_Main_01_360x240.jpg.webp",creditText:Q,creator:{"@type":aR,name:Q},publisher:{"@type":aR,"@id":T}}]}},seo_meta_medias:[{hid:aS,property:aS,content:"en_US"},{hid:aT,property:aT,content:"website"},{hid:aU,property:aU,content:J},{hid:aV,property:aV,content:I},{hid:aW,property:aW,content:aQ},{hid:aX,property:aX,content:"DFRobot Wiki"},{hid:aY,property:aY,content:aZ},{hid:a_,property:a_,content:P},{hid:a$,property:a$,content:"summary_large_image"},{hid:ba,property:ba,content:bb},{hid:bc,property:bc,content:bb},{hid:bd,property:bd,content:J},{hid:be,property:be,content:I},{hid:bf,property:bf,content:aZ},{hid:bg,property:bg,content:P}]}],fetch:{"0":{},"data-v-d71158b6:0":{jq:a,md5:{},tools:{},backName:"menu-back",pageType:a,viewType:v,deviceCss:[{rel:"stylesheet",href:"\u002Flibs\u002Fswiper\u002Fswiper-bundle.min.css"}],deviceJs:[{src:"\u002Fdfrobotshop\u002Flib\u002Fdfpclib.js",ssr:h}],showPL:c,userMenu:c,user:{identity:"unset"},storeMenu:bh,storeActive:d,login:c,userType:"guest",cartNum:b,searchkey:a,currency:U,currencyList:bx,showFastCategory:c,categories:[],timer_fastSearch:f,fastSearch:{loadingProduct:c,products:[],loadingBlog:c,blogs:[],loadingWiki:c,wikis:[]},navList:[{name:"Community",url:"https:\u002F\u002Fcommunity.dfrobot.com\u002F",target:s},{name:"Forum",url:"https:\u002F\u002Fwww.dfrobot.com\u002Fforum\u002F",target:s},{name:"Wiki",url:aP,target:s},{name:"Blog",url:"https:\u002F\u002Fwww.dfrobot.com\u002Fblog",target:s},{name:"Learn",url:"https:\u002F\u002Flearn.dfrobot.com\u002F",target:s}],items:[{title:X},{title:X},{title:X},{title:"Click Me 2"}],menuStatus:a,mColor:"#000000",mtColor:"#ffffff",mNavShow:c,enableWarehouse:h},"data-v-0d8b5951:0":{jq:{},md5:{},tools:{},backName:"popbox-back",data:{name:a,size:a,url:a},tipsMsg:a,errorMsg:a,errorMsgBackFun:f,pop:{show:c,icon:a,title:a,subtitle:a,desc:a,yesText:a,noText:a,yesFun:f,noFun:f,autoClose:b},viewType:v}},error:f,state:{authUser:f,setting:{learn:[{link:"https:\u002F\u002Flearn.dfrobot.com\u002Fcourse-691.html",thumb:["https:\u002F\u002Fdfimg.dfrobot.com\u002F5caaf47fe9f1335a9d6ad8d6\u002Fdfapi\u002F6c9280468a6858d1d874c304f1f7ecc6.jpg"],title:"Get Started with Arduino: A Step-by-Step Tutorial"},{link:"https:\u002F\u002Flearn.dfrobot.com\u002Fcourse-668.html",thumb:["https:\u002F\u002Fdfimg.dfrobot.com\u002F5caaf47fe9f1335a9d6ad8d6\u002Fdfapi\u002F57e329cb6a8573e51a855f392fe747c2.jpg"],title:"Python Programming on Hardware for Beginners"}],seoDesc:"DFRobot provides open-source hardware, kits and robotics dedicated to bringing innovative electronics.",seoKeyword:"Arduino,LattePanda,Raspberry Pi,micro:bit,Gravity,Robotics,Internet of Things - IoT,FireBeetle,Artificial Intelligence,Fermion,STEM Education,Boson,esp8266 &amp; esp32,jeston nano",seoTitle:"DFRobot Open-Source Hardware Electronics and Kits",siteDesc:a,topBanner:{"USA-1":{bannerBg:[],bannerImg:[],bannerLink:a,bannerMobile:[],bannerTitle:a,begin:"2025-07-02 00:00:00",begin2:D,end:"2025-07-15 00:00:00",end2:D,message:"\u003Cp\u003EAnniversary Sale! 30% Off First Item + Free Shipping ($50+) \u003Ca target=\"_blank\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.dfrobot.com\u002F15th_anniversary\"\u003E➡️ Shop Now\u003C\u002Fa\u003E\u003C\u002Fp\u003E",onlyTest:c,warehouse:"USA-1"},GLOBAL:{bannerBg:[],bannerImg:[],bannerLink:a,bannerMobile:[],bannerTitle:a,begin:"2025-09-07 00:00:00",begin2:D,end:"2025-11-19 00:00:00",end2:D,message:"\u003Cp\u003EMAJOR LAUNCH: HUSKYLENS 2 6 TOPS LLM MCP AI Vision Sensor is now available. \u003Ca target=\"_blank\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.dfrobot.com\u002Fproduct-2995.html?marketing=690360ffb0f6d\"\u003E\u003Cstrong\u003EBuy Now →\u003C\u002Fstrong\u003E\u003C\u002Fa\u003E\u003C\u002Fp\u003E",onlyTest:c,warehouse:"GLOBAL"}},store:bh},currencys:bx,viewtype:v},serverRendered:h,routePath:_,config:{_app:{basePath:Y,assetsPath:"\u002F_nuxt\u002F",cdnURL:f}}}}("",0,false,1,"fileUrl",null,"wiki",true,"product",121,"wiki_en","SEN0197","Out Of Stock","All","Sensors",7102,"ListItem",4.9,"_blank","Modules","Prototyping & Accessories","pc","Sound Sensors","All Products,Gravity,Sensors,Sound Sensors","36 63 282","Gravity: Voice Recorder Module","Gravity: Voice Recorder Module (WTR096 V2.0, 20s, 16KHz)",4,"Development Boards","NaN-NaN-NaN NaN:NaN:NaN",1507,"Inquiry Only","All Products,Boson,STEM Education,Sensors,Sound Sensors","36 63 280 283","?️ Elevate your DIY and educational projects with the Gravity: Voice Recorder Module -WTR096 V2.0! Compact, versatile, and easy-to-use, it's perfect for adding high-quality audio to Arduino setups. Discover how to integrate sound effortlessly into your projects today!","Gravity: Voice Recorder Module -WTR096 V2.0 | Enhance Your Arduino Projects with Sound","https:\u002F\u002Fdfimg.dfrobot.com\u002Fwiki\u002F17505\u002FSEN0197_gravity-voice-recorder-module_schematics_v1.0.pdf","Gravity: Voice Recorder Module -WTR096 V2.0 | Compact & Versatile Audio Solutions | DFRobot Wiki","https:\u002F\u002Fdfimg.dfrobot.com\u002Fwiki\u002F17505\u002FSEN0197_gravity-voice-recorder-module_svg_V1.0.svg",653,"0.00000000","Overview of Gravity: Voice Recorder Module","DFRobot","Example Code for Arduino-Voice Playback Trigger","https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#mainimage","https:\u002F\u002Fwiki.dfrobot.com\u002F#organization","USD","Others","Kits","Click Me","\u002F","\u002Fcategory-63\u002F","\u002Fsen0197\u002F","2","Gravity: DF2301Q Offline Voice Recognition Sensor","Gravity: Analog Sound Sensor","Gravity: Analog Sound Level Sensor","Gravity: Text to Speech Voice Synthesizer Module V2.0","All Products,Arduino,Gravity,Sensors,Sound Sensors","36 63 277 282",1824,"SEN0197, Audio, record, tape, Sound, ISD1820, voice,Gravity","Mind+.IDE,Sound Sensors.PF,5V.WV,M.SL,Digital.ToS,Arduino IDE.IDE,Hobby.Scenario,Gravity.Brand,C++.PL","Fermion: Voice Recorder Module","Gravity: I2C Voice Recorder and Playback with Speech Synthesis Module","BOSON Sound Sensor i9","BOSON Buzzer Module o5","BOSON Voice Recorder Module o7","Docs","Tech Specs","Projects","Explore the Gravity: Voice Recorder Module -WTR096 V2.0, featuring single-button operation, microcontroller compatibility, and high-quality audio output. Perfect for Arduino projects, educational demos, and prototypes needing sound alerts. Discover tutorials, specs, and project ideas. Start enhancing your projects today!","voice recorder module, Arduino voice recorder, DIY audio recording, compact sound module, audio playback module, microcontroller-compatible voice module, high-fidelity audio recording, interactive project sound module, educational tools voice recorder, STEM projects audio solutions","Gravity: Voice Recorder Module -WTR096 V2.0 is perfect for enhancing Arduino projects with high-quality audio. Easy integration and durable design.","SVG","Schematics","Gravity voice recorder module, voice recording module, audio playback module, embedded sound recorder, 16KHz audio module, 20 second voice recorder, digital audio module, sound sensor module, module for Arduino, interactive audio electronics",741,"2016-08-10T00:00:00Z","4.9","490",10,"1",{},"Best Collection of 10 micro:bit Robot and IoT Projects to Try in 2023",void 0,"RiverTrue","https:\u002F\u002Fcommunity.dfrobot.com\u002Fmakelog-313402.html","The article guides readers through setting up a voice playback trigger using Arduino. It covers hardware and software preparation, the wiring process, and provides sample code to implement voice recording and playback functionality.","18294","1. Example Code for Arduino-Voice Playback Trigger","DigitalDocument",2,3,"https:\u002F\u002Fwiki.dfrobot.com\u002FSEN0197\u002F#breadcrumb","https:\u002F\u002Fwiki.dfrobot.com\u002F","https:\u002F\u002Fwiki.dfrobot.com\u002Fsen0197\u002F","Organization","og:locale","og:type","og:title","og:description","og:url","og:site_name","og:image","https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002Fimage\u002Fdata\u002FSEN0197\u002FSEN0197_Main_01_1200x630.jpg.webp","og:image:alt","twitter:card","twitter:site","@wiki","twitter:creator","twitter:title","twitter:description","twitter:image","twitter:image:alt",Array(13),"ESP32-P4, ESP32-C5, ESP32-C6, ESP32-S3, ESP8266 IoT microcontrollers","\u002Ftopic-316.html","pH Sensor, EC sensor, TDS sensor, DO sensor, turbidity sensor, ORP sensor, liquid level sensor","\u002Fcategory-68.html","Liquid Sensors","O2 sensor, CO sensor, CO2 sensor, air quality sensor, weather station, wind speed sensor","\u002Fcategory-85.html","Air Sensors","\u002Fcategory-55.html","Range & Distance Sensors","Raspberry Pi 5, Raspberry Pi 4B, Raspberry Pi Pico 2 W, Raspberry Pi CM4, Beetle RP2040","Raspberry Pi","ESP32-C6, ESP32-S3, ESP8266 IoT microcontrollers","micro:bit","STEM Education",{}));</script><script src="/_nuxt/819275d.js" defer></script><script src="/_nuxt/a387eb4.js" defer></script><script src="/_nuxt/bc9ed79.js" defer></script><script src="/_nuxt/bb93122.js" defer></script><script src="/_nuxt/c9a8dec.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,6848 @@
+PAGE 1
+Special designs from Panasonic that provide high sensitivity and reliability
+PIR MOTION SENSORS 2025
+
+
+PAGE 2
+Pyroelectric infrared motion sensors from Panasonic for optimal usability and reliability
+Panasonic develops and produces PIR motion sensors, which combine easy integration, high reliability and environment-friendly materials.
+The Panasonic PIR motion sensors abbreviated as PaPIRs, have different series of products, including:
+EKMB (WL) digital output for battery-operated devices (1, 2, 6μA)
+EKMC (VZ) digital and analog output for battery-free devices (170μA)
+Available lens colors: white, black and pearl white
+AMN3 digital output for battery-free devices (170μA)
+Available lens colors: white and black
+EKM
+AMN
+Table of content.............................................................. 02
+PaPIRs
+Ordering information...................................................... 03
+Design features.............................................................. 04
+Search by Lens.............................................................. 06
+Product matrix................................................................ 08
+EKM - Standard Detection Type..................................... 10
+EKM - Low Profile Type.................................................. 11
+EKM - Flat Square Type................................................. 12 
+AMN - Standard Detection Type.................................... 13
+EKM - Long Distance Detection Type............................ 14
+EKM - High Density Long Distance Detection Type...... 15
+EKM - Ultra Wide & Long Distance Detection Type............. 16
+AMN - 10m Detection Type (Long Distance)................. 17
+EKM - Ultra Slight Motion Detection Type...................... 18
+EKM - Slight Motion Detection Type.............................. 19
+EKM - Standard and Slight Motion Detection Type........ 20
+AMN - Slight Motion Detection Type.............................. 21
+EKM - Wall Installation Type........................................... 22
+EKM - Horizontally Wide Detection Type....................... 23
+EKM - Wide Detection Type........................................... 24
+AMN - Spot Detection Type........................................... 25
+PaPIRs+
+Ordering information...................................................... 28
+Design features.............................................................. 29
+Search by Lens / Product matrix.................................... 30
+EKM - Standard Detection Type..................................... 32
+EKM - Low Profile Type.................................................. 33
+EKM - Long Distance Detection Type............................ 34
+EKM - High Density Long Distance Detection Type...... 35
+EKM - Ultra Wide & Long Distance Detection Type............. 36
+EKM - Ultra Slight Motion Detection Type...................... 37
+EKM - Flat wide detection type...................................... 38
+EKM - Horizontally Wide Detection Type....................... 39
+EKM - Wide Detection Type........................................... 40
+EKM - Spot Detection Type............................................ 41
+EKM - Characteristics.................................................... 42
+AMN - Characteristics.................................................... 44
+Technical information..................................................... 45
+Cautions for use............................................................. 46
+CONTENT
+at https://industrial.panasonic.com/ww/products/pt/papirs
+PIR MOTION SENSORS
+02
+
+
+PAGE 3
+Ordering information
+1︓White
+2︓Black
+3︓Pearl white
+EKM
+11
+●Lens color
+EKM
+AMN
+AMN3
+11
+●Lens type
+1︓Standard
+2︓Slight Motion
+3︓Spot
+4︓10m
+●Lens color
+1︓Black
+2︓White
+①
+②
+③
+④
+④
+⑤
+⑥
+01︓Standard
+03︓Long Distance
+04︓Wall Installation
+05︓Horizontally Wide
+06︓High Density Long Distance
+07︓Low Profile
+08︓Wide Detection  
+09︓Ultra Slight Motion
+10︓Flat Square
+11︓Ultra Wide & Long Distance
+91︓Slight Motion
+93︓Standard & Slight Motion
+●Lens type
+④
+④
+⑤
+●Suffix
+●Lensless
+⑥
+K︓The following products have “K” at the end
+EKMB1100100, EKMB1200100, EKMB1300100K, EKMB4300100K
+EKMC1600100, EKMC2600100K, EKMC4600100K
+EKMB13, EKMB43, EKMC26, EKMC46
+①
+②
+①
+②
+①
+②
+③
+●Sensor type
+B11, B12, B13, B43︓WL Series
+C16, C26, C46︓VZ Series
+Sensor
+Lens
+Sensor
+Lens
+Suffix
+at https://industrial.panasonic.com/ww/products/pt/papirs
+03
+
+
+PAGE 4
+at https://industrial.panasonic.com/ww/products/pt/papirs
+PIR MOTION SENSORS
+04
+Design features
+Thanks to the special design of the small pyroelectric ele-
+ments, it is possible to use a smaller lens size while keeping 
+the same detection area and distance compared to conven-
+tional sensors.
+The PIR motion sensors from Panasonic offer crucial advantages over conventional PIR motion sensors. The unique design concept 
+(explained below) ranges from the production of the pyroelectric sensing devices to the internal signal processing, thus guarantee-
+ing an optimal detection capability and high reliability.
+The integrated amplifier / comparator circuit inside a TO-5 metal 
+can (digital type) prevents interferences caused by electro-
+magnetic fields, such as those generated by cell phones and 
+wireless devices. A special differential circuit design is intro-
+duced for the EKMB 6μA type for applications where a high 
+noise resistance is required (up to GHz range).  
+Small multi lens
+TO-5 metal can
+ASIC inside (amplifier and comparator)
+High sensitive quad pyroelectric
+element with slit design
+Open-drain
+No false
+alarms
+ 
+Radiation noise
+GND
+OUT
+VDD
+0.6mm
+0.4mm
+0.6mm
+0.4mm
+0.6mm
+0.6mm
+Lens
+Reduced focal length
+(Distance from element to lens)
+Lens
+Detection zones
+Conventional 
+PIR element size
+1.1×1.1mm
+0.6mm
+0.4mm
+0.6mm
+0.4mm
+0.6mm
+0.6mm
+The sensitivity has been significantly improved thanks to a 
+unique slit design of the pyroelectric elements. The separated 
+sensing areas prevent thermal crosstalk between the single 
+sensing elements. Therefore, reliable detection is possible even 
+if the temperature difference between the background  
+(e.g. floor / wall) and the target object (human) is small. 
+(e.g. ∆T = 4°C)
+PaPIRs
+0.6×0.6mm
+Easy design-in
+Small and optimal lens design
+Best in class sensitivity
+Element without slit design
+Element with slit design
+Temperature distribution of 
+conventional pyroelectric 
+sensors without slit design
+Temperature distribution of 
+Panasonic’s pyroelectric infrared 
+sensors with slit design
+
+
+PAGE 5
+PaPIRs: High signal-to-noise ratio
+Conventional types: Low signal-to-noise ratio
+Analog output 
+diagram
+Analog output 
+diagram
+Threshold
+Threshold
+Threshold
+Threshold
+False alarm
+at https://industrial.panasonic.com/ww/products/pt/papirs
+05
+Improved signal-to-noise ratio thanks to a special I/V circuit 
+which is used for converting a current signal from the pyroelec-
+tric element to voltage. Panasonic PIR motion sensors perform 
+by the feedback capacitor and the operational amplifier, different 
+from the conventional FET-type, thereby decreasing the probabil-
+ity of false alarms due to temperature fluctuation.
+A ferroelectric Lithiumtantalate (LiTaO3) single lead-free crystal is 
+used as the pyroelectric element for Panasonic PIR motion sen-
+sors. Conventional PIR motion sensors normally use a ceramic 
+base material (e.g. PZT) for the pyroelectric element, which con-
+tains lead in many cases.
+Conventional PIR  (JFET)
+PaPIRs (op amp)
+FET
+DC current  
+feedback circuit
+Op amp
+Rg
+Best in class signal-to-noise ratio
+Lead-free pyroelectric element
+Low current consumption EKMB (WL)
+Reduction of current consumption (1, 2 or 6μA) thanks to the 
+special circuit design technology allows battery life to be 
+extended for battery-driven products.
+Detection principle
+
+
+Difference of Standard & Slight motion by lens design
+(Specified detection conditions)
+
+
+PAGE 6
+
+
+
+
+
+
+	
+
+
+
+	
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+
+
+
+
+
+
+	
+97° 
+6.8m
+106° 
+8.0m
+3m
+110° 
+8.5m
+110° 
+8.5m
+3m
+115° 
+9.3m
+115° 
+9.3m
+3m
+106° 
+8.0m
+120° 
+10.5m
+3m
+108° 
+99° 
+ 16.3m
+ 19.3m
+7m
+φ16.5m
+69° 
+12m
+12.6m
+31.0m
+92° 
+45° 
+15m
+107° 
+120° 
+ 17.3m
+ 13.5m
+5m
+
+
+
+	
+
+	
+
+
+
+	
+
+
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+Search by Lens
+06
+
+
+PAGE 7
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+φ8.0m
+107° 
+3m
+φ7.7m
+104° 
+3m
+44°
+44°
+91° 
+91° 
+φ6.1m
+3m
+Slight 
+Motion
+Standard 
+Motion
+106° 
+φ8.0m
+3m
+φ13.0m
+130° 
+3m
+57° 
+42° 
+ 5.4m
+ 3.8m
+5m
+
+
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	
+
+
+
+
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+07
+
+
+PAGE 8
+ Slight Motion
+Detection Types
+Ultra Slight
+Slight Motion
+Standard 
+and Slight
+AMN series
+Slight Motion
+1μA
+2μA
+6μA
+170μA
+170μA
+1μA
+2μA
+6μA 
+170μA
+170μA 
+1μA
+2μA
+6μA 
+170μA
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ _
+Standard Detection Types
+Long Distance
+Detection Types
+Standard
+Low Profile
+Flat Square
+AMN series 
+Standard
+Long Distance
+Ultra Wide & 
+Long Distance
+AMN series 
+10m Detection
+High Density
+Long Distance
+
+	
+
+
+	
+Standard
+Adjustable
+1µA
+2µA
+6µA 
+170µA
+170µA
+1µA
+2µA
+6µA
+170µA
+170µA 
+1µA
+2µA
+6µA 
+170µA
+170µA
+170µA
+1μA
+2μA
+6μA
+170μA
+170μA 
+1μA
+2μA
+6μA 
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        _
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+Wall Installation
+Horizontally 
+Wide Detection
+Wide Detection
+AMN series
+Spot Detection
+1μA
+2μA
+6μA 
+170μA
+170μA
+1μA
+2μA
+6μA
+170μA
+170μA 
+1μA
+2μA
+6μA 
+170μA
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       _
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Standard
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+Specific Area Detection Types
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Standard
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Digital
+Standard
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+1μA
+2μA
+6μA
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Standard
+Digital
+―
+Analog
+Digital
+Standard
+170μA
+
+
+ _
+Output    Sensitivity White                      Black                Pearl white 
+ 
+White
+Black
+Pearl white
+
+
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+Product Matrix
+08
+
+
+PAGE 9
+
+
+
+
+
+106°×97°
+110°×110°
+115°×115°
+120°×106°
+5.0m
+5.0m
+5.0m
+5.0m
+108°×99°
+69°×69°
+12.0m
+12.0 / 14.5m
+92
+128
+
+
+
+	
+	
+
+	
+	
+
+	
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+68
+88
+16
+208
+24
+56°×112°
+122°×35°
+150°×36°
+130°×130°
+57°×42°
+12.0m/6.0m/3.0m
+5.0m
+2.5 ｰ 5.9m
+5.0 ｰ 5.6m
+
+107°×107°
+104°×104°
+44°×44°
+91°×91°
+107°×106°
+2.5 ｰ 4.1m
+5.2 ｰ 8.0m
+(for Standard motion)
+2.5 ｰ 4.0m
+2.2 ｰ 3.1m
+2.0 ｰ 3.3m
+192
+112
+36
+48
+104
+
+
+
+	
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+64
+32
+40
+104
+92°×45°
+10.0 / 15.0m
+188
+
+
+	
+
+
+
+
+P.10
+P.11
+P.12
+P.13
+P.18
+P.19
+P.20
+P.21
+P.22
+P.23
+P.24
+P.25
+P.14
+P.15
+P.16
+P.17
+
+
+120°×107°
+5.0 ｰ 10.0m
+80
+Recommended applications
+ 
+
+
+
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+09
+
+
+PAGE 10
+EKM - Standard Detection Type
+Preference type
+Flat lens for an unobtrusive 
+integration
+Lens diameter 9.5mm
+Specified detection distance (Note 1)
+up to 5m 
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view
+106° x 97°
+Detection zones
+64
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1101111
+EKMB1101112
+EKMB1101113
+2µA
+Digital
+Standard
+EKMB1201111
+EKMB1201112
+EKMB1201113
+Economy
+6µA
+Digital
+Standard
+EKMB1301111K
+EKMB1301112K
+EKMB1301113K
+170µA
+Digital
+Standard
+EKMC1601111
+EKMC1601112
+EKMC1601113
+170µA
+Analog
+Adjustable
+EKMC2601111K
+EKMC2601112K
+EKMC2601113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+0
+1m
+2m
+3m
+4m
+5m
+1m
+2m
+3m
+4m
+5m
+5m
+4m
+2m
+3m
+1m
+1m
+2m
+3m
+4m
+5m
+0
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft) (16.4ft)
+Y
+X
+(9.8ft)
+3m
+X
+5m
+47.0°
+(53.1°)
+(53.1°)
+47.0°
+(16.4ft)
+Y
+(48.4°)
+(48.4°)
+41.8°
+41.8°
+3m
+(9.8ft)
+5m
+(16.4ft)
+ Ø11 
+ 4.6 
+ 13 
+ Ø9.5 
+ Ø0.45 
+ 14.4 
+A
+A
+(0.181)
+(0.512)
+(0.567)
+(0.374 dia.)
+(0.433 dia.)
+(0.018 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+±4°
+±4°
+SECTION   A-A
+(0.2 dia.)
+Long Distance Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+Standard Detection Type
+97° 
+6.8m
+106° 
+8.0m
+3m
+Detection area coverage
+X-Y cross section at 3m (9.8ft)
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+10
+
+
+PAGE 11
+Long Distance Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+EKM - Low Profile Type
+Lower height lens design
+[14.4mmg10.9mm]
+Comparable performance to 
+PaPIRs standard detection type 
+lens
+Fit with superior product design
+Specified detection distance (Note 1)
+up to 5m 
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view
+110° x 110°
+Detection zones
+32
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1107111
+EKMB1107112
+EKMB1107113
+2µA
+Digital
+Standard
+EKMB1207111
+EKMB1207112
+EKMB1207113
+Economy
+6µA
+Digital
+Standard
+EKMB1307111K
+EKMB1307112K
+EKMB1307113K
+170µA
+Digital
+Standard
+EKMC1607111
+EKMC1607112
+EKMC1607113
+170µA
+Analog
+Adjustable
+EKMC2607111K
+EKMC2607112K
+EKMC2607113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+5m
+X
+44.7°
+(54.8°)
+44.7°
+(54.8°)
+3m
+(9.8ft)
+5m
+Y
+Y
+(54.8°)
+44.7°
+44.7°
+(54.8°)
+(9.8ft)
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(16.4ft)
+3m
+Ø11 
+5.5
+Ø10.4
+Ø0.45 
+A
+A
+(0.215)
+10.9
+(0.430)
+9.9
+(0.389)
+5.8
+(0.228)
+(0.410 dia.)
+Ø9.3
+(0.365 dia.)
+Ø9
+(0.354 dia.)
+(0.433 dia.)
+(0.018 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+±4°
+±4°
+SECTION   A-A
+(0.2 dia.)
+X-Y cross section at 3m (9.8ft)
+Standard Detection Type
+110° 
+8.5m
+110° 
+8.5m
+3m
+Detection area coverage
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+11
+
+
+PAGE 12
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+EKM – Flat Square Type
+Detection area: 9m x 9m  
+(@3m installation height)
+Flat & square lens  
+design: 10.6 x 10.6mm
+Low profile: 10.9mm
+Specified detection distance (Note 1)
+Up to 5.0m
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view
+115° x 115°
+Detection zones
+40
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1.0m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation
+test under representative conditions is
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1μA
+Digital
+Standard
+EKMB1110111
+EKMB1110112
+EKMB1110113
+2μA
+Digital
+Standard
+EKMB1210111
+EKMB1210112
+EKMB1210113
+Economy
+6μA
+Digital
+Standard
+EKMB1310111K
+EKMB1310112K
+EKMB1310113K
+170μA
+Digital
+Standard
+EKMC1610111
+EKMC1610112
+EKMC1610113
+170μA
+Analog
+Adjustable
+EKMC2610111K
+EKMC2610112K
+EKMC2610113K
+Special
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+ 10.9 
+ 5.8 
+ 11 
+ 5.5 
+ 
+0.45 
+ 9.2 
+ 10.6 
+ 9.6 
+A
+A
+ P.D.C.
+5.08 ±0.2 
+Vdd
+GND
+OUT
+SECTION A-A
+(0.2 dia.)
+(0.018 dia.)
+(0.433)
+(0.215)
+(0.228)
+(0.430)
+(0.364)
+(0.379)
+(0.418)
+䢶䢷䢰䢸䤑
+䢪䢷䢹䢰䢵䤑䢫
+䢶䢷䢰䢸䤑
+䢪䢷䢹䢰䢵䤑䢫
+䢵䣯
+䢷䣯
+䣚
+䢪䢳䢸䢰䢶䣨䣶䢫
+䢪䢻䢰䢺䣶䢫
+䢶䢷䢰䢸䤑
+䢪䢷䢹䢰䢵䤑䢫
+䢶䢷䢰䢸䤑
+䢪䢷䢹䢰䢵䤑䢫
+䣛
+䢷䣯
+䢵䣯
+䢪䢳䢸䢰䢶䣨䣶䢫
+䢪䢻䢰䢺䣨䣶䢫
+䢷䣯
+䢶䣯
+䢵䣯
+䢴䣯
+䢳䣯
+䢳䣯
+䢴䣯
+䢵䣯
+䢶䣯
+䢷䣯
+䢲
+䢷䣯
+䢶䣯
+䢵䣯
+䢴䣯
+䢳䣯
+䢲
+䢳䣯
+䢴䣯
+䢵䣯
+䢶䣯
+䢷䣯
+䢪䢵䢰䢵䣨䣶䢫
+䢪䢸䢰䢸䣨䣶䢫
+䢪䢻䢰䢺䣨䣶䢫
+䢪䢳䢵䢰䢳䣨䣶䢫
+䢪䢳䢸䢰䢶䣨䣶䢫
+䢪䢵䢰䢵䣨䣶䢫
+䢪䢸䢰䢸䣨䣶䢫
+䢪䢻䢰䢺䣨䣶䢫
+䢪䢳䢵䢰䢳䣨䣶䢫
+䢪䢳䢸䢰䢶䣨䣶䢫
+䢪䢳䢸䢰䢶䣨䣶䢫
+䢪䢳䢵䢰䢳䣨䣶䢫
+䢪䢻䢰䢺䣨䣶䢫
+䢪䢸䢰䢸䣨䣶䢫
+䢪䢵䢰䢵䣨䣶䢫
+䢪䢵䢰䢵䣨䣶䢫
+䢪䢸䢰䢸䣨䣶䢫
+䢪䢻䢰䢺䣨䣶䢫
+䢪䢳䢵䢰䢳䣨䣶䢫
+䢪䢳䢸䢰䢶䣨䣶䢫
+X-Y cross section at 3m (9.8ft)
+115° 
+9.3m
+115° 
+9.3m
+3m
+Detection area coverage
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+12
+
+
+PAGE 13
+AMN - Standard Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Specified detection distance (Note 1)
+up to 5m
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view
+120° x 106°
+Detection zones
+64
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Small lens diameter of 
+only 9.5mm
+Typical applications
+ 
+Ø0.45 ±0.05 
+ 14.5 
+ 11 
+ Ø9.5 
+ Ø11 
+ 4.5 
+A
+A
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+VDD
+OUT
+GND
+±4°
+±4°
+SECTION   A-A
+(0.2 dia.)
+(0.018 dia.)
+(0.433 dia.)
+(0.433)
+(0.177)
+(0.571)
+(0.374 dia.)
+Notes
+Standby current consumption
+Output type
+Threshold sensitivity
+White
+Black 
+NaPiOn
+170μA
+Digital
+Standard
+AMN31112
+AMN31111
+X-Y cross section at 3m (9.8ft)
+Further information on electrical characteristics please see page 44
+6m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+6m
+6m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+6m
+Y
+X
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(19.9ft)
+(19.9ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(19.9ft)
+(19.9ft)
+(53.1°)
+44.8°
+44.8°
+(53.1°)
+Y
+5m
+(16.4ft)
+(60.1°)
+(60.1°)
+54.0°
+54.0°
+X
+5m
+(16.4ft)
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+106° 
+8.0m
+120° 
+10.5m
+3m
+Detection area coverage
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+13
+PIR MOTION SENSORS
+
+
+PAGE 14
+EKM - Long Distance Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Specified detection distance (Note 1)
+up to 12m
+Typical ceiling installation height (Note 2)
+7.0m
+Field of view
+108° x 99°
+Detection zones
+92
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environ-
+mental conditions, so a performance 
+evaluation test under representative 
+conditions is recommended
+Lens diameter 20.7mm
+Wide detection angle and 
+long distance
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1103111
+EKMB1103112
+EKMB1103113
+2µA
+Digital
+Standard
+EKMB1203111
+EKMB1203112
+EKMB1203113
+Economy
+6µA
+Digital
+Standard
+EKMB1303111K
+EKMB1303112K
+EKMB1303113K
+170µA
+Digital
+Standard
+EKMC1603111
+EKMC1603112
+EKMC1603113
+170µA
+Analog
+Adjustable
+EKMC2603111K
+EKMC2603112K
+EKMC2603113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+ 22 
+ Ø20.7 
+ Ø0.45 ±0.05 
+ Ø11 
+ 4.6 
+ 7.3 
+ 20.2 
+A
+A
+(0.433 dia.)
+(0.018 dia.)
+(0.866)
+(0.815 dia.)
+ 5 
+ 2.5 
+ P.C.D. Ø5.08±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+(0.2 dia.)
+±4°
+±4°
+(0.197)
+(0.098)
+SECTION   A-A 
+(0.795)
+(0.287)
+(0.181)
+X-Y cross section at 7m (22.9ft)
+Further information on electrical characteristics please see page 42
+10m
+8m
+6m
+4m
+2m
+2m
+4m
+6m
+8m
+10m
+0
+10m
+8m
+6m
+4m
+10m
+2m
+2m
+4m
+6m
+8m
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+0
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+X
+Y
+X
+7m
+12m
+(23.0ft)
+(54.0°)
+(54.0°)
+51.3°
+51.3°
+(39.4ft)
+Y
+7m
+12m
+46.3°
+(49.3°)
+46.3°
+(49.3°)
+(23.0ft)
+(39.4ft)
+Notes: The specification shows the X-Y cross section at 5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+108° 
+99° 
+ 16.3m
+ 19.3m
+7m
+Detection area coverage
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+14
+
+
+PAGE 15
+Notes: Digital Output type: Open-drain 
+Analog Output type: Op-amp
+EKM - High Density Long Distance Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+ 
+ 
+ 
+ 
+ 
+ 22 
+Ø19.3
+Ø0.45 ±0.05 
+Ø11 
+ 4.6 
+ 7.3 
+ 20.8
+A
+A
+(0.433 dia.)
+(0.018 dia.)
+(0.866)
+(0.760 dia.)
+ 5 
+ 2.5 
+ P.C.D. Ø5.08±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+(0.2 dia.)
+±4°
+±4°
+(0.197)
+(0.098)
+SECTION   A-A 
+(0.819)
+(0.287)
+(0.181)
+Ø20.45 
+(0.805 dia.)
+Specified detection distance (Note 1)
+12m / 14.5m
+Typical ceiling installation height (Note 2)
+12.0m
+Field of view
+69° x 69°
+Detection zones
+128
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Smallest long range sensor
+Lens diameter 19.3mm
+Additional lip (20.45mm) ready 
+for an o-ring
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1106111
+EKMB1106112
+EKMB1106113
+2µA
+Digital
+Standard
+EKMB1206111
+EKMB1206112
+EKMB1206113
+Economy
+6µA
+Digital
+Standard
+EKMB1306111K
+EKMB1306112K
+EKMB1306113K
+170µA
+Digital
+Standard
+EKMC1606111
+EKMC1606112
+EKMC1606113
+170µA
+Analog
+Adjustable
+EKMC2606111K
+EKMC2606112K
+EKMC2606113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+31°
+31°
+(34.5°)
+(34.5°)
+12m
+X
+(39.4ft)
+31°
+31°
+(34.5°)
+(34.5°)
+12m
+Y
+(39.4ft)
+10m 8m
+6m
+4m
+2m
+0
+2m
+4m
+6m
+8m
+10m
+10m
+8m
+6m
+4m
+2m
+0
+2m
+4m
+6m
+8m
+10m
+Y
+X
+(32.8ft) (26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+(32.8ft)
+(26.2ft)
+(13.1ft)
+(19.7ft)
+(6.6ft)
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+X-Y cross section at 12m (39.4ft)
+Further information on electrical characteristics please see page 42
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+φ16.5m
+69° 
+12m
+Detection area coverage
+Please contact us if you install at celling height 17m
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+15
+PIR MOTION SENSORS
+
+
+PAGE 16
+Specified detection distance (Note 1)
+10m / 15m
+Typical ceiling installation height (Note 2)
+15.0m (High sensitivity sensor)
+*10.0m (Standard sensitivity sensor)
+Field of view
+92° x 45°
+Detection zones
+188
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Smallest aisle high bay 
+sensor (lens Ø32.6mm)
+High sensitivity on the 
+aisle entry and exit area
+Optimized for radial 
+movement
+EKM - Ultra Wide & Long Distance Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+X-Y cross section at 15m (49.2ft)
+Further information on electrical characteristics please see page 42
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+
+
+
+Detection area coverage
+12.6m
+31.0m
+92° 
+45° 
+15m
+SECTION   A-A
+ 36 
+ 32.6 
+ 37.5 
+ Ø11 
+ 7.3 
+ 12.5 
+ 14.3 
+Ø0.45 
+ 26.2 
+A
+A
+(0.492)
+(0.287)
+(0.563)
+(1.031)
+(0.433 dia.)
+ 5 
+ 2.5 
+P.C.D. Ø5.08 ±0.2 
+GND
+OUT
+Vdd
+(0.018 dia.)
+(1.417 dia.)
+(1.283 dia.)
+(1.476)
+(0.197)
+(0.098)
+(0.2 dia.)
+(45.8°) 43.0°
+(45.8°)
+43.0°
+X
+15m
+(49.2ft)
+15m
+17.7°
+(22.7°)
+17.7°
+(22.7°)
+(49.2ft)
+0
+5m
+10m
+15m
+20m
+5m
+10m
+15m
+20m
+10m
+5m
+5m
+10m
+0
+Y
+X
+(16.4ft)
+(32.8ft)
+(49.2ft)
+(65.6ft)
+(16.4ft)
+(32.8ft)
+(49.2ft)
+(65.6ft)
+(32.8ft)
+(32.8ft)
+(16.4ft)
+(16.4ft)
+Y
+Please contact us if you install at celling height 10m 
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1111111
+EKMB1111112
+EKMB1111113
+2µA
+Digital
+Standard
+EKMB1211111
+EKMB1211112
+EKMB1211113
+Economy
+6µA
+Digital
+Standard
+EKMB1311111K
+EKMB1311112K
+EKMB1311113K
+170µA
+Digital
+Standard
+EKMC1611111
+EKMC1611112
+EKMC1611113
+170µA
+Analog
+Adjustable
+EKMC2611111K
+EKMC2611112K
+EKMC2611113K
+Special
+6µA
+Digital
+High*
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High*
+170µA
+Digital
+Low
+Notes: High threshold sensitivity types have a lower threshold-to-noise ratio. Please contact us for further details 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+16
+PIR MOTION SENSORS
+
+
+PAGE 17
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+Specified detection distance (Note 1)
+up to 5 - 10m
+Typical ceiling installation height (Note 2)
+5.0m
+Field of view
+120° x 107°
+Detection zones
+80
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Smaller type than long  
+distance lens
+Lens diameter 17.4mm
+AMN - 10m Detection Type (Long Distance)
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current consumption
+Output type
+Threshold sensitivity
+White
+Black 
+NaPiOn
+170μA
+Digital
+Standard
+AMN34112
+AMN34111
+X-Y cross section at 5m (16.4ft)
+Further information on electrical characteristics please see page 44
+49.3°
+(53.5°)
+(53.5°)
+49.3°
+10m
+X
+5m
+(16.4ft)
+(32.8ft)
+(60.0°)
+57.1°
+57.1°
+(60.0°)
+10m
+Y
+5m
+(32.8ft)
+(16.4ft)
+X
+Y
+2m
+4m
+6m
+8m
+10m
+2m
+4m
+6m
+8m
+10m
+2m
+4m
+6m
+8m
+10m
+0
+0
+2m
+4m
+6m
+8m
+10m
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+ 8.6 
+ Ø17.4 
+ Ø11 
+ Ø0.45 ±0.05 
+ Ø17 
+ 18.5 
+ 4.5 
+A
+A
+(0.433 dia.)
+(0.018 dia.)
+(0.669 dia.)
+(0.685 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+(0.2 dia.)
+GND
+OUT
+VDD
+SECTION   A-A
+(0.730)
+(0.339)
+(0.177)
+±4°
+±4°
+107° 
+120° 
+ 17.3m
+ 13.5m
+5m
+Detection area coverage
+Note: Digital Output type: Open-drain
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+17
+PIR MOTION SENSORS
+
+
+PAGE 18
+Slight Motion Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Specific Area Detection Type
+EKM - Ultra Slight Motion Detection Type
+Optimized for the detection of 
+smallest movements and objects
+Extremely small Lens as a Slight 
+motion detection type
+Same mechanical dimensions 
+like the Wide Detection Type
+Specified detection distance (Note 1)
+2.5m ~ 4.1m
+Typical ceiling installation height(Note 2)
+3.0m
+Field of view
+107° x 107°
+Detection zones
+192
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 0.5m/s (Slight motion) 
+1.0m/s (Standard motion)
+	› Object size: 200 x 200mm (Slight motion) 
+700 x 250mm (Standard motion)
+	› Crossing 1 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation
+test under representative conditions is
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1μA
+Digital
+Standard
+EKMB1109111
+EKMB1109112
+EKMB1109113
+2μA
+Digital
+Standard
+EKMB1209111
+EKMB1209112
+EKMB1209113
+Economy
+6μA
+Digital
+Standard
+EKMB1309111K
+EKMB1309112K
+EKMB1309113K
+170μA
+Digital
+Standard
+EKMC1609111
+EKMC1609112
+EKMC1609113
+170μA
+Analog
+Adjustable
+EKMC2609111K
+EKMC2609112K
+EKMC2609113K
+Special
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+ Ø11 
+ Ø14.9 
+ Ø14 
+ Ø16 
+ Ø16.6 
+ 7.9 
+ 10.7 
+ 12.1 
+Ø0.45 
+ 17.2 
+A
+A
+(0.433 dia.)
+(0.311)
+(0.421)
+(0.654 dia.)
+(0.630 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+(0.476)
+(0.677)
+Vdd
+GND
+OUT
+SECTION A-A 
+(0.2 dia.)
+(0.018 dia.)
+±4°
+±4°
+(0.587 dia.)
+(0.551 dia.)
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(13.1ft)
+(16.4ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(53.5°)
+49.5°
+49.5°
+(53.5°)
+Y
+3m
+(9.8ft)
+(53.5°) 49.5°
+49.5°(53.5°)
+3m
+(9.8ft)
+X
+X-Y cross section at 3m (9.8ft)
+φ8.0m
+107° 
+3m
+Detection area coverage
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+18
+PIR MOTION SENSORS
+
+
+PAGE 19
+Slight Motion Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Specific Area Detection Type
+EKM - Slight Motion Detection Type
+Specified detection distance (Note 1)
+up to 2.5m - 4m
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view
+104° x 104°
+Detection zones
+112
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 0.5m/s
+	› Object size: 200 x 200mm
+	› Crossing 1 detection zone
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+X
+0
+1m
+2m
+3m
+4m
+5m
+1m
+2m
+3m
+4m
+5m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft) (16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+3m
+(9.8ft)
+Y
+48.5°
+(52.2°)
+(52.2°)
+48.5°
+3m
+(9.8ft)
+X
+48.5°
+(52.2°)
+48.5° (52.2°)
+Y
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1191111
+EKMB1191112
+EKMB1191113
+2µA
+Digital
+Standard
+EKMB1291111
+EKMB1291112
+EKMB1291113
+Economy
+6µA
+Digital
+Standard
+EKMB1391111K
+EKMB1391112K
+EKMB1391113K
+170µA
+Digital
+Standard
+EKMC1691111
+EKMC1691112
+EKMC1691113
+170µA
+Analog
+Adjustable
+EKMC2691111K
+EKMC2691112K
+EKMC2691113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+X-Y cross section at 3m (9.8ft)
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+ 
+VDD
+GND
+OUT
+P.C.D.
+Ø14.6 
+16.6 
+7.9 
+17.2 
+A
+A
+(0.311)
+4.6
+(0.181)
+2
+(0.079)
+4
+(0.157)
+(0.654)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+(0.677)
+GND
+OUT
+SECTION A-A 
+(0.2 dia.)
+Ø0.45 ±0.05
+Ø11
+(0.018 dia.)
+±4°
+±4°
+(0.575 dia.)
+Molding gate
+VDD
+Optimized for small movements
+Lens diameter 14.6mm
+Almost the same mechanical 
+dimensions like the Standard and 
+Slight Motion Detection Type (lens 
+diameter 0.3mm smaller)
+Typical applications
+Detection area coverage
+φ7.7m
+104° 
+3m
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+19
+PIR MOTION SENSORS
+
+
+PAGE 20
+Slight Motion Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Specific Area Detection Type
+Specified detection distance (Note 1)
+up to 2.2m - 3.1m
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view slight motion area
+44° x 44°
+Field of view standard motion area
+91° x 91°
+Detection zones slight motion area
+36
+Detection zones standard motion area
+48
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 0.5m/s (slight motion area) 
+1m/s (standard motion area)
+	› Object size: 200 x 200mm (slight motion area) 
+400 x 200mm (standard motion area)
+	› Crossing 1 detection zone (slight motion area)
+	› Crossing 2 detection zones (standard motion area)
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+ Ø14.9 
+ 4.6 
+ Ø0.45 ±0.05 
+ Ø11 
+ 7.9 
+ Ø16.6 
+ 17.2 
+A
+A
+(0.587 dia)
+(0.654 dia)
+(0.433 dia)
+(0.018 dia)
+(0.677)
+(0.181)
+(0.311)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+OUT
+GND
+VDD
+±4°
+±4°
+(0.2 dia)
+SECTION   A-A 
+EKM - Standard and Slight Motion Detection Type
+The rectangular center zone  
+is optimized detecting smallest 
+movements.
+Lens diameter 14.9mm
+Almost the same mechanical  
+dimensions like the Slight Motion 
+Detection Type (lens diameter  
+0.3mm bigger)
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1193111
+EKMB1193112
+EKMB1193113
+2µA
+Digital
+Standard
+EKMB1293111
+EKMB1293112
+EKMB1293113
+Economy
+6µA
+Digital
+Standard
+EKMB1393111K
+EKMB1393112K
+EKMB1393113K
+170µA
+Digital
+Standard
+EKMC1693111
+EKMC1693112
+EKMC1693113
+170µA
+Analog
+Adjustable
+EKMC2693111K
+EKMC2693112K
+EKMC2693113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+X
+Y
+0
+1m
+2m
+3m
+4m
+5m
+1m
+2m
+3m
+4m
+5m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft) (16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+Slight motion 
+detection area
+3m
+(9.8ft)
+41.0°
+(45.3°)
+(45.3°)
+41.0°
+X
+3m
+(9.8ft)
+41.0°
+(45.3°)
+41.0°
+(45.3°)
+Y
+Standard motion
+detection area
+X-Y cross section at 3m (9.8ft)
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 2.2m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+44°
+44°
+91° 
+91° 
+φ6.1m
+3m
+Slight 
+Motion
+Standard 
+Motion
+Detection area coverage
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+20
+PIR MOTION SENSORS
+
+
+PAGE 21
+Specified detection distance (Note 1)
+up to 2m - 3.3m
+Typical ceiling installation height (Note 2)
+3.0m
+Field of view
+107° x 106°
+Detection zones
+104
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 0.5m/s
+	› Object size: 200mm x 200mm
+	› Crossing 1 detection zone
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Optimized for small 
+movements
+AMN - Slight Motion Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current consumption
+Output type
+Threshold sensitivity
+White
+Black 
+NaPiOn
+170μA
+Digital
+Standard
+AMN32112
+AMN32111
+ 15.2 
+ 8.9 
+ Ø11.9 
+ Ø11 
+ Ø0.45 ±0.05 
+ 4.5 
+ 12.8 
+ Ø12.7 
+A
+A
+(0.504)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+GND
+OUT
+VDD
+SECTION    A-A
+(0.2 dia.)
+(0.018 dia.)
+(0.433 dia.)
+(0.350)
+(0.177)
+(0.598)
+(0.469 dia.)
+(0.500 dia.)
+±4°
+±4°
+X-Y cross section at 3m (9.8ft)
+Further information on electrical characteristics please see page 44
+Y
+X
+5m
+4m
+3m
+2m
+1m
+1m
+2m
+3m
+4m
+5m
+0
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft) (16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+X
+48.3°
+48.3°
+(53.1°)
+(53.1°)
+3m (9.8ft)
+Y
+3m
+(53.6°)
+(53.6°)
+49.0°
+49.0°
+(9.8ft)
+106° 
+φ8.0m
+3m
+Detection area coverage
+Slight Motion Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Specific Area Detection Type
+Notes: The specification shows the X-Y cross section at 2m. 
+Digital Output type: Open-drain
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+21
+PIR MOTION SENSORS
+
+
+PAGE 22
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+EKM - Wall Installation Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Specified detection distance  
+(Note 1 & 2)
+up to 12m (1st step lens) 
+up to 6m (2nd step lens) 
+up to 3m (3rd step lens)
+Field of view
+56° x 112°
+Detection zones
+68
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Lens diameter 20.7mm
+Similar dimensions like  
+the Long Distance Detection 
+Type
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1104111
+EKMB1104112
+EKMB1104113
+2µA
+Digital
+Standard
+EKMB1204111
+EKMB1204112
+EKMB1204113
+Economy
+6µA
+Digital
+Standard
+EKMB1304111K
+EKMB1304112K
+EKMB1304113K
+170µA
+Digital
+Standard
+EKMC1604111
+EKMC1604112
+EKMC1604113
+170µA
+Analog
+Adjustable
+EKMC2604111K
+EKMC2604112K
+EKMC2604113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+0
+2m
+4m
+6m
+8m
+2m
+4m
+6m
+8m
+6m
+4m
+2m
+0
+2m
+Y
+X
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(6.6ft)
+(13.1ft) (19.7ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(6.6ft)
+3m
+6m
+12m
+5m
+Y
+4.0°
+(6.6°)
+1st line lens
+2nd line lens
+3rd line lens
+44.0°
+(48.9°)
+(39.4ft)
+(19.7ft)
+(9.8ft)
+(16.4ft)
+12m
+6m
+3m
+5m
+X
+52.5°
+(56.1°)
+52.5°
+(56.1°)
+(16.4ft)
+(39.4ft)
+(19.7ft)
+(9.8ft)
+1st step
+2nd step
+3rd step
+ 22 
+ Ø20.7 
+ Ø0.45 ±0.05 
+ Ø11 
+ 4.6 
+ 20.2 
+ 7.3 
+A
+A
+(0.018 dia.)
+(0.433 dia.)
+(0.815 dia.)
+(0.866)
+ 2.5 
+ 5 
+P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+GND
+OUT
+VDD
+(0.2 dia.)
+±4°
+±4°
+(0.098)
+(0.197)
+SECTION A-A
+(0.795)
+(0.287)
+(0.181)
+X-Y cross section at 5m (16.4ft)
+Further information on electrical characteristics please see page 42
+Detection area coverage
+Notes: Digital Output type: Open-drain 
+Analog Output type: Op-amp
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+22
+
+
+PAGE 23
+EKM - Horizontally Wide Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+ 
+ 
+ 
+Ø0.45 ±0.05 
+Ø11 
+11.1
+A
+A
+(0.018 dia.)
+ P.C.D. Ø5.08±0.2 
+VDD
+GND
+OUT
+(0.2 dia.)
+SECTION   A-A 
+(0.437)
+12
+(0.472)
+13.3
+(0.524)
+16.6
+6.3
+4.6
+(0.654)
+(0.248)
+(0.181)
+26
+(1.024)
+22.1
+(0.870)
+5
+(0.197)
+2.5
+(0.098)
+3.5
+(0.138)
+6
+(0.236)
+(25°)
+(10°)
+15°
+Y
+1m
+(3.3ft)
+Y
+0
+0
+1m
+2m
+3m
+4m
+1m
+2m
+3m
+4m
+1m
+1m
+(3.3ft)
+(3.3ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+X
+5m
+2.5m
+1m
+74°
+(75°)
+(75°)
+74°
+X
+58°
+(61°)
+58°
+(61°)
+(16.4ft)
+(8.2ft)
+(3.3ft)
+Area A
+Area B
+Area B
+Specified detection distance (Note 1 & 2)
+up to 5m
+Field of view area A
+122° x 35°
+Field of view area B
+150° x 36°
+Detection zones area A
+88
+Detection zones area B
+16
+Note 1:
+	› ∆T ≥ 4°C (Area A)
+	› ∆T ≥ 8°C (Area B)
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+World’s first PIR with “Approach  
+Sensing” technology
+Panasonic presents the world’s  
+first PIR sensor in the shape of  
+a hammerhead with a special  
+optic, which is more sensitive to 
+radial motion.
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1µA
+Digital
+Standard
+EKMB1105111
+EKMB1105112
+EKMB1105113
+2µA
+Digital
+Standard
+EKMB1205111
+EKMB1205112
+EKMB1205113
+Economy
+6µA
+Digital
+Standard
+EKMB1305111K
+EKMB1305112K
+EKMB1305113K
+170µA
+Digital
+Standard
+EKMC1605111
+EKMC1605112
+EKMC1605113
+170µA
+Analog
+Adjustable
+EKMC2605111K
+EKMC2605112K
+EKMC2605113K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+X-Y cross section at 1m (3.3ft)
+Further information on electrical characteristics please see page 42
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+122° 
+150° 
+35° 
+5m
+Detection area coverage
+Notes: Digital Output type: Open-drain 
+Analog Output type: Op-amp
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+23
+PIR MOTION SENSORS
+
+
+PAGE 24
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+EKM - Wide Detection Type
+Large detection area: ø12.9m 
+(@3m installation height)
+Lens diameter: 14mm
+Specified detection distance (Note 1)
+2.5m ~ 5.9m
+Typical ceiling installation height(Note 2)
+3.0m
+Field of view
+130° x 130°
+Detection zones
+208
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1.0m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation
+test under representative conditions is
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+High-end
+1μA
+Digital
+Standard
+EKMB1108111
+EKMB1108112
+EKMB1108113
+2μA
+Digital
+Standard
+EKMB1208111
+EKMB1208112
+EKMB1208113
+Economy
+6μA
+Digital
+Standard
+EKMB1308111K
+EKMB1308112K
+EKMB1308113K
+170μA
+Digital
+Standard
+EKMC1608111
+EKMC1608112
+EKMC1608113
+170μA
+Analog
+Adjustable
+EKMC2608111K
+EKMC2608112K
+EKMC2608113K
+Special
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+(0.476)
+(0.677)
+Vdd
+GND
+OUT
+ Ø11 
+Ø0.45 
+ 7.9 
+ 10.7 
+ Ø16.6 
+ Ø14 
+ Ø14.9 
+ Ø16 
+ 17.2 
+ 12.1 
+A
+A
+(0.421)
+(0.630 dia.)
+(0.311)
+(0.433 dia.)
+SECTION A-A 
+(0.2 dia.)
+(0.018 dia.)
+±4°
+±4°
+(0.587 dia.)
+(0.551 dia.)
+(0.654 dia.)
+8m
+7m
+6m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+6m
+7m
+8m
+(9.8ft) (6.6ft) (3.3ft)
+(13.1ft)
+(16.4ft)
+(19.7ft)
+(22.0ft)
+(26.2ft)
+(3.3ft) (6.6ft)
+(9.8ft) (13.1ft)(16.4ft) (19.7ft) (22.0ft) (26.2ft)
+(26.2ft)
+(22.0ft)
+(19.7ft)
+(13.1ft)
+(16.4ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(19.7ft)
+(22.0ft)
+(26.2ft)
+X
+3m
+(9.8ft)
+62.5°
+(65.2°)
+(65.2°)
+62.5°
+3m
+(9.8ft)
+62.5°
+(65.2°)
+62.5°
+(65.2°)
+Y
+X
+0
+1m
+2m
+3m
+4m
+5m
+6m
+7m
+8m
+1m 2m
+3m
+4m 5m 6m 7m
+8m
+X-Y cross section at 3m (9.8ft)
+φ13.0m
+130° 
+3m
+Detection area coverage
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+24
+PIR MOTION SENSORS
+
+
+PAGE 25
+AMN - Spot Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Specified detection distance (Note 1)
+up to 5m - 5.6m
+Typical ceiling installation height (Note 2)
+5.0m
+Field of view
+57° x 42°
+Detection zones
+24
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Flat lens
+Lens diameter 8.9mm
+Narrow field of view
+Typical applications
+Notes
+Standby current consumption
+Output type
+Threshold sensitivity
+White
+Black 
+NaPiOn
+170μA
+Digital
+Standard
+AMN33112
+AMN33111
+ 15.1 
+ Ø8.9 
+ Ø0.45 ±0.05 
+ 4.5 
+ 
+Ø11 
+A
+A
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+GND
+OUT
+(0.2 dia.)
+(0.018 dia.)
+(0.433 dia.)
+(0.594)
+(0.177)
+(0.350 dia.)
+±4°
+±4°
+VDD
+SECTION   A-A
+20.2°
+(28.5°)
+20.2°
+(28.5°)
+Y
+5m
+(16.4ft)
+11.9°
+(21.0°)
+11.9° (21.0°)
+(16.4ft)
+0
+1m
+2m
+3m
+1m
+2m
+3m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+Y
+X
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+X
+5m
+X-Y cross section at 5m (16.4ft)
+Further information on electrical characteristics please see page 44
+57° 
+42° 
+ 5.4m
+ 3.8m
+5m
+Detection area coverage
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+Note: Digital Output type: Open-drain
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+25
+PIR MOTION SENSORS
+
+
+PAGE 26
+MEMO
+
+
+PAGE 27
+
+
+PAGE 28
+Ordering information
+1︓White
+2︓Black
+3︓Pearl white
+EKM
+81
+●Lens color
+EKM
+①
+②
+③
+④
+④
+⑤
+⑥
+01︓Standard
+03︓Long Distance
+05︓Horizontally Wide
+06︓High Density Long Distance
+07︓Low Profile
+08︓Wide Detection  
+09︓Ultra Slight Motion
+11︓Ultra Wide & Long Distance
+12︓Flat Wide
+74︓Spot Detection
+●Lens type
+④
+④
+⑤
+●Suffix
+●Lensless
+⑥
+K︓The following products have “K” at the end
+EKMB1300800K, EKMB4300800K
+EKMC1600800, EKMC2600800K, EKMC4600800K
+EKMB13, EKMB43, EKMC26, EKMC46
+①
+②
+③
+●Sensor type
+B13, B43︓WL Series
+C16, C26, C46︓VZ Series
+Sensor
+Lens
+Suffix
+Ordering information
+at https://industrial.panasonic.com/ww/products/pt/papirs
+28
+
+
+PAGE 29
+029
+PIR MOTION SENSORS
+at https://industrial.panasonic.com/ww/products/pt/papirs
+29
+The pyroelectric element of PaPIRs
+has further evolved into a “Big & Black Element”
+Achieves approximately x2 sensitivity with the Big & Black element
+Extended detection 
+distance
+Improved infrared absorption rate
+Enhanced detection 
+temperature difference
+Higher density detection area
+［PaPIRs ］
+Since 1998
+July 2025
+Reflected
+IR energy
+Incoming
+IR energy
+［PaPIRs Plus ］
+Electrode
+Pyro Element
+100%
+Less than 5%
+Absorbed IR energy
+More than 95%
+Evolution:
+Carbon applied by 
+screen printing
+Reflected
+IR energy
+Electrode
+Pyro Element
+100%
+Approx. 35%
+Absorbed IR energy
+Approx. 65% 
+Incoming
+IR energy
+High Density Long Distance
+Detection Lens
+[12m]
+[17m]
+69° 
+12m
+72° 
+17.6m
+16.6m
+69° 
+17m
+72° 
+24.9m
+23.5m
+X-Y cross section: 2.5m
+Ultra Slight Motion Lens 
+-6
+-4
+-2
+0
+2
+4
+6
+-6
+-4
+-2
+0
+2
+4
+6
+-6
+-4
+-2
+0
+2
+4
+6
+-6
+-4
+-2
+0
+2
+4
+6
+Approx. x2 Sensitivity
+by Big Element
+x1.7 Sensitivity
+by Black Element
+x1.4 Sensitivity
+(Max)
+Current
+Element
+Big Black
+Element
+Room temperature
+Approx. x2 Sensitivity
+Room temperature
+Detects with a temperature 
+difference of 4°C
+Detects with a temperature 
+difference of 4°C
+Detects with a temperature 
+difference of 2°C
+Detects with a temperature 
+difference of 2°C
+Body temperature
+
+
+PAGE 30
+ Slight Motion
+Detection Types
+Ultra Slight
+6μA
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+Standard
+Detection Types
+Long Distance
+Detection Types
+Standard
+Low Profile
+Long Distance
+Ultra Wide & 
+Long Distance
+High Density
+Long Distance
+
+	
+
+
+	
+Standard
+Adjustable
+6µA 
+170µA
+170µA
+6µA
+170µA
+170µA
+6μA
+170μA
+170μA 
+6μA 
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+Flat Wide 
+Detection
+Horizontally 
+Wide Detection
+Wide Detection
+Spot Detection
+6μA 
+170μA
+170μA
+6μA
+170μA
+170μA 
+6μA 
+170μA
+170μA
+6μA 
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       _
+       _
+       _
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+Specific Area Detection Types
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+Digital
+Analog
+Standard
+Adjustable
+6μA
+170μA
+170μA
+
+
+
+
+
+
+
+
+
+Standard
+Digital
+―
+Analog
+Output    Sensitivity White                      Black                Pearl white 
+ 
+White
+Black
+Pearl white
+
+
+
+
+
+
+
+
+	
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+
+
+
+
+
+
+
+
+	
+103° 
+7.5m
+106° 
+8.0m
+3m
+117° 
+9.8m
+111° 
+8.8m
+3m
+108° 
+101° 
+ 17.1m
+ 19.3m
+7m
+69° 
+12m
+72° 
+17.6m
+16.6m
+13.4m
+31.6m
+93° 
+48° 
+15m
+
+
+
+
+
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+30
+Search by Lens / Product Matrix
+
+
+PAGE 31
+
+
+
+
+
+106°×103°
+117°×111°
+5.0m
+5.0m
+108°×101°
+72°×69°
+12.0m
+17.0 / 20.5m
+92
+128
+
+
+
+	
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+416
+88
+16
+208
+24
+136°×135°
+122°×35°
+150°×36°
+133°×130°
+64.4°×42.4°
+3.5m/2.5m
+5.0m
+2.5 ｰ 5.9m
+5.0 ｰ 5.6m
+
+110°×107°
+2.5 ｰ 4.1m
+5.2 ｰ 8.0m
+(for Standard motion)
+192
+
+
+
+	
+
+
+64
+32
+93°×48°
+15.0 / 20.0m
+188
+
+
+	
+
+
+
+
+
+
+	
+
+
+
+
+P.32
+P.33
+P.37
+P.38
+P.39
+P.40
+P.41
+P.34
+P.35
+P.36
+
+
+
+
+Recommended applications
+ 
+
+
+
+
+
+
+
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+							
+
+
+110° 
+3m
+107° 
+8.1m
+8.5m
+136° 
+3m
+135° 
+14.6m
+15m
+133° 
+3m
+130° 
+13.0m
+13.7m
+64.4° 
+42.4° 
+ 6.3m
+ 3.9m
+5m
+
+
+
+
+
+
+
+
+
+123° 
+151° 
+40° 
+5m
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+31
+
+
+PAGE 32
+Long Distance Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+Standard Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+32
+EKM - Standard Detection Type
+Preference type
+Flat lens for an unobtrusive 
+integration
+Lens diameter 9.5mm
+Specified detection distance (Note 1)
+up to 7m 
+Typical ceiling installation height (Note 2)
+3m
+Field of view
+106° x 103°
+Detection zones
+64
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6µA
+Digital
+Standard
+EKMB1301811K
+EKMB1301812K
+EKMB1301813K
+170µA
+Digital
+Standard
+EKMC1601811
+EKMC1601812
+EKMC1601813
+170µA
+Analog
+Adjustable
+EKMC2601811K
+EKMC2601812K
+EKMC2601813K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 3.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+0
+1m
+2m
+3m
+4m
+5m
+1m
+2m
+3m
+4m
+5m5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(13.1ft)
+(16.4ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+Y
+X
+41.8°
+41.8°
+(51.5°)
+(51.5°)
+5m
+3m
+Y
+(9.8ft)
+47.0°
+47.0°
+(53.2°)
+(53.2°)
+5m
+3m
+X
+(9.8ft)
+X-Y Cross Section (3m) (9.8ft)
+(16.4ft)
+(16.4ft)
+ Ø11 
+ 4.6 
+ 13 
+ Ø9.5 
+ Ø0.45 
+ 14.4 
+A
+A
+(0.181)
+(0.512)
+(0.567)
+(0.374 dia.)
+(0.433 dia.)
+(0.018 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+±4°
+±4°
+SECTION   A-A
+(0.2 dia.)
+103° 
+7.5m
+106° 
+8.0m
+3m
+Detection area coverage
+X-Y cross section at 3m (9.8ft)
+
+
+PAGE 33
+Long Distance Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+Standard Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+33
+Notes: The specification shows the X-Y cross section at 3.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+EKM - Low Profile Type
+Lower height lens design
+[14.4mmg10.9mm]
+Comparable performance to 
+PaPIRs standard detection  
+type lens
+Fit with superior product design
+Specified detection distance (Note 1)
+up to 7m 
+Typical ceiling installation height (Note 2)
+3m
+Field of view
+117° x 111°
+Detection zones
+32
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6µA
+Digital
+Standard
+EKMB1307811K
+EKMB1307812K
+EKMB1307813K
+170µA
+Digital
+Standard
+EKMC1607811
+EKMC1607812
+EKMC1607813
+170µA
+Analog
+Adjustable
+EKMC2607811K
+EKMC2607812K
+EKMC2607813K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+0
+1m
+2m
+3m
+4m
+5m5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+1m
+2m
+3m
+4m
+5m
+Y
+X
+5m
+44.7°
+(58.5°)
+44.7°
+(58.5°)
+3m
+Y
+(9.8ft)
+(9.8t)
+5m
+3m
+X
+44.7°
+(55.0°)
+44.7°
+(55.0°)
+X-Y Cross Section (3.0m)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(16.4ft)
+(9.8ft)
+Ø11 
+5.5
+Ø10.4
+Ø0.45 
+A
+A
+(0.215)
+10.9
+(0.430)
+9.9
+(0.389)
+5.8
+(0.228)
+(0.410 dia.)
+Ø9.3
+(0.365 dia.)
+Ø9
+(0.354 dia.)
+(0.433 dia.)
+(0.018 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+±4°
+±4°
+SECTION   A-A
+(0.2 dia.)
+117° 
+9.8m
+111° 
+8.8m
+3m
+Detection area coverage
+PIR MOTION SENSORS
+X-Y cross section at 3.0m (9.8ft)
+
+
+PAGE 34
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+34
+EKM - Long Distance Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Specified detection distance (Note 1)
+up to 17m
+Typical ceiling installation height (Note 2)
+7m
+Field of view
+108° x 101°
+Detection zones
+92
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environ-
+mental conditions, so a performance 
+evaluation test under representative 
+conditions is recommended
+Lens diameter 20.7mm
+Wide detection angle and 
+long distance
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6µA
+Digital
+Standard
+EKMB1303811K
+EKMB1303812K
+EKMB1303813K
+170µA
+Digital
+Standard
+EKMC1603811
+EKMC1603812
+EKMC1603813
+170µA
+Analog
+Adjustable
+EKMC2603811K
+EKMC2603812K
+EKMC2603813K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+ 22 
+ Ø20.7 
+ Ø0.45 ±0.05 
+ Ø11 
+ 4.6 
+ 7.3 
+ 20.2 
+A
+A
+(0.433 dia.)
+(0.018 dia.)
+(0.866)
+(0.815 dia.)
+ 5 
+ 2.5 
+ P.C.D. Ø5.08±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+(0.2 dia.)
+±4°
+±4°
+(0.197)
+(0.098)
+SECTION   A-A 
+(0.795)
+(0.287)
+(0.181)
+Further information on electrical characteristics please see page 42
+X
+Y
+2m
+0
+4m
+6m
+8m
+10m
+2m
+4m
+6m
+8m
+10m
+10m
+8m
+6m
+2m
+0
+4m
+2m
+4m
+6m
+8m
+10m
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+(6.6ft)
+(13.1ft)
+(26.2ft) (32.8ft)
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(13.1ft)
+(6.6ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+12m
+7m
+Y
+46.3°
+46.3°
+(50.7°)
+(50.7°)
+(23.0ft)
+(39.4ft)
+12m
+51.3°
+51.3°
+(54.1°)
+(54.1°)
+X
+7m
+(23.0ft)
+(39.4ft)
+X-Y Cross Section (7m) (23.0ft)
+(19.7ft)
+Notes: Digital Output type: Open-drain 
+Analog Output type: Op-amp
+108° 
+101° 
+ 17.1m
+ 19.3m
+7m
+Detection area coverage
+X-Y cross section at 7m (23.0ft)
+
+
+PAGE 35
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+35
+PIR MOTION SENSORS
+EKM - High Density Long Distance Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+ 
+ 
+ 
+ 
+ 
+ 22 
+Ø19.3
+Ø0.45 ±0.05 
+Ø11 
+ 4.6 
+ 7.3 
+ 20.8
+A
+A
+(0.433 dia.)
+(0.018 dia.)
+(0.866)
+(0.760 dia.)
+ 5 
+ 2.5 
+ P.C.D. Ø5.08±0.2 
+ 45° 
+ 45° 
+VDD
+GND
+OUT
+(0.2 dia.)
+±4°
+±4°
+(0.197)
+(0.098)
+SECTION   A-A 
+(0.819)
+(0.287)
+(0.181)
+Ø20.45 
+(0.805 dia.)
+Specified detection distance (Note 1)
+17m / 20.5m
+Typical ceiling installation height (Note 2)
+12m
+Field of view
+72° x 69°
+Detection zones
+128
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Smallest long range sensor
+Lens diameter 19.3mm
+Additional lip (20.45mm) ready 
+for an o-ring
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6µA
+Digital
+Standard
+EKMB1306811K
+EKMB1306812K
+EKMB1306813K
+170µA
+Digital
+Standard
+EKMC1606811
+EKMC1606812
+EKMC1606813
+170µA
+Analog
+Adjustable
+EKMC2606811K
+EKMC2606812K
+EKMC2606813K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+10m 8m
+6m
+4m
+2m
+10m
+8m
+6m
+4m
+2m
+0
+8m
+6m
+4m
+2m
+0
+6m
+2m
+4m
+8m
+10m
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(32.8ft)
+(26.2ft)
+(19.7ft) (13.1ft)
+(6.6ft)
+(32.8ft)
+(26.2ft)
+(19.7ft)
+(13.1ft)
+(6.6ft)
+(6.6ft)
+(13.1ft)
+(19.7ft)
+(26.2ft)
+(32.8ft)
+Y
+X
+10m
+31°
+31°
+(36.2°)
+Y
+12m
+(39.4ft)
+(36.2°)
+31°
+(34.6°)
+(34.6°)
+31°
+X
+12m
+(39.4ft)
+X-Y Cross Section (12m) (39.4ft)
+X-Y cross section at 12m (39.4ft)
+Further information on electrical characteristics please see page 42
+69° 
+12m
+72° 
+17.6m
+16.6m
+Detection area coverage
+Please contact us if you install at celling height 17m
+Notes: Digital Output type: Open-drain 
+Analog Output type: Op-amp
+
+
+PAGE 36
+Long Distance Detection Type
+Standard Detection Type
+Slight Motion Detection Type
+Specific Area Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+36
+Specified detection distance (Note 1)
+15m / 20m
+Typical ceiling installation height (Note 2)
+15.0m (Standard sensitivity sensor) 
+*20.0m (High sensitivity sensor)
+Field of view
+93° x 48°
+Detection zones
+188
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Smallest aisle high bay 
+sensor (lens Ø32.6mm)
+High sensitivity on the 
+aisle entry and exit area
+Optimized for radial 
+movement
+EKM - Ultra Wide & Long Distance Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Further information on electrical characteristics please see page 42
+
+
+
+Detection area coverage
+13.4m
+31.6m
+93° 
+48° 
+15m
+SECTION   A-A
+ 36 
+ 32.6 
+ 37.5 
+ Ø11 
+ 7.3 
+ 12.5 
+ 14.3 
+Ø0.45 
+ 26.2 
+A
+A
+(0.492)
+(0.287)
+(0.563)
+(1.031)
+(0.433 dia.)
+ 5 
+ 2.5 
+P.C.D. Ø5.08 ±0.2 
+GND
+OUT
+Vdd
+(0.018 dia.)
+(1.417 dia.)
+(1.283 dia.)
+(1.476)
+(0.197)
+(0.098)
+(0.2 dia.)
+0
+5m
+10m
+15m
+20m
+5m
+10m
+15m
+20m
+10m
+5m
+5m
+10m
+0
+X
+Y
+(16.4ft)
+(32.8ft)
+(49.2ft)
+(65.6ft)
+(16.4ft)
+(32.8ft)
+(49.2ft)
+(65.6ft)
+(32.8ft)
+(16.4ft)
+(16.4ft)
+(32.8ft)
+(24.0°)
+17.7°
+17.7°
+(24.0°)
+15m
+(49.2ft)
+(46.6°)
+43.0°
+43.0° (46.6°)
+X
+15m
+(49.2ft)
+X-Y Cross Section (15m)
+Y
+(49.2ft)
+Please contact us if you install at celling height 10m 
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6µA
+Digital
+Standard
+EKMB1311811K
+EKMB1311812K
+EKMB1311813K
+170µA
+Digital
+Standard
+EKMC1611811
+EKMC1611812
+EKMC1611813
+170µA
+Analog
+Adjustable
+EKMC2611811K
+EKMC2611812K
+EKMC2611813K
+Special
+6µA
+Digital
+High*
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High*
+170µA
+Digital
+Low
+Notes: High threshold sensitivity types have a lower threshold-to-noise ratio. Please contact us for further details 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+X-Y cross section at 15m (49.2ft)
+
+
+PAGE 37
+Slight Motion Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Specific Area Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+37
+PIR MOTION SENSORS
+EKM - Ultra Slight Motion Detection Type
+Optimized for the detection of 
+smallest movements and objects
+Extremely small lens: 14mm 
+diameter
+Same mechanical dimensions 
+like the Wide Detection Type
+Specified detection distance (Note 1)
+3.5m ~ 5.7m
+Typical ceiling installation height(Note 2)
+3.0m
+Field of view
+110° x 107°
+Detection zones
+192
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 0.5m/s (Slight motion) 
+1.0m/s (Standard motion)
+	› Object size: 200 x 200mm (Slight motion) 
+700 x 250mm (Standard motion)
+	› Crossing 1 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation
+test under representative conditions is
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6μA
+Digital
+Standard
+EKMB1309811K
+EKMB1309812K
+EKMB1309813K
+170μA
+Digital
+Standard
+EKMC1609811
+EKMC1609812
+EKMC1609813
+170μA
+Analog
+Adjustable
+EKMC2609811K
+EKMC2609812K
+EKMC2609813K
+Special
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+Notes: The specification shows the X-Y cross section at 3.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+ Ø11 
+ Ø14.9 
+ Ø14 
+ Ø16 
+ Ø16.6 
+ 7.9 
+ 10.7 
+ 12.1 
+Ø0.45 
+ 17.2 
+A
+A
+(0.433 dia.)
+(0.311)
+(0.421)
+(0.654 dia.)
+(0.630 dia.)
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+(0.476)
+(0.677)
+Vdd
+GND
+OUT
+SECTION A-A 
+(0.2 dia.)
+(0.018 dia.)
+±4°
+±4°
+(0.587 dia.)
+(0.551 dia.)
+X-Y Cross Section (3.0m) (9.8ft)
+Y
+X
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+Y
+(54.9°)
+49.5°
+49.5°
+(54.9°)
+3m
+(9.8ft)
+X
+(53.5°) 49.5°
+49.5° (53.5°)
+3m (9.8ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+X-Y cross section at 3.0m (9.8ft)
+110° 
+3m
+107° 
+8.1m
+8.5m
+Detection area coverage
+
+
+PAGE 38
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+38
+Notes: The specification shows the X-Y cross section at 2.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+EKM - Flat wide detection type
+Featuring both wide-angle 
+coverage and high-density 
+in a single lens.
+The flat-top lens makes the 
+customer's product look 
+better.
+Specified detection distance (Note 1)
+2.5m ~ 5.9m
+Typical ceiling installation height(Note 2)
+3.0m
+Field of view
+136° x 135°
+Detection zones
+416
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1.0m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation
+test under representative conditions is
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6μA
+Digital
+Standard
+EKMB1312811K
+EKMB1312812K
+EKMB1312813K
+170μA
+Digital
+Standard
+EKMC1612811
+EKMC1612812
+EKMC1612813
+170μA
+Analog
+Adjustable
+EKMC2612811K
+EKMC2612812K
+EKMC2612813K
+Special
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+136° 
+3m
+135° 
+14.6m
+15m
+
+
+
+Detection area coverage
+3m 2m 1m
+4m
+5m
+6m
+7m
+8m
+0 1m 2m3m 4m 5m 6m 7m 8m8m
+7m
+6m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+6m
+7m
+8m
+X
+Y
+(9.8ft) (6.6ft) (3.3ft)
+(13.1ft)
+(16.4ft)
+(19.7ft)
+(23.0ft)
+(26.2ft)
+(3.3ft) (6.6ft) (9.8ft) (13.1ft) (16.4ft) (19.7ft) (23.0ft)(26.2ft)
+(26.2ft)
+(23.0ft)
+(19.7ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(19.7ft)
+(26.2ft)
+66.5°
+(68.2°)
+Y
+3m
+66.5°
+(68.2°)
+66.5°
+(67.7°)
+66.5°(67.7°)
+3m
+X
+(9.8ft)
+(9.8ft)
+X-Y Cross Section (3.0m)
+(9.8ft)
+(23.0ft)
+X-Y cross section at 3.0m (9.8ft)
+
+
+PAGE 39
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+39
+PIR MOTION SENSORS
+EKM - Horizontally Wide Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+ 
+ 
+ 
+Ø0.45 ±0.05 
+Ø11 
+11.1
+A
+A
+(0.018 dia.)
+ P.C.D. Ø5.08±0.2 
+VDD
+GND
+OUT
+(0.2 dia.)
+SECTION   A-A 
+(0.437)
+12
+(0.472)
+13.3
+(0.524)
+16.6
+6.3
+4.6
+(0.654)
+(0.248)
+(0.181)
+26
+(1.024)
+22.1
+(0.870)
+5
+(0.197)
+2.5
+(0.098)
+3.5
+(0.138)
+6
+(0.236)
+(75.7°)
+(61.5°)
+58°
+74°
+58°
+74°
+(61.5°)
+(75.7°)
+X
+1m
+Area A
+Area B
+Area B
+(3.3ft)
+5m
+2.5m
+(16.4ft)
+(8.2ft)
+15°
+(26.8°)
+(13.4°)
+Y
+1m
+(3.3ft)
+X
+Y
+0
+1m
+2m
+3m
+4m
+1m
+2m
+3m
+4m1m
+1m
+0
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(3.3ft)
+(3.3ft)
+X-Y Cross Section (1m)(3.3ft)
+Specified detection distance (Note 1 & 2)
+up to 5m
+Field of view area A
+123° x 40°
+Field of view area B
+151° x 41°
+Detection zones area A
+88
+Detection zones area B
+16
+Note 1:
+	› ∆T ≥ 4°C (Area A)
+	› ∆T ≥ 8°C (Area B)
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+World’s first PIR with “Approach  
+Sensing” technology
+Panasonic presents the world’s  
+first PIR sensor in the shape of  
+a hammerhead with a special  
+optic, which is more sensitive to 
+radial motion.
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6µA
+Digital
+Standard
+EKMB1305811K
+EKMB1305812K
+EKMB1305813K
+170µA
+Digital
+Standard
+EKMC1605811
+EKMC1605812
+EKMC1605813
+170µA
+Analog
+Adjustable
+EKMC2605811K
+EKMC2605812K
+EKMC2605813K
+Special
+6µA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170µA
+Digital
+High
+170µA
+Digital
+Low
+X-Y cross section at 1m (3.3ft)
+Further information on electrical characteristics please see page 42
+123° 
+151° 
+40° 
+5m
+Detection area coverage
+Notes: Digital Output type: Open-drain 
+Analog Output type: Op-amp
+
+
+PAGE 40
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+PIR MOTION SENSORS
+40
+Notes: The specification shows the X-Y cross section at 3.5m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+EKM - Wide Detection Type
+Large detection area: ø12.9m 
+(@3m installation height)
+Lens diameter: 14mm
+Specified detection distance (Note 1)
+3.5m ~ 8.2m
+Typical ceiling installation height(Note 2)
+3.0m
+Field of view
+133° x 130°
+Detection zones
+208
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1.0m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation
+test under representative conditions is
+recommended
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Typical applications
+Notes
+Standby current 
+consumption
+Output type
+Threshold sensitivity
+White
+Black 
+Pearl White
+Economy
+6μA
+Digital
+Standard
+EKMB1308811K
+EKMB1308812K
+EKMB1308813K
+170μA
+Digital
+Standard
+EKMC1608811
+EKMC1608812
+EKMC1608813
+170μA
+Analog
+Adjustable
+EKMC2608811K
+EKMC2608812K
+EKMC2608813K
+Special
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Further information on electrical characteristics please see page 42
+P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+(0.476)
+(0.677)
+Vdd
+GND
+OUT
+ Ø11 
+Ø0.45 
+ 7.9 
+ 10.7 
+ Ø16.6 
+ Ø14 
+ Ø14.9 
+ Ø16 
+ 17.2 
+ 12.1 
+A
+A
+(0.421)
+(0.630 dia.)
+(0.311)
+(0.433 dia.)
+SECTION A-A 
+(0.2 dia.)
+(0.018 dia.)
+±4°
+±4°
+(0.587 dia.)
+(0.551 dia.)
+(0.654 dia.)
+3m 2m 1m
+4m
+5m
+6m
+7m
+8m
+1m
+0
+2m 3m 4m 5m 6m 7m 8m8m
+7m
+6m
+5m
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+5m
+6m
+7m
+8m
+(9.8ft) (6.6ft)
+(3.3ft)
+(13.1ft)
+(16.4ft)
+(19.7ft)
+(23.0ft)
+(26.2ft)
+(3.3ft) (6.6ft)
+(9.8ft)
+(13.1ft) (16.4ft) (19.7ft) (23.0ft)(26.2ft)
+(26.2ft)
+(23.0ft)
+(19.7ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(19.7ft)
+(23.0ft)
+(26.2ft)
+X
+Y
+62.5°
+62.5°
+(66.3°)
+(66.3°)
+3m
+(9.8ft)
+Y
+62.5°
+(65.2°)
+62.5°(65.2°)
+3m (9.8ft)
+X
+X-Y Cross Section (3.0m) (9.8ft)
+X-Y cross section at 3.0m (9.8ft)
+133° 
+3m
+130° 
+13.0m
+13.7m
+Detection area coverage
+
+
+PAGE 41
+Specific Area Detection Type
+Standard Detection Type
+Long Distance Detection Type
+Slight Motion Detection Type
+at https://industrial.panasonic.com/ww/products/pt/papirs/models
+41
+PIR MOTION SENSORS
+Spot Detection Type
+Dimension (in mm, inches in brackets)
+Detection area (reference)
+Specified detection distance (Note 1)
+up to 7m - 7.8m
+Typical ceiling installation height (Note 2)
+5m
+Field of view
+64.4° x 42.4°
+Detection zones
+24
+Note 1:
+	› ∆T ≥ 4°C
+	› Object speed: 1m/s
+	› Object size: 700 x 250mm
+	› Crossing 2 detection zones
+Note 2:
+The sensitivity of passive infrared 
+sensors is influenced by environmental 
+conditions, so a performance evaluation 
+test under representative conditions is 
+recommended
+Flat lens
+Lens diameter 8.9mm
+Narrow field of view
+Typical applications
+ 15.1 
+ Ø8.9 
+ Ø0.45 ±0.05 
+ 4.5 
+ 
+Ø11 
+A
+A
+ P.C.D. Ø5.08 ±0.2 
+ 45° 
+ 45° 
+GND
+OUT
+(0.2 dia.)
+(0.018 dia.)
+(0.433 dia.)
+(0.594)
+(0.177)
+(0.350 dia.)
+±4°
+±4°
+VDD
+SECTION   A-A
+20.2°
+(32.2°)
+20.2°
+(32.2°)
+Y
+5m
+(21.2°) 11.9°
+11.9° (21.2°)
+5m
+(16.4ft)
+X
+Y
+4m
+3m
+2m
+1m
+1m
+2m
+3m
+4m
+0
+4m
+3m
+2m
+1m
+0
+1m
+2m
+3m
+4m
+X
+X-Y Cross Section (5.0m)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+(13.1ft)
+(9.8ft)
+(6.6ft)
+(3.3ft)
+(3.3ft)
+(6.6ft)
+(9.8ft)
+(13.1ft)
+(16.4ft)
+X-Y cross section at 5.0m (16.4ft)
+Further information on electrical characteristics please see page 42
+64.4° 
+42.4° 
+ 6.3m
+ 3.9m
+5m
+Detection area coverage
+Standby current consumption
+Output type
+Threshold sensitivity
+White
+Black 
+6μA
+Digital
+Standard
+EKMB1374811K
+EKMB1374812K
+170μA
+Digital
+Standard
+EKMC1674811
+EKMC1674812
+170μA
+Analog
+Adjustable
+EKMC2674811K
+EKMC2674812K
+6μA
+Digital
+High
+Please contact us if a higher or a lower sensitivity is required.
+170μA
+Digital
+High
+170μA
+Digital
+Low
+Notes: The specification shows the X-Y cross section at 7m. 
+Digital Output type: Open-drain 
+Analog Output type: Op-amp
+
+
+PAGE 42
+EKM - Characteristics
+EKM - Maximum rated values
+EKM - Electrical characteristics (digital output types)
+EKM - Electrical characteristics (analog output types)
+Items
+EKMB series
+EKMC series
+Power supply voltage
+-0.3 to 4.5V DC
+-0.3 to 7V DC
+Ambient temperature
+-20 to 60°C
+-20 to 55°C (high sensitivity type)
+(no frost, no condensation)
+Storage temperature
+-20 to 70°C
+Items
+Symbol
+EKMB11 series 
+(1μA)
+EKMB12 series 
+(2μA)
+EKMB13K series 
+(6μA)
+EKMC16 series 
+(170µA)
+Conditions
+Operating voltage
+VDD
+Max
+4.0V DC
+6.0V DC
+–
+Min
+2.3V DC
+3.0V DC
+Current consumption  
+(in standby/sleep mode) 
+Note 1
+IW
+Ave
+1μA
+2μA
+6μA
+170µA
+Ambient temperature: 25°C 
+IOUT = 0A  
+EKMB series: VDD = 3V DC 
+EKMC series: VDD = 5V DC
+Output current  
+(during detection period)  
+Note 2
+IOUT
+Max
+100μA
+Ambient temperature: 25°C 
+VOUT ≥ VDD – 0.5V DC
+Output voltage  
+(during detection period)
+VOUT
+Min
+VDD ­– 0.5V
+Ambient temperature: 25°C
+Circuit stability time  
+(when voltage is applied) 
+tWU
+Ave
+25 seconds
+–
+–
+Ambient temperature: 25°C 
+IOUT = 0A 
+EKMB series: VDD = 3V DC 
+EKMC series: VDD = 5V DC
+Max
+210 seconds
+10 seconds
+30 seconds
+Note 1:
+The total current consumption during detection is the current consumption in standby mode (IW) plus the output current (IOUT). For the 1μA type the average current con-
+sumption (IW) is 1μA in sleep mode and 1.9μA in standby mode. Please also refer to the timing charts on the next page.
+Note 2:
+Please select an output resistor (pull-down concept) in accordance with VOUT so that the output current is maximum 100μA.
+Items
+Symbol
+EKMC26K series
+Remarks
+Operating voltage
+VDD
+Max
+5.5V
+–
+Min
+3.0V
+Current consumption 
+(in standby mode)
+Note1
+IW
+Ave
+170μA
+Ambient temperature =  25°C 
+IOUT  =  0A
+Max
+350μA
+Output current  
+(during detection period)
+Note 2
+IOUT
+Max
+200μA
+–
+Analog output saturated voltage
+VH
+High
+Min. 1.9V
+–
+VL
+Low
+Max. 0.2V
+–
+Output offset voltage 
+(at non detection)
+Note 3
+VOFF
+Max
+1.2V
+Ambient temperature: 25°C 
+Steady output voltage at non 
+detection
+Ave
+1.1V
+Min
+1.0V
+Steady noise
+VN
+Max
+150mVPP
+–
+Ave
+80mVPP
+Circuit stability time  
+(after applying voltage)
+tWU
+Max
+30 seconds
+Ambient temperature: 25°C 
+IOUT =  0A
+Note 1:
+The total current consumption during detection is the current consumption in standby mode (IW) plus the output current (IOUT). 
+Note 2:
+The output offset voltage has a certain tolerance. Please assure to measure the offset voltage before setting the upper and lower threshold values.  
+Otherwise the threshold window could be unsymmetrical relative to the offset voltage.
+Note 3:
+The internal circuit threshold of the EKMC16 series corresponds to output offset voltage(Vos)±0.22V.
+The threshold of the EKMC46 series corresponds to half of this.
+at https://industrial.panasonic.com/ww/products/pt/papirs
+PIR MOTION SENSORS
+42
+PIR MOTION SENSORS
+
+
+PAGE 43
+2μA / 6μA / 170μA type (digital output)
+1μA type (digital output)
+Timing chart
+tWU
+Power supply
+Output
+Movement
+Yes
+No
+ON
+OFF
+High
+Low
+1）
+2）
+3）1）
+2）
+3）
+1）
+2）
+3）
+t1（tWU）
+t2
+t2
+t3
+t2
+t3
+*2
+*1
+ON
+OFF
+High
+Low
+Power supply
+Output
+Movement
+Yes
+No
+Mode
+Unstable
+1) Sleep
+2) Standby
+3) Mask
+Explanation of modes
+1)
+Sleep mode:
+When the output is Low. The electrical current consumption is around 
+1μA
+2)
+Standby mode:
+After the sensor's output has reached High status, the sensor switches 
+to standby mode. The electrical current consumption gets close to 
+1.9μA. When the sensor's output returns to its Low value after the "hold 
+time" has expired, the sensor switches again to sleep mode.
+3)
+Mask mode:
+Time during which the output is forced to Low status after the end of the 
+standby mode. (No detection is possible during this period.)
+Explanation of the timing
+t1)
+(tWU)
+Circuit stability time: about 25 seconds (typ.)
+While the circuitry is stabilizing after the power is turned on, the sensor 
+output is not fixed in the High or Low state. This is true regardless of 
+whether or not the sensor has detected anything.
+t2)
+Standby hold time:
+About 2.6 seconds (typ.) after the last detection of a signal. (*1)
+t3)
+Mask time:
+About 1.3 seconds (typ.) During this stage, even if the sensor detects 
+something, the output will not switch to High. (*2)
+Explanation of the timing
+tWU
+Circuit stability time: about 25 seconds (typ.) for 2μA type, 
+max. 10 seconds for 6μA type, max. 30 seconds for 170μA type.
+While the circuitry is stabilizing after the power is turned on, the 
+sensor output is not fixed in the High or Low state. This is true 
+regardless of whether or not the sensor has detected anything.
+Explanation of the timing
+tWU
+Circuit stability time: max. 30 seconds
+While the circuitry is stabilizing after the power is turned on, the sensor output 
+is not fixed. This is true regardless of whether or not the sensor has detected 
+anything.
+ON
+OFF
+VDD
+VOFF
+GND
+tWU
+VN
+VH
+VL
+Power supply
+Output voltage
+Movement
+Yes
+No
+Detection signal
+170μA type (analog output)
+at https://industrial.panasonic.com/ww/products/pt/papirs
+43
+PIR MOTION SENSORS
+
+
+PAGE 44
+AMN - Maximum rated values (digital output types)
+AMN - Electrical characteristics (digital output types)    
+Items                                                                                 
+  Value
+Power supply voltage
+-0.3 to 7V DC
+Ambient temperature
+-20 to +60°C  
+(no frost, no condensation)
+Storage temperature
+-20 to +70°C
+Items
+Symbol
+AMN3* series
+Conditions
+Operating voltage
+VDD
+Max
+6.0V DC
+–
+Min
+3.0V DC
+Current consumption (in standby mode) 
+Note 1
+IW
+Ave
+170μA
+Ambient temperature: 25°C 
+IOUT = 0A VDD = 5V DC
+Output current (during detection)  
+Note 2
+IOUT
+Max
+100μA
+Ambient temperature: 25°C 
+VOUT ≥ VDD – 0.5V DC
+Output voltage (during detection)
+VOUT
+Min
+VDD - 0.5V
+Ambient temperature: 25°C 
+Circuit stability time  
+(when voltage is applied) Note 3
+tWU
+Max
+30 seconds
+Ambient temperature: 25°C 
+IOUT = 0A VDD = 5V DC
+Note 1:
+The total current consumption is equal to the current consumption in standby mode (IW) plus the output current (IOUT). 
+Note 2:
+Please select an output resistor (pull-down concept) in accordance with VOUT so that the output current is maximum 100μA. If the output current is more than 100μA, this 
+may cause false alarms.
+Note 3:
+The sensor temperature has to be constant for the time specified.
+Digital output
+tWU
+ON
+OFF
+High
+Low
+Power supply
+Output
+Movement
+Yes
+No
+Explanation of the timing
+tWU
+Circuit stability time: max. 30 seconds
+While the circuitry is stabilizing after the power is turned on, the sensor output 
+is not fixed in the High or Low state. This is true regardless of whether or not the 
+sensor has detected anything.
+AMN - Characteristics
+at https://industrial.panasonic.com/ww/products/pt/papirs
+PIR MOTION SENSORS
+44
+PIR MOTION SENSORS
+
+
+PAGE 45
+Infrared 
+radiation
+Comparator
+Amp
+Stabilized power
+I/V
+PIR sensor
+Optical filter
+Multilens
+Output
+GND
+VDD
+TO-5
+ASIC
+Infrared 
+radiation
+Amp
+Stabilized power
+I/V
+PIR sensor
+Optical filter
+Multilens
+Output
+GND
+VDD
+TO-5
+ASIC
+Block diagram output circuit
+Digital output with integrated 
+amplifier and comparator
+Digital output
+Analog output with  
+integrated amplifier
+Analog output
+Wiring diagram
+Notes:
+Digital output types:
+The output signal for the digital output type is from inside FET drain, therefore pull-down resistors are necessary. Please select an output resistor (pull-down concept) in accor-
+dance with VOUT so that the output current is maximum 100μA. If the output current is more than 100μA, this may cause false alarms.
+If the microcomputer has a pull-down function, there is no need for a resistor as long as the output current does not exceed 100µA.
+Analog output types (EKMC26 series): 
+In either case, a microcomputer or a resistor needs to be chosen in accordance to VOUT, so that the output current is maximum 200µA.
+Microcomputer,  
+A/D converter, etc.
+Sensor
+VDD
+Out
+GND
+IOUT: max. 100μA
+IOUT: max. 200μA
+Sensor
+VDD
+Out
+GND
+IOUT: max. 100μA
+Load
+Microcomputer,  
+A/D converter, etc.
+Sensor
+VDD
+Out
+GND
+Technical information
+at https://industrial.panasonic.com/ww/products/pt/papirs
+45
+PIR MOTION SENSORS
+
+
+PAGE 46
+PaPIRs are pyroelectric infrared sensors that detect variations in infrared rays.  
+However, detection may not be successful in the following cases: lack of movement or no 
+temperature change in the heat source. They could also detect the presence of heat sourc-
+es other than a human body. Efficiency and reliability of the system may vary depending on 
+the actual operating conditions:
+1)	 Detecting heat sources other than the human body, such as: 
+a) 	 small animals entering the detection area
+b) 	 When a heat source, for example sun light, incandescent lamp, car headlights etc., 
+or strong light beam hit the sensor regardless whether the detection area is inside 
+or outside.
+c) 	 Sudden temperature change inside or around the detection area caused by hot 
+or cold wind from HVAC, or vapor from a humidifier, etc.
+2)	 Difficulty in sensing the heat source
+a)	 Glass, acrylic or similar materials standing between the target and the sensor may 
+not allow a correct transmission of infrared rays.
+b)	 Non-movement or quick movements of the heat source inside the detection  area.
+3)	 Expansion of the detection area
+	
+In case of a considerable difference in the ambient temperature and the human body 
+temperature, the detection area may be larger than the configured detection area.
+4)	 Malfunction / Detection error 
+On rare occasions, an erroneous detection signal may be output due to the nature of 
+pyroelectric element. When the application cannot tolerate erroneous detection signals, 
+take countermeasures by introducing a pulse-count circuit, etc.
+5)	 Detection distance 
+Panasonic's PIR Motion sensors state the detection distance in the specifications 
+because they are usually provided with the lens (please refer to item 6 for lensless 
+types). The PIR Motion sensor could detect variations in infrared rays however such 
+variations are decided by following three factors.
+•	 The temperature difference between the target and the surroundings:  
+The larger the temperature difference, the easier it is to detect targets.
+•	 	Movement speed: If the target is moving at a slower or faster speed than specified in 
+the tables, the detection ability may be lower.
+•	 Target size: The human body is the standard. If the target is smaller or larger than 
+specified in the table, the detection ability may be lower.  
+The detection distance explained in our data sheet is defined by the three factors 
+mentioned above. Panasonic's standard for the temperature difference between the 
+target and the surrounding is defined as 4°C. The larger the temperature difference, 
+the longer the detection distance. If the temperature difference is 8°C, which is twice 
+as much as the standard, the detection distance will be approx. 1.4 times longer than 
+the distance at 4°C. For example, if targets at a distance of 5m can be detected at 
+4°C, then the sensor can detect targets at a distance of 7m at 8°C. (This is based 
+on the theory that the detection sensitivity will vary inversely with the square of the 
+distance.)
+6)	 Lensless Type 
+The lensless type cannot detect any targets because it is not possible to focus infrared 
+variations into the sensor chip. It is not possible to determine the detection distance and 
+the field of view without a lens. Please provide your own lens based on your lens design 
+concept. 
+7)	 Lens material and the plate setting in front of the lens 
+Typically, the only material that can be passed by infrared rays is Polyethylene. 
+(The lens material of Panasonic's PIR Motion sensors is "High density polyethylene, 
+HDPE".) When you need to set a plate in front of the lens, please choose one made from 
+the Polyethylene. Please note the thickness or color of the plate will affect the detection 
+ability, e.g. it may make the detection distance shorter. Therefore, please confirm by 
+testing the sensor with the plate under realistic conditions.
+1)	 Refer to the newest specification regarding optimal operating environment conditions.
+2)	 Do not solder with a soldering iron above 350°C (662°F) or for more than 3 seconds. 
+This sensor should be hand-soldered.
+3)	 To maintain stability of the product, always mount it on a printed circuit board.
+4)	 Do not use liquids to wash the sensor. If washing fluid gets into the lens, it can reduce 
+the performance.
+5)	 Do not use a sensor after it has fallen on the ground.
+6)	 The sensor may be damaged by ±200 volts of static electricity.
+Avoid direct hand contact with the pins and be very careful when operating the product.
+7)	 When wiring the product, always use shielded cables and minimize the wiring length to 
+prevent noise disturbances.
+8)	 The inner circuit board can be destroyed by a voltage surge.
+The use of surge absorption elements is highly recommended.
+Surge resistance: below the power supply voltage value indicated in the section on 
+maximum rated values.
+9)	 Please use a stabilized power supply. Noise from the power supply can cause operat-
+ing errors.
+Noise resistance: max. ±20V (square waves with a width of 50ns or 1μs)
+To reduce the effect of noise from the power supply , install a capacitor on the sensor's 
+power supply pin.
+10)	 Operation errors can be caused by noise from static electricity, lightnings, cell phones, 
+amateur radio, broadcasting offices, etc
+11)	 The detection performance can be reduced by dirt on the lens, please be careful.
+12)	 The lens is made of soft materials (Polyethylene).
+Please avoid adding weight or impacts that may change its shape, causing operation 
+errors or reduced performance.
+13)	 The specified temperature and humidity levels are suggested to prolong usage. Howev-
+er, they do not guarantee durability or environmental resistance.
+Generally, high temperatures or high humidity levels will accelerate the deterioration of 
+electrical components. Please consider both the planned usage and environment to 
+determine the expected reliability and length of life of the product.
+14)	 Do not attempt to clean this product with detergents or solvents such as benzene or 
+alcohol, as these can cause shape or color alterations.
+15)	 Avoid storage in high, low temperature or liquid environments. 
+Also, avoid storage in environments containing corrosive gas, dust, salty air etc.
+Adverse conditions may cause performance deterioration and the sensor's main part or 
+the metallic connectors could be damaged.
+16)	 Storage conditions
+Temperature: +5 to +40°C, humidity: 30 to 75%
+Please use within 1 year after delivery.
+Basic principles
+Cautions
+Obey the following precautions to prevent injury or accidents.
+1)	 Do not use these sensors under any circumstance in which the range of their ratings, environment conditions or other specifications are exceeded. Using the sensors in any way 
+which causes their specifications to be exceeded may generate abnormally high levels of heat, emit smoke, etc., resulting in damage to the circuitry and possibly causing an 
+accident. 
+2)	 Our company is committed to making products of the highest quality and reliability. Nevertheless, all electrical components are subject to natural deterioration, and durability of a 
+product will depend on the operating environment and conditions of use. Continued use after such deterioration could lead to overheating, smoke or fire. Always use the product in 
+conjunction with proper fire-prevention, safety and maintenance measures to avoid accidents, reduction in product life expectancy or break-down.
+3)	 Before connecting, check the pin layout by referring to the connector wiring diagram, specifications diagram, etc., to verify that the connector is connected properly. Mistakes 
+made in connection may cause unforeseen problems in operation, generate abnormally high levels of heat, emit smoke, etc., resulting in damage to the circuitry. 
+4)	 Do not use any motion sensor which has been disassembled or remodeled. 
+5)	 Failure modes of sensors include short-circuiting, open-circuiting and temperature rises. If this sensor is to be used in equipment where safety is a prime consideration, examine the possi-
+ble effects of these failures on the equipment concerned, and ensure safety by providing protection circuits or protection devices. 
+Example : Safety equipment and devices, traffic signals, burglar and disaster prevention devices, controlling and safety device for trains and motor vehicles
+Safety precautions
+Cautions for use
+at https://industrial.panasonic.com/ww/products/pt/papirs
+PIR MOTION SENSORS
+46
+PIR MOTION SENSORS
+
+
+PAGE 47
+MEMO
+
+
+PAGE 48
+East Asia
+Asia-Pacific
+The Americas
+Europe
+China 	
+Panasonic Industry (China) Co., Ltd.
+Hong Kong 	
+Panasonic Industrial Devices Sales (Hong Kong) Co., Ltd.
+Taiwan 	
+Panasonic Industrial Devices Sales Taiwan Co., Ltd.
+Korea 	
+Panasonic Industrial Devices Sales Korea Co., Ltd.
+Japan 	
+Panasonic Industry Co., Ltd.
+Singapore	
+Panasonic Industry Sales Asia Pacific
+Thailand	
+Panasonic Industrial Devices Sales (Thailand) Co., Ltd.
+United States 
+(Headquarters in NJ) 	 Panasonic Industrial Devices Sales Company of America
+Canada 	
+Panasonic Canada Inc
+Brazil 	
+Panasonic Do Brasil Limitada
+All Rights Reserved © 2025 COPYRIGHT Panasonic Corporation
+Specifications are subject to change without notice.
+Electrical Construction Materials Business Unit
+Address: 1048, Kadoma, Kadoma-shi
+Osaka 571-8686, Japan
+Web: https://industrial.panasonic.com/ww/products/pt/papirs
+(PIR Motion Sensor PaPIRs)
+ユㄍㄆ㄄ㄕㄓㄊ㄄チヸㄐㄓㄌㄔチヤㄐㄎㄑ㄂ㄏㄚ
+202508-4ZT
+Global Network
+Headquarters	
+Panasonic Industry Europe GmbH
+Austria	
+Panasonic Industry Austria GmbH
+The Netherlands	Panasonic Industry Benelux B.V.
+Czech Republic	 Panasonic Industry Europe GmbH
+France	
+Panasonic Industry Europe GmbH
+	
+Panasonic Electric Works Sales Western Europe B.V.
+Germany	
+Panasonic Industry Europe GmbH
+Hungary	
+Panasonic Industry Europe GmbH
+Ireland	
+Panasonic Industry UK Ltd
+Italy	
+Panasonic Industry Italia srl
+Nordic Countries	Panasonic Industry Europe GmbH
+Poland	
+Panasonic Industry Poland sp. z o.o.
+Spain	
+Panasonic Industry Europe GmbH
+Switzerland	
+Panasonic Industry Europe GmbH
+United Kingdom	 Panasonic Industry Europe GmbH
+	
+Panasonic Industry United Kingdom Ltd.

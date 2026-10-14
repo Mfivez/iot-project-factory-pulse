@@ -1,0 +1,635 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head >
+    <meta  charset="utf-8"><meta  name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta  name="apple-mobile-web-app-capable" content="yes"><meta  data-hid="robots" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta  data-hid="keywords" name="keywords" content="Gravity LED Switch Sensor, LED Switch Sensor, digital output, 3.3-5V, PH2.0-3P, red, yellow, green, blue, white, 27 * 26.5mm, DFRobot"><meta  data-hid="description" name="description" content="Discover the Gravity: LED Switch Sensor, a versatile digital output sensor with 3.3-5V operating voltage and PH2.0-3P connector. Available in multiple colors."><meta  data-hid="og:locale" property="og:locale" content="en_US"><meta  data-hid="og:type" property="og:type" content="website"><meta  data-hid="og:title" property="og:title" content="Gravity: LED Switch Sensor ? | DFRobot Wiki"><meta  data-hid="og:description" property="og:description" content="Explore the Gravity: LED Switch Sensor, a compact and versatile digital output sensor. Perfect for your next project with its 3.3-5V operating voltage and PH2.0-3P connector. Available in 5 colors!"><meta  data-hid="og:url" property="og:url" content="https://wiki.dfrobot.com/dfr0789-b/"><meta  data-hid="og:site_name" property="og:site_name" content="DFRobot Wiki"><meta  data-hid="og:image" property="og:image" content="https://dfimg.dfrobot.com/enshop/DFR0789-B/DFR0789-B_Main_01_1200x630.jpg.webp"><meta  data-hid="og:image:alt" property="og:image:alt" content="Front of blue LED push button switch with G/R/B pins for Arduino-DFRobot product sku:DFR0789-B image."><meta  data-hid="twitter:card" property="twitter:card" content="summary_large_image"><meta  data-hid="twitter:site" property="twitter:site" content="@wiki"><meta  data-hid="twitter:creator" property="twitter:creator" content="@wiki"><meta  data-hid="twitter:title" property="twitter:title" content="Gravity: LED Switch Sensor ? | DFRobot Wiki"><meta  data-hid="twitter:description" property="twitter:description" content="Explore the Gravity: LED Switch Sensor, a compact and versatile digital output sensor. Perfect for your next project with its 3.3-5V operating voltage and PH2.0-3P connector. Available in 5 colors!"><meta  data-hid="twitter:image" property="twitter:image" content="https://dfimg.dfrobot.com/enshop/DFR0789-B/DFR0789-B_Main_01_1200x630.jpg.webp"><meta  data-hid="twitter:image:alt" property="twitter:image:alt" content="Front of blue LED push button switch with G/R/B pins for Arduino-DFRobot product sku:DFR0789-B image."><title>Gravity: LED Switch Sensor | DFRobot Wiki</title><base href="/"><link  rel="canonical" href="https://wiki.dfrobot.com/dfr0789-b/"><link  rel="stylesheet" href="/css/pc.css"><link  rel="stylesheet" href="/libs/swiper/swiper-bundle.min.css"><style data-n-head="vuetify" type="text/css" id="vuetify-theme-stylesheet" nonce="undefined">.v-application a { color: #1976d2; }
+.v-application .primary {
+  background-color: #1976d2 !important;
+  border-color: #1976d2 !important;
+}
+.v-application .primary--text {
+  color: #1976d2 !important;
+  caret-color: #1976d2 !important;
+}
+.v-application .primary.lighten-5 {
+  background-color: #c7fdff !important;
+  border-color: #c7fdff !important;
+}
+.v-application .primary--text.text--lighten-5 {
+  color: #c7fdff !important;
+  caret-color: #c7fdff !important;
+}
+.v-application .primary.lighten-4 {
+  background-color: #a8e0ff !important;
+  border-color: #a8e0ff !important;
+}
+.v-application .primary--text.text--lighten-4 {
+  color: #a8e0ff !important;
+  caret-color: #a8e0ff !important;
+}
+.v-application .primary.lighten-3 {
+  background-color: #8ac5ff !important;
+  border-color: #8ac5ff !important;
+}
+.v-application .primary--text.text--lighten-3 {
+  color: #8ac5ff !important;
+  caret-color: #8ac5ff !important;
+}
+.v-application .primary.lighten-2 {
+  background-color: #6aaaff !important;
+  border-color: #6aaaff !important;
+}
+.v-application .primary--text.text--lighten-2 {
+  color: #6aaaff !important;
+  caret-color: #6aaaff !important;
+}
+.v-application .primary.lighten-1 {
+  background-color: #488fef !important;
+  border-color: #488fef !important;
+}
+.v-application .primary--text.text--lighten-1 {
+  color: #488fef !important;
+  caret-color: #488fef !important;
+}
+.v-application .primary.darken-1 {
+  background-color: #005eb6 !important;
+  border-color: #005eb6 !important;
+}
+.v-application .primary--text.text--darken-1 {
+  color: #005eb6 !important;
+  caret-color: #005eb6 !important;
+}
+.v-application .primary.darken-2 {
+  background-color: #00479b !important;
+  border-color: #00479b !important;
+}
+.v-application .primary--text.text--darken-2 {
+  color: #00479b !important;
+  caret-color: #00479b !important;
+}
+.v-application .primary.darken-3 {
+  background-color: #003180 !important;
+  border-color: #003180 !important;
+}
+.v-application .primary--text.text--darken-3 {
+  color: #003180 !important;
+  caret-color: #003180 !important;
+}
+.v-application .primary.darken-4 {
+  background-color: #001e67 !important;
+  border-color: #001e67 !important;
+}
+.v-application .primary--text.text--darken-4 {
+  color: #001e67 !important;
+  caret-color: #001e67 !important;
+}
+.v-application .secondary {
+  background-color: #424242 !important;
+  border-color: #424242 !important;
+}
+.v-application .secondary--text {
+  color: #424242 !important;
+  caret-color: #424242 !important;
+}
+.v-application .secondary.lighten-5 {
+  background-color: #c1c1c1 !important;
+  border-color: #c1c1c1 !important;
+}
+.v-application .secondary--text.text--lighten-5 {
+  color: #c1c1c1 !important;
+  caret-color: #c1c1c1 !important;
+}
+.v-application .secondary.lighten-4 {
+  background-color: #a6a6a6 !important;
+  border-color: #a6a6a6 !important;
+}
+.v-application .secondary--text.text--lighten-4 {
+  color: #a6a6a6 !important;
+  caret-color: #a6a6a6 !important;
+}
+.v-application .secondary.lighten-3 {
+  background-color: #8b8b8b !important;
+  border-color: #8b8b8b !important;
+}
+.v-application .secondary--text.text--lighten-3 {
+  color: #8b8b8b !important;
+  caret-color: #8b8b8b !important;
+}
+.v-application .secondary.lighten-2 {
+  background-color: #727272 !important;
+  border-color: #727272 !important;
+}
+.v-application .secondary--text.text--lighten-2 {
+  color: #727272 !important;
+  caret-color: #727272 !important;
+}
+.v-application .secondary.lighten-1 {
+  background-color: #595959 !important;
+  border-color: #595959 !important;
+}
+.v-application .secondary--text.text--lighten-1 {
+  color: #595959 !important;
+  caret-color: #595959 !important;
+}
+.v-application .secondary.darken-1 {
+  background-color: #2c2c2c !important;
+  border-color: #2c2c2c !important;
+}
+.v-application .secondary--text.text--darken-1 {
+  color: #2c2c2c !important;
+  caret-color: #2c2c2c !important;
+}
+.v-application .secondary.darken-2 {
+  background-color: #171717 !important;
+  border-color: #171717 !important;
+}
+.v-application .secondary--text.text--darken-2 {
+  color: #171717 !important;
+  caret-color: #171717 !important;
+}
+.v-application .secondary.darken-3 {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+.v-application .secondary--text.text--darken-3 {
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+.v-application .secondary.darken-4 {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+.v-application .secondary--text.text--darken-4 {
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+.v-application .accent {
+  background-color: #82b1ff !important;
+  border-color: #82b1ff !important;
+}
+.v-application .accent--text {
+  color: #82b1ff !important;
+  caret-color: #82b1ff !important;
+}
+.v-application .accent.lighten-5 {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+.v-application .accent--text.text--lighten-5 {
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+.v-application .accent.lighten-4 {
+  background-color: #f8ffff !important;
+  border-color: #f8ffff !important;
+}
+.v-application .accent--text.text--lighten-4 {
+  color: #f8ffff !important;
+  caret-color: #f8ffff !important;
+}
+.v-application .accent.lighten-3 {
+  background-color: #daffff !important;
+  border-color: #daffff !important;
+}
+.v-application .accent--text.text--lighten-3 {
+  color: #daffff !important;
+  caret-color: #daffff !important;
+}
+.v-application .accent.lighten-2 {
+  background-color: #bce8ff !important;
+  border-color: #bce8ff !important;
+}
+.v-application .accent--text.text--lighten-2 {
+  color: #bce8ff !important;
+  caret-color: #bce8ff !important;
+}
+.v-application .accent.lighten-1 {
+  background-color: #9fccff !important;
+  border-color: #9fccff !important;
+}
+.v-application .accent--text.text--lighten-1 {
+  color: #9fccff !important;
+  caret-color: #9fccff !important;
+}
+.v-application .accent.darken-1 {
+  background-color: #6596e2 !important;
+  border-color: #6596e2 !important;
+}
+.v-application .accent--text.text--darken-1 {
+  color: #6596e2 !important;
+  caret-color: #6596e2 !important;
+}
+.v-application .accent.darken-2 {
+  background-color: #467dc6 !important;
+  border-color: #467dc6 !important;
+}
+.v-application .accent--text.text--darken-2 {
+  color: #467dc6 !important;
+  caret-color: #467dc6 !important;
+}
+.v-application .accent.darken-3 {
+  background-color: #2364aa !important;
+  border-color: #2364aa !important;
+}
+.v-application .accent--text.text--darken-3 {
+  color: #2364aa !important;
+  caret-color: #2364aa !important;
+}
+.v-application .accent.darken-4 {
+  background-color: #004c90 !important;
+  border-color: #004c90 !important;
+}
+.v-application .accent--text.text--darken-4 {
+  color: #004c90 !important;
+  caret-color: #004c90 !important;
+}
+.v-application .error {
+  background-color: #ff5252 !important;
+  border-color: #ff5252 !important;
+}
+.v-application .error--text {
+  color: #ff5252 !important;
+  caret-color: #ff5252 !important;
+}
+.v-application .error.lighten-5 {
+  background-color: #ffe4d5 !important;
+  border-color: #ffe4d5 !important;
+}
+.v-application .error--text.text--lighten-5 {
+  color: #ffe4d5 !important;
+  caret-color: #ffe4d5 !important;
+}
+.v-application .error.lighten-4 {
+  background-color: #ffc6b9 !important;
+  border-color: #ffc6b9 !important;
+}
+.v-application .error--text.text--lighten-4 {
+  color: #ffc6b9 !important;
+  caret-color: #ffc6b9 !important;
+}
+.v-application .error.lighten-3 {
+  background-color: #ffa99e !important;
+  border-color: #ffa99e !important;
+}
+.v-application .error--text.text--lighten-3 {
+  color: #ffa99e !important;
+  caret-color: #ffa99e !important;
+}
+.v-application .error.lighten-2 {
+  background-color: #ff8c84 !important;
+  border-color: #ff8c84 !important;
+}
+.v-application .error--text.text--lighten-2 {
+  color: #ff8c84 !important;
+  caret-color: #ff8c84 !important;
+}
+.v-application .error.lighten-1 {
+  background-color: #ff6f6a !important;
+  border-color: #ff6f6a !important;
+}
+.v-application .error--text.text--lighten-1 {
+  color: #ff6f6a !important;
+  caret-color: #ff6f6a !important;
+}
+.v-application .error.darken-1 {
+  background-color: #df323b !important;
+  border-color: #df323b !important;
+}
+.v-application .error--text.text--darken-1 {
+  color: #df323b !important;
+  caret-color: #df323b !important;
+}
+.v-application .error.darken-2 {
+  background-color: #bf0025 !important;
+  border-color: #bf0025 !important;
+}
+.v-application .error--text.text--darken-2 {
+  color: #bf0025 !important;
+  caret-color: #bf0025 !important;
+}
+.v-application .error.darken-3 {
+  background-color: #9f0010 !important;
+  border-color: #9f0010 !important;
+}
+.v-application .error--text.text--darken-3 {
+  color: #9f0010 !important;
+  caret-color: #9f0010 !important;
+}
+.v-application .error.darken-4 {
+  background-color: #800000 !important;
+  border-color: #800000 !important;
+}
+.v-application .error--text.text--darken-4 {
+  color: #800000 !important;
+  caret-color: #800000 !important;
+}
+.v-application .info {
+  background-color: #2196f3 !important;
+  border-color: #2196f3 !important;
+}
+.v-application .info--text {
+  color: #2196f3 !important;
+  caret-color: #2196f3 !important;
+}
+.v-application .info.lighten-5 {
+  background-color: #d4ffff !important;
+  border-color: #d4ffff !important;
+}
+.v-application .info--text.text--lighten-5 {
+  color: #d4ffff !important;
+  caret-color: #d4ffff !important;
+}
+.v-application .info.lighten-4 {
+  background-color: #b5ffff !important;
+  border-color: #b5ffff !important;
+}
+.v-application .info--text.text--lighten-4 {
+  color: #b5ffff !important;
+  caret-color: #b5ffff !important;
+}
+.v-application .info.lighten-3 {
+  background-color: #95e8ff !important;
+  border-color: #95e8ff !important;
+}
+.v-application .info--text.text--lighten-3 {
+  color: #95e8ff !important;
+  caret-color: #95e8ff !important;
+}
+.v-application .info.lighten-2 {
+  background-color: #75ccff !important;
+  border-color: #75ccff !important;
+}
+.v-application .info--text.text--lighten-2 {
+  color: #75ccff !important;
+  caret-color: #75ccff !important;
+}
+.v-application .info.lighten-1 {
+  background-color: #51b0ff !important;
+  border-color: #51b0ff !important;
+}
+.v-application .info--text.text--lighten-1 {
+  color: #51b0ff !important;
+  caret-color: #51b0ff !important;
+}
+.v-application .info.darken-1 {
+  background-color: #007cd6 !important;
+  border-color: #007cd6 !important;
+}
+.v-application .info--text.text--darken-1 {
+  color: #007cd6 !important;
+  caret-color: #007cd6 !important;
+}
+.v-application .info.darken-2 {
+  background-color: #0064ba !important;
+  border-color: #0064ba !important;
+}
+.v-application .info--text.text--darken-2 {
+  color: #0064ba !important;
+  caret-color: #0064ba !important;
+}
+.v-application .info.darken-3 {
+  background-color: #004d9f !important;
+  border-color: #004d9f !important;
+}
+.v-application .info--text.text--darken-3 {
+  color: #004d9f !important;
+  caret-color: #004d9f !important;
+}
+.v-application .info.darken-4 {
+  background-color: #003784 !important;
+  border-color: #003784 !important;
+}
+.v-application .info--text.text--darken-4 {
+  color: #003784 !important;
+  caret-color: #003784 !important;
+}
+.v-application .success {
+  background-color: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+.v-application .success--text {
+  color: #4caf50 !important;
+  caret-color: #4caf50 !important;
+}
+.v-application .success.lighten-5 {
+  background-color: #dcffd6 !important;
+  border-color: #dcffd6 !important;
+}
+.v-application .success--text.text--lighten-5 {
+  color: #dcffd6 !important;
+  caret-color: #dcffd6 !important;
+}
+.v-application .success.lighten-4 {
+  background-color: #beffba !important;
+  border-color: #beffba !important;
+}
+.v-application .success--text.text--lighten-4 {
+  color: #beffba !important;
+  caret-color: #beffba !important;
+}
+.v-application .success.lighten-3 {
+  background-color: #a2ff9e !important;
+  border-color: #a2ff9e !important;
+}
+.v-application .success--text.text--lighten-3 {
+  color: #a2ff9e !important;
+  caret-color: #a2ff9e !important;
+}
+.v-application .success.lighten-2 {
+  background-color: #85e783 !important;
+  border-color: #85e783 !important;
+}
+.v-application .success--text.text--lighten-2 {
+  color: #85e783 !important;
+  caret-color: #85e783 !important;
+}
+.v-application .success.lighten-1 {
+  background-color: #69cb69 !important;
+  border-color: #69cb69 !important;
+}
+.v-application .success--text.text--lighten-1 {
+  color: #69cb69 !important;
+  caret-color: #69cb69 !important;
+}
+.v-application .success.darken-1 {
+  background-color: #2d9437 !important;
+  border-color: #2d9437 !important;
+}
+.v-application .success--text.text--darken-1 {
+  color: #2d9437 !important;
+  caret-color: #2d9437 !important;
+}
+.v-application .success.darken-2 {
+  background-color: #00791e !important;
+  border-color: #00791e !important;
+}
+.v-application .success--text.text--darken-2 {
+  color: #00791e !important;
+  caret-color: #00791e !important;
+}
+.v-application .success.darken-3 {
+  background-color: #006000 !important;
+  border-color: #006000 !important;
+}
+.v-application .success--text.text--darken-3 {
+  color: #006000 !important;
+  caret-color: #006000 !important;
+}
+.v-application .success.darken-4 {
+  background-color: #004700 !important;
+  border-color: #004700 !important;
+}
+.v-application .success--text.text--darken-4 {
+  color: #004700 !important;
+  caret-color: #004700 !important;
+}
+.v-application .warning {
+  background-color: #fb8c00 !important;
+  border-color: #fb8c00 !important;
+}
+.v-application .warning--text {
+  color: #fb8c00 !important;
+  caret-color: #fb8c00 !important;
+}
+.v-application .warning.lighten-5 {
+  background-color: #ffff9e !important;
+  border-color: #ffff9e !important;
+}
+.v-application .warning--text.text--lighten-5 {
+  color: #ffff9e !important;
+  caret-color: #ffff9e !important;
+}
+.v-application .warning.lighten-4 {
+  background-color: #fffb82 !important;
+  border-color: #fffb82 !important;
+}
+.v-application .warning--text.text--lighten-4 {
+  color: #fffb82 !important;
+  caret-color: #fffb82 !important;
+}
+.v-application .warning.lighten-3 {
+  background-color: #ffdf67 !important;
+  border-color: #ffdf67 !important;
+}
+.v-application .warning--text.text--lighten-3 {
+  color: #ffdf67 !important;
+  caret-color: #ffdf67 !important;
+}
+.v-application .warning.lighten-2 {
+  background-color: #ffc24b !important;
+  border-color: #ffc24b !important;
+}
+.v-application .warning--text.text--lighten-2 {
+  color: #ffc24b !important;
+  caret-color: #ffc24b !important;
+}
+.v-application .warning.lighten-1 {
+  background-color: #ffa72d !important;
+  border-color: #ffa72d !important;
+}
+.v-application .warning--text.text--lighten-1 {
+  color: #ffa72d !important;
+  caret-color: #ffa72d !important;
+}
+.v-application .warning.darken-1 {
+  background-color: #db7200 !important;
+  border-color: #db7200 !important;
+}
+.v-application .warning--text.text--darken-1 {
+  color: #db7200 !important;
+  caret-color: #db7200 !important;
+}
+.v-application .warning.darken-2 {
+  background-color: #bb5900 !important;
+  border-color: #bb5900 !important;
+}
+.v-application .warning--text.text--darken-2 {
+  color: #bb5900 !important;
+  caret-color: #bb5900 !important;
+}
+.v-application .warning.darken-3 {
+  background-color: #9d4000 !important;
+  border-color: #9d4000 !important;
+}
+.v-application .warning--text.text--darken-3 {
+  color: #9d4000 !important;
+  caret-color: #9d4000 !important;
+}
+.v-application .warning.darken-4 {
+  background-color: #802700 !important;
+  border-color: #802700 !important;
+}
+.v-application .warning--text.text--darken-4 {
+  color: #802700 !important;
+  caret-color: #802700 !important;
+}</style><script  src="/common/md5.min.js" ssr="true"></script><script  src="/common/jquery-2.1.1.min.js" ssr="true"></script><script  src="https://www.googletagmanager.com/gtag/js?id=G-KEFMZ0P9J0" ssr="false" async></script><script  src="/libs/gtag.js" ssr="false" async></script><script  type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://wiki.dfrobot.com/DFR0789-B/#article","headline":"Gravity: LED Switch Sensor | DFRobot Wiki","description":"The Gravity: LED Switch Sensor is a digital output sensor with a 3.3-5V operating voltage and a PH2.0-3P connector. It is available in red, yellow, green, blue, and white, and measures 27 * 26.5mm. The pinout includes a control port (D), VCC (+), and GND (-).","keywords":["Gravity LED Switch Sensor"," LED Switch Sensor"," digital output"," 3.3-5V"," PH2.0-3P"," red"," yellow"," green"," blue"," white"," 27 * 26.5mm"," DFRobot"],"image":{"@id":"https://wiki.dfrobot.com/DFR0789-B/#mainimage"},"dateModified":"2026-05-12","author":{"@id":"https://wiki.dfrobot.com/#organization"},"publisher":{"@id":"https://wiki.dfrobot.com/#organization"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".wiki-introduction .desc"]},"subjectOf":[{"@type":"SoftwareSourceCode","name":"1. Example Code for micro:bit-Mind+LED Switch Control","description":"This article offers a comprehensive tutorial on controlling an LED switch using micro:bit with Mind+, including software preparation, wiring diagrams, and example code for successful implementation."},{"@type":"SoftwareSourceCode","name":"2. Example Code for micro:bit-Makecode LED Switch Control","description":"This article offers a step-by-step guide for controlling an LED switch with micro:bit using MakeCode, including a wiring diagram and example code, ideal for beginners seeking to learn electronics and programming."},{"@type":"SoftwareSourceCode","name":"3. Example Code for Arduino-LED Switch Control","description":"Explore how to control an LED light using Arduino and a switch module, complete with a wiring diagram and sample code for beginners."}],"mainEntity":{"@type":"ItemList","name":"Wiki Sections","itemListElement":[{"@type":"ListItem","position":1,"url":"https://wiki.dfrobot.com/DFR0789-B/#docs","name":"Docs"},{"@type":"ListItem","position":2,"url":"https://wiki.dfrobot.com/DFR0789-B/#tech_specs","name":"Tech Specs"}]},"about":{"@type":"Thing","name":"Gravity: LED Switch for Arduino / micro:bit (Blue)","sku":"DFR0789-B","@id":"https://www.dfrobot.com/product-2350.html#product","image":{"@id":"https://wiki.dfrobot.com/DFR0789-B/#mainimage"},"offers":{"@type":"Offer","price":3,"priceCurrency":"USD"},"isPartOf":{"@type":"CreativeWorkSeries","@id":"https://wiki.dfrobot.com/DFR0789-B/#series","name":"Gravity: LED Switch Sensor"},"hasCertification":[]}},{"@type":"CollectionPage","@id":"https://wiki.dfrobot.com/DFR0789-B/#webpage","url":"https://wiki.dfrobot.com/DFR0789-B/","name":"","mainEntity":{"@id":"https://wiki.dfrobot.com/DFR0789-B#article"},"breadcrumb":{"@id":"https://wiki.dfrobot.com/DFR0789-B/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://wiki.dfrobot.com/DFR0789-B/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"wiki","item":"https://wiki.dfrobot.com/"},{"@type":"ListItem","position":2,"name":"Sensors","item":"https://wiki.dfrobot.com/category-36/"},{"@type":"ListItem","position":3,"name":"Switches &amp; Buttons","item":"https://wiki.dfrobot.com/category-205/"},{"@type":"ListItem","position":4,"name":"DFR0789-B","item":"https://wiki.dfrobot.com/dfr0789-b/"}]},{"@type":"ImageObject","@id":"https://wiki.dfrobot.com/DFR0789-B/#mainimage","contentUrl":"https://dfimg.dfrobot.com/enshop/DFR0789-B/DFR0789-B_Main_01_360x240.jpg.webp","creditText":"DFRobot","creator":{"@type":"Organization","name":"DFRobot"},"publisher":{"@type":"Organization","@id":"https://wiki.dfrobot.com/#organization"}}]}</script><script  src="/dfrobotshop/lib/dfpclib.js" ssr="true"></script><noscript  data-hid="facebook-no-script"><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=517401871764527&ev=PageView&noscript=1" /></noscript><link rel="preload" href="/_nuxt/819275d.js" as="script"><link rel="preload" href="/_nuxt/bc9ed79.js" as="script"><link rel="preload" href="/_nuxt/css/f8e0a27.css" as="style"><link rel="preload" href="/_nuxt/bb93122.js" as="script"><link rel="preload" href="/_nuxt/css/628cafc.css" as="style"><link rel="preload" href="/_nuxt/c9a8dec.js" as="script"><link rel="preload" href="/_nuxt/css/b0fcb67.css" as="style"><link rel="preload" href="/_nuxt/a387eb4.js" as="script"><link rel="stylesheet" href="/_nuxt/css/f8e0a27.css"><link rel="stylesheet" href="/_nuxt/css/628cafc.css"><link rel="stylesheet" href="/_nuxt/css/b0fcb67.css">
+  </head>
+  <body >
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><div data-viewtype="pc" class="wiki-second-page sku-page"><div data-theme="pc" data-fetch-key="data-v-d71158b6:0" class="headFrame" data-v-d71158b6><div data-fetch-key="data-v-0d8b5951:0" data-v-0d8b5951 data-v-d71158b6><!----> <!----> <!----></div> <!----> <div class="head" data-v-d71158b6><div class="df-container" data-v-d71158b6><div class="logo" data-v-d71158b6><a href="https://www.dfrobot.com/" data-v-d71158b6><img src="/dfrobotshop/images/pc/logo.png" alt="logo" data-v-d71158b6></a></div> <div class="navigate" data-v-d71158b6><a href="javascript:;" data-v-d71158b6><button data-v-d71158b6>Store<i class="icon iconfont icon-downarrow2" data-v-d71158b6></i></button></a> <a href="https://community.dfrobot.com/" data-v-d71158b6>Community</a><a href="https://www.dfrobot.com/forum/" data-v-d71158b6>Forum</a><a href="https://wiki.dfrobot.com/" data-v-d71158b6>Wiki</a><a href="https://www.dfrobot.com/blog" data-v-d71158b6>Blog</a><a href="https://learn.dfrobot.com/" data-v-d71158b6>Learn</a></div> <div class="options" data-v-d71158b6><div class="search" data-v-d71158b6><button data-v-d71158b6><i class="icon iconfont icon-search" data-v-d71158b6></i></button></div> <div data-theme="pc" class="warehouse" data-v-d71158b6><!----> <!----> <!----></div> <div class="currency" data-v-d71158b6><button data-v-d71158b6>$USD</button> <ul class="dropdownMenu" style="display:none;" data-v-d71158b6><li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>$USD</a></li><li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>EUR€</a></li><li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>£GBP</a></li></ul></div> <div class="wishlist" data-v-d71158b6><button data-v-d71158b6><i class="icon iconfont icon-hart" data-v-d71158b6></i></button></div> <div data-theme="pc" class="miniCart" data-v-adbdabb8 data-v-d71158b6><button data-v-adbdabb8><span data-v-adbdabb8></span> <i class="icon iconfont icon-gouwuche1" data-v-adbdabb8></i></button> <!----></div> <div class="user" data-v-d71158b6><button class="headImg" data-v-d71158b6><img src="/dfrobotshop/images/pc/nologinhead.png" alt="userhead" data-v-d71158b6></button> <ul class="dropdownMenu" style="display:none;" data-v-d71158b6><li class="name" data-v-d71158b6><b data-v-d71158b6>.</b> <span data-v-d71158b6><i class="icon iconfont icon-VIPicon" data-v-d71158b6></i>VIP</span></li> <li data-v-d71158b6><a href="https://www.dfrobot.com/account/" data-v-d71158b6>My Account</a></li> <li data-v-d71158b6><a href="https://www.dfrobot.com/account/order" data-v-d71158b6>Order History</a></li> <li data-v-d71158b6><a href="https://www.dfrobot.com/account/vip" data-v-d71158b6>VIP Benefits</a></li> <li data-v-d71158b6><a href="javascript:;" data-v-d71158b6>Logout</a></li></ul></div></div></div> <!----> <!----></div> <!----></div> <div class="fullwidth-2-columns"><div data-theme="pc" class="menu"><div class="menu-sticky-block"><div class="search-input-box"><i class="iconfont search icon-search1"></i> <input type="text" placeholder="Search" value=""></div> <a href="/category-205/" class="nav-back"><i class="iconfont icon-arrow-left"></i>
+      Sensors
+    </a> <div class="menu-title">Switches & Buttons</div> <div class="menu-list type_2"><!----> <ul><a href="/sen0235/"><b>Fermion: EC11 Rotary Encoder Module</b><span>(SKU: SEN0235)</span></a><a href="/dfr0029-y/"><b>Gravity: Digital Push Button</b><span>(SKU: DFR0029-Y)</span></a><a href="/dfr0029-w/"><b>Gravity: Digital Push Button</b><span>(SKU: DFR0029-W)</span></a><a href="/dfr0029-b/"><b>Gravity: Digital Push Button</b><span>(SKU: DFR0029-B)</span></a><a href="/fit0658/"><b>5V Metal Proximity Sensor</b><span>(SKU: FIT0658)</span></a><a href="/dfr0029-r/"><b>Gravity: Digital Push Button</b><span>(SKU: DFR0029-R)</span></a><a href="/dfr0991/"><b>Gravity: I2C RGB LED Button Module</b><span>(SKU: DFR0991)</span></a><a href="/dfr0785/"><b>Gravity: LED Button  Sensor</b><span>(SKU: DFR0785)</span></a><a href="/sen0138-r/"><b>Gravity: Digital Crash Sensor(Right)</b><span>(SKU: SEN0138-R)</span></a><a href="/dfr0789/"><b>Gravity: LED Switch Sensor</b><span>(SKU: DFR0789)</span></a><a href="/dfr0789-g/"><b>Gravity: LED Switch Sensor</b><span>(SKU: DFR0789-G)</span></a><a href="/sen0138-l/"><b>Gravity: Digital Crash Sensor(Left)</b><span>(SKU: SEN0138-L)</span></a><a href="/dfr0785-g/"><b>Gravity: LED Button  Sensor</b><span>(SKU: DFR0785-G)</span></a><a href="/dfr0029-g/"><b>Gravity: Digital Push Button</b><span>(SKU: DFR0029-G)</span></a><a href="/dfr0785-w/"><b>Gravity: LED Button  Sensor</b><span>(SKU: DFR0785-W)</span></a><a href="/dfr0423/"><b>Gravity: Digital Self-Locking Switch Module</b><span>(SKU: DFR0423)</span></a><a href="/dfr0789-y/"><b>Gravity: LED Switch Sensor</b><span>(SKU: DFR0789-Y)</span></a><a href="/sen0156/"><b>Gravity: Analog Rotary Switch Module V1</b><span>(SKU: SEN0156)</span></a><a href="/sen0223/"><b>Gravity: Conductivity Switch Sensor</b><span>(SKU: SEN0223)</span></a><a href="/dfr0789-w/"><b>Gravity: LED Switch Sensor</b><span>(SKU: DFR0789-W)</span></a><a href="/dfr0785-y/"><b>Gravity: LED Button  Sensor</b><span>(SKU: DFR0785-Y)</span></a><a href="/dfr0789-r/"><b>Gravity: LED Switch Sensor</b><span>(SKU: DFR0789-R)</span></a><a href="/dfr0075/"><b>Gravity: Analog ADKeyboard Module</b><span>(SKU: DFR0075)</span></a><a href="/dfr1129/"><b>Gravity: Infrared Light Photo Interrupter Module</b><span>(SKU: DFR1129)</span></a><a href="/dfr0789-b/" class="active"><b>Gravity: LED Switch Sensor</b><span>(SKU: DFR0789-B)</span></a><a href="/sen0481/"><b>Magnetic Switch Sensor</b><span>(SKU: SEN0481)</span></a><a href="/dfr0785-b/"><b>Gravity: LED Button  Sensor</b><span>(SKU: DFR0785-B)</span></a><a href="/dfr0785-r/"><b>Gravity: LED Button  Sensor</b><span>(SKU: DFR0785-R)</span></a><a href="/dfr0721/"><b>Fermion: 8421 Encoder-Vertical</b><span>(SKU: DFR0721)</span></a><a href="/dfr0722/"><b>Fermion: 8421 Encoder-Horizontal Module</b><span>(SKU: DFR0722)</span></a><a href="/bos0005/"><b>BOSON Tilt Sensor i5</b><span>(SKU: BOS0005)</span></a><a href="/bos0003/"><b>BOSON Self Locking Switch Module i3</b><span>(SKU: BOS0003)</span></a><a href="/bos0002/"><b>BOSON Push Button Module i2r/i2g/i2b</b><span>(SKU: BOS0002)</span></a></ul> <!----></div></div></div> <div class="full"><div class="full-container"><ul data-theme="pc" class="breadcrumb"><li><i class="iconfont icon-home2"></i> <a href="/">wiki</a></li><li><!----> <a href="/category-36/">Sensors</a></li><li><!----> <a href="/category-205/">Switches & Buttons</a></li><li><!----> <span>DFR0789-B</span></li></ul> <div class="wiki-introduction"><div class="text"><h1>Gravity: LED Switch Sensor</h1> <p>SKU: DFR0789-B</p> <div class="desc"><p>
+                  This article introduces the LED-illuminated self-lock switch module, a simple yet effective switch button that lights up when pressed, providing visual feedback. The module is versatile and can be integrated into various interactive projects using micro:bit, such as switches, backlight keyboards, music player panels, and recording control panels. Available in multiple colors, including red, yellow, green, blue, and white, these switches add a fun and engaging element to your electronics projects. Whether you're creating a DIY electronic device or enhancing an existing setup, the LED-illuminated self-lock switch module is an excellent choice for adding functionality and visual appeal.
+                </p></div></div> <div class="view"><img src="https://dfimg.dfrobot.com/enshop/DFR0789-B/DFR0789-B_Main_01_360x240.jpg.webp" alt="Front of blue LED push button switch with G/R/B pins for Arduino-DFRobot product sku:DFR0789-B image."> <button><i class="iconfont icon-cart1"></i>Buy now</button></div></div> <!----> <div class="category-select-tab"><li class="selected">Docs</li><li>Tech Specs</li></div> <div class="wiki-content docs"><div data-theme="pc" class="docs-navi depth-1"><div class="folder"><a href="/dfr0789-b/docs/24445" target="_blank" class="wiki-title doc"><b>1. Example Code for micro:bit-Mind+LED Switch Control</b><i class="iconfont icon-subscribe"></i> <p class="wiki-desc">This article offers a comprehensive tutorial on controlling an LED switch using micro:bit with Mind+, including software preparation, wiring diagrams, and example code for successful implementation.</p></a> </div><div class="folder"><a href="/dfr0789-b/docs/24444" target="_blank" class="wiki-title doc"><b>2. Example Code for micro:bit-Makecode LED Switch Control</b><i class="iconfont icon-subscribe"></i> <p class="wiki-desc">This article offers a step-by-step guide for controlling an LED switch with micro:bit using MakeCode, including a wiring diagram and example code, ideal for beginners seeking to learn electronics and programming.</p></a> </div><div class="folder"><a href="/dfr0789-b/docs/24443" target="_blank" class="wiki-title doc"><b>3. Example Code for Arduino-LED Switch Control</b><i class="iconfont icon-subscribe"></i> <p class="wiki-desc">Explore how to control an LED light using Arduino and a switch module, complete with a wiring diagram and sample code for beginners.</p></a> </div></div> <div style="display:none;"><div><h3>Specification</h3>
+<p><img src="https://dfimg.dfrobot.com/5f100c15c913a99430e3ee44/wikien/62b07cb0ca8aa07848f7b27e119d7226_0x0.png.webp" alt="Dimension" title="Dimension"></p>
+<div class="table-box"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating Voltage</td>
+<td>+3.3-5V (3.3V is recommended)</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>digital</td>
+</tr>
+<tr>
+<td>Connector</td>
+<td>PH2.0-3P</td>
+</tr>
+<tr>
+<td>Dimension</td>
+<td>27 * 26.5mm</td>
+</tr>
+<tr>
+<td>Colors Available</td>
+<td>red, yellow, green, blue, white</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Pinout</h3>
+<p><img src="https://dfimg.dfrobot.com/5f100c15c913a99430e3ee44/wikien/411fd9870f60f2615b8cc49823de656f_0x0.png.webp" alt="Physical diagram" title="Physical diagram"></p>
+<div class="table-box"><table>
+<thead>
+<tr>
+<th><strong>Num</strong></th>
+<th><strong>Silk-screen</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>D</td>
+<td>Control port</td>
+</tr>
+<tr>
+<td>2</td>
+<td>+</td>
+<td>VCC</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table></div>
+</div></div> <div data-theme="pc" class="docs-navi depth-0" style="display:none;"></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"> <span class="loadmore" style="display:none;">More <i class="iconfont icon-downarrow2"></i></span></div> <div style="display:none;"></div></div> <!----> <div data-theme="pc" class="helpful-survey"><div class="begining-survey"><p>Was this article helpful?</p> <div class="buttons"><button><i class="iconfont icon-thumbs-up"></i></button> <button><i class="iconfont icon-thumbs-down"></i></button></div></div> <div class="further-survey"></div> <!----></div></div></div></div> <div data-theme="pc" class="scroll-top" style="opacity:0;"><i class="iconfont icon-uparrow"></i>
+  TOP
+</div> <footer data-theme="pc"><div class="df-container con xs"><div class="nav"><div class="left"><span><b>Information</b> <a href="https://www.dfrobot.com/about-us">About Us</a><a href="https://www.dfrobot.com/warranty">Warranty</a><a href="https://www.dfrobot.com/privacy-policy">Terms &amp; Conditions</a><a href="https://www.dfrobot.com/shipping">Shipping</a><a href="https://www.dfrobot.com/payment">Payment</a><a href="https://www.dfrobot.com/faq">FAQ</a></span><span><b>Customer Service</b> <a href="https://www.dfrobot.com/distributor">DFRobot Distributors</a><a href="https://www.dfrobot.com/contact-us">Contact Us</a><a href="https://www.dfrobot.com/site-map">Site Map</a></span><span><b>My Account</b> <a href="https://www.dfrobot.com/affiliates">Affiliates</a><a href="https://www.dfrobot.com/special.html">Specials</a></span></div> <div class="right"><a href="https://www.dfrobot.com/"><img src="/dfrobotshop/images/pc/logo.png" alt="logo"></a> <div class="subscribe"><b>Sign up for exclusive offers!</b> <form id="mc-embedded-subscribe-form" action="//DFRobot.us16.list-manage.com/subscribe/post?u=e384b3074873a648e7d3237cc&id=316955a8ff" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="novalidate" class="validate"><div id="mc_embed_signup_scroll" class="footer_scroll"><input id="subscribeEmail" type="email" value name="EMAIL" placeholder="Your email address" required="required" class="email"> <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_e384b3074873a648e7d3237cc_316955a8ff" tabindex="-1" value></div> <button id="subscribeBtn" aria-label="subscribe" type="submit" name="subscribe"><i class="icon iconfont icon-fangxiangyi"></i></button></div></form></div> <div class="like"><b>Like us on</b> <span><a href="https://www.facebook.com/DFrobot" title="dfrobot facebook" target="_blank"><i class="icon iconfont icon-facebook1"></i></a> <a href="https://twitter.com/dfrobotcn" title="dfrobot twitter" target="_blank"><i class="icon iconfont icon-twitter"></i></a> <a href="https://discord.com/invite/wr4szfVUZ7" title="dfrobot discord" target="_blank"><i class="icon iconfont icon-discord"></i></a> <a href="https://www.linkedin.com/company/dfrobot" title="dfrobot linkedin" target="_blank"><i class="icon iconfont icon-linkedin"></i></a> <a href="https://www.youtube.com/user/DFROBOTCN" title="dfrobot youtube" target="_blank"><i class="icon iconfont icon-YouTube"></i></a> <a href="https://www.tiktok.com/@dfrobot_official" title="dfrobot tiktok" target="_blank"><i class="icon iconfont icon-douyin-icon"></i></a></span></div></div></div> <div class="copyright">Copyright © 2025 DFRobot. All rights reserved.</div></div></footer> <!----></div></div></div></div><script>window.__NUXT__=(function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,_,$,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay,az,aA,aB,aC,aD,aE,aF,aG,aH,aI,aJ,aK,aL,aM,aN,aO,aP,aQ,aR,aS,aT,aU,aV,aW,aX,aY,aZ,a_,a$,ba,bb,bc,bd,be,bf,bg,bh,bi,bj,bk,bl,bm,bn,bo,bp,bq,br,bs,bt,bu,bv,bw,bx,by,bz,bA,bB,bC,bD,bE,bF,bG,bH,bI,bJ,bK,bL,bM,bN,bO,bP,bQ,bR,bS){bC[0]={description:a,link:"\u002Fnew-products.html",submenu:[],title:"New Products"};bC[1]={description:a,link:a,submenu:[{description:"A Mountable Spatial Tracking Module for Apple Vision Pro Developers",link:"\u002Fproduct-3157.html",title:"seeMote Cap"},{description:"A micro x86 compute module for ON-DEVICE AI",link:"\u002Fproduct-3149.html",title:"LattePanda Mu Ultra"},{description:"Control your visionOS app with a physical device you can anchor digital content to.",link:"\u002Fproduct-3136.html",title:"seeMote Cube"},{description:"6 TOPS LLM MCP AI Vision Sensor (20+ Models, Deploy Custom Models)",link:"\u002Fproduct-2995.html",title:"Huskylens 2"},{description:"AI learning device designed for education",link:"\u002Ftopic-314.html",title:"UNIHIKER"},{description:"A Palm-Sized X86 Single Board Computer Powered by the Intel N150",link:"\u002Fproduct-2989.html",title:"LattePanda IOTA"},{description:bD,link:bE,title:"ESP32"},{description:bF,link:bG,title:bH},{description:bI,link:bJ,title:bK},{description:"Compatible with 1V\u002F2V\u002F3V\u002F5V\u002F9V\u002F12V\u002F18V solar panels ",link:"\u002Fproduct-1712.html",title:"Solar Power Manager"},{description:"mmwave sensor, ultrasonic sensor, lightning distance sensor, infrared proximity sensor",link:bL,title:bM}],title:"Featured"};bC[2]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-284.html",title:v},{description:"NVIDIA Jetson Orin, ESP32-CAM, other boards based on ARM and RISC-V AI processor",link:"\u002Ftopic-284-184.html",title:"AI Development Boards"},{description:"Language learning voice recognition sensor, AI vision sensor, AI vision camera",link:"\u002Ftopic-284-36.html",title:"AI Sensors"},{description:"NVIDIA Jetson Orin \u002F Nano \u002F Xavier carrier boards, OpenMV Cam shields",link:"\u002Ftopic-284-156.html",title:"AI Modules"},{description:"Jetson Nano accessories and other smart tools",link:"\u002Ftopic-284-66.html",title:"AI Prototyping & Accessories"},{description:a,link:"\u002Ftopic-284-140.html",title:"AI Kits"}],title:"AI Hardware"};bC[3]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-277.html",title:v},{description:"Arduino UNO R4 \u002F R3, Arduino Mega 2560, Arduino Leonardo, Arduino Nano and other boards compatible with Arduino",link:"\u002Ftopic-277-184.html",title:"Arduino Development Boards"},{description:"mmwave sensor, voice recognition sensor, ultrasonic sensor, gas sensor and other sensors compatible with Arduino",link:"\u002Ftopic-277-36.html",title:"Arduino Sensors"},{description:"MP3 player, IO Expansion Shield, DAC module, LCD display module, NB-IoT \u002F LTE \u002F GNSS \u002F GPRS \u002F GPS Expansion Shield",link:"\u002Ftopic-277-156.html",title:"Arduino Modules"},{description:"Arduino beginner kit with detailed tutorials, arduino sensor kit, arduino robot kit, arduino coding kit",link:"\u002Ftopic-277-140.html",title:"Arduino Kits"},{description:"Prototyping shields, cables, connectors, USB power supply, battery holder",link:"\u002Ftopic-277-66.html",title:"Arduino Prototyping & Accessories"}],title:"Arduino"};bC[4]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-184.html",title:v},{description:"Raspberry Pi, LattePanda, NVIDIA, ARM",link:"\u002Fcategory-311.html",title:"Single Board Computer"},{description:bN,link:"\u002Fcategory-188.html",title:bO},{description:"x86 Windows \u002F Linux single board computer, server, compute module",link:"\u002Fcategory-186.html",title:"LattePanda Dev Board"},{description:"NVIDIA Jetson Orin Nano, NVIDIA Jetson AGX Orin",link:"\u002Fcategory-268.html",title:"NVIDIA"},{description:"UNIHIKER, Raspberry Pi CM 5, ROCK Pi",link:"\u002Fcategory-294.html",title:"ARM"},{description:"Arduino, ESP32 & ESP8266, micro:bit",link:"\u002Fcategory-312.html",title:"MCU"},{description:"Development boards compatible with Arduino: DFRduino , Beetle, Romeo, Bluno, Xboard",link:"\u002Fcategory-185.html",title:"Arduino Board"},{description:bP,link:"\u002Fcategory-271.html",title:"ESP32 & ESP8266"},{description:"A pocket-sized computer designed to inspire creative thinking in children",link:"\u002Fcategory-257.html",title:bQ},{description:"PYNQ-Z2, Calliope, Particle, Maixduino, CurieCore",link:"\u002Fcategory-52.html",title:ah}],title:J};bC[5]={description:a,link:a,submenu:[{description:bD,link:bE,title:v},{description:"Low power consumption microcontroller intentionally designed for IoT projects",link:"\u002Ftopic-302.html",title:"FireBeetle"},{description:"IoT hardwares and IoT home automation devices",link:"\u002Ftopic-276.html",title:"Internet of Things - IoT"},{description:bP,link:"\u002Ftopic-302-184.html",title:J},{description:"Sensors compatible with ESP32",link:"\u002Ftopic-302-36.html",title:w},{description:"IO Shield, OLED Display, LoRa Radio, LED Matrix, Terminal Block Board for FireBeetle ESP32",link:"\u002Ftopic-302-156.html",title:C},{description:"Hackster & DFRobot AI \u002F IoT \u002F Environmental Sensor Starter EEDU Kit",link:"\u002Ftopic-302-140.html",title:ai},{description:"Prototyping board, Enclosure for FireBeetle, Patch Test Hook",link:"\u002Ftopic-302-66.html",title:E}],title:"ESP32 \u002F ESP8266"};bC[6]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-278.html",title:v},{description:"LattePanda Mu, LattePanda Sigma, LattePanda 3 Delta, LattePanda 2 Alpha \u002F Delta, LattePanda V1",link:"\u002Ftopic-278-184.html",title:"LattePanda Boards"},{description:"Carrier Board for LattePanda Mu, touch display, UPS hat, network card for LattePanda",link:"\u002Ftopic-278-156.html",title:C},{description:"Cases, streaming cable, cooler, heat sink, power cable, power supply for LattePanda",link:"\u002Ftopic-278-66.html",title:"LattePanda Accessories"},{description:"Camera, GPS receiver for LattePanda",link:"\u002Ftopic-278-36.html",title:w},{description:"LattePanda Mu evaluation kit, LattePanda board with case & streaming cable & touch display kit",link:"\u002Ftopic-278-140.html",title:"LattePanda Kits"}],title:"LattePanda"};bC[7]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-156.html",title:v},{description:"DC \u002F Stepper \u002F Brushless \u002F Geared \u002F TT motor and motor driver, servo, relay module, peristaltic pump",link:"\u002Fcategory-51.html",title:"Motors & Actuators & Drivers"},{description:"3G\u002F4G\u002F5G, Lora, WiFi, Bluetooth, NB-IoT, Ethernet, GSM\u002FGPRS\u002FGPS, Serial, CANBUS & OBD, RFID, Infra Red, Radio (RF), Xbee \u002F Zigbee",link:"\u002Fcategory-45.html",title:"Communications"},{description:"DFPlayer, mini MP3 player, speaker module, audio analyzer module, digital buzzer, audio amplifier",link:"\u002Fcategory-259.html",title:"Audio"},{description:"IO Expansion Shield, UPS HAT, Carrier Board for Arduino \u002F Raspberry Pi \u002F micro:bit \u002F LattePanda",link:"\u002Fcategory-269.html",title:"IO Expansion Shields & HATs"},{description:"eDP touch display, IPS display, DSI touchscreen, capacitive touch panel, LED matrix, OLED display, LEDs",link:"\u002Fcategory-53.html",title:"LCDs\u002FLEDs\u002FE-ink\u002FDisplays"},{description:"ADC Module, DAC Module",link:"\u002Fcategory-261.html",title:"AD\u002FDA Converter"},{description:"Real-time clock module",link:"\u002Fcategory-232.html",title:"RTC Modules"},{description:"MicroSD card module, 16GB 32GB 64GB 128GB MicroSD memory card",link:"\u002Fcategory-213.html",title:"Storage Modules"},{description:"Solar power manager, battery holder, DC-DC buck converter, wireless charging module",link:"\u002Fcategory-70.html",title:"Power Modules"},{description:"GamePad, joystick, sensor adapter",link:"\u002Fcategory-215.html",title:ah}],title:C};bC[8]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-66.html",title:v},{description:"6DoF spatial tracking and input accessories for Apple Vision Pro",link:"\u002Fcategory-324.html",title:"Spatial Anchors"},{description:"Heatsink, cooling fan, DIN rail mount bracket, VESA mounting kit",link:"\u002Fcategory-96.html",title:"Accessories"},{description:"Buttons, headers, LEDs, resistors, capacitors, diodes & transistors, crystals",link:"\u002Fcategory-219.html",title:"Electronics"},{description:"Case for Raspberry Pi, LattePanda, micro:bit, Arduino UNO, Jetson Nano",link:"\u002Fcategory-303.html",title:"Enclosure&Case"},{description:"Power supply, solar panel, AA batteries holder",link:"\u002Fcategory-92.html",title:"Power"},{description:"Jumper wires, power cables, USB data cables, gravity module cables, audio & video cables, Ethernet cable",link:"\u002Fcategory-86.html",title:"Cables and Wires"},{description:"micro:Maqueen mechanic, robot gripper, rubber wheels, mecanum wheels, screw",link:"\u002Fcategory-46.html",title:"Mechanics"},{description:"Electric solenoid lock, hot plate preheater, straight\u002Fcross screwdriver",link:"\u002Fcategory-43.html",title:"Tools"},{description:"Bread board self adhesive, prototyping shield for arduino, flexible single sided protoBoard",link:"\u002Fcategory-67.html",title:"Breadboards & Protoboards"},{description:"Soldering station, soldering starter tools, soldering iron welding tool kit",link:"\u002Fcategory-115.html",title:"Soldering"},{description:"Wireless keyboard for Raspberry Pi and LattePanda",link:"\u002Fcategory-270.html",title:"Keyboards"},{description:"Electroluminecent wire",link:"\u002Fcategory-132.html",title:"EL Wires"}],title:E};bC[9]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-272.html",title:v},{description:bN,link:"\u002Ftopic-272-184.html",title:"Raspberry Pi Boards"},{description:"Heatsink, cooling case, power supply and cables for Raspberry Pi",link:"\u002Ftopic-272-66.html",title:E},{description:"Touch display, relay module, UPS HAT, expansion board for Raspberry Pi",link:"\u002Ftopic-272-156.html",title:C},{description:"Raspberry Pi 5 and 4B Starter Kit",link:"\u002Ftopic-272-140.html",title:"Raspberry Pi Kits"},{description:"Sensors compatible with Raspberry Pi, such as camera, ultrasonic sensor, etc.",link:"\u002Ftopic-272-36.html",title:w}],title:bO};bC[10]={description:a,link:a,submenu:[{description:a,link:"\u002Ftopic-279.html",title:v},{description:"Robot control board with motor driver",link:"\u002Ftopic-279-184.html",title:J},{description:"LiDAR, ToF laser range scanner, ultrasonic distance sensor, camera, DOF sensor",link:"\u002Ftopic-279-36.html",title:w},{description:"Motor, motor driver, digital servo, clutch servo, DC-DC converter",link:"\u002Ftopic-279-156.html",title:C},{description:"micro:bit programming robot platform, mobile robot platform, robotic arm",link:"\u002Ftopic-279-140.html",title:ai},{description:"micro:Maqueen Mechanic, rubber wheel, mecanum wheel, battery holder",link:"\u002Ftopic-279-66.html",title:E}],title:"Robotics"};bC[11]={description:a,link:a,submenu:[{description:a,link:"\u002Fcategory-36.html",title:"All Sensors"},{description:"Sensors with standard interface, plug-and-play, no soldering required, with color coded pin headers & cables",link:"\u002Ftopic-282.html",title:"Gravity Sensors"},{description:"High-quality and open-source breakout boards with small size and flexible wiring method",link:"\u002Ftopic-292.html",title:"Fermion Breakout"},{description:"24GHz and 60GHz radar modules compatible with Home Assistant, ESPHome, and Arduino",link:"\u002Fcategory-321.html",title:"mmWave Radar Sensors"},{description:"AI vision sensor, gesture sensor, fingerprint sensor, touch sensor",link:"\u002Fcategory-76.html",title:"Interactive Sensors"},{description:bF,link:bG,title:bH},{description:bI,link:bJ,title:bK},{description:"Sensors for soil moisture, pH, EC, and NPK in smart agriculture.",link:"\u002Fcategory-322.html",title:"Soil Sensors"},{description:"Solid state liDAR, laser range scanner, ToF LiDAR, single-point ranging LiDAR",link:"\u002Fcategory-313.html",title:"LiDAR"},{description:"IR positioning camera, ambient light sensor, 3D ToF sensor, camera module, RGB color sensor, QR code scanner",link:"\u002Fcategory-58.html",title:"Light & Imaging Sensors"},{description:"mmWave, human presence detection sensor, PIR sensor, vibration sensor, tilt sensor",link:"\u002Fcategory-204.html",title:"Motion Sensors"},{description:"Soil moisture sensor, DHT\u002FSHT\u002FAHT temperature & humidity sensor, BME688 environmental sensor",link:"\u002Fcategory-64.html",title:"Temperature & Humidity Sensor"},{description:"Sensors for weather stations, air, UV, light, wind, and climate data.",link:"\u002Fcategory-323.html",title:"Environmental Sensors"},{description:"Ultrasonic sensor, lightning distance sensor, infrared proximity sensor",link:bL,title:bM},{description:"Voice recognition sensor, text to speech, voice synthesizer module, voice recorder module",link:"\u002Fcategory-63.html",title:"Sound Sensors"},{description:"AC current sensor, digital wattmeter, LED current meter",link:"\u002Fcategory-201.html",title:"Current Sensors"},{description:"DOF sensor, triple axis accelerometer, 6-axis accelerometer, 9-axis sensor",link:"\u002Fcategory-65.html",title:"IMU Sensors"},{description:"Heart rate monitor sensor, EMG\u002FECG\u002FPPG sensor",link:"\u002Fcategory-199.html",title:"e-Health Sensors"},{description:"Digital weight sensor",link:"\u002Fcategory-200.html",title:"Weight Sensors"},{description:"Triple axis magnetometer sensor, hall sensor",link:"\u002Fcategory-60.html",title:"Magnetic Sensors"},{description:"Barometric pressure sensor, differential pressure sensor, air pressure sensor",link:"\u002Fcategory-229.html",title:"Pressure Sensors"},{description:"Thin film pressure sensor, flexiforce pressure sensor",link:"\u002Fcategory-202.html",title:"Flex Sensors"},{description:"Rotary encoder, TT Motor encoder, 360 degree hall angle sensor",link:"\u002Fcategory-301.html",title:"Encoders"},{description:"USB GPS receiver compatible with Raspberry Pi \u002F LattePanda \u002F Jetson Nano",link:"\u002Fcategory-57.html",title:"GPS"},{description:"Push button, LED button, magnetic switch, LED switch",link:"\u002Fcategory-205.html",title:G},{description:"Analog slide position sensor, analog rotation potentiometer sensor",link:"\u002Fcategory-203.html",title:"Potentiometer"},{description:"9 PCS \u002F 27 PCS \u002F 37 PCS sensor set for Arduino and Raspberry Pi",link:"\u002Fcategory-227.html",title:"Sensor Set"},{description:"Geiger counter module, analog signal isolator, soil NPK measure sensor",link:"\u002Fcategory-230.html",title:ah}],title:"Sensor"};bC[12]={description:a,link:a,submenu:[{description:"Arduino and micro:bit kits with detailed tutorials",link:"\u002Ftopic-280.html",title:bR},{description:"Educational robot platform for micro:bit and micro:bit accessories",link:"\u002Ftopic-281.html",title:bQ},{description:"micro:bit robots for hands-on STEM",link:"\u002Ftopic-319.html",title:"Maqueen"},{description:"Modularized electronic building blocks designed for young inventors and STEM educators",link:"\u002Ftopic-283.html",title:"Boson"},{description:"micro:bit, UNIHIKER",link:"\u002Ftopic-280-184.html",title:J},{description:"Huskylens, Lark weather station, sensor set for Arduino",link:"\u002Ftopic-280-36.html",title:w},{description:"micro:bit accessories, science data acquisition module",link:"\u002Ftopic-280-156.html",title:C},{description:"Arduino beginner kit, micro:bit educational programming robot kit",link:"\u002Ftopic-280-140.html",title:ai},{description:"micro:Maqueen mechanic, UNIHIKER silicone case",link:"\u002Ftopic-280-66.html",title:E}],title:bR};bS.USD={symbol:"$",code:ag,name:"$USD",rate:c};bS.EUR={symbol:"€",code:"EUR",name:"EUR€",rate:.85254949};bS.GBP={symbol:"£",code:"GBP",name:"£GBP",rate:.74400586};return {layout:f,data:[{viewType:F,sku:u,breadcrumbs:[{href:ak,text:f},{href:"\u002Fcategory-36\u002F",text:w},{href:al,text:G},{href:am,text:u}],menu:{type:an,now:{text:G,href:a},back:{text:w,href:al},content:[{id:"17574",material_id:h,title:ao,subject:"sen0235\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586490,sku:"SEN0235",user_id:k,product:a,default_sort:412,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1611,product_name:"Fermion: EC11 Rotary Encoder Module (Breakout)",category_names:"All Products,Fermion,Sensors,Switches &amp; Buttons",product_type:g,category_category_ids:"36 205 292",tag:"SEN0235, EC11, rotary encoder, button, rotary encoder button, Fermion",pm_tag:"MP.SL,C++.PL,Fermion.Brand,Switches & Buttons.PF,3.3V.WV,Digital.ToS,Pin.Interface,5V.WV,Arduino IDE.IDE",text:ao,href:"\u002FSEN0235\u002F",active:d},{id:"22799",material_id:h,title:s,subject:"dfr0029-y\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1768905134,sku:"DFR0029-Y",user_id:k,product:a,default_sort:920,sort_order_plus:b,_score:e,stock_name_status:j,product_id:73,product_name:"Gravity: Digital Push Button (Yellow)",category_names:o,product_type:g,category_category_ids:p,tag:"push button,digital button,DFR0029-Y, Switch \u002F Button, Gravity",pm_tag:"Digital.ToS,Buttons.PF,Gravity.Brand,3.3V.WV,PH2.0.Interface,M.SL,5V.WV,Arduino IDE.IDE,C++.PL,Mind+.IDE",text:s,href:"\u002FDFR0029-Y\u002F",active:d},{id:"22800",material_id:h,title:s,subject:"dfr0029-w\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1768905241,sku:"DFR0029-W",user_id:k,product:a,default_sort:1328,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1097,product_name:"Gravity: Digital Push Button (White)",category_names:o,product_type:g,category_category_ids:p,tag:"DFR0029-W,digital button,push button, Switch \u002F Button, Gravity",pm_tag:"Arduino IDE.IDE,C++.PL,Mind+.IDE,Buttons.PF,Gravity.Brand,3.3V.WV,PH2.0.Interface,M.SL,Digital.ToS,5V.WV",text:s,href:"\u002FDFR0029-W\u002F",active:d},{id:"22798",material_id:h,title:s,subject:"dfr0029-b\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1768905022,sku:"DFR0029-B",user_id:k,product:a,default_sort:1469,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1096,product_name:"Gravity: Digital Push Button (Blue)",category_names:o,product_type:g,category_category_ids:p,tag:"DFR0029-B,push button, digital button, Gravity, Switch \u002F Button",pm_tag:"Digital.ToS,5V.WV,Arduino IDE.IDE,C++.PL,Mind+.IDE,Buttons.PF,Gravity.Brand,3.3V.WV,PH2.0.Interface,M.SL",text:s,href:"\u002FDFR0029-B\u002F",active:d},{id:"17481",material_id:h,title:ap,subject:"fit0658\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586438,sku:"FIT0658",user_id:k,product:a,default_sort:1541,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2025,product_name:"5V Metal Proximity Switch",category_names:"All Products,Sensors,Switches &amp; Buttons",product_type:g,category_category_ids:"36 205",tag:"FIT0658, Switch, Metal, Metal Proximity Switch, Proximity",pm_tag:"PH2.0.Interface,Production.Scenario,Automation.Scenario,M+.SL,Arduino IDE.IDE,C++.PL,Digital.ToS,Other Brands.Brand,Switches & Buttons.PF,5V.WV",text:ap,href:"\u002FFIT0658\u002F",active:d},{id:"17140",material_id:h,title:s,subject:"dfr0029-r\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764819946,sku:"DFR0029-R",user_id:k,product:a,default_sort:1566,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1098,product_name:"Gravity: Digital Push Button (Red)",category_names:o,product_type:g,category_category_ids:p,tag:"digital button,DFR0029-R,push button,button, Switch \u002F Button, Gravity",pm_tag:"PH2.0.Interface,M.SL,Digital.ToS,5V.WV,Arduino IDE.IDE,C++.PL,Mind+.IDE,Buttons.PF,Gravity.Brand,3.3V.WV",text:s,href:"\u002FDFR0029-R\u002F",active:d},{id:"21082",material_id:h,title:aq,subject:"dfr0991\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1765246454,sku:"DFR0991",user_id:k,product:a,default_sort:1597,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2634,product_name:"Gravity: I2C RGB LED Colorful Button Module",category_names:ar,product_type:g,category_category_ids:as,tag:"button module arduino, arduino uno rgb led button,rgb led button controller,rgb led diy button",pm_tag:"3.3V.WV,Gravity.Brand,M+.SL,C++.PL,I2C.ToS,Class.Scenario,Project.Scenario,5V.WV,Switches & Buttons.PF,Art.Scenario,PH2.0.Interface,Mind+.PL",text:aq,href:"\u002FDFR0991\u002F",active:d},{id:"17535",material_id:h,title:n,subject:"dfr0785\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586467,sku:"DFR0785",user_id:7124,product:a,default_sort:1796,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2502,product_name:"Gravity: LED Button Module Pack (Digital Signal, 5 PCS)",category_names:at,product_type:g,category_category_ids:au,tag:A,pm_tag:"Hobby.Scenario,M.SL,Python.PL,Gravity.Brand,Project.Scenario,5V.WV,3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF",text:n,href:"\u002FDFR0785\u002F",active:d},{id:"17412",material_id:h,title:av,subject:"sen0138-r\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586404,sku:"SEN0138-R",user_id:k,product:a,default_sort:1805,sort_order_plus:b,_score:e,stock_name_status:j,product_id:763,product_name:"Gravity: Digital Crash Sensor (Right)",category_names:o,product_type:g,category_category_ids:p,tag:"SEN0138,crash sensor,miniature,snap,micro,switch,Gravity, Proximity",pm_tag:"Gravity.Brand,C++.PL,PH2.0.Interface,3.3V.WV,M.SL,Other Sensors.PF,Arduino IDE.IDE,Mind+.IDE,MobileRobot.Scenario,5V.WV,Digital.ToS",text:av,href:"\u002FSEN0138-R\u002F",active:d},{id:"17547",material_id:h,title:m,subject:"dfr0789\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586475,sku:"DFR0789",user_id:k,product:a,default_sort:1815,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2501,product_name:"Gravity: LED Switch x 5 Pack",category_names:at,product_type:g,category_category_ids:au,tag:y,pm_tag:"PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,5V.WV,Gravity.Brand,Project.Scenario,3.3V.WV,Mind+.PL,Digital.ToS",text:m,href:"\u002FDFR0789\u002F",active:d},{id:"24248",material_id:h,title:m,subject:"dfr0789-g\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:aw,sku:"DFR0789-G",user_id:k,product:a,default_sort:1914,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2351,product_name:"Gravity: LED Switch for Arduino \u002F micro:bit (Green)",category_names:q,product_type:g,category_category_ids:r,tag:y,pm_tag:"Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,5V.WV,Gravity.Brand,Project.Scenario,3.3V.WV",text:m,href:"\u002FDFR0789-G\u002F",active:d},{id:"22387",material_id:h,title:ax,subject:"sen0138-l\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1766744786,sku:"SEN0138-L",user_id:k,product:a,default_sort:1917,sort_order_plus:b,_score:e,stock_name_status:j,product_id:762,product_name:"Gravity: Digital Crash Sensor (Left)",category_names:o,product_type:g,category_category_ids:p,tag:"SEN0138,crash,miniature,snap,micro,switch,Gravity",pm_tag:"Mind+.IDE,MobileRobot.Scenario,5V.WV,Digital.ToS,Gravity.Brand,C++.PL,PH2.0.Interface,3.3V.WV,M.SL,Other Sensors.PF,Arduino IDE.IDE",text:ax,href:"\u002FSEN0138-L\u002F",active:d},{id:"24255",material_id:h,title:n,subject:"dfr0785-g\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:L,sku:"DFR0785-G",user_id:k,product:a,default_sort:1921,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2364,product_name:"Gravity: LED Button for Arduino \u002F micro:bit (Green)",category_names:q,product_type:g,category_category_ids:r,tag:A,pm_tag:"C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,Gravity.Brand,Project.Scenario,5V.WV,3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age",text:n,href:"\u002FDFR0785-G\u002F",active:d},{id:"22801",material_id:h,title:s,subject:"dfr0029-g\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1768905341,sku:"DFR0029-G",user_id:k,product:a,default_sort:2199,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1095,product_name:"Gravity: Digital Push Button (Green)",category_names:o,product_type:g,category_category_ids:p,tag:"DFR0029-G,push button,digital button,button, Gravity, Switch \u002F Button",pm_tag:"Mind+.IDE,Buttons.PF,Gravity.Brand,3.3V.WV,PH2.0.Interface,M.SL,Digital.ToS,5V.WV,Arduino IDE.IDE,C++.PL",text:s,href:"\u002FDFR0029-G\u002F",active:d},{id:"24253",material_id:h,title:n,subject:"dfr0785-w\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:ay,sku:"DFR0785-W",user_id:k,product:a,default_sort:2270,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2362,product_name:"Gravity: LED Button for Arduino \u002F micro:bit (White)",category_names:q,product_type:g,category_category_ids:r,tag:A,pm_tag:az,text:n,href:"\u002FDFR0785-W\u002F",active:d},{id:"17364",material_id:h,title:aA,subject:"dfr0423\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586380,sku:"DFR0423",user_id:k,product:a,default_sort:2330,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1456,product_name:"Gravity: Digital Self-Locking Switch",category_names:o,product_type:g,category_category_ids:p,tag:"DFR0423, button, switch, self-locking, gravity sensor, Switch \u002F Button, Gravity",pm_tag:"PH2.0.Interface,Digital.ToS,5V.WV,Switches & Buttons.PF,3.3V.WV,Arduino.Brand,Arduino IDE.IDE,M.SL,C++.PL,Mind+.IDE",text:aA,href:"\u002FDFR0423\u002F",active:d},{id:"24251",material_id:h,title:m,subject:"dfr0789-y\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1779085622,sku:"DFR0789-Y",user_id:k,product:a,default_sort:2488,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2354,product_name:"Gravity: LED Switch for Arduino \u002F micro:bit (Yellow)",category_names:q,product_type:g,category_category_ids:r,tag:y,pm_tag:az,text:m,href:"\u002FDFR0789-Y\u002F",active:d},{id:"17514",material_id:h,title:M,subject:"sen0156\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586456,sku:"SEN0156",user_id:k,product:a,default_sort:2736,sort_order_plus:b,_score:e,stock_name_status:j,product_id:970,product_name:M,category_names:o,product_type:g,category_category_ids:p,tag:"SEN0156,Rotary Switch,Switch,Gravity, Position \u002F Angle",pm_tag:"Analog.ToS,Gravity.Brand,C++.PL,Switches & Buttons.PF,3.3V.WV,12V.WV,5V.WV,Arduino IDE.IDE,M+.SL,PH2.0.Interface",text:M,href:"\u002FSEN0156\u002F",active:d},{id:"17524",material_id:h,title:aB,subject:"sen0223\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586461,sku:"SEN0223",user_id:k,product:a,default_sort:2905,sort_order_plus:b,_score:e,stock_name_status:j,product_id:1564,product_name:"Gravity: Conductivity Sensor Switch",category_names:o,product_type:g,category_category_ids:p,tag:"SEN0223, Arduino Makey Makey, conductivity switch, button, touchable,Gravity, Switch \u002F Button",pm_tag:"Art.Scenario,Mind+.IDE,3.3V.WV,M.SL,PH2.0.Interface,Arduino IDE.IDE,Digital.ToS,C++.PL,Gravity.Brand,5V.WV,Production.Scenario,Switches & Buttons.PF",text:aB,href:"\u002FSEN0223\u002F",active:d},{id:"24250",material_id:h,title:m,subject:"dfr0789-w\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:aC,sku:"DFR0789-W",user_id:k,product:a,default_sort:3152,sort_order_plus:b,_score:e,stock_name_status:j,product_id:aD,product_name:"Gravity: LED Switch for Arduino \u002F micro:bit (White)",category_names:q,product_type:g,category_category_ids:r,tag:y,pm_tag:"3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,5V.WV,Gravity.Brand,Project.Scenario",text:m,href:"\u002FDFR0789-W\u002F",active:d},{id:"24252",material_id:h,title:n,subject:"dfr0785-y\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:ay,sku:"DFR0785-Y",user_id:k,product:a,default_sort:3292,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2361,product_name:"Gravity: LED Button for Arduino \u002F micro:bit (Yellow)",category_names:q,product_type:g,category_category_ids:r,tag:A,pm_tag:N,text:n,href:"\u002FDFR0785-Y\u002F",active:d},{id:"24249",material_id:h,title:m,subject:"dfr0789-r\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:aC,sku:"DFR0789-R",user_id:k,product:a,default_sort:3335,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2352,product_name:"Gravity: LED Switch for Arduino \u002F micro:bit (Red)",category_names:q,product_type:g,category_category_ids:r,tag:y,pm_tag:"Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,5V.WV,Gravity.Brand,Project.Scenario,3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL",text:m,href:"\u002FDFR0789-R\u002F",active:d},{id:"17386",material_id:h,title:aE,subject:"dfr0075\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586392,sku:"DFR0075",user_id:k,product:a,default_sort:1563,sort_order_plus:b,_score:e,stock_name_status:j,product_id:197,product_name:"Gravity: Analog ADKeyboard Module V2",category_names:o,product_type:g,category_category_ids:p,tag:"Button,AD,Keyboard,dfr0075,Analog,V2,Gravity,arduino sensor, Switch, Button",pm_tag:"5V.WV,Analog.ToS,Prototyping.Scenario,Gravity.Brand,PH2.0.Interface,C++.PL,Keyboards.PF,Arduino IDE.IDE,M.SL,Mind+.IDE,3.3V.WV",text:aE,href:"\u002FDFR0075\u002F",active:d},{id:"19378",material_id:h,title:aF,subject:"dfr1129\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764754930,sku:"DFR1129",user_id:k,product:a,default_sort:2169,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2849,product_name:"Gravity: Infrared Light Photo Interrupter Module (940nm, 5.0mm Gap)",category_names:ar,product_type:g,category_category_ids:as,tag:"DFR1129, Photo Interrupter, Photoelectric Sensor, ITR9608, Smart Card Switch, Slot Type Photoelectric Switch, Infrared Sensor, Photo Interrupter Sensor, Photoelectric Switches, Photoelectric Sensors, Photointerrupters",pm_tag:"Digital.ToS,Class.Scenario,Switches & Buttons.PF,Project.Scenario,C++.PL,3.3V.WV,Arduino IDE.IDE,Gravity.Brand,M.SL,Mind+.IDE,Automation.Scenario,K12.Age,Python.PL,Production.Scenario,Graphical.PL,Makecode.IDE,PH2.0.Interface,5V.WV",text:aF,href:"\u002FDFR1129\u002F",active:d},{id:"24247",material_id:h,title:m,subject:"dfr0789-b\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:aw,sku:u,user_id:k,product:a,default_sort:aG,sort_order_plus:b,_score:e,stock_name_status:j,product_id:O,product_name:H,category_names:q,product_type:g,category_category_ids:r,tag:y,pm_tag:N,text:m,href:"\u002FDFR0789-B\u002F",active:z},{id:"17394",material_id:h,title:aH,subject:"sen0481\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586396,sku:"SEN0481",user_id:k,product:a,default_sort:aD,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2347,product_name:"Magnetic Contact Switch Sensor for Arduino",category_names:"All Products,Arduino,Sensors,Switches &amp; Buttons",product_type:g,category_category_ids:"36 205 277",tag:"SEN0481, magnetic control switch, proximity switch, reed switch, magnetic reed,magnetic door sensor, magnetic reed switch, magnetic door switch, magnetic contact switch, reed switch arduino",pm_tag:"Other Brands.Brand,M+.SL,C++.PL,3.3V.WV,Switches & Buttons.PF,Prototyping.Scenario,Project.Scenario,5V.WV,12V.WV,Pin.Interface,Digital.ToS,Automation.Scenario,24V.WV",text:aH,href:"\u002FSEN0481\u002F",active:d},{id:"24256",material_id:h,title:n,subject:"dfr0785-b\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:L,sku:"DFR0785-B",user_id:k,product:a,default_sort:3193,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2365,product_name:"Gravity: LED Button for Arduino \u002F micro:bit (Blue)",category_names:q,product_type:g,category_category_ids:r,tag:A,pm_tag:"Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,Gravity.Brand,Project.Scenario,5V.WV,3.3V.WV",text:n,href:"\u002FDFR0785-B\u002F",active:d},{id:"24254",material_id:h,title:n,subject:"dfr0785-r\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:L,sku:"DFR0785-R",user_id:k,product:a,default_sort:3356,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2363,product_name:"Gravity: LED Button for Arduino \u002F micro:bit (Red)",category_names:q,product_type:g,category_category_ids:r,tag:A,pm_tag:"5V.WV,Gravity.Brand,Project.Scenario,3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL",text:n,href:"\u002FDFR0785-R\u002F",active:d},{id:"17587",material_id:h,title:aI,subject:"dfr0721\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586497,sku:"DFR0721",user_id:k,product:a,default_sort:3631,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2098,product_name:"Fermion: 8421 Encoder-Vertical (Breakout)",category_names:aJ,product_type:g,category_category_ids:aK,tag:"DFR0721, Encoder, Knob, Potentiometer, Encode, Encode switch, 8421, 8421 Encode, Switch, Fermion",pm_tag:"C++.PL,12V.WV,5V.WV,MP.SL,3.3V.WV,Test and Measurement.Scenario,Fermion.Brand,24V.WV,Switches & Buttons.PF,Pin.Interface",text:aI,href:"\u002FDFR0721\u002F",active:d},{id:"17604",material_id:h,title:aL,subject:"dfr0722\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586506,sku:"DFR0722",user_id:k,product:a,default_sort:3771,sort_order_plus:b,_score:e,stock_name_status:j,product_id:2099,product_name:"Fermion: 8421 Absolute Position Encoder (Breakout, Horizontal)",category_names:aJ,product_type:g,category_category_ids:aK,tag:"DFR0722, Encoder, Knob, Potentiometer, Encode, Encode switch, 8421, 8421 Encode, Switch, Fermion",pm_tag:"MP.SL,3.3V.WV,Test and Measurement.Scenario,Fermion.Brand,24V.WV,Switches & Buttons.PF,Pin.Interface,C++.PL,Arduino IDE.IDE,12V.WV,5V.WV",text:aL,href:"\u002FDFR0722\u002F",active:d},{id:"17596",material_id:h,title:aM,subject:"bos0005\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764586502,sku:"BOS0005",user_id:k,product:a,default_sort:5460,sort_order_plus:b,_score:e,stock_name_status:P,product_id:3031,product_name:"BOSON: Tilt Switch Sensor i5",category_names:Q,product_type:g,category_category_ids:R,tag:"BOSON tilt sensor, digital tilt switch, steel ball switch, Arduino tilt sensor, micro:bit tilt sensor, gravity sensor module, PH2.0 interface, DFRobot BOSON, graphical programming sensor, non-mercury tilt switch.",pm_tag:a,text:aM,href:"\u002FBOS0005\u002F",active:d},{id:"18620",material_id:h,title:aN,subject:"bos0003\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764671345,sku:"BOS0003",user_id:aO,product:a,default_sort:5483,sort_order_plus:b,_score:e,stock_name_status:P,product_id:3029,product_name:"Boson: Self Locking Switch Module i3",category_names:Q,product_type:g,category_category_ids:R,tag:"BOSON self-locking switch, digital switch module, Arduino switch, micro:bit switch, latching button, PH2.0 switch module, DFRobot BOSON, maker project switch, graphical programming switch, parallel circuit switch.",pm_tag:a,text:aN,href:"\u002FBOS0003\u002F",active:d},{id:"18619",material_id:h,title:aP,subject:"bos0002\u002F",type:f,platform:i,status:c,show:c,orderBy:b,addtime:1764671344,sku:"BOS0002",user_id:aO,product:a,default_sort:5549,sort_order_plus:b,_score:e,stock_name_status:P,product_id:3028,product_name:"BOSON: Blue Push Button i2r \u002F i2g \u002F i2b",category_names:Q,product_type:g,category_category_ids:R,tag:"BOSON push button, digital button module, Arduino push button, micro:bit button, interactive electronic button, PH2.0 button module, DFRobot BOSON, maker project button, graphical programming button, red push button.",pm_tag:a,text:aP,href:"\u002FBOS0002\u002F",active:d}]},categorySelects:[{text:aQ,value:"docs",selected:z,show:z,hasMore:e},{text:aR,value:"tech_specs",selected:d,show:z}],wikiData:{aiseo:a,cad:{draftName:"DFR0789-B_gravity-led-switch-sensor_cad_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},ce:{draftName:"DFR0789-B_gravity-led-switch-sensor_ce_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},content:"### Specification\n\n![Dimension](https:\u002F\u002Fdfimg.dfrobot.com\u002F5f100c15c913a99430e3ee44\u002Fwikien\u002F62b07cb0ca8aa07848f7b27e119d7226.png \"Dimension\")\n\n\n| Parameter         | Value                          |\n|-------------------|--------------------------------|\n| Operating Voltage | +3.3-5V (3.3V is recommended)  |\n| Output            | digital                        |\n| Connector         | PH2.0-3P                       |\n| Dimension         | 27 * 26.5mm                      |\n| Colors Available  | red, yellow, green, blue, white|\n\n\n### Pinout\n\n![Physical diagram](https:\u002F\u002Fdfimg.dfrobot.com\u002F5f100c15c913a99430e3ee44\u002Fwikien\u002F411fd9870f60f2615b8cc49823de656f.png \"Physical diagram\")\n\n\n\n\n| **Num** | **Silk-screen** | **Description** |\n| ------- | --------- | --------------- |\n| 1       | D       | Control port          |\n| 2       |+ |      VCC           |\n| 3       | -          | GND                |",datasheet:{draftName:"DFR0789-B_gravity-led-switch-sensor_datasheet_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},desc:"This article introduces the LED-illuminated self-lock switch module, a simple yet effective switch button that lights up when pressed, providing visual feedback. The module is versatile and can be integrated into various interactive projects using micro:bit, such as switches, backlight keyboards, music player panels, and recording control panels. Available in multiple colors, including red, yellow, green, blue, and white, these switches add a fun and engaging element to your electronics projects. Whether you're creating a DIY electronic device or enhancing an existing setup, the LED-illuminated self-lock switch module is an excellent choice for adding functionality and visual appeal.",dimension:{draftName:"DFR0789-B_gravity-led-switch-sensor_dimension_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},driver:{draftName:"DFR0789-B_gravity-led-switch-sensor_driver_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},en71:{draftName:"DFR0789-B_gravity-led-switch-sensor_en71_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},fcc:{draftName:"DFR0789-B_gravity-led-switch-sensor_fcc_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},gitHub:a,ic:{draftName:"DFR0789-B_gravity-led-switch-sensor_ic_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},kc:{draftName:"DFR0789-B_gravity-led-switch-sensor_kc_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},layout:{draftName:"DFR0789-B_gravity-led-switch-sensor_layout_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},library:{draftName:"DFR0789-B_gravity-led-switch-sensor_library_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},ogDesc:S,ogTitle:T,pName:"gravity-led-switch-sensor",pfas:{draftName:"DFR0789-B_gravity-led-switch-sensor_pfas_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},rcm:{draftName:"DFR0789-B_gravity-led-switch-sensor_rcm_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},reach:{draftName:"DFR0789-B_gravity-led-switch-sensor_reach_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},rohs:{draftName:"DFR0789-B_gravity-led-switch-sensor_rohs_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},schematics:{draftName:"DFR0789-B_gravity-led-switch-sensor_schematics_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},seoDesc:aS,seoKey:aT,seoTitle:U,show:c,sku:u,stpFiles:{draftName:"DFR0789-B_gravity-led-switch-sensor_stpfile_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},structuredDesc:aU,subjectUrl:a,svg:{draftName:"DFR0789-B_gravity-led-switch-sensor_svg_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},telec:{draftName:"DFR0789-B_gravity-led-switch-sensor_telec_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},title:m,type:f,ukca:{draftName:"DFR0789-B_gravity-led-switch-sensor_ukca_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},weee:{draftName:"DFR0789-B_gravity-led-switch-sensor_weee_",fileName:a,fileSize:a,fileUrl:a,pass:d,select:l,time:a,urlData:{}},id:24247,updatetime:"2026-05-12 16:34:34"},techSpecs:"\u003Ch3\u003ESpecification\u003C\u002Fh3\u003E\n\u003Cp\u003E\u003Cimg src=\"https:\u002F\u002Fdfimg.dfrobot.com\u002F5f100c15c913a99430e3ee44\u002Fwikien\u002F62b07cb0ca8aa07848f7b27e119d7226_0x0.png.webp\" alt=\"Dimension\" title=\"Dimension\"\u003E\u003C\u002Fp\u003E\n\u003Cdiv class=\"table-box\"\u003E\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EParameter\u003C\u002Fth\u003E\n\u003Cth\u003EValue\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EOperating Voltage\u003C\u002Ftd\u003E\n\u003Ctd\u003E+3.3-5V (3.3V is recommended)\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EOutput\u003C\u002Ftd\u003E\n\u003Ctd\u003Edigital\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EConnector\u003C\u002Ftd\u003E\n\u003Ctd\u003EPH2.0-3P\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EDimension\u003C\u002Ftd\u003E\n\u003Ctd\u003E27 * 26.5mm\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003EColors Available\u003C\u002Ftd\u003E\n\u003Ctd\u003Ered, yellow, green, blue, white\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\u003C\u002Fdiv\u003E\n\u003Ch3\u003EPinout\u003C\u002Fh3\u003E\n\u003Cp\u003E\u003Cimg src=\"https:\u002F\u002Fdfimg.dfrobot.com\u002F5f100c15c913a99430e3ee44\u002Fwikien\u002F411fd9870f60f2615b8cc49823de656f_0x0.png.webp\" alt=\"Physical diagram\" title=\"Physical diagram\"\u003E\u003C\u002Fp\u003E\n\u003Cdiv class=\"table-box\"\u003E\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003E\u003Cstrong\u003ENum\u003C\u002Fstrong\u003E\u003C\u002Fth\u003E\n\u003Cth\u003E\u003Cstrong\u003ESilk-screen\u003C\u002Fstrong\u003E\u003C\u002Fth\u003E\n\u003Cth\u003E\u003Cstrong\u003EDescription\u003C\u002Fstrong\u003E\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E1\u003C\u002Ftd\u003E\n\u003Ctd\u003ED\u003C\u002Ftd\u003E\n\u003Ctd\u003EControl port\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E2\u003C\u002Ftd\u003E\n\u003Ctd\u003E+\u003C\u002Ftd\u003E\n\u003Ctd\u003EVCC\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E3\u003C\u002Ftd\u003E\n\u003Ctd\u003E-\u003C\u002Ftd\u003E\n\u003Ctd\u003EGND\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\u003C\u002Fdiv\u003E\n",downloadResources:[],certifications:[],product:{product:{attribute:{black_friday_event_tags:"[{\"name\":\"Black Friday 2025\",\"sort_order\":553},{\"name\":\"enjoy discounts on the GLOBAL website\",\"sort_order\":553},{\"name\":\"Others GLOBAL\",\"sort_order\":553}]",description:"LED-illuminated self-lock switch button with visual feedback in various colors. Outputs High when pressed, Low when pressed again. Suitable for interactive projects.",meta_description:"Explore the LED-illuminated self-lock switch button, perfect for interactive projects with micro:bit. Lights up in various colors, offering visual feedback.",meta_keywords:"LED switch, self-lock button, interactive projects, micro:bit, switch button, push button, LED indicator, digital sensor, 5V switch, visual feedback",og_description:"Enhance your projects with this LED self-lock switch button! Perfect for micro:bit interactive projects, offering colorful visual feedback. ",og_title:"Discover the LED Self-lock Switch Button for Interactive Fun!",package_coupon_text:a,package_coupon_url:a,package_option:"[{\"option_name\":\"\",\"required\":\"0\",\"sort_order\":\"0\"}]",package_original_price_range:a,package_price_range:a,package_sub_fixed_amount:D,package_sub_percentage:D,package_type:D,structured_description:"This LED-illuminated self-lock switch button lights up in various colors when pressed, offering visual feedback for interactive micro:bit projects.",summary:"LED self-lock button lights up in various colors, ideal for micro:bit interactive projects, providing visual feedback.",title:"LED Illuminated Self-lock Switch Button for Interactive Projects"},available_for_sale:"Yes",black_friday_event_tags:[{name:"Black Friday 2025",sort_order:V},{name:"enjoy discounts on the GLOBAL website",sort_order:V},{name:"Others GLOBAL",sort_order:V}],category:a,category_category_ids:r,category_names:q,cdy_type:a,create_time:1625068800,customer_group_id:8,date_added:aV,date_available:aV,date_modified:"2026-10-09T18:08:09Z",date_updated:"2026-10-13T09:55:02Z",default_sort:aG,discontinued_product:a,discount:b,discount9:2.4,display_price:aW,ean:"6959420919963",for_search_category_names:"arduino sensors switches buttons all products gravity &amp; micro:bit",for_search_meta_keyword:"square with led button arduino switch indicator light 5v push",for_search_model:"dfr0789-b",for_search_pm_tag:"mind+.pl c++.pl m.sl & makecode.pl k12.age switches buttons.pf hobby.scenario project.scenario 5v.wv gravity.brand 3.3v.wv digital.tos ph2.0.interface class.scenario python.pl",for_search_product_name:"\u002F micro:bit (blue) gravity: led switch for arduino",for_search_tag:"dfr0789 buttons switches switch arduino indicator light &amp; square with led button push 5v",height:W,href:"https:\u002F\u002Fwww.dfrobot.com\u002Fproduct-2350.html",image:"https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002FDFR0789-B\u002FDFR0789-B_Main_01.jpg",image_alt:X,isbn:a,jan:a,landing_tag:a,length:W,length_class_id:c,local_warehouse_quantity:I,location:"Shanghai",main_category_category_id:"36",manufacturer:Y,manufacturer_id:11,maxquantity:b,meta_keyword:"led push button arduino, led push button switch arduino, square led push button, push button switch with led indicator, led push button light, 5v led push button",minimum:c,model:u,mpn:a,name:H,original_price:aW,pm_tag:N,points:D,price:t,product_90_quantity:t,product_90_times:I,product_90_times_rank:898,product_90_uv:22170,product_90_uv_rank:1286,product_attributes:"{\"black_friday_event_tags\":\"[{\\\"name\\\":\\\"Black Friday 2025\\\",\\\"sort_order\\\":553},{\\\"name\\\":\\\"enjoy discounts on the GLOBAL website\\\",\\\"sort_order\\\":553},{\\\"name\\\":\\\"Others GLOBAL\\\",\\\"sort_order\\\":553}]\",\"description\":\"LED-illuminated self-lock switch button with visual feedback in various colors. Outputs High when pressed, Low when pressed again. Suitable for interactive projects.\",\"meta_description\":\"Explore the LED-illuminated self-lock switch button, perfect for interactive projects with micro:bit. Lights up in various colors, offering visual feedback.\",\"meta_keywords\":\"LED switch, self-lock button, interactive projects, micro:bit, switch button, push button, LED indicator, digital sensor, 5V switch, visual feedback\",\"og_description\":\"Enhance your projects with this LED self-lock switch button! Perfect for micro:bit interactive projects, offering colorful visual feedback. \",\"og_title\":\"Discover the LED Self-lock Switch Button for Interactive Fun!\",\"package_coupon_text\":\"\",\"package_coupon_url\":\"\",\"package_option\":\"[{\\\"option_name\\\":\\\"\\\",\\\"required\\\":\\\"0\\\",\\\"sort_order\\\":\\\"0\\\"}]\",\"package_original_price_range\":\"\",\"package_price_range\":\"\",\"package_sub_fixed_amount\":\"0\",\"package_sub_percentage\":\"0\",\"package_type\":\"0\",\"structured_description\":\"This LED-illuminated self-lock switch button lights up in various colors when pressed, offering visual feedback for interactive micro:bit projects.\",\"summary\":\"LED self-lock button lights up in various colors, ideal for micro:bit interactive projects, providing visual feedback.\",\"title\":\"LED Illuminated Self-lock Switch Button for Interactive Projects\"}",product_id:O,product_name:H,product_type:g,quantity:I,quantity_USA_1:b,quantity_status:"Only",quantity_status_USA_1:"None",sale_sort:t,sales:b,score:b,shipping:aX,sku:u,sort_order:c,sort_order_plus:b,source:aX,special:t,special9:b,special_end:a,special_end_time:b,special_priority:b,special_start_time:b,status:c,stock_name_status:j,stock_status:j,stock_status_id:5,stock_us:b,subtract:c,tag:y,tax_class_id:b,terminal_maximum:b,terminal_minimum:c,terminal_reward:D,time_left_special:-1791878154,upc:a,upload_file:aY,us_warehouse_quantity:b,video:aY,video_link:a,video_thumb:"https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002Fimage\u002Fdata\u002FDFR0789-B\u002FDFR0789-B-detail-004.jpg",viewed:9333,vimeo_link:a,weight:e,weight_class_id:an,width:W},price_info:{product_id:O,origin_price:t,anniversary_discounted_sub_average_price:b,special_sub_average_price:b,tiered_sub_average_price:b,vip_sub_average_price:b,coupon_sub_average_price:b,special_price:b,tiered_price:b,origin_quantity:c,anniversary_discounted_quantity:b,special_quantity:b,tiered_quantity:b,vip_quantity:c,coupon_quantity:b,package_sub_average_price:b,item_total_price:t,item_subtotal_price:t,distributor_discount_sub_average_price:b,distributor_discount_quantity:b,product_weight:.011,product_sku:u,add_on_deal_sub_average_price:b,add_on_deal_quantity:b}},inSkuWhiteList:d,projects:[],tutorials:[],courses:[],contributions:[],blogs:[],displayedCourses:[],displayedProjects:[],displayedContributions:[],displayedBlogs:[],docs:[{desc:aZ,develop:a,id:a_,modify:d,modifyTime:a$,name:Z,reference:b,shortTitle:Z,subject:"dfr0789-b\u002Fdocs\u002F24445",tasks:[],title:Z,wikiid:a_,text:ba,isDir:d,href:"\u002Fdfr0789-b\u002Fdocs\u002F24445",target:x,docIndex:c,children:[],expand:d,active:d,class:_},{desc:bb,develop:a,id:bc,modify:d,modifyTime:a$,name:$,reference:b,shortTitle:$,subject:"dfr0789-b\u002Fdocs\u002F24444",tasks:[],title:$,wikiid:bc,text:bd,isDir:d,href:"\u002Fdfr0789-b\u002Fdocs\u002F24444",target:x,docIndex:aa,children:[],expand:d,active:d,class:_},{desc:be,develop:a,id:bf,modify:d,modifyTime:"2026-06-01 00:00:00",name:ab,reference:b,shortTitle:ab,subject:"dfr0789-b\u002Fdocs\u002F24443",tasks:[],title:ab,wikiid:bf,text:bg,isDir:d,href:"\u002Fdfr0789-b\u002Fdocs\u002F24443",target:x,docIndex:t,children:[],expand:d,active:d,class:_}],faqs:[],faqLink:"\u002Fforum\u002F",seo_tdk:{title:U,description:aS,keywords:aT},seo_schema:{type:"application\u002Fld+json",json:{"@context":"https:\u002F\u002Fschema.org","@graph":[{"@type":"TechArticle","@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#article",headline:U,description:aU,keywords:["Gravity LED Switch Sensor"," LED Switch Sensor"," digital output"," 3.3-5V"," PH2.0-3P"," red"," yellow"," green"," blue"," white"," 27 * 26.5mm"," DFRobot"],image:{"@id":ac},dateModified:"2026-05-12",author:{"@id":ad},publisher:{"@id":ad},speakable:{"@type":"SpeakableSpecification",cssSelector:[".wiki-introduction .desc"]},subjectOf:[{"@type":ae,name:ba,url:af,description:aZ},{"@type":ae,name:bd,url:af,description:bb},{"@type":ae,name:bg,url:af,description:be}],mainEntity:{"@type":"ItemList",name:"Wiki Sections",itemListElement:[{"@type":B,position:c,url:"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#docs",name:aQ},{"@type":B,position:aa,url:"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#tech_specs",name:aR}]},about:{"@type":"Thing",name:H,sku:u,"@id":"https:\u002F\u002Fwww.dfrobot.com\u002Fproduct-2350.html#product",image:{"@id":ac},offers:{"@type":"Offer",price:t,priceCurrency:ag},isPartOf:{"@type":"CreativeWorkSeries","@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#series",name:m},hasCertification:[]}},{"@type":"CollectionPage","@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#webpage",url:"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F",name:a,mainEntity:{"@id":"https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B#article"},breadcrumb:{"@id":bh}},{"@type":"BreadcrumbList","@id":bh,itemListElement:[{"@type":B,position:c,name:f,item:bi},{"@type":B,position:aa,name:w,item:"https:\u002F\u002Fwiki.dfrobot.com\u002Fcategory-36\u002F"},{"@type":B,position:t,name:G,item:"https:\u002F\u002Fwiki.dfrobot.com\u002Fcategory-205\u002F"},{"@type":B,position:I,name:u,item:bj}]},{"@type":"ImageObject","@id":ac,contentUrl:"https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002FDFR0789-B\u002FDFR0789-B_Main_01_360x240.jpg.webp",creditText:Y,creator:{"@type":bk,name:Y},publisher:{"@type":bk,"@id":ad}}]}},seo_meta_medias:[{hid:bl,property:bl,content:"en_US"},{hid:bm,property:bm,content:"website"},{hid:bn,property:bn,content:T},{hid:bo,property:bo,content:S},{hid:bp,property:bp,content:bj},{hid:bq,property:bq,content:"DFRobot Wiki"},{hid:br,property:br,content:bs},{hid:bt,property:bt,content:X},{hid:bu,property:bu,content:"summary_large_image"},{hid:bv,property:bv,content:bw},{hid:bx,property:bx,content:bw},{hid:by,property:by,content:T},{hid:bz,property:bz,content:S},{hid:bA,property:bA,content:bs},{hid:bB,property:bB,content:X}]}],fetch:{"0":{},"data-v-d71158b6:0":{jq:a,md5:{},tools:{},backName:"menu-back",pageType:a,viewType:F,deviceCss:[{rel:"stylesheet",href:"\u002Flibs\u002Fswiper\u002Fswiper-bundle.min.css"}],deviceJs:[{src:"\u002Fdfrobotshop\u002Flib\u002Fdfpclib.js",ssr:z}],showPL:d,userMenu:d,user:{identity:"unset"},storeMenu:bC,storeActive:c,login:d,userType:"guest",cartNum:b,searchkey:a,currency:ag,currencyList:bS,showFastCategory:d,categories:[],timer_fastSearch:e,fastSearch:{loadingProduct:d,products:[],loadingBlog:d,blogs:[],loadingWiki:d,wikis:[]},navList:[{name:"Community",url:"https:\u002F\u002Fcommunity.dfrobot.com\u002F",target:x},{name:"Forum",url:"https:\u002F\u002Fwww.dfrobot.com\u002Fforum\u002F",target:x},{name:"Wiki",url:bi,target:x},{name:"Blog",url:"https:\u002F\u002Fwww.dfrobot.com\u002Fblog",target:x},{name:"Learn",url:"https:\u002F\u002Flearn.dfrobot.com\u002F",target:x}],items:[{title:aj},{title:aj},{title:aj},{title:"Click Me 2"}],menuStatus:a,mColor:"#000000",mtColor:"#ffffff",mNavShow:d,enableWarehouse:z},"data-v-0d8b5951:0":{jq:{},md5:{},tools:{},backName:"popbox-back",data:{name:a,size:a,url:a},tipsMsg:a,errorMsg:a,errorMsgBackFun:e,pop:{show:d,icon:a,title:a,subtitle:a,desc:a,yesText:a,noText:a,yesFun:e,noFun:e,autoClose:b},viewType:F}},error:e,state:{authUser:e,setting:{learn:[{link:"https:\u002F\u002Flearn.dfrobot.com\u002Fcourse-691.html",thumb:["https:\u002F\u002Fdfimg.dfrobot.com\u002F5caaf47fe9f1335a9d6ad8d6\u002Fdfapi\u002F6c9280468a6858d1d874c304f1f7ecc6.jpg"],title:"Get Started with Arduino: A Step-by-Step Tutorial"},{link:"https:\u002F\u002Flearn.dfrobot.com\u002Fcourse-668.html",thumb:["https:\u002F\u002Fdfimg.dfrobot.com\u002F5caaf47fe9f1335a9d6ad8d6\u002Fdfapi\u002F57e329cb6a8573e51a855f392fe747c2.jpg"],title:"Python Programming on Hardware for Beginners"}],seoDesc:"DFRobot provides open-source hardware, kits and robotics dedicated to bringing innovative electronics.",seoKeyword:"Arduino,LattePanda,Raspberry Pi,micro:bit,Gravity,Robotics,Internet of Things - IoT,FireBeetle,Artificial Intelligence,Fermion,STEM Education,Boson,esp8266 &amp; esp32,jeston nano",seoTitle:"DFRobot Open-Source Hardware Electronics and Kits",siteDesc:a,topBanner:{"USA-1":{bannerBg:[],bannerImg:[],bannerLink:a,bannerMobile:[],bannerTitle:a,begin:"2025-07-02 00:00:00",begin2:K,end:"2025-07-15 00:00:00",end2:K,message:"\u003Cp\u003EAnniversary Sale! 30% Off First Item + Free Shipping ($50+) \u003Ca target=\"_blank\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.dfrobot.com\u002F15th_anniversary\"\u003E➡️ Shop Now\u003C\u002Fa\u003E\u003C\u002Fp\u003E",onlyTest:d,warehouse:"USA-1"},GLOBAL:{bannerBg:[],bannerImg:[],bannerLink:a,bannerMobile:[],bannerTitle:a,begin:"2025-09-07 00:00:00",begin2:K,end:"2025-11-19 00:00:00",end2:K,message:"\u003Cp\u003EMAJOR LAUNCH: HUSKYLENS 2 6 TOPS LLM MCP AI Vision Sensor is now available. \u003Ca target=\"_blank\" rel=\"noopener noreferrer\" href=\"https:\u002F\u002Fwww.dfrobot.com\u002Fproduct-2995.html?marketing=690360ffb0f6d\"\u003E\u003Cstrong\u003EBuy Now →\u003C\u002Fstrong\u003E\u003C\u002Fa\u003E\u003C\u002Fp\u003E",onlyTest:d,warehouse:"GLOBAL"}},store:bC},currencys:bS,viewtype:F},serverRendered:z,routePath:am,config:{_app:{basePath:ak,assetsPath:"\u002F_nuxt\u002F",cdnURL:e}}}}("",0,1,false,null,"wiki","product",121,"wiki_en","Out Of Stock",7102,"fileUrl","Gravity: LED Switch Sensor","Gravity: LED Button  Sensor","All Products,Gravity,Sensors,Switches &amp; Buttons","36 205 282","All Products,Arduino,Gravity,Sensors,Switches &amp; Buttons,micro:bit","36 205 277 281 282","Gravity: Digital Push Button",3,"DFR0789-B","All","Sensors","_blank","DFR0789, LED, Button, Switches &amp; Buttons, LED Switch, Switch Button, led push button arduino, led push button switch arduino, square led push button, push button switch with led indicator, led push button light, 5v led push button",true,"DFR0785, LED, Button, Switches &amp; Buttons, LED Switch, Switch Button, led push button arduino, led push button switch arduino, square led push button, push button switch with led indicator, led push button light, 5v led push button","ListItem","Modules","0","Prototyping & Accessories","pc","Switches & Buttons","Gravity: LED Switch for Arduino \u002F micro:bit (Blue)",4,"Development Boards","NaN-NaN-NaN NaN:NaN:NaN",1779085624,"Gravity: Analog Rotary Switch Module V1","M.SL,Python.PL,5V.WV,Gravity.Brand,Project.Scenario,3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario,K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario",2350,"Inquiry Only","All Products,Boson,STEM Education,Sensors,Switches &amp; Buttons","36 205 280 283","Explore the Gravity: LED Switch Sensor, a compact and versatile digital output sensor. Perfect for your next project with its 3.3-5V operating voltage and PH2.0-3P connector. Available in 5 colors!","Gravity: LED Switch Sensor ? | DFRobot Wiki","Gravity: LED Switch Sensor | DFRobot Wiki",553,"0.00000000","Front of blue LED push button switch with G\u002FR\u002FB pins for Arduino-DFRobot product sku:DFR0789-B image.","DFRobot","Example Code for micro:bit-Mind+LED Switch Control","doc","Example Code for micro:bit-Makecode LED Switch Control",2,"Example Code for Arduino-LED Switch Control","https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#mainimage","https:\u002F\u002Fwiki.dfrobot.com\u002F#organization","SoftwareSourceCode",void 0,"USD","Others","Kits","Click Me","\u002F","\u002Fcategory-205\u002F","\u002Fdfr0789-b\u002F","2","Fermion: EC11 Rotary Encoder Module","5V Metal Proximity Sensor","Gravity: I2C RGB LED Button Module","All Products,Arduino,Gravity,Sensors,Switches &amp; Buttons","36 205 277 282","All Products,Arduino,Sensors,Switches &amp; Buttons,micro:bit","36 205 277 281","Gravity: Digital Crash Sensor(Right)",1779085620,"Gravity: Digital Crash Sensor(Left)",1779085623,"K12.Age,C++.PL,Switches & Buttons.PF,Hobby.Scenario,M.SL,Python.PL,5V.WV,Gravity.Brand,Project.Scenario,3.3V.WV,Mind+.PL,Digital.ToS,PH2.0.Interface,Makecode.PL,Class.Scenario","Gravity: Digital Self-Locking Switch Module","Gravity: Conductivity Switch Sensor",1779085621,2353,"Gravity: Analog ADKeyboard Module","Gravity: Infrared Light Photo Interrupter Module",2184,"Magnetic Switch Sensor","Fermion: 8421 Encoder-Vertical","All Products,Arduino,Fermion,Sensors,Switches &amp; Buttons","36 205 277 292","Fermion: 8421 Encoder-Horizontal Module","BOSON Tilt Sensor i5","BOSON Self Locking Switch Module i3",7160,"BOSON Push Button Module i2r\u002Fi2g\u002Fi2b","Docs","Tech Specs","Discover the Gravity: LED Switch Sensor, a versatile digital output sensor with 3.3-5V operating voltage and PH2.0-3P connector. Available in multiple colors.","Gravity LED Switch Sensor, LED Switch Sensor, digital output, 3.3-5V, PH2.0-3P, red, yellow, green, blue, white, 27 * 26.5mm, DFRobot","The Gravity: LED Switch Sensor is a digital output sensor with a 3.3-5V operating voltage and a PH2.0-3P connector. It is available in red, yellow, green, blue, and white, and measures 27 * 26.5mm. The pinout includes a control port (D), VCC (+), and GND (-).","2021-07-01T00:00:00Z","3","1","https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002Fimage\u002Fvideos\u002FDFR0789-B-450×300-EN.mp4","This article offers a comprehensive tutorial on controlling an LED switch using micro:bit with Mind+, including software preparation, wiring diagrams, and example code for successful implementation.","24445","2026-06-02 00:00:00","1. Example Code for micro:bit-Mind+LED Switch Control","This article offers a step-by-step guide for controlling an LED switch with micro:bit using MakeCode, including a wiring diagram and example code, ideal for beginners seeking to learn electronics and programming.","24444","2. Example Code for micro:bit-Makecode LED Switch Control","Explore how to control an LED light using Arduino and a switch module, complete with a wiring diagram and sample code for beginners.","24443","3. Example Code for Arduino-LED Switch Control","https:\u002F\u002Fwiki.dfrobot.com\u002FDFR0789-B\u002F#breadcrumb","https:\u002F\u002Fwiki.dfrobot.com\u002F","https:\u002F\u002Fwiki.dfrobot.com\u002Fdfr0789-b\u002F","Organization","og:locale","og:type","og:title","og:description","og:url","og:site_name","og:image","https:\u002F\u002Fdfimg.dfrobot.com\u002Fenshop\u002FDFR0789-B\u002FDFR0789-B_Main_01_1200x630.jpg.webp","og:image:alt","twitter:card","twitter:site","@wiki","twitter:creator","twitter:title","twitter:description","twitter:image","twitter:image:alt",Array(13),"ESP32-P4, ESP32-C5, ESP32-C6, ESP32-S3, ESP8266 IoT microcontrollers","\u002Ftopic-316.html","pH Sensor, EC sensor, TDS sensor, DO sensor, turbidity sensor, ORP sensor, liquid level sensor","\u002Fcategory-68.html","Liquid Sensors","O2 sensor, CO sensor, CO2 sensor, air quality sensor, weather station, wind speed sensor","\u002Fcategory-85.html","Air Sensors","\u002Fcategory-55.html","Range & Distance Sensors","Raspberry Pi 5, Raspberry Pi 4B, Raspberry Pi Pico 2 W, Raspberry Pi CM4, Beetle RP2040","Raspberry Pi","ESP32-C6, ESP32-S3, ESP8266 IoT microcontrollers","micro:bit","STEM Education",{}));</script><script src="/_nuxt/819275d.js" defer></script><script src="/_nuxt/a387eb4.js" defer></script><script src="/_nuxt/bc9ed79.js" defer></script><script src="/_nuxt/bb93122.js" defer></script><script src="/_nuxt/c9a8dec.js" defer></script>
+  </body>
+</html>

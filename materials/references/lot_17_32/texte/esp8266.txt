@@ -1,0 +1,1949 @@
+PAGE 1
+ 
+www.espressif.com
+ESP8266EX 
+Datasheet Version 7.1
+Note： 
+It is recommended to use the upgraded model: ESP8684
+NOT RECOMMENDED 
+FOR NEW DESIGNS 
+
+
+PAGE 2
+About This Guide 
+This document introduces the specifications of ESP8266EX. 
+Release Notes 
+Date
+Version
+Release Notes
+2015.12
+V4.6
+Updated Chapter 3.
+2016.02
+V4.7
+Updated Section 3.6 and Section 4.1.
+2016.04
+V4.8
+Updated Chapter 1.
+2016.08
+V4.9
+Updated Chapter 1.
+2016.11
+V5.0
+Added Appendix Ⅱ “Learning Resources”.
+2016.11
+V5.1
+Changed the power consumption during Deep-sleep from 10 μA to 20 
+μA in Table 5-2.
+2016.11
+V5.2
+Changed the crystal frequency range from “26 MHz to 52 MHz” to “24 
+MHz to 52 MHz” in Section 3.3.
+2016.12
+V5.3
+Changed the minimum working voltage from 3.0 V to 2.5 V.
+2017.04
+V5.4
+Changed chip input and output impedance from 50 Ω to 39 + j6 Ω.
+2017.10
+V5.5
+Updated Chapter 3 regarding the range of clock amplitude to 0.8 V ~ 
+1.5 V.
+2017.11
+V5.6
+Updated VDDPST from 1.8 V ~ 3.3 V to 1.8 V ~ 3.6 V.
+2017.11
+V5.7
+•
+Corrected a typo in the description of SDIO_DATA_0 in Table 2-1; 
+•
+Added the testing conditions for the data in Table 5-2.
+2018.02
+V5.8
+•
+Updated Wi-Fi protocols in Section 1.1; 
+•
+Updated description of the integrated Tensilica processor in 3.1.
+2018.09
+V5.9
+•
+Update document cover; 
+•
+Added a note for Table 1-1; 
+•
+Updated Wi-Fi key features in Section 1.1; 
+•
+Updated description of the Wi-Fi function in 3.5; 
+•
+Updated pin layout diagram; 
+•
+Fixed a typo in Table 2-1; 
+•
+Removed Section AHB and AHB module; 
+•
+Restructured Section Power Management; 
+•
+Fixed a typo in Section UART; 
+•
+Removed description of transmission angle in Section IR Remote 
+Control; 
+•
+Other optimization (wording).
+www.espressif.com
+NRND
+
+
+PAGE 3
+Documentation Change Notification 
+Espressif provides email notifications to keep customers updated on changes to 
+technical documentation. Please subscribe at https://www.espressif.com/en/subscribe. 
+Certification 
+Download certificates for Espressif products from https://www.espressif.com/en/
+certificates. 
+2018.11
+V6.0
+•
+Added an SPI pin in Table 4-2; 
+•
+Updated the diagram of packing information.
+2019.08
+V6.1
+Removed description of the GPIO function in Section 4.1.
+2019.08
+V6.2
+Updated notes on CHIP_EN in Section 5.1
+2019.12
+V6.3
+Add feedback links.
+2020.04
+V6.4
+•
+Removed the description of “Antenna diversity”; 
+•
+Updated the feedback links.
+2020.07
+V6.5
+•
+Updated the description of HSPI in Section 4.3; 
+•
+Updated links in Appendix.
+2020.10
+V6.6
+•
+Fixed a typo in Figure 2-1; 
+•
+Updated the link of ESP8266 Pin List.
+2022.07
+v6.7
+•
+Updated Figure 2-1; 
+•
+Updated the link of ESP8266 Hardware Resources.
+2022.10
+v6.8
+Updated typos in Chapter 6.
+2023.02
+v6.9
+Added link to Xtensa® Instruction Set Architecture (ISA) Summary in 
+Section 3.1.1.
+2023.06
+v7.0
+•
+Added a note on the cover page; 
+•
+Updated two documents in Appendix.
+2025.11
+v7.1
+Updated the product marketing status to Not Recommended for New 
+Designs (NRND).
+Date
+Version
+Release Notes
+www.espressif.com
+NRND
+
+
+PAGE 4
+Table of Contents 
+1. Overview	
+ 
+..........................................................................................................................1
+1.1.
+Wi-Fi Key Features 
+ 
+.............................................................................................................1
+1.2.
+Specifications 
+ 
+.....................................................................................................................2
+1.3.
+Applications 
+ 
+........................................................................................................................3
+2. Pin Definitions	
+ 
+.................................................................................................................4
+3. Functional Description	
+ 
+....................................................................................................7
+3.1.
+CPU, Memory, and Flash 
+ 
+....................................................................................................7
+3.1.1.
+CPU 
+ 
+.......................................................................................................................7
+3.1.2.
+Memory 
+ 
+.................................................................................................................7
+3.1.3.
+External Flash 
+ 
+........................................................................................................8
+3.2.
+Clock 
+ 
+...................................................................................................................................8
+3.2.1.
+High Frequency Clock 
+ 
+...........................................................................................8
+3.2.2.
+External Clock Requirements 
+ 
+................................................................................9
+3.3.
+Radio 
+ 
+..................................................................................................................................9
+3.3.1.
+Channel Frequencies 
+ 
+.............................................................................................9
+3.3.2.
+2.4 GHz Receiver 
+ 
+................................................................................................10
+3.3.3.
+2.4 GHz Transmitter 
+ 
+.............................................................................................10
+3.3.4.
+Clock Generator 
+ 
+..................................................................................................10
+3.4.
+Wi-Fi 
+ 
+.................................................................................................................................10
+3.4.1.
+Wi-Fi Radio and Baseband 
+ 
+.................................................................................10
+3.4.2.
+Wi-Fi MAC 
+ 
+...........................................................................................................11
+3.5.
+Power Management 
+ 
+.........................................................................................................11
+4. Peripheral Interface	
+ 
+......................................................................................................13
+4.1.
+General Purpose Input/Output Interface (GPIO) 
+ 
+...............................................................13
+4.2.
+Secure Digital Input/Output Interface (SDIO) 
+ 
+....................................................................13
+4.3.
+Serial Peripheral Interface (SPI/HSPI) 
+ 
+...............................................................................13
+4.3.1.
+General SPI (Master/Slave) 
+ 
+.................................................................................14
+4.3.2.
+HSPI (Master/Slave) 
+ 
+............................................................................................14
+www.espressif.com
+NRND
+
+
+PAGE 5
+4.4.
+I2C Interface 
+ 
+.....................................................................................................................14
+4.5.
+I2S Interface 
+ 
+......................................................................................................................15
+4.6.
+Universal Asynchronous Receiver Transmitter (UART) 
+ 
+.....................................................15
+4.7.
+Pulse-Width Modulation (PWM) 
+ 
+.......................................................................................16
+4.8.
+IR Remote Control 
+ 
+............................................................................................................16
+4.9.
+ADC (Analog-to-Digital Converter) 
+ 
+...................................................................................17
+5. Electrical Specifications	
+ 
+...............................................................................................19
+5.1.
+Electrical Characteristics 
+ 
+..................................................................................................19
+5.2.
+RF Power Consumption 
+ 
+...................................................................................................20
+5.3.
+Wi-Fi Radio Characteristics 
+ 
+..............................................................................................20
+6. Package Information	
+ 
+.....................................................................................................22
+Appendix A. Pin List	
+ 
+..........................................................................................................23
+Appendix B. Learning Resources	
+ 
+.....................................................................................24
+B.1    Must-Read Documents 
+ 
+.....................................................................................................24
+B.2    Must-Have Resources ......................................................................................................24
+www.espressif.com
+NRND
+
+
+PAGE 6
+1. Overview
+1. Overview 
+Espressif’s ESP8266EX delivers highly integrated Wi-Fi SoC solution to meet users’ 
+continuous demands for efficient power usage, compact design and reliable 
+performance in the Internet of Things industry. 
+With the complete and self-contained Wi-Fi networking capabilities, ESP8266EX can 
+perform either as a standalone application or as the slave to a host MCU. When 
+ESP8266EX hosts the application, it promptly boots up from the flash. The integrated 
+high-speed cache helps to increase the system performance and optimize the system 
+memory. Also, ESP8266EX can be applied to any microcontroller design as a Wi-Fi 
+adaptor through SPI/SDIO or UART interfaces. 
+ESP8266EX integrates antenna switches, RF balun, power amplifier, low noise receive 
+amplifier, filters and power management modules. The compact design minimizes the 
+PCB size and requires minimal external circuitries. 
+Besides the Wi-Fi functionalities, ESP8266EX also integrates an enhanced version of 
+Tensilica’s L106 Diamond series 32-bit processor and on-chip SRAM. It can be 
+interfaced with external sensors and other devices through the GPIOs. Software 
+Development Kit (SDK) provides sample codes for various applications. 
+Espressif Systems’ Smart Connectivity Platform (ESCP) enables sophisticated features 
+including: 
+•
+Fast switch between sleep and wakeup mode for energy-efficient purpose; 
+•
+Adaptive radio biasing for low-power operation 
+•
+Advance signal processing 
+•
+Spur cancellation and RF co-existence mechanisms for common cellular, 
+Bluetooth, DDR, LVDS, LCD interference mitigation 
+1.1.
+Wi-Fi Key Features 
+•
+802.11 b/g/n support 
+•
+802.11 n support (2.4 GHz), up to 72.2 Mbps 
+•
+Defragmentation 
+•
+2 x virtual Wi-Fi interface 
+•
+Automatic beacon monitoring (hardware TSF)  
+•
+Support Infrastructure BSS Station mode/SoftAP mode/Promiscuous mode 
+Espressif 
+/
+ 
+1 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 7
+1. Overview
+1.2.
+Specifications 
+Table 1-1. Specifications
+Categories
+Items
+Parameters
+Wi-Fi
+Certification
+Wi-Fi Alliance
+Protocols
+802.11 b/g/n (HT20)
+Frequency Range
+2.4 GHz ~ 2.5 GHz (2400 MHz ~ 2483.5 MHz)
+TX Power
+802.11 b: +20 dBm
+802.11 g: +17 dBm
+802.11 n: +14 dBm
+Rx Sensitivity
+802.11 b: –91 dbm (11 Mbps)
+802.11 g: –75 dbm (54 Mbps) 
+802.11 n: –72 dbm (MCS7)
+Antenna
+PCB Trace, External, IPEX Connector, Ceramic Chip 
+Hardware
+CPU
+Tensilica L106 32-bit processor
+Peripheral Interface
+UART/SDIO/SPI/I2C/I2S/IR Remote Control
+GPIO/ADC/PWM/LED Light & Button
+Operating Voltage
+2.5 V ~ 3.6 V
+Operating Current
+Average value: 80 mA
+Operating Temperature Range
+–40 °C ~ 125 °C
+Package Size
+QFN32-pin (5 mm x 5 mm)
+External Interface
+-
+Software
+Wi-Fi Mode
+Station/SoftAP/SoftAP+Station
+Security
+WPA/WPA2
+Encryption
+WEP/TKIP/AES
+Firmware Upgrade
+UART Download / OTA (via network) 
+Software Development
+Supports Cloud Server Development / Firmware and 
+SDK for fast on-chip programming
+Network Protocols
+IPv4, TCP/UDP/HTTP
+User Configuration
+AT Instruction Set, Cloud Server, Android/iOS App
+📖 Note: 
+The TX power can be configured based on the actual user scenarios.
+Espressif 
+/
+ 
+2 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 8
+1. Overview
+1.3.
+Applications 
+•
+Home appliances 
+•
+Home automation 
+•
+Smart plugs and lights  
+•
+Industrial wireless control 
+•
+Baby monitors 
+•
+IP cameras 
+•
+Sensor networks 
+•
+Wearable electronics 
+•
+Wi-Fi location-aware devices 
+•
+Security ID tags 
+•
+Wi-Fi position system beacons 
+Espressif 
+/
+ 
+3 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 9
+2. Pin Definitions
+2. Pin Definitions 
+Figure 2-1 shows the pin layout for 32-pin QFN package. 
+Figure 2-1. Pin Layout (Top View) 
+Table 2-1 lists the definitions and functions of each pin. 
+Table 2-1. ESP8266EX Pin Definitions
+Pin
+Name
+Type
+Function
+1
+VDDA
+P
+Analog Power 2.5 V ~ 3.6 V
+2
+LNA
+I/O
+RF antenna interface 
+Chip output impedance = 39 + j6 Ω. It is suggested to retain 
+the π-type matching network to match the antenna. 
+3
+VDD3P3
+P
+Amplifier Power 2.5 V ~ 3.6 V
+4
+VDD3P3
+P
+Amplifier Power 2.5 V ~ 3.6 V
+5
+VDD_RTC
+P
+NC (1.1 V)
+Espressif 
+/
+ 
+4 26
+Submit Documentation Feedback
+NRND  
+2025.11
+1
+2
+3
+4
+5
+6
+7
+8
+17
+18
+19
+20
+21
+22
+23
+24
+9
+10
+11
+12
+13
+14
+15
+16
+27
+28
+29
+30
+31
+32
+26
+25
+GPIO4
+GPIO0
+GPIO2
+MTDO
+MTCK
+VDDPST
+MTDI
+MTMS
+XPD_DCDC
+CHIP_EN
+TOUT
+VDD_RTC
+VDD3P3
+VDD3P3
+LNA
+VDDA
+EXT_RSTB
+RES12K
+VDDA
+VDDD
+XTAL_IN
+XTAL_OUT
+U0TXD
+U0RXD
+SD_DATA_1
+SD_DATA_0
+SD_CLK
+SD_CMD
+SD_DATA_3
+SD_DATA_2
+VDDPST
+ESP8266EX
+33 GND
+GPIO5
+
+
+PAGE 10
+2. Pin Definitions
+6
+TOUT
+I
+ADC pin. It can be used to test the power-supply voltage of 
+VDD3P3 (Pin3 and Pin4) and the input power voltage of 
+TOUT (Pin 6). However, these two functions cannot be used 
+simultaneously. 
+7
+CHIP_EN
+I
+Chip Enable 
+High: On, chip works properly 
+Low: Off, small current consumed 
+8
+XPD_DCDC
+I/O
+Deep-sleep wakeup (need to be connected to EXT_RSTB); 
+GPIO16
+9
+MTMS
+I/O
+GPIO 14; HSPI_CLK
+10
+MTDI
+I/O
+GPIO 12; HSPI_MISO
+11
+VDDPST
+P
+Digital/IO Power Supply (1.8 V ~ 3.6 V)
+12
+MTCK
+I/O
+GPIO 13; HSPI_MOSI; UART0_CTS
+13
+MTDO
+I/O
+GPIO 15; HSPI_CS; UART0_RTS
+14
+GPIO2
+I/O
+UART TX during flash programming; GPIO2
+15
+GPIO0
+I/O
+GPIO0; SPI_CS2
+16
+GPIO4
+I/O
+GPIO4
+17
+VDDPST
+P
+Digital/IO Power Supply (1.8 V ~ 3.6 V)
+18
+SDIO_DATA_2
+I/O
+Connect to SD_D2 (Series R: 20 Ω); SPIHD; HSPIHD; 
+GPIO9
+19
+SDIO_DATA_3
+I/O
+Connect to SD_D3 (Series R: 200 Ω); SPIWP; HSPIWP; 
+GPIO10
+20
+SDIO_CMD
+I/O
+Connect to SD_CMD (Series R: 200 Ω); SPI_CS0; GPIO11
+21
+SDIO_CLK
+I/O
+Connect to SD_CLK (Series R: 200 Ω); SPI_CLK; GPIO6
+22
+SDIO_DATA_0
+I/O
+Connect to SD_D0 (Series R: 200 Ω); SPI_MISO; GPIO7
+23
+SDIO_DATA_1
+I/O
+Connect to SD_D1 (Series R: 200 Ω); SPI_MOSI; GPIO8
+24
+GPIO5
+I/O
+GPIO5
+25
+U0RXD
+I/O
+UART Rx during flash programming; GPIO3
+26
+U0TXD
+I/O
+UART TX during flash programming; GPIO1; SPI_CS1
+27
+XTAL_OUT
+I/O
+Connect to crystal oscillator output, can be used to provide 
+BT clock input
+28
+XTAL_IN
+I/O
+Connect to crystal oscillator input
+29
+VDDD
+P
+Analog Power 2.5 V ~ 3.6 V
+30
+VDDA
+P
+Analog Power 2.5 V ~ 3.6 V
+31
+RES12K
+I
+Serial connection with a 12 kΩ resistor and connect to the 
+ground
+32
+EXT_RSTB
+I
+External reset signal (Low voltage level: active)
+Pin
+Name
+Type
+Function
+Espressif 
+/
+ 
+5 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 11
+2. Pin Definitions
+📖 Note: 
+•
+GPIO2, GPIO0, and MTDO are used to select booting mode and the SDIO mode; 
+•
+U0TXD should not be pulled externally to a low logic level during the powering-up.
+Espressif 
+/
+ 
+6 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 12
+3. Functional Description 
+3. Functional Description 
+The functional diagram of ESP8266EX is shown as in Figure 3-1. 
+ 
+Figure 3-1. Functional Block Diagram 
+3.1.
+CPU, Memory, and Flash 
+3.1.1.
+CPU 
+The ESP8266EX integrates a Tensilica L106 32-bit RISC processor, which achieves 
+extra-low power consumption and reaches a maximum clock speed of 160 MHz. The 
+Real-Time Operating System (RTOS) and Wi-Fi stack allow 80% of the processing 
+power to be available for user application programming and development. The CPU 
+includes the interfaces as below: 
+•
+Programmable RAM/ROM interfaces (iBus), which can be connected with 
+memory controller, and can also be used to visit flash. 
+•
+Data RAM interface (dBus), which can connected with memory controller. 
+•
+AHB interface which can be used to visit the register. 
+For information about the Xtensa® Instruction Set Architecture, please refer to Xtensa® 
+Instruction Set Architecture (ISA) Summary. 
+3.1.2.
+Memory 
+ESP8266EX Wi-Fi SoC integrates memory controller and memory units including SRAM 
+and ROM. MCU can access the memory units through iBus, dBus, and AHB interfaces. 
+All memory units can be accessed upon request, while a memory arbiter will decide the 
+running sequence according to the time when these requests are received by the 
+processor. 
+RF balun
+Switch
+RF
+receive
+RF
+transmit
+Analog 
+receive
+Analog 
+transmit
+PLL
+VCO
+1/2
+PLL
+Digital baseband
+MAC
+Interface
+PMU
+Crystal
+Bias circuits
+SRAM
+PMU
+SDIO
+I2C
+PWM
+ADC
+SPI
+UART
+GPIO
+I2S
+Flash
+Registers
+CPU
+Sequencers
+Accelerator
+Espressif 
+/
+ 
+7 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 13
+3. Functional Description 
+According to our current version of SDK, SRAM space available to users is assigned as 
+below. 
+•
+RAM size < 50 kB, that is, when ESP8266EX is working under the Station mode 
+and connects to the router, the maximum programmable space accessible in 
+Heap + Data section is around 50 kB. 
+•
+There is no programmable ROM in the SoC. Therefore, user program must be 
+stored in an external SPI flash. 
+3.1.3.
+External Flash 
+ESP8266EX uses external SPI flash to store user programs, and supports up to 16 MB 
+memory capacity theoretically. 
+The minimum flash memory of ESP8266EX is shown below: 
+•
+OTA disabled: 512 kB at least 
+•
+OTA enabled: 1 MB at least 
+3.2.
+Clock 
+3.2.1.
+High Frequency Clock 
+The high frequency clock on ESP8266EX is used to drive both transmit and receive 
+mixers. This clock is generated from internal crystal oscillator and external crystal. The 
+crystal frequency ranges from 24 MHz to 52 MHz. 
+The internal calibration inside the crystal oscillator ensures that a wide range of crystals 
+can be used, nevertheless the quality of the crystal is still a factor to consider to have 
+reasonable phase noise and good Wi-Fi sensitivity. Refer to Table 3-1 to measure the 
+frequency offset. 
+⚠ Notice: 
+SPI mode supported: Standard SPI, Dual SPI and Quad SPI. The correct SPI mode should be 
+selected when flashing bin files to ESP8266. Otherwise, the downloaded firmware/program may not 
+be working properly.
+Table 3-1. High Frequency Clock Specifications
+Parameter
+Symbol
+Min
+Max
+Unit
+Frequency
+FXO
+24
+52
+MHz
+Loading capacitance
+CL
+-
+32
+pF
+Motional capacitance
+CM
+2
+5
+pF
+Series resistance
+RS
+0
+65
+Ω
+Frequency tolerance
+ΔFXO
+–15
+15
+ppm
+Frequency vs temperature (–25 °C ~ 75 °C)
+ΔFXO,Temp
+–15
+15
+ppm
+Espressif 
+/
+ 
+8 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 14
+3. Functional Description 
+3.2.2.
+External Clock Requirements 
+An externally generated clock is available with the frequency ranging from 24 MHz to 52 
+MHz. The following characteristics are expected to achieve good performance of radio. 
+3.3.
+Radio 
+ESP8266EX radio consists of the following blocks. 
+•
+2.4 GHz receiver 
+•
+2.4 GHz transmitter 
+•
+High speed clock generators and crystal oscillator 
+•
+Bias and regulators 
+•
+Power management 
+3.3.1.
+Channel Frequencies 
+The RF transceiver supports the following channels according to IEEE802.11 b/g/n 
+standards. 
+Table 3-2. External Clock Reference
+Parameter
+Symbol
+Min
+Max
+Unit
+Clock amplitude
+VXO
+0.8
+1.5
+Vpp
+External clock accuracy
+ΔFXO,EXT
+–15
+15
+ppm
+Phase noise @1-kHz offset, 40-MHz clock
+-
+-
+–120
+dBc/Hz
+Phase noise @10-kHz offset, 40-MHz clock
+-
+-
+–130
+dBc/Hz
+Phase noise @100-kHz offset, 40-MHz clock
+-
+-
+–138
+dBc/Hz
+Table 3-3. Frequency Channel
+Channel No.
+Frequency (MHz)
+Channel No.
+Frequency (MHz)
+1
+2412
+8
+2447
+2
+2417
+9
+2452
+3
+2422
+10
+2457
+4
+2427
+11
+2462
+5
+2432
+12
+2467
+6
+2437
+13
+2472
+7
+2442
+14
+2484
+Espressif 
+/
+ 
+9 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 15
+3. Functional Description 
+3.3.2.
+2.4 GHz Receiver 
+The 2.4 GHz receiver down-converts the RF signals to quadrature baseband signals 
+and converts them to the digital domain with 2 high resolution high speed ADCs. To 
+adapt to varying signal channel conditions, RF filters, automatic gain control (AGC), DC 
+offset cancelation circuits and baseband filters are integrated within ESP8266EX. 
+3.3.3.
+2.4 GHz Transmitter 
+The 2.4 GHz transmitter up-converts the quadrature baseband signals to 2.4 GHz, and 
+drives the antenna with a high-power CMOS power amplifier. The function of digital 
+calibration further improves the linearity of the power amplifier, enabling a state of art 
+performance of delivering +19.5 dBm average TX power for 802.11b transmission and 
++18 dBm for 802.11n (MSC0) transmission. 
+Additional calibrations are integrated to offset any imperfections of the radio, such as: 
+•
+Carrier leakage 
+•
+I/Q phase matching 
+•
+Baseband nonlinearities 
+These built-in calibration functions reduce the product test time and make the test 
+equipment unnecessary. 
+3.3.4.
+Clock Generator 
+The clock generator generates quadrature 2.4 GHz clock signals for the receiver and 
+transmitter. All components of the clock generator are integrated on the chip, including 
+all inductors, varactors, loop filters, linear voltage regulators and dividers. 
+The clock generator has built-in calibration and self test circuits. Quadrature clock 
+phases and phase noise are optimized on-chip with patented calibration algorithms to 
+ensure the best performance of the receiver and transmitter. 
+3.4.
+Wi-Fi 
+ESP8266EX implements TCP/IP and full 802.11 b/g/n WLAN MAC protocol. It supports 
+Basic Service Set (BSS) STA and SoftAP operations under the Distributed Control 
+Function (DCF). Power management is handled with minimum host interaction to 
+minimize active-duty period. 
+3.4.1.
+Wi-Fi Radio and Baseband 
+The ESP8266EX Wi-Fi Radio and Baseband support the following features:  
+•
+802.11 b and 802.11 g 
+•
+802.11 n MCS0-7 in 20 MHz bandwidth 
+•
+802.11 n 0.4 μs guard-interval 
+•
+up to 72.2 Mbps of data rate 
+Espressif 
+/
+ 
+10 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 16
+3. Functional Description 
+•
+Receiving STBC 2 x 1 
+•
+Up to 20.5 dBm of transmitting power 
+•
+Adjustable transmitting power 
+3.4.2.
+Wi-Fi MAC 
+The ESP8266EX Wi-Fi MAC applies low-level protocol functions automatically, as 
+follows: 
+•
+2 × virtual Wi-Fi interfaces 
+•
+Infrastructure BSS Station mode/SoftAP mode/Promiscuous mode 
+•
+Request To Send (RTS), Clear To Send (CTS) and Immediate Block ACK 
+•
+Defragmentation 
+•
+CCMP (CBC-MAC, counter mode), TKIP (MIC, RC4), WEP (RC4) and CRC  
+•
+Automatic beacon monitoring (hardware TSF)  
+•
+Dual and single antenna Bluetooth co-existence support with optional 
+simultaneous receive (Wi-Fi/Bluetooth) capability 
+3.5.
+Power Management 
+ESP8266EX is designed with advanced power management technologies and intended 
+for mobile devices, wearable electronics and the Internet of Things applications. 
+The low-power architecture operates in the following modes: 
+•
+Active mode: The chip radio is powered on. The chip can receive, transmit, or 
+listen. 
+•
+Modem-sleep mode: The CPU is operational. The Wi-Fi and radio are disabled. 
+•
+Light-sleep mode: The CPU and all peripherals are paused. Any wake-up events 
+(MAC, host, RTC timer, or external interrupts) will wake up the chip. 
+•
+Deep-sleep mode: Only the RTC is operational and all other part of the chip are 
+powered off.
+Table 3-4. Power Consumption by Power Modes
+Power Mode
+Description
+Power Consumption
+Active (RF working)
+Wi-Fi TX packet
+Please refer to Table 5-2.
+Wi-Fi RX packet
+Modem-sleep①
+CPU is working
+15 mA
+Light-sleep②
+-
+0.9 mA
+Deep-sleep③
+Only RTC is working
+20 uA
+Shut down
+-
+0.5 uA
+Espressif 
+/
+ 
+11 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 17
+3. Functional Description 
+📖 Notes: 
+①
+Modem-sleep mode is used in the applications that require the CPU to be working, as in PWM 
+or I2S applications. According to 802.11 standards (like U-APSD), it shuts down the Wi-Fi 
+Modem circuit while maintaining a Wi-Fi connection with no data transmission to optimize power 
+consumption. E.g., in DTIM3, maintaining a sleep of 300 ms with a wakeup of 3 ms cycle to 
+receive AP’s Beacon packages at interval requires about 15 mA current. 
+②
+During Light-sleep mode, the CPU may be suspended in applications like Wi-Fi switch. Without 
+data transmission, the Wi-Fi Modem circuit can be turned off and CPU suspended to save 
+power consumption according to the 802.11 standards (U-APSD). E.g. in DTIM3, maintaining a 
+sleep of 300 ms with a wakeup of 3ms to receive AP’s Beacon packages at interval requires 
+about 0.9 mA current. 
+③
+During Deep-sleep mode, Wi-Fi is turned off. For applications with long time lags between data 
+transmission, e.g. a temperature sensor that detects the temperature every 100 s, sleeps for 
+300 s and wakes up to connect to the AP (taking about 0.3 ~ 1 s), the overall average current is 
+less than 1 mA. The current of 20 μA is acquired at the voltage of 2.5 V.
+Espressif 
+/
+ 
+12 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 18
+4. Peripheral Interface 
+4. Peripheral Interface 
+4.1.
+General Purpose Input/Output Interface (GPIO) 
+ESP8266EX has 17 GPIO pins which can be assigned to various functions by 
+programming the appropriate registers. 
+Each GPIO PAD can be configured with internal pull-up or pull-down (XPD_DCDC can 
+only be configured with internal pull-down, other GPIO PAD can only be configured with 
+internal pull-up), or set to high impedance. When configured as an input, the data are 
+stored in software registers; the input can also be set to edge-trigger or level trigger 
+CPU interrupts. In short, the IO pads are bi-directional, non-inverting and tristate, which 
+includes input and output buffer with tristate control inputs. 
+These pins, when working as GPIOs, can be multiplexed with other functions such as 
+I2C, I2S, UART, PWM, and IR Remote Control, etc. 
+4.2.
+Secure Digital Input/Output Interface (SDIO) 
+ESP8266EX has one Slave SDIO, the definitions of which are described as Table 4-1, 
+which supports 25 MHz SDIO v1.1 and 50 MHz SDIO v2.0, and 1 bit/4 bit SD mode 
+and SPI mode. 
+4.3.
+Serial Peripheral Interface (SPI/HSPI) 
+ESP8266EX has two SPIs. 
+•
+One general Slave/Master SPI 
+•
+One general Slave/Master HSPI 
+Functions of all these pins can be implemented via hardware. 
+Table 4-1. Pin Definitions of SDIOs
+Pin Name
+Pin Num
+IO
+Function Name
+SDIO_CLK 
+21
+IO6
+SDIO_CLK 
+SDIO_DATA0
+22
+IO7
+SDIO_DATA0
+SDIO_DATA1
+23
+IO8
+SDIO_DATA1
+SDIO_DATA_2
+18
+IO9
+SDIO_DATA_2
+SDIO_DATA_3
+19
+IO10
+SDIO_DATA_3
+SDIO_CMD
+20
+IO11
+SDIO_CMD
+Espressif 
+/
+ 
+13 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 19
+4. Peripheral Interface 
+4.3.1.
+General SPI (Master/Slave) 
+4.3.2.
+HSPI (Master/Slave) 
+4.4.
+I2C Interface 
+ESP8266EX has one I2C, which is realized via software programming, used to connect 
+with other microcontrollers and other peripheral equipments such as sensors. The pin 
+definition of I2C is as below. 
+Table 4-2. Pin Definitions of SPIs
+Pin Name
+Pin Num
+IO
+Function Name
+SDIO_CLK
+21
+IO6
+SPICLK
+SDIO_DATA0
+22
+IO7
+SPIQ/MISO
+SDIO_DATA1
+23
+IO8
+SPID/MOSI
+SDIO_DATA_2
+18
+IO9
+SPIHD
+SDIO_DATA_3
+19
+IO10
+SPIWP
+U0TXD
+26
+IO1
+SPICS1
+GPIO0
+15
+IO0
+SPICS2
+SDIO_CMD
+20
+IO11
+SPICS0
+📖 Note: 
+SPI mode can be implemented via software programming. The clock frequency is 80 MHz at 
+maximum when working as a master, 20 MHz at maximum when working as a slave.
+Table 4-3. Pin Definitions of HSPI
+Pin Name
+Pin Num
+IO
+Function Name
+MTMS
+9
+IO14
+HSPICLK
+MTDI
+10
+IO12
+HSPIQ/MISO
+MTCK
+12
+IO13
+HSPID/MOSI
+MTDO
+13
+IO15
+HPSICS
+📖 Note: 
+SPI mode can be implemented via software programming. The clock frequency is 20 MHz at maximum.
+Table 4-4. Pin Definitions of I2C
+Pin Name
+Pin Num
+IO
+Function Name
+MTMS
+9
+IO14
+I2C_SCL
+Espressif 
+/
+ 
+14 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 20
+4. Peripheral Interface 
+Both I2C Master and I2C Slave are supported. I2C interface functionality can be realized 
+via software programming, and the clock frequency is 100 kHz at maximum. 
+4.5.
+I2S Interface 
+ESP8266EX has one I2S data input interface and one I2S data output interface, and 
+supports the linked list DMA. I2S interfaces are mainly used in applications such as data 
+collection, processing, and transmission of audio data, as well as the input and output 
+of serial data. For example, LED lights (WS2812 series) are supported. The pin definition 
+of I2S is shown in Table 4-5. 
+4.6.
+Universal Asynchronous Receiver Transmitter (UART) 
+ESP8266EX has two UART interfaces UART0 and UART1, the definitions are shown in 
+Table 4-6. 
+Data transfers to/from UART interfaces can be implemented via hardware. The data 
+transmission speed via UART interfaces reaches 115200 x 40 (4.5 Mbps). 
+GPIO2
+14
+IO2
+I2C_SDA
+Pin Name
+Pin Num
+IO
+Function Name
+Table 4-5. Pin Definitions of I2S
+I2S Data Input
+Pin Name
+Pin Num
+IO
+Function Name
+MTDI
+10
+IO12
+I2SI_DATA
+MTCK
+12
+IO13
+I2SI_BCK
+MTMS
+9
+IO14
+I2SI_WS
+MTDO
+13
+IO15
+I2SO_BCK
+U0RXD
+25
+IO3
+I2SO_DATA
+GPIO2
+14
+IO2
+I2SO_WS
+Table 4-6. Pin Definitions of UART
+Pin Type
+Pin Name
+Pin Num
+IO
+Function Name
+UART0
+U0RXD
+25
+IO3
+U0RXD
+U0TXD
+26
+IO1
+U0TXD
+MTDO
+13
+IO15
+U0RTS
+MTCK
+12
+IO13
+U0CTS
+UART1
+GPIO2
+14
+IO2
+U1TXD
+SD_D1
+23
+IO8
+U1RXD
+Espressif 
+/
+ 
+15 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 21
+4. Peripheral Interface 
+UART0 can be used for communication. It supports flow control. Since UART1 features 
+only data transmit signal (TX), it is usually used for printing log. 
+4.7.
+Pulse-Width Modulation (PWM) 
+ESP8266EX has four PWM output interfaces. They can be extended by users 
+themselves. The pin definitions of the PWM interfaces are defined as below. 
+The functionality of PWM interfaces can be implemented via software programming. For 
+example, in the LED smart light demo, the function of PWM is realized by interruption of 
+the timer, the minimum resolution reaches as high as 44 ns. PWM frequency range is 
+adjustable from 1000 μs to 10000 μs, i.e., between 100 Hz and 1 kHz. When the PWM 
+frequency is 1 kHz, the duty ratio will be 1/22727, and a resolution of over 14 bits will 
+be achieved at 1 kHz refresh rate. 
+4.8.
+IR Remote Control 
+ESP8266EX currently supports one infrared remote control interface. For detailed pin 
+definitions, please see Table 4-8 below. 
+The functionality of Infrared remote control interface can be implemented via software 
+programming. NEC coding, modulation, and demodulation are supported by this 
+interface. The frequency of modulated carrier signal is 38 kHz, while the duty ratio of the 
+square wave is 1/3. The transmission range is around 1m which is determined by two 
+factors: one is the maximum current drive output, the other is internal current-limiting 
+📖 Note: 
+By default, UART0 outputs some printed information when the device is powered on and booting up. Th
+baud rate of the printed information is relevant to the frequency of the external crystal oscillator. If the 
+frequency of the crystal oscillator is 40 MHz, then the baud rate for printing is 115200; if the frequency o
+the crystal oscillator is 26 MHz, then the baud rate for printing is 74880. If the printed information exerts
+any influence on the functionality of the device, it is suggested to block the printing during the power-on
+period by changing (U0TXD, U0RXD) to (MTDO, MTCK).
+Table 4-7. Pin Definitions of PWM
+Pin Name
+Pin Num
+IO
+Function Name
+MTDI
+10
+IO12
+PWM0
+MTDO
+13
+IO15
+PWM1
+MTMS
+9
+IO14
+PWM2
+GPIO4
+16
+IO4
+PWM3
+Table 4-8. Pin Definitions of IR Remote Control
+Pin Name
+Pin Num
+IO
+Function Name
+MTMS
+9
+IO14
+IR TX
+GPIO5
+24
+IO 5
+IR Rx
+Espressif 
+/
+ 
+16 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 22
+4. Peripheral Interface 
+resistance value in the infrared receiver. The larger the resistance value, the lower the 
+current, so is the power, and vice versa. 
+4.9.
+ADC (Analog-to-Digital Converter) 
+ESP8266EX is embedded with a 10-bit precision SAR ADC. TOUT (Pin6) is defined as 
+below: 
+The following two measurements can be implemented using ADC (Pin6). However, they 
+cannot be implemented at the same time. 
+•
+Measure the power supply voltage of VDD3P3 (Pin3 and Pin4). 
+•
+Measure the input voltage of TOUT (Pin6). 
+Table 4-9. Pin Definition of ADC
+Pin Name
+Pin Num
+Function Name
+TOUT
+6
+ADC Interface
+Hardware Design
+TOUT must be floating.
+RF Initialization 
+Parameter
+The 107th byte of esp_init_data_default.bin (0 ~ 127 bytes), vdd33_const 
+must be set to 0xFF.
+RF Calibration Process
+Optimize the RF circuit conditions based on the testing results of VDD3P3 
+(Pin3 and Pin4).
+User Programming
+Use system_get_vdd33 instead of system_adc_read.
+Hardware Design
+The input voltage range is 0 to 1.0 V when TOUT is connected to external 
+circuit.
+RF Initialization 
+Parameter
+The value of the 107th byte of esp_init_data_default.bin (0 ~ 127 bytes), 
+vdd33_const must be set to the real power supply voltage of Pin3 and Pin4. 
+The unit and effective value range of vdd33_const is 0.1 V and 18 to 36, 
+respectively, thus making the working power voltage range of ESP8266EX 
+between 1.8 V and 3.6 V.
+RF Calibration Process
+Optimize the RF circuit conditions based on the value of vdd33_const. The 
+permissible error is ± 0.2 V.
+User Programming
+Use system_adc_read instead of system_get_vdd33.
+Espressif 
+/
+ 
+17 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 23
+4. Peripheral Interface 
+📖 Notes: 
+esp_init_data_default.bin is provided in SDK package which contains RF initialization parameters (0–
+127 bytes). The name of the 107th byte in esp_init_data_default.bin is vdd33_const, which is 
+defined as below: 
+•
+When vdd33_const = 0xff, the power voltage of Pin3 and Pin4 will be tested by the internal self-
+calibration process of ESP8266EX itself. RF circuit conditions should be optimized according to 
+the testing results. 
+•
+When 18 = < vdd33_const = < 36, ESP8266EX RF Calibration and optimization process is 
+implemented via (vdd33_const/10). 
+•
+When vdd33_const < 18 or 36 < vdd33_const < 255, vdd33_const is invalid. ESP8266EX RF 
+Calibration and optimization process is implemented via the default value 3.3 V.
+Espressif 
+/
+ 
+18 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 24
+5. Electrical Specifications
+5. Electrical Specifications 
+5.1.
+Electrical Characteristics 
+Notes on CHIP_EN: 
+The figure below shows ESP8266EX power-up and reset timing. Details about the 
+parameters are listed in Table 5-2. 
+ 
+Figure 5-1. ESP8266EX Power-up and Reset Timing 
+Table 5-1. Electrical Characteristics
+Parameters
+Conditions
+Min
+Typical
+Max
+Unit
+Operating Temperature Range
+-
+–40
+Normal
+125
+℃
+Maximum Soldering Temperature
+IPC/JEDEC J-
+STD-020
+-
+-
+260
+℃
+Working Voltage Value
+-
+2.5
+3.3
+3.6
+V
+I/O
+VIL
+-
+–0.3
+-
+0.25 VIO
+V
+VIH
+0.75 VIO
+3.6
+VOL
+-
+-
+-
+0.1 VIO
+VOH
+0.8 VIO
+-
+IMAX
+-
+-
+-
+12
+mA
+Electrostatic Discharge (HBM)
+TAMB = 25 ℃
+-
+-
+2
+KV
+Electrostatic Discharge (CDM)
+TAMB = 25 ℃
+-
+-
+0.5
+KV
+Espressif 
+/
+ 
+19 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 25
+5. Electrical Specifications
+5.2.
+RF Power Consumption 
+Unless otherwise specified, the power consumption measurements are taken with a 3.0 
+V supply at 25 °C of ambient temperature. All transmitters’ measurements are based on 
+a 50% duty cycle. 
+5.3.
+Wi-Fi Radio Characteristics 
+The following data are from tests conducted at room temperature, with a 3.3 V power 
+supply.
+Table 5-2. Description of ESP8266EX Power-up and Reset Timing Parameters
+Description
+Min
+Max
+Unit
+t1
+The rise-time of VDD33
+10
+2000
+μs
+t2
+The rise-time of EXT_RSTB
+0
+2
+ms
+t3
+EXT_RSTB goes high after VDD33
+0.1
+-
+ms
+t4
+The rise-time of CHIP_EN
+0
+2
+ms
+t5
+CHIP_EN goes high after EXT_RSTB
+0.1
+-
+ms
+Table 5-3. Power Consumption
+Parameters
+Min
+Typical
+Max
+Unit
+TX802.11 b, CCK 11 Mbps, POUT = +17 dBm
+-
+170
+-
+mA
+TX802.11 g, OFDM 54Mbps, POUT = +15 dBm
+-
+140
+-
+mA
+TX802.11 n, MCS7, POUT = +13 dBm
+-
+120
+-
+mA
+Rx802.11 b, 1024 bytes packet length, –80 dBm
+-
+50
+-
+mA
+Rx802.11 g, 1024 bytes packet length, –70 dBm
+-
+56
+-
+mA
+Rx802.11 n, 1024 bytes packet length, –65 dBm
+-
+56
+-
+mA
+Table 5-4. Wi-Fi Radio Characteristics
+Parameters
+Min
+Typical
+Max
+Unit
+Input frequency
+2412
+-
+2484
+MHz
+Output impedance
+-
+39 + j6
+-
+Ω
+Output power of PA for 72.2 Mbps
+15.5
+16.5
+17.5
+dBm
+Output power of PA for 11b mode
+19.5
+20.5
+21.5
+dBm
+Sensitivity
+DSSS, 1 Mbps
+-
+–98
+-
+dBm
+Espressif 
+/
+ 
+20 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 26
+5. Electrical Specifications
+CCK, 11 Mbps
+-
+–91
+-
+dBm
+6 Mbps (1/2 BPSK)
+-
+–93
+-
+dBm
+54 Mbps (3/4 64-QAM)
+-
+–75
+-
+dBm
+HT20, MCS7 (65 Mbps, 72.2 Mbps)
+-
+–72
+-
+dBm
+Adjacent Channel Rejection
+OFDM, 6 Mbps
+-
+37
+-
+dB
+OFDM, 54 Mbps
+-
+21
+-
+dB
+HT20, MCS0
+-
+37
+-
+dB
+HT20, MCS7
+-
+20
+-
+dB
+Espressif 
+/
+ 
+21 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 27
+6. Package Information
+6. Package Information 
+Figure 6-1. ESP8266EX Package 
+Espressif 
+/
+ 
+22 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 28
+Appendix A. Pin List
+Appendix A. Pin List 
+For detailed pin information, please see ESP8266 Pin List. 
+•
+Digital Die Pin List 
+•
+Buffer Sheet 
+•
+Register List 
+•
+Strapping List 
+📖 Notes: 
+•
+INST_NAME refers to the IO_MUX REGISTER defined in eagle_soc.h, for example MTDI_U refers 
+to PERIPHS_IO_MUX_MTDI_U. 
+•
+Net Name refers to the pin name in schematic. 
+•
+Function refers to the multifunction of each pin pad. 
+•
+Function number 1 ~ 5 correspond to FUNCTION 0 ~ 4 in SDK. For example, set MTDI to 
+GPIO12 as follows. 
+#define FUNC_GPIO12  3 //defined in eagle_soc.h 
+PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDI_U,FUNC_GPIO12)
+Espressif 
+/
+ 
+23 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 29
+Appendix B. Learning Resources
+Appendix B. Learning Resources 
+B.1    Must-Read Documents 
+•
+ESP-AT Instruction User Guide 
+Description: This document provides users with detailed information on what is ESP-
+AT, how to connect hardware, and how to download and flash AT firmware. 
+•
+ESP8266 SDK Getting Started Guide 
+Description: This document describes how to get started 
+with ESP8266_RTOS_SDK, which is the official development framework for 
+the ESP8266EX chip. 
+•
+ESP8266 Pin List 
+Description: This link directs you to a list containing the type and function of every 
+ESP8266 pin. 
+•
+ESP8266 Hardware Design Guideline 
+Description: This document provides a technical description of the ESP8266 series 
+of products, including ESP8266EX, ESP-LAUNCHER and ESP-WROOM. 
+•
+ESP8266 Technical Reference 
+Description: This document provides an introduction to the interfaces integrated on 
+ESP8266. Functional overview, parameter configuration, function description, 
+application demos and other pieces of information are included. 
+•
+ESP8266 Hardware Resources 
+Description: This zip package includes manufacturing BOMs, schematics and PCB 
+layouts of ESP8266 boards and modules. 
+•
+FAQ 
+B.2    Must-Have Resources 
+•
+ESP8266 SDKs 
+Description: This webpage provides links both to the latest version of the ESP8266 
+SDK and the older ones. 
+•
+ESP8266 Tools 
+Description: This webpage provides links to both the ESP8266 flash download tools 
+and the ESP8266 performance evaluation tools. 
+•
+ESP8266 Apps 
+•
+ESP8266 Certification and Test Guide 
+Espressif 
+/
+ 
+24 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 30
+Appendix B. Learning Resources
+•
+ESP8266 BBS 
+•
+ESP8266 Resources 
+Espressif 
+/
+ 
+25 26
+Submit Documentation Feedback
+NRND  
+2025.11
+
+
+PAGE 31
+Disclaimer and Copyright Notice 
+Information in this document, including URL references, is subject to change without notice. 
+ALL THIRD PARTY’S INFORMATION IN THIS DOCUMENT IS PROVIDED AS IS WITH NO WARRANTIES TO ITS AUTHENTICITY AND 
+ACCURACY.  
+NO WARRANTY IS PROVIDED TO THIS DOCUMENT FOR ITS MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR ANY 
+PARTICULAR PURPOSE, NOR DOES ANY WARRANTY OTHERWISE ARISING OUT OF ANY PROPOSAL, SPECIFICATION OR 
+SAMPLE. 
+All liability, including liability for infringement of any proprietary rights, relating to use of information in this document is disclaimed. No 
+licenses express or implied, by estoppel or otherwise, to any intellectual property rights are granted herein. 
+The Wi-Fi Alliance Member logo is a trademark of the Wi-Fi Alliance. The Bluetooth logo is a registered trademark of Bluetooth SIG. 
+All trade names, trademarks and registered trademarks mentioned in this document are property of their respective owners, and are 
+hereby acknowledged. 
+Copyright © 2025 Espressif Systems (Shanghai) Co., Ltd. All rights reserved. 
+www.espressif.com

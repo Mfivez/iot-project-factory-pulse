@@ -1,0 +1,23 @@
+{
+  "validated_on": "2026-10-13",
+  "inventory_items": 16,
+  "inventory_order_matches_csv": true,
+  "source_references": 25,
+  "unique_sources": 24,
+  "pdf_downloaded": 16,
+  "pages_extracted": 225,
+  "local_pdf_signatures_valid": true,
+  "local_pdf_sha256_recomputed_and_matching": true,
+  "extracted_page_counts_match_pdf": true,
+  "pages_requiring_ocr": {
+    "rpi3bplus_mechanical": [1],
+    "rpi4_mechanical": [1]
+  },
+  "download_failures": {
+    "htu21d": "HTTP 403; lien PDF vérifié avec l’outil web, téléchargement direct refusé",
+    "max7219": "Expiration de lecture; lien PDF vérifié avec l’outil web"
+  },
+  "exact_document_not_found": ["Ma16"],
+  "hardware_tested": false,
+  "inventory_modified": false
+}

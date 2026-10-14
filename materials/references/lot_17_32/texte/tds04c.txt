@@ -1,0 +1,2 @@
+PAGE 1 — TRANSCRIPTION VISUELLE PARTIELLE
+Lecture manuelle partielle du tableau de la page 1, vérifiée visuellement le 13 octobre 2026. Famille TDS-04C, bobines standard: 6 V / 24 ohms / 250 mA; 12 V / 96 ohms / 125 mA; 24 V / 384 ohms / 62,5 mA. Puissance de service continu standard: 1,5 W. Ces valeurs de famille ne sont pas validées pour la bobine OEM LM4239-001 inventoriée Ma22. Graphiques force/course et toutes les cotes non transcrits; consulter le PDF original.

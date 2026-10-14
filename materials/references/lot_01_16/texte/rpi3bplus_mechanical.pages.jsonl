@@ -1,0 +1,1 @@
+{"document_id": "rpi3bplus_mechanical", "page": 1, "source_url": "https://pip.raspberrypi.com/documents/RP-008337-DS", "source_sha256": "967b7e123670d7f4ef4bd93b0add8e24e6a54910f3d98a09eab68753c5db1e63", "text": "", "extraction_method": "pypdf.PdfReader.extract_text", "requires_visual_review": true}

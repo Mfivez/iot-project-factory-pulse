@@ -1,0 +1,238 @@
+PAGE 1
+ROTARY ENCODER
+COM-KY040RE
+Joy-IT powered by SIMAC Electronics GmbH - Pascalstr. 8 - 47506 Neukirchen-Vluyn - www.joy-it.net
+
+
+PAGE 2
+Dear customer,
+thank you for choosing our product. Below we will show you what you need 
+to bear in mind during commissioning and use.
+Should you encounter any unexpected problems during use, please do not 
+hesitate to contact us. 
+This joystick module outputs the current positions of the X and Y axes as 
+an analog signal via the VRx and VRy pins. The joystick can also be pressed 
+down, which changes the status at pin SW from LOW to HIGH.
+1. GENERAL INFORMATION
+2. EQUIPMENT OVERVIEW
+
+
+PAGE 3
+First connect the module to your Arduino:
+3. ARDUINO APPLICATION EXAMPLE
+ROTARY ENCODER
+ARDUINO
+GND
++
+GND
+5V
+SW
+D5
+DT
+D4
+CLK
+D3
+
+
+PAGE 4
+Now transfer the code example on this and the next page 
+to your Arduino. 
+// Initialization of needed variables
+int Counter =  0;
+boolean Direction;
+int Pin_clk_Last;
+int Pin_clk_Current;
+// Definition of input pins
+int pin_clk =  3;
+int pin_dt =  4;
+int button_pin =  5;
+void setup() {
+  // Initialize input pins...
+  pinMode(pin_clk, INPUT);
+  pinMode(pin_dt, INPUT);
+  pinMode(button_pin, INPUT);
+  // ...and activate their pull-up resistors
+  digitalWrite(pin_clk, true);
+  digitalWrite(pin_dt, true);
+  digitalWrite(button_pin, true);
+  // Initial reading of Pin_CLK
+  Pin_clk_Last = digitalRead(pin_clk);
+  Serial.begin(115200);
+}
+/*
+The program checks if there has been a change in the pin states, which of 
+the two
+pins changed first, indicating the direction of rotation.
+This information is obtained by comparing one of the pin values from a 
+previous
+run with the value of the current run.
+Once the direction is determined, steps are counted from the start 
+position and displayed.
+Pressing the button on the rotary encoder resets the current position.
+*/
+
+
+PAGE 5
+void loop() {
+  // Read the current status
+  Pin_clk_Current = digitalRead(pin_clk);
+  // Check for change
+ if (Pin_clk_Current != Pin_clk_Last) {
+   if (digitalRead(pin_dt) != Pin_clk_Current) {
+      // Pin_CLK changed first
+      Counter++;
+      Direction = true;
+    }
+   else {  // Otherwise, Pin_DT changed first
+      Direction = false;
+      Counter--;
+    }
+    Serial.println("Rotation detected: ");
+    Serial.print("Rotation direction: ");
+   if (Direction) {
+      Serial.println("Clockwise");
+    } else {
+      Serial.println("Counterclockwise");
+    }
+    Serial.print("Current position: ");
+    Serial.println(Counter);
+    Serial.println("------------------------------");
+  }
+  /* 
+  Preparation for the next run:
+  The value of the current run is the previous value in the next run
+  */
+  Pin_clk_Last = Pin_clk_Current;
+  // Reset function to save the current position
+ if (!digitalRead(button_pin) && Counter != 0) {
+    Counter = 0;
+    Serial.println("Position reset");
+  }
+}
+
+
+PAGE 6
+First connect the module to your Raspberry Pi.
+4. APPLICATION EXAMPLE RASPBERRY PI
+i
+These instructions were written under Raspberry Pi OS Bookworm for 
+the Raspberry Pi 4 and 5.  It has not been checked with newer operating 
+systems or hardware.
+ROTARY ENCODER
+RASPBERRY PI
+GND
++
+GND
+3V3
+SW
+DT
+CLK
+GPIO15
+GPIO16
+GPIO14
+You can download the code example that we have made available to you 
+here or you can execute the following command in your console.
+wget https://www.joy-it.net/files/files/Produkte/COM-KY040RE/COM-KY040RE-RPi.zip
+Now unpack the file with the following command:
+unzip COM-KY040RE-RPi.zip
+You can now execute the script with the following command. Pay attention
+Please note that your file path may differ.
+python3 COM-KY040RE-RPi.py
+
+
+PAGE 7
+from gpiozero import Button
+from signal import pause
+# Declaration of input pins where the sensor is connected.
+PIN_CLK = 16
+PIN_DT = 15
+BUTTON_PIN = 14
+# Creating button objects
+button_clk = Button(PIN_CLK)
+button_dt = Button(PIN_DT)
+button_reset = Button(BUTTON_PIN)
+# Initializing necessary variables
+Counter = 0
+Direction = True
+PIN_CLK_LAST = 0
+# Initial read of the PIN_CLK
+PIN_CLK_LAST = button_clk.value
+# This output function executes upon signal detection
+def outputFunction():
+   global Counter, Direction, PIN_CLK_LAST
+    PIN_CLK_CURRENT = button_clk.value
+   if PIN_CLK_CURRENT != PIN_CLK_LAST:
+       if button_dt.value != PIN_CLK_CURRENT:
+            Counter += 1
+            Direction = True
+       else:
+            Direction = False
+            Counter -= 1
+       print("Rotation detected: ")
+       if direction:
+           print("Rotation direction: Clockwise")
+       else:
+           print("Rotation direction: Counterclockwise")
+       print("Current position: ", Counter)
+       print("------------------------------")
+        PIN_CLK_LAST = PIN_CLK_CURRENT
+def counter_reset():
+   global Counter
+   print("Position reset!")
+   print("------------------------------")
+    Counter = 0
+# Add callbacks for the buttons
+button_clk.when_pressed = outputFunction
+button_dt.when_pressed = outputFunction
+button_reset.when_pressed = counter_reset
+print("Sensor test [press CTRL+C to end the test]")
+# Keep the program running in an infinite loop to process events
+pause()
+Alternatively, you can copy the code example here and paste it into
+Insert your Python file.
+
+
+PAGE 8
+5. INFORMATION & TAKE-BACK OBLIGATIONS
+Our information and take-back obligations under the German 
+Electrical and Electronic Equipment Act (ElektroG) 
+Symbol on electrical and electronic equipment: 
+This crossed-out garbage can means that electrical and electronic appliances 
+do not belong in household waste. You must hand in the old appliances at a 
+collection point. Before handing them in, you must separate used batteries 
+and accumulators that are not enclosed by the old appliance. 
+Return options: 
+As an end user, you can hand in your old appliance (which essentially fulfills 
+the same function as the new appliance purchased from us) for disposal free 
+of charge when purchasing a new appliance. Small appliances with no external 
+dimensions greater than 25 cm can be disposed of in normal household 
+quantities regardless of whether you have purchased a new appliance. 
+Possibility of return at our company location during opening hours: 
+SIMAC Electronics GmbH, Pascalstr. 8, D-47506 Neukirchen-Vluyn 
+Return option in your area: 
+We will send you a parcel stamp with which you can return the device to us 
+free of charge. To do so, please contact us by e-mail at Service@joy-it.net or 
+by telephone. 
+Packaging information: 
+Please pack your old appliance securely for transportation. If you do not have 
+suitable packaging material or do not wish to use your own, please contact us 
+and we will send you suitable packaging. 
+www.joy-it.net
+SIMAC Electronics GmbH
+Pascalstr. 8 47506 Neukirchen-Vluyn
+Published: 2024.05.07
+6. SUPPORT
+We are also there for you after your purchase. If you still have any questions 
+or problems arise, we are also available by e-mail, telephone and ticket sup­
+port system.
+E-Mail: service@joy-it.net
+Ticket-System: https://support.joy-it.net
+Phone: +49 (0)2845 9360 - 50 (Mon - Thur: 09:00 - 17:00 o'clock CET,
+	
+	
+	
+	
+	
+    Fri: 09:00 - 14:30 o'clock CET)
+For further information, please visit our website:
+www.joy-it.net
