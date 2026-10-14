@@ -1,0 +1,335 @@
+DOCUMENT HTML
+Safety Precautions for Fan | San Ace COOLING SYSTEMS Safety Precautions | Product Site | SANYO DENKI
+
+      Login
+      Logout
+
+  Japan 
+
+SANYO DENKI Global Site
+
+SANYO DENKI CO., LTD.
+
+SANYO KOGYO CO., LTD.
+
+SANYO DENKI Techno Service CO., LTD.
+
+SANYO DENKI IT Solution CO., LTD.
+
+  Asia 
+
+SANYO DENKI SHANGHAI CO., LTD.
+
+SANYO DENKI (Shenzhen) CO., LTD.
+
+SANYO DENKI (Chengdu) CO., LTD.
+
+SANYO DENKI (Tianjin) CO., LTD.
+
+SANYO DENKI (H.K.) CO., LIMITED
+
+SANYO DENKI TAIWAN CO., LTD.
+
+SANYO DENKI KOREA CO., LTD.
+
+SANYO DENKI (THAILAND) CO., LTD.
+
+SANYO DENKI INDIA PRIVATE LIMITED
+
+SANYO DENKI Singapore Branch
+
+SANYO DENKI Jakarta Rep.Office
+
+  North 
+
+            America 
+
+SANYO DENKI AMERICA, INC
+
+  Europe 
+
+SANYO DENKI EUROPE S.A.
+
+SANYO DENKI GERMANY GmbH
+
+          CLOSE
+
+Home
+
+San Ace Cooling Systems
+
+Safety Precautions
+
+Safety Precautions for Fan
+
+Product Related Inquiries
+
+Safety Precautions
+
+Safety Precautions for Fan
+
+To ensure that this fan is used safely, be sure that you read and understand the following precautions fully and use it only as directed. 
+
+Be sure to read these Safety Precautions carefully before installing, connecting, operating, maintaining, or inspecting the fan. Follow all the precautions and directions given here. 
+
+The fan has been designed and manufactured for built-in use in general industrial machinery, and might not be used otherwise. 
+
+The fan falls into the Category 16 (Class 84, Item 14) of the Appended Table 1 of the Export Trade Control Order. When exporting the fan either as a standalone item or as part of another product, be sure to implement the necessary procedures including the “Informed Cases” and “Objective Cases” based on the “Catch-All Controls” defined by the Ministry of Economy, Trade and Industry of Japan. 
+
+When disposing the fan, treat it as industrial waste. For instructions on proper disposal methods, please contact local government authorities. 
+
+When using the fan in equipment that could affect people's lives or health, that is used on a car, ship, or aircraft, or that could have a major impact on society or on the public, use it at your own discretion only after deploying sufficient safety measures and making prior evaluation. 
+
+Fully understand the Safety Precautions described in this document before using the product. SANYO DENKI will not be liable for any accidents resulting in death, injury, or property damage due to the failure of the fan.
+
+Safety precautions necessary for preventing any possible bodily injury or damage to property or equipment are ranked in two levels:
+
+Warning
+                Denotes hazards which could cause severe bodily injury or death as a result of incorrect operation.
+
+Caution
+                Denotes hazards which could cause bodily injury or property damage as a result of incorrect operation.
+
+Note: Even those items marked‘Caution’ might also result in serious consequences depending on the situation. Be sure to observe them carefully to the same extent as items marked‘Warning.’
+
+Descriptions of the precautions to be taken to ensure safety are given below.
+
+Warning
+
+Use the fan at your own discretion after deploying sufficient safety measures and making prior evaluation. When using the fan in the following equipment especially, take special care.
+
+            - Equipment that could affect people's lives or health
+
+            - Equipment that is used on a car, ship, or aircraft
+
+            - Equipment that could have a major impact on society or on the public
+
+            SANYO DENKI will not be liable for any accidents involving human casualties (death, injury, etc.) or property damage due to the failure of the fan while use in such equipment. 
+
+Ensure that wiring is done correctly. Failure to do so might result in fire, burns, or electrical shock. 
+
+If there are any grounding taps or wires, ground them securely. Failure to do so might result in electric shock. 
+
+Never use in explosive atmospheres, as doing so might result in fires, burns, or bodily injury. 
+
+Do not operate the fan with live parts exposed. Doing so might result in electric shock. 
+
+Never allow any persons or objects to approach or come into contact with the fan's rotor while in operation, as doing so might result in damage or personal injury. 
+
+Turn off the power and stop using the fan immediately if you notice any sparks, smoke, odd odors or sounds, or anything unusual during operation. Failure to do so might result in fire, bodily injury, or electrical shock. 
+
+Never allow the fan to fall, topple over, or be subjected to excessive shocks when moving it. Doing so might result in product failure or performance deterioration. 
+
+The fan should be handled by technically qualified personnel or someone with sufficient expertise; the personnel shall be assigned at your own discretion. 
+
+Never attempt to disassemble, repair, or alter the fan in any way, as doing so might result in electrical shock, fire, or bodily injury.
+
+Caution
+
+Handling
+
+Installation, mounting, connections, wiring, and relocation of the fan should be done by technically qualified personnel or someone with sufficient expertise; the personnel shall be assigned at your own discretion. Never perform such work while the product is on, as this might lead to injury, electrical shock, burns, or fire.
+
+Do not operate the fan if it is not secured, nor while held in hand.
+
+Never allow yourself to come into contact with the fan when measuring insulation resistance or dielectric strength. There is danger of electric shock.
+
+Never attempt to disassemble or alter the fan in any way. Doing so might not only result in substandard performance, but also fire, burns, bodily injury, or electrical shock.
+
+Operation
+
+Take protective measures for the equipment in which the fan is embedded in case the fan stops, malfunctions, or fails during operation.
+
+Never use the fan at voltages, temperatures, or any other parameters exceeding those given in the product specifications. Otherwise, it might result in substandard performance, failure, fire, bodily injury, or electrical shock.
+
+Any specifications not listed in document, such as fan and sensor operation after the fan power is turned off, will not be covered by our warranty. Please contact us in advance if you need to make any special arrangements for the specifications not listed in document.
+
+When voltage is applied or fluctuates, a charge current flows to the capacitor inside the fan, and a large peak current called inrush current may flow for a duration of microseconds to milliseconds. Use the fan after ensuring protection from inrush current by selecting the right fuses and circuit breakers on the equipment side at your own risk. 
+
+When voltage is applied or fluctuates, current several times the rated current may flow. Since an under-capacity power supply may lead to faulty fan operation, please choose the right power supply at your own risk after performing evaluations on the actual equipment.
+
+Start all fans at the same time when two or more fans are positioned in equipment in a way that creates wind interference. If the fan is exposed to wind from other fans at startup, it might result in fan failure or faulty fan startup. 
+
+When using two or more fans in equipment, be sure to evaluate the operating conditions of each fan in advance on the actual equipment, and take necessary measures if needed and use them at your own risk.
+
+Never connect or disconnect lead wires, plug cords, or connectors while the power is on. Be sure to connect or disconnect them while holding the frame only after power-off. Otherwise, it might result in fan damage or electrical shock.
+
+Do not remove the lead wire of the fan from the frame hook. Doing so might scratch and damage the surface of the lead wire.
+
+Do not remove the nameplate. Doing so might result in fan failure or electrical shock.
+
+Do not press down hard on the nameplate of the fan. Otherwise, the nameplate might break or come into contact with the shaft, hindering proper operation.
+
+The fan might be damaged or burned out if foreign objects or external forces hinder normal fan operation.
+
+Do not use the power supply's PWM to control the speed of the fan. Doing so might result in fan malfunction.
+
+Do not turn the power on or off on the negative power line. Doing so might damage the fan.
+
+Turning the power on and off frequently or turning the power back on before the fan comes to a complete stop might result in fan failure or damage. Before conducting such operations, fully evaluate the equipment in which the fan is embedded.
+
+The IP ratings of Splash Proof Fans apply only to the live electric parts and motor coils of the fan in accordance with IEC 60529. The protection does not apply to the non-live parts of the fan. If the fan is to be used for a long period of time in an environment subject to dust, water, or condensation, take measures required for the operating environment.
+
+Do not wash the fan during maintenance of equipment. Doing so might result in failure of the fan.
+
+For DC fans, even if the positive and negative lead wires of the power supply are connected in reverse, the fan will not be affected by the motor protection function. However, when wiring fans with sensors or PWM speed control function, connecting positive and negative leads in reverse may damage the fans.
+
+Installation (Common to All Fans)
+
+Install and secure the fan properly with its weight and vibration during operation taken into account. Failure to do so might result in bodily injury or equipment failure due to the fan or its parts falling off.
+
+Ensure that the fan is installed in the right orientation. Failure to do so might result in bodily injury or equipment failure.
+
+For the fan to perform to its full capacity, secure air vents and take measures to prevent foreign objects from entering the fan. Failure to do so might result in bodily injury or fan failure.
+
+Do not subject the fan to excessive shock. Doing so might result in failure or substandard performance of the fan.
+
+Pulling or pinching lead wires might result in damage and stress to the wire. Also, make connections so that the lead wires do not come into contact with the rotating blades. Failure to do so might result in equipment failure or electrical shock.
+
+Take proper precautions against static electricity when wiring. Failure to do so might cause failure of the fan or equipment.
+
+Take safety measures such as installing a finger guard and displaying a warning symbol if there is any danger of fingers or objects coming into contact with the rotating blades. Failure to do so might result in bodily injury or fan failure.
+
+When installing an inlet nozzle, finger guard, filter, or base plate to the fan, ensure that they are positioned correctly according to Product Specification and other documents so that they do not come into contact with the rotating blades. Also, use the fan only after checking that the rotating blades do not come into contact with anything. Otherwise, it might result in equipment failure.
+
+Please use only genuine SANYO DENKI inlet nozzles and finger guards.
+
+Make connections correctly in accordance with the information of Product Specification and the nameplate of the fan. Failure to do so might result in equipment failure or the malfunction, failure, or performance degradation of the fan.
+
+Installation (Axial Fan and Blower)
+
+When mounting the fan with screws, make sure that the screw and base plate will not deform the frame of the fan before mounting. A deformed frame might result in failure or substandard performance of the fan.
+
+When mounting the fan with screws, ensure that the screw tightening torque is correct. If the tightening torque exceeds the recommended torque, the fan frame might be deformed or damaged. Choose a ribbed frame model if mounting fans with plastic frames through both sides of the frame with throughscrews.
+
+              To prevent loose screws, use plain washers or spring washers. For the screwing torque of each fan type, contact SANYO DENKI or a SANYO DENKI distributor.
+
+Note that mounting the fan with self-tapping screws might damage the fan frame.
+
+            If using self-tapping screws, be sure to choose the screw that we recommend and conduct evaluations before using it.
+
+Installation (Centrifugal Fan)
+
+The fan shall be mounted with screws. For the screw size for each fan model, see Product Specification.
+
+Choose screws with the right length with information such as the fan mounting depth and base plate thickness taken into account. Failure to do so might result in stripped screw holes and improper fan mounting. For the mounting depth of each fan model, see Product Specification.
+
+Ensure that the screw tightening torque is correct. If the tightening torque exceeds the recommended torque, the screw hole might be deformed or damaged. Also, to prevent loose screws, use plain washers or spring washers. For the tightening torque for each fan model, see Product Specification.
+
+For the inlet nozzle and base plate installation dimensions for each fan model, see Product Specification.
+
+Operating Environments
+
+Avoid using or storing the fan in the following environments. Otherwise, it might result in fire or the failure or performance degradation of the fan.
+
+              In environments where flammable or corrosive gas is present, where water or oil splashes, where there is much dust or humidity, where condensation occurs, where exposed to radioactive rays or direct sunlight, where a salty sea breeze blows or seawater splashes, where the fan might be contaminated by such corrosive materials as sulfurous water, sulfurous volcanic ash, organic solvents, acidic and alkali chemicals, or nuclear fuel materials, where subjected to constant vibration, strong shocks, centrifugal force, acceleration, or strong magnetic force, where electromagnetic noise radiation is present, where the electromagnetic noise overlaps into power voltage, or where subjected to rapid environmental fluctuations (temperature, humidity, pressure, etc.).
+
+Storage
+
+The fan should be stored in packaging.
+
+Ensure that the fan is stored in the following environments where:
+
+              - the temperature is normal and stable;
+
+              - the relative humidity is 20 to 85% with no sudden changes in humidity and no condensation;
+
+              - not subjected to direct sunlight;
+
+              - not subjected to water, oil, corrosive materials, or other hazardous substances;
+
+              - and not subjected to vibration or shock.
+
+Maintenance
+
+Maintenance and inspections of the fan should be done by technically qualified personnel or someone with sufficient expertise; the
+personnel shall be assigned at your own discretion. Otherwise, it might result in fire, burns, bodily injury, or electrical shock.
+
+Never perform any maintenance or inspections while the fan is in operation. Also note that the blades continue to rotate for some time immediately after operation ceases. Always confirm that all rotating parts have come to a stop before beginning work. Failure to do so might result in bodily injury.
+
+Never use gasoline, paint thinner, benzene, or any other organic solvents to clean the fan. Also, avoid placing excessive stresses on the fan.
+
+              Otherwise, it might result in product deformation or performance degradation.
+
+Last updated: november 2025
+
+ID
+
+Password
+
+Login
+
+            Create Account
+
+            Reset Password
+
+          Logout
+          Login
+
+        Product Related Inquiries
+
+            Language
+            日本語
+            English
+
+ DC Cooling Fan  
+
+DC Cooling Fan
+
+Counter Rotating Fan
+
+Reversible Flow Fan
+
+Splash Proof Fan
+
+Splash Proof Centrifugal Fan
+
+Splash Proof Blower
+
+Oil Proof Fan
+
+Long Life Fan
+
+Wide Temperature Range Fan
+
+G Proof Fan
+
+Centrifugal Fan
+
+Blower
+
+ ACDC Fan  
+
+ACDC Fan
+
+Splash Proof Centrifugal Fan
+
+Centrifugal Fan
+
+ AC Cooling Fan  
+
+AC Cooling Fan
+
+ Measuring Device  
+
+Airflow Tester
+
+ Controller  
+
+PWM Controller
+
+San Ace Controller
+
+ Option  
+
+Option
+
+      CLOSE
+
+Conditions of Use
+
+Privacy Statement
+
+Privacy Notice (GDPR)
+
+© SANYO DENKI CO., LTD. All Rights Reserved.

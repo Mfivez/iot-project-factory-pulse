@@ -1,0 +1,4 @@
+# Preserve archived reference bytes and their recorded checksums.
+materials/references/** -text
+materials/references/**/*.pdf binary
+data/outputs/cahier_des_charges/FactoryPulse_cahier_des_charges_montages.pdf binary

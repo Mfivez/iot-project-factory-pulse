@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KY-040 Rotary encoder - SensorKit</title>
+<base href="https://sensorkit.joy-it.net/">
+<meta name="robots" content="index,follow">
+<meta name="description" content="When the rotary switch is moved, the direction of movement and the current position of the rotary switch are coded and output via the outputs.">
+<meta name="generator" content="Contao Open Source CMS">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/bundles/contaocookiebar/default.00b012e7.css">
+<link rel="stylesheet" href="/assets/css/main.css,prism.css,menu.css,language.css,hamburger.css,header.cs...-7f07e4f1.css"><script src="/assets/js/jquery.min.js-c31f118d.js"></script><link rel="alternate" hreflang="de" href="https://sensorkit.joy-it.net/de/sensors/ky-040">
+<link rel="alternate" hreflang="x-default" href="https://sensorkit.joy-it.net/de/sensors/ky-040">
+<link rel="alternate" hreflang="en" href="https://sensorkit.joy-it.net/en/sensors/ky-040">
+<link rel="alternate" hreflang="fr" href="https://sensorkit.joy-it.net/fr/sensors/ky-040">
+
+<script src="/bundles/contaocookiebar/cookiebar.f2d9506d.js"></script>
+</head>
+<body id="top" class="line-numbers " itemscope itemtype="http://schema.org/WebPage">
+<input type="checkbox" id="nav_opened" class="invisible">
+<div id="wrapper">
+<header id="header">
+<div class="inside">
+<label for="nav_opened" id="hamburger">
+<div id="hamburger-box">
+<div id="hamburger-inner"></div>
+</div>
+</label>
+<div class="upper">
+<div class="logo">
+<div class="inner">
+<a aria-label="SensorKit" href="/"><span class="invisible">SensorKit</span></a>
+</div>
+</div>
+</div>            </div>
+</header>
+<div id="container">
+<main id="main">
+<div class="page_header">
+<div class="image_hero">
+<h1>KY-040 Rotary encoder</h1>
+<p>When the rotary switch is moved, the direction of movement and the current position of the rotary switch are coded and output via the outputs.</p>
+</div>
+</div>
+<div class="inside">
+<div class="mod_article block" id="article-126">
+<ul class="sbcselection">
+<li id="arduino" class="first selector active">Arduino</li>
+<li id="raspberry" class="selector ">Raspberry Pi</li>
+<li id="raspberrypipico" class="selector ">Raspberry Pi Pico</li>
+<li id="microbit" class="selector last">Micro:Bit</li>
+</ul>
+<div class="sbc arduino active content-markdown">
+<img src="/files/files/sensors/KY-040/KY-040.png" width="358">
+<p>The coded rotary switch (rotary encoder) outputs the direction of movement and the current position of the switch via its outputs when it is rotated.</p>
+<p>The state of the two outputs changes with each step, allowing the direction of rotation to be determined. The direction of rotation is determined by the sequence of the state changes of the outputs: Depending on which output changes state first, it is possible to detect whether the switch is turned clockwise or counterclockwise.</p>
+<p>This rotary switch is ideal for applications where precise position and movement information is required, such as in user interfaces for electronic devices, machine controls or in rotary measuring systems. It provides accurate and reliable input and is a versatile component for many projects.</p>
+<h2>Pin assignment</h2>
+<img src="/files/files/sensors/KY-040/KY-040.svg" width="400">
+<br>
+<img src="/files/files/sensors/KY-040/040-ARD.svg" width="570">
+<table>
+<thead>
+<tr>
+<th>Arduino</th>
+<th>Sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 V</td>
+<td>+ V</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>Pin 3</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>Pin 4</td>
+<td>DT</td>
+</tr>
+<tr>
+<td>Pin 5</td>
+<td>SW</td>
+</tr>
+</tbody>
+</table>
+<h2>Code example</h2>
+<p>The sample program checks for the change of the pin states and determines the direction of rotation as soon as a rotation has been detected. After the direction has been determined, the steps from the start position are counted and output. Pressing the button resets the count.</p>
+<p>To load the following code example onto your Arduino, we recommend using the <a href="https://www.arduino.cc/en/software" target="_blank">Arduino IDE</a>. In the IDE, you can select the appropriate port and board for your device.</p>
+<p>Copy the code below into your IDE. To upload the code to your Arduino, simply click on the upload button.</p>
+<pre><code class="language-cpp">// Initialization of required variables
+int counter &#61; 0; 
+boolean direction;
+int pin_clk_last;  
+int pin_clk_current;
+ 
+// Definition of the input pins
+int pin_clk &#61; 3;  
+int pin_dt &#61; 4; 
+int button_pin &#61; 5;
+  
+  
+void setup()  { 
+  // Input pins are initialized...
+  pinMode(pin_clk,INPUT);
+  pinMode(pin_dt,INPUT);
+  pinMode(button_pin,INPUT);
+  
+  // ...and their pull-up resistors activated
+  digitalWrite(pin_clk, true);
+  digitalWrite(pin_dt, true);
+  digitalWrite(button_pin, true);
+  
+  // Initial readout of the Pin_CLK
+  pin_clk_last &#61; digitalRead(pin_clk);   
+  Serial.begin (9600);
+  Serial.println(&quot;KY-040 Rotary encoder test&quot;);
+ } 
+ 
+// If a change in the pin states has occurred, the program checks which of the two pins changed first, indicating the direction of rotation.
+// pins changed first, which indicates the direction of rotation.
+// This information can be obtained by comparing one of the two pin values from a previous
+// run with the value of the current run.
+// Once the direction has been determined, the steps from the start position are counted and output.
+// Pressing the rotary encoder button resets the current position.
+ 
+void loop() { 
+  // Reading out the current status  
+  pin_clk_current &#61; digitalRead(pin_clk);
+
+  // Check for change
+  if (pin_clk_current !&#61; pin_clk_last) { 
+    if (digitalRead(pin_dt) !&#61; pin_clk_current) {  
+      // Pin_CLK has changed first
+      counter ++;
+      direction &#61; true;
+    } 
+    else {       
+      // Otherwise Pin_DT has changed first
+      direction &#61; false;
+      counter--;
+    }
+    delay(300);
+    Serial.println(&quot;Rotation detected&quot;);
+    Serial.print(&quot;Direction of rotation: &quot;); 
+    if (direction) Serial.println (&quot;Clockwise&quot;);
+    else Serial.println(&quot;Counterclockwise&quot;);
+      
+    Serial.print(&quot;Current position: &quot;);
+    Serial.println(counter);
+    Serial.println(&quot;------------------------------&quot;);
+  } 
+  // Preparation for the next run:
+  // The value of the current run is the previous value for the next run
+  pin_clk_last &#61; pin_clk_current;
+  // Reset function to save current position
+  if (!digitalRead(button_pin) &amp;&amp; counter!&#61;0) {
+    counter &#61; 0;
+    Serial.println(&quot;Position reset&quot;);
+  }
+ }
+</code></pre>
+</div>
+<div class="sbc raspberry content-markdown">
+<img src="/files/files/sensors/KY-040/KY-040.png" width="358">
+<p>The coded rotary switch (rotary encoder) outputs the direction of movement and the current position of the switch via its outputs when it is rotated.</p>
+<p>The state of the two outputs changes with each step, allowing the direction of rotation to be determined. The direction of rotation is determined by the sequence of the state changes of the outputs: Depending on which output changes state first, it is possible to detect whether the switch is turned clockwise or counterclockwise.</p>
+<p>This rotary switch is ideal for applications where precise position and movement information is required, such as in user interfaces for electronic devices, machine controls or in rotary measuring systems. It provides accurate and reliable input and is a versatile component for many projects.</p>
+<h2>Pin assignment</h2>
+<img src="/files/files/sensors/KY-040/KY-040.svg" width="400">
+<br>
+<img src="/files/files/sensors/KY-040/040-RPi.svg" width="575">
+<table>
+<thead>
+<tr>
+<th>Raspberry Pi</th>
+<th>Sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO 14 [pin 8]</td>
+<td>Button</td>
+</tr>
+<tr>
+<td>3.3 V [pin 1]</td>
+<td>+ V</td>
+</tr>
+<tr>
+<td>GND [pin 6]</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>GPIO 16 [pin 36]</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>GPIO 15 [pin 10]</td>
+<td>DT</td>
+</tr>
+</tbody>
+</table>
+<h2>Code example</h2>
+<p>The sample program checks for the change of the pin states and determines the direction of rotation as soon as a rotation has been detected. After the direction has been determined, the steps from the start position are counted and output. Pressing the button resets the count.</p>
+<pre><code class="language-python">import time
+from gpiozero import Button
+
+# Initialization of the pins for the rotary encoder
+clk &#61; Button(16, pull_up&#61;True)
+dt &#61; Button(15, pull_up&#61;True)
+reset_button &#61; Button(14, pull_up&#61;True)  # Button for resetting the counter
+
+last_clk_state &#61; clk.is_pressed  # Saves the last status of CLK
+
+# Initialize the counter
+counter &#61; 0
+
+def read_encoder():
+    global last_clk_state, counter
+    while True:
+        current_clk_state &#61; clk.is_pressed
+        if current_clk_state !&#61; last_clk_state:  # Recognize a change of state
+            if current_clk_state:
+                if dt.is_pressed !&#61; current_clk_state:
+                    counter +&#61; 1  # Clockwise rotation
+                    direction &#61; &quot;Clockwise&quot;
+                else:
+                    counter -&#61; 1  # Counterclockwise rotation
+                    direction &#61; &quot;Counterclockwise&quot;
+                print(f&quot;Direction of rotation: {direction}&quot;)
+                print(f&quot;Current position: {counter}&quot;)
+                print(&quot;------------------------------&quot;)
+            last_clk_state &#61; current_clk_state
+        time.sleep(0.001)  # short pause to save CPU time
+
+def reset_counter():
+    global counter
+    counter &#61; 0
+    print(&quot;Counter reset!&quot;)
+    print(&quot;------------------------------&quot;)
+
+# Add an event handler for the reset button
+reset_button.when_pressed &#61; reset_counter
+
+print(&quot;Sensor test [press CTRL+C to end the test]&quot;)
+
+try:
+    read_encoder()  # Start the function for reading the encoder
+except KeyboardInterrupt:
+    print(&quot;Program was interrupted by user&quot;)
+</code></pre>
+</div>
+<div class="sbc microbit content-markdown">
+<img src="/files/files/sensors/KY-040/KY-040.png" width="358">
+<p>The coded rotary switch (rotary encoder) outputs the direction of movement and the current position of the switch via its outputs when it is rotated.</p>
+<p>The state of the two outputs changes with each step, allowing the direction of rotation to be determined. The direction of rotation is determined by the sequence of the state changes of the outputs: Depending on which output changes state first, it is possible to detect whether the switch is turned clockwise or counterclockwise.</p>
+<p>This rotary switch is ideal for applications where precise position and movement information is required, such as in user interfaces for electronic devices, machine controls or in rotary measuring systems. It provides accurate and reliable input and is a versatile component for many projects.</p>
+<h2>Pin assignment</h2>
+<img src="/files/files/sensors/KY-040/KY-040.svg" width="400">
+<br>
+<img src="/files/files/sensors/KY-040/040-MB.svg" width="500">
+<table>
+<thead>
+<tr>
+<th>Micro:Bit</th>
+<th>Sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 V</td>
+<td>+V</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>Pin 1</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>Pin 2</td>
+<td>DT</td>
+</tr>
+<tr>
+<td>Pin 0</td>
+<td>Button</td>
+</tr>
+</tbody>
+</table>
+<h2>Code example</h2>
+<p>The sample program checks for the change of the pin states and determines the direction of rotation as soon as a rotation has been detected. After the direction has been determined, the steps from the start position are counted and output. Pressing the button resets the count.</p>
+<pre id="pre1" class="makecoderender">
+	<code>
+		function RotaryEncoder () {
+		    CLKAKTUELL &#61; pins.digitalReadPin(DigitalPin.P1)
+		    if (CLKAKTUELL !&#61; CLKLETZTE) {
+		        if (pins.digitalReadPin(DigitalPin.P2) !&#61; CLKAKTUELL) {
+		            Richtung &#61; 1
+		        } else {
+		            Richtung &#61; 0
+		        }
+		        serial.writeLine(&#34;Drehung Erkannt: &#34;)
+		        if (Richtung &#61;&#61; 1) {
+		            POS +&#61; -1
+		            POSLETZTE &#61; POS
+		            serial.writeLine(&#34;Drehrichtung: Gegen den Uhrzeigersinn&#34;)
+		        } else {
+		            POS +&#61; 1
+		            POSLETZTE &#61; POS
+		            serial.writeLine(&#34;Drehrichtung: Im Uhrzeigersinn&#34;)
+		        }
+		        serial.writeLine(&#34;Aktuelle Position: &#34;)
+		        serial.writeLine(&#34;&#34; + (POS))
+		    }
+		    if (POS !&#61; VORHERIGEPOS) {
+		        serial.writeLine(&#34;&#34; + (POS))
+		        VORHERIGEPOS &#61; POS
+		    }
+		}
+		pins.onPulsed(DigitalPin.P2, PulseValue.High, function () {
+		    RotaryEncoder()
+		})
+		pins.onPulsed(DigitalPin.P2, PulseValue.Low, function () {
+		    RotaryEncoder()
+		})
+		pins.onPulsed(DigitalPin.P0, PulseValue.Low, function () {
+		    Reset()
+		})
+		function Reset () {
+		    basic.pause(100)
+		    CLKLETZTE &#61; CLKAKTUELL
+		    POS &#61; 0
+		}
+		let VORHERIGEPOS &#61; 0
+		let POSLETZTE &#61; 0
+		let POS &#61; 0
+		let Richtung &#61; 0
+		let CLKAKTUELL &#61; 0
+		let CLKLETZTE &#61; 0
+		CLKLETZTE &#61; 0
+		CLKAKTUELL &#61; 0
+		Richtung &#61; 1
+		CLKLETZTE &#61; pins.digitalReadPin(DigitalPin.P1)
+		POS &#61; 0
+		POSLETZTE &#61; 0
+		pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
+		pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
+		pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
+	</code>
+</pre>
+<h3>Sample program download</h3>
+<p><a href="/files/files/sensors/KY-040/microbit-KY-040.zip">microbit-KY-040.zip</a></p>
+</div>
+<div class="sbc raspberrypipico content-markdown">
+<img src="/files/files/sensors/KY-040/KY-040.png" width="358">
+<p>The coded rotary switch (rotary encoder) outputs the direction of movement and the current position of the switch via its outputs when it is rotated.</p>
+<p>The state of the two outputs changes with each step, allowing the direction of rotation to be determined. The direction of rotation is determined by the sequence of the state changes of the outputs: Depending on which output changes state first, it is possible to detect whether the switch is turned clockwise or counterclockwise.</p>
+<p>This rotary switch is ideal for applications where precise position and movement information is required, such as in user interfaces for electronic devices, machine controls or in rotary measuring systems. It provides accurate and reliable input and is a versatile component for many projects.</p>
+<h2>Pin assignment</h2>
+<img src="/files/files/sensors/KY-040/KY-040.svg" width="400">
+<br>
+<img src="/files/files/sensors/KY-040/040-Pico.svg" width="570">
+<table>
+<thead>
+<tr>
+<th>Raspberry Pi Pico</th>
+<th>Sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 V</td>
+<td>+V</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>GPIO16</td>
+<td>CLK</td>
+</tr>
+<tr>
+<td>GPIO17</td>
+<td>DT</td>
+</tr>
+<tr>
+<td>GPIO18</td>
+<td>SW</td>
+</tr>
+</tbody>
+</table>
+<h2>Code example</h2>
+<p>The sample program checks for the change of the pin states and determines the direction of rotation as soon as a rotation has been detected. After the direction has been determined, the steps from the start position are counted and output. Pressing the button resets the count.</p>
+<p>To load the following code example onto your Pico, we recommend using the <a href="https://thonny.org/" target="_blank">Thonny IDE</a>. All you have to do first is go to <em><strong>Run &gt; Configure interpreter ... &gt; Interpreter &gt; Which kind of interpreter should Thonny use for running your code?</strong></em> and select <em><strong>MicroPython (Raspberry Pi Pico)</strong></em>.</p>
+<p>Now copy the code below into your IDE and click on <strong>Run</strong>.</p>
+<pre><code class="language-python"># Load libraries
+from machine import Pin
+from time import sleep
+
+# Initialization of GPIO16, GPIO17 and GPIO18 as input
+CLK &#61; Pin(16,Pin.IN, Pin.PULL_DOWN)
+DT &#61; Pin(17,Pin.IN, Pin.PULL_DOWN)
+SW &#61; Pin(18,Pin.IN, Pin.PULL_UP)
+
+# Variable definition
+counter &#61; 0
+clk_last &#61; CLK.value()
+clk_current &#61; 0
+direction &#61; True
+
+print(&quot;KY-040 Rotary encoder test&quot;)
+print(&quot;-------------------------------------------&quot;)
+
+def output():
+    global clk_current, counter, direction
+
+    # Read out the current status 
+    clk_current &#61; CLK.value()
+
+    # Check for change
+    if clk_current !&#61; clk_last:
+
+        # Pin_CLK has changed first
+        if DT.value() !&#61; clk_current:
+            counter &#61; counter + 1
+            direction &#61; True
+
+        # Otherwise Pin_DT has changed first
+        else:
+            direction &#61; False
+            counter &#61; counter - 1
+        print(&quot;Rotation recognized: &quot;)
+
+        if direction:
+            print(&quot;Direction of rotation: Clockwise&quot;)
+        else:
+            print(&quot;Direction of rotation: Counterclockwise&quot;)
+        print(&quot;Current position: &quot; + str(counter))
+        print(&quot;-------------------------------------------&quot;)
+
+# Function: Counter variable is reset when the button is pressed
+def counterReset():
+    global counter
+    if SW.value() &#61;&#61; 0:
+        print(&quot;Position reset!&quot;)
+        print(&quot;-----------------------&quot;)
+        counter &#61; 0
+        sleep(0.5)
+
+# Endless loop for constant reading of the sensor
+while True:
+    output()
+    clk_last &#61; clk_current
+    counterReset()
+</code></pre>
+</div>
+</div>
+</div>
+</main>
+<aside id="left">
+<div class="inside">
+<div class="upper">
+<div class="logo">
+<div class="inner">
+<a aria-label="SensorKit" href="/"><span class="invisible">SensorKit</span></a>
+</div>
+</div>
+</div>
+<div class="scrollcontainer">
+<!-- indexer::stop -->
+<nav class="mod_changelanguage block">
+<ul class="level_1">
+<li class="lang-de"><a href="/de/sensors/ky-040" class="lang-de" hreflang="de" aria-label="Go to current page in German">Deutsch (German)</a></li>
+<li class="lang-en active"><strong class="lang-en active" aria-current="page">Englisch (English)</strong></li>
+<li class="lang-fr"><a href="/fr/sensors/ky-040" class="lang-fr" hreflang="fr" aria-label="Go to current page in French">Französisch (French)</a></li>
+</ul>
+</nav>
+<!-- indexer::continue -->
+<!-- indexer::stop -->
+<nav class="mod_navigation block">
+<a href="/en/sensors/ky-040#skipNavigation1" class="invisible">Skip navigation</a>
+<ul class="level_1">
+<li class="submenu trail home"><a href="/en/" class="submenu trail home" aria-haspopup="true">Home</a>
+<ul class="level_2">
+<li class="sibling"><a href="/en/sensors/ky-001" class="sibling">KY-001 Temperature sensor &#40;DS18B20&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-002" class="sibling">KY-002 Vibration switch</a></li>
+<li class="sibling"><a href="/en/sensors/ky-003" class="sibling">KY-003 Hall magnetic field sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-004" class="sibling">KY-004 Button</a></li>
+<li class="sibling"><a href="/en/sensors/ky-005" class="sibling">KY-005 Infrared transmitter</a></li>
+<li class="sibling"><a href="/en/sensors/ky-006" class="sibling">KY-006 Passive Piezo-Buzzer</a></li>
+<li class="sibling"><a href="/en/sensors/ky-009" class="sibling">KY-009 RGB SMD-LED</a></li>
+<li class="sibling"><a href="/en/sensors/ky-010" class="sibling">KY-010 Light barrier</a></li>
+<li class="sibling"><a href="/en/sensors/ky-011" class="sibling">KY-011 2-Color 5mm LED</a></li>
+<li class="sibling"><a href="/en/sensors/ky-012" class="sibling">KY-012 Active Piezo-Buzzer</a></li>
+<li class="sibling"><a href="/en/sensors/ky-013" class="sibling">KY-013 Temperature sensor &#40;NTC&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-015" class="sibling">KY-015 Combi-Sensor &#40;temperature & humidity&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-016" class="sibling">KY-016 RGB 5mm LED</a></li>
+<li class="sibling"><a href="/en/sensors/ky-017" class="sibling">KY-017 Tilt switch</a></li>
+<li class="sibling"><a href="/en/sensors/ky-018" class="sibling">KY-018 Photoresistor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-019" class="sibling">KY-019 5V Relay</a></li>
+<li class="sibling"><a href="/en/sensors/ky-020" class="sibling">KY-020 Tilt switch</a></li>
+<li class="sibling"><a href="/en/sensors/ky-021" class="sibling">KY-021 Mini reed magnet</a></li>
+<li class="sibling"><a href="/en/sensors/ky-022" class="sibling">KY-022 Infrared receiver</a></li>
+<li class="sibling"><a href="/en/sensors/ky-023" class="sibling">KY-023 Joystick &#40;X-Y-Axis&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-024" class="sibling">KY-024 Linear, magnetic hall sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-025" class="sibling">KY-025 Analog, magnetic reed sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-026" class="sibling">KY-026 Analog flame sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-027" class="sibling">KY-027 Magic light cup</a></li>
+<li class="sibling"><a href="/en/sensors/ky-028" class="sibling">KY-028 Temperature sensor &#40;thermistor&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-029" class="sibling">KY-029 2-Color 3mm LED</a></li>
+<li class="sibling"><a href="/en/sensors/ky-031" class="sibling">KY-031 Knock sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-032" class="sibling">KY-032 Obstacle detector</a></li>
+<li class="sibling"><a href="/en/sensors/ky-033" class="sibling">KY-033 Linetracking sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-034" class="sibling">KY-034 7 Color flash-LED</a></li>
+<li class="sibling"><a href="/en/sensors/ky-035" class="sibling">KY-035 Bihor magnetic sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-036" class="sibling">KY-036 Metal-touch sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-037" class="sibling">KY-037 Microphone sound sensor &#40;high sensitivity&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-038" class="sibling">KY-038 Microphone sound sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-039" class="sibling">KY-039 Heartbeat sensor</a></li>
+<li class="active"><strong class="active" aria-current="page">KY-040 Rotary encoder</strong></li>
+<li class="sibling"><a href="/en/sensors/ky-050" class="sibling">KY-050 Ultrasonic distance sensor</a></li>
+<li class="sibling"><a href="/en/sensors/ky-051" class="sibling">KY-051 Voltage Translator / Level Shifter</a></li>
+<li class="sibling"><a href="/en/sensors/ky-052" class="sibling">KY-052 Pressure sensor / Temperature sensor &#40;BMP280&#41;</a></li>
+<li class="sibling"><a href="/en/sensors/ky-053" class="sibling">KY-053 Analog Digital Converter</a></li>
+<li class="sibling"><a href="/en/sensors/ky-054" class="sibling">KY-054 Phototransistor</a></li>
+</ul>
+</li>
+<li><a href="/en/data-privacy">Privacy policy</a></li>
+<li><a href="/en/legal-disclosure">Legal Disclosure</a></li>
+</ul>
+<span id="skipNavigation1" class="invisible"></span>
+</nav>
+<!-- indexer::continue -->
+<div class="copyright">
+<div class="inside">
+<p>© 2026 Copyright by <a href="https://joy-it.net">Joy-IT</a></p>
+</div>
+</div>
+</div>                </div>
+</aside>
+</div>
+</div>
+<script src="/files/theme/js/prism.js?v=29ffada5"></script><script src="/files/theme/js/perfect-scrollbar.min.js?v=0019ad46"></script><script src="/files/theme/js/scrollbar.js?v=455ccbb2"></script><script src="/files/theme/js/sbcselection.js?v=aebae1a8"></script><script src="/files/theme/js/makecoderenderer.js?v=4ac710f8"></script>
+<!-- indexer::stop -->
+<div class="contao-cookiebar cc-wrap cc-bottom" role="complementary" aria-describedby="cookiebar-desc" data-nosnippet>
+    <div class="cc-inner" aria-live="assertive" role="alert">
+        <div id="cookiebar-desc" class="cc-head">
+                            <p><strong>Cookie and privacy policy</strong></p>
+                    </div>
+
+                    <div class="cc-groups">
+                                    <div class="cc-group">
+                            <input type="checkbox" name="group[]" id="g3" value="3" data-toggle-cookies disabled checked>
+                        <label for="g3" class="group">Essential</label>
+
+                            <button class="cc-detail-btn cc-focus" data-toggle-group aria-expanded="false" aria-controls="cg3">
+                    <span>Show details<span class="cc-invisible"> for Essential</span></span>
+                    <span>Hide details<span class="cc-invisible"> for Essential</span></span>
+                </button>
+            
+            <div id="cg3" class="cc-cookies toggle-group">
+                    
+                    <div class="cc-cookie">
+            <input type="checkbox" name="cookie[]" id="c6" value="6"  disabled checked>
+            <label for="c6" class="cookie">Contao HTTPS CSRF Token</label>
+            <p>Schützt vor Cross-Site-Request-Forgery Angriffen.</p>
+            <div class="cc-cookie-info"></div>                    </div>
+                    <div class="cc-cookie">
+            <input type="checkbox" name="cookie[]" id="c7" value="7"  disabled checked>
+            <label for="c7" class="cookie">PHP SESSION ID</label>
+            <p>Speichert die aktuelle PHP-Session.</p>
+            <div class="cc-cookie-info"></div>                    </div>
+    
+            </div>
+        </div>
+    
+            </div>
+        
+        <div class="cc-footer highlight">
+                            <button class="cc-btn cc-focus save" data-save>Save selection</button>
+                <button class="cc-btn cc-focus success" data-accept-all>Accept all</button>
+                                </div>
+
+        <div class="cc-info">
+                            <p>This website uses cookies to enable certain functions and to improve the service.</p>
+                                    <a class="cc-focus" href="https://sensorkit.joy-it.net/en/data-privacy">Privacy policy</a>
+                                    <a class="cc-focus" href="https://sensorkit.joy-it.net/en/legal-disclosure">Legal Disclosure</a>
+                                    </div>
+    </div>
+</div>
+<!-- indexer::continue -->
+
+    <script>var cookiebar = new ContaoCookiebar({configId:2,pageId:96,hideOnInit:0,blocking:0,focusTrap:1,version:1,lifetime:63072000,consentLog:0,token:'ccb_contao_token',doNotTrack:0,currentPageId:134,excludedPageIds:null,cookies:[],configs:[],disableTracking:0,texts:{acceptAndDisplay:'tl_cookiebar.acceptAndDisplayLabel'}});</script>
+</body>
+</html>

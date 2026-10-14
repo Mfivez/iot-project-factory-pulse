@@ -1,0 +1,636 @@
+PAGE 1
+1
+Cooling Fan Manual
+1. Safety Precautions
+・To ensure that this fan is used safely, be sure that you read and understand the following 
+precautions fully and use it only as directed.
+・Be sure to read these Safety Precautions carefully before installing, connecting, operating, 
+maintaining, or inspecting the fan. Follow all the precautions and directions given here.
+・The fan has been designed and manufactured for built-in use in general industrial machinery, and 
+might not be used otherwise.
+・The fan falls into the Category 16 (Class 84, Item 14) of the Appended Table 1 of the Export 
+Trade Control Order. When exporting the fan either as a standalone item or as part of another 
+product, be sure to implement the necessary procedures including the “Informed Cases” and 
+“Objective Cases” based on the “Catch-All Controls” defined by the Ministry of Economy, Trade 
+and Industry of Japan.
+・When disposing the fan, treat it as industrial waste. For instructions on proper disposal methods, 
+please contact local government authorities.
+・When using the fan in equipment that could affect people’s lives or health, that is used on a car, 
+ship, or aircraft, or that could have a major impact on society or on the public, use it at your own 
+discretion only after deploying sufficient safety measures and making prior evaluation.
+・Fully understand the Safety Precautions described in this document before using the product. 
+SANYO DENKI will not be liable for any accidents resulting in death, injury, or property damage 
+due to the failure of the fan.
+Safety precautions necessary for preventing any possible bodily injury or 
+damage to property or equipment are ranked in two levels:
+Note: Even those items marked ‘Caution’ might also result in serious consequences depending 
+on the situation. Be sure to observe them carefully to the same extent as items marked ‘Warning.’
+Denotes hazards which could cause severe bodily injury or death as a result of 
+incorrect operation.
+Denotes hazards which could cause bodily injury or property damage as a result of 
+incorrect operation.
+Warning
+Caution
+Descriptions of the precautions to be taken to ensure safety are given below.
+Warning
+・When using the fan in the following equipment, use it at your own discretion only after 
+deploying sufficient safety measures and making prior evaluation.
+Equipment that could affect people’s lives or health
+Equipment that is used on a car, ship, or aircraft
+Equipment that could have a major impact on society or on the public
+　SANYO DENKI will not be liable for any accidents involving human casualties (death, 
+injury, etc.) or property damage due to the failure of the fan while use in such 
+equipment.
+・Ensure that wiring is done correctly. Failure to do so might result in fire, burns, or 
+electrical shock.
+・If there are any grounding taps or wires, ground them securely. Failure to do so might 
+result in electric shock.
+・Never use in explosive atmospheres, as doing so might result in fires, burns, or bodily 
+injury.
+・Do not operate the fan with live parts exposed. Doing so might result in electric shock.
+・Never allow any persons or objects to approach or come into contact with the fan's 
+rotor while in operation, as doing so might result in damage or personal injury.
+・Turn off the power and stop using the fan immediately if you notice any sparks, smoke, 
+odd odors or sounds, or anything unusual during operation. Failure to do so might result 
+in fire, bodily injury, or electrical shock.
+・Never allow the fan to fall, topple over, or be subjected to excessive shocks when 
+moving it. Doing so might result in product failure or performance deterioration.
+・The fan should be handled by technically qualified personnel or someone with sufficient 
+expertise; the personnel shall be assigned at your own discretion.
+・Never attempt to disassemble, repair, or alter the fan in any way, as doing so might 
+result in electrical shock, fire, or bodily injury.
+Caution
+Handling
+・Installation, mounting, connections, wiring, and relocation of the fan should be done by 
+technically qualified personnel or someone with sufficient expertise; the personnel shall 
+be assigned at your own discretion.
+・Never perform such work while the product is on, as this might lead to injury, electrical 
+shock, burns, or fire.
+・Do not operate the fan if it is not secured, nor while held in hand.
+・Never allow yourself to come into contact with the fan when measuring insulation 
+resistance or dielectric strength. There is danger of electric shock.
+・Never attempt to disassemble or alter the fan in any way. Doing so might not only result 
+in substandard performance, but also fire, burns, bodily injury, or electrical shock.
+Instruction
+・Take protective measures for the equipment in which the fan is embedded in case the 
+fan stops, malfunctions, or fails during operation.
+・Never use the fan at voltages, temperatures, or any other parameters exceeding 
+those given in the product specifications. Otherwise, it might result in substandard 
+performance, failure, fire, bodily injury, or electrical shock.
+・Any specifications not listed in this document, such as fan or sensor behaviors after 
+the fan power is turned off, will not be covered by our warranty. Please contact us in 
+advance if you need to make any special arrangements for the specifications not listed 
+in the Product Specification.
+・Using a power supply with insufficient capacity might result in faulty fan operation 
+because an inrush current several times larger than the rated current will flow at the 
+moment of fan startup. Be sure to use a power supply with sufficient capacity.
+・Start all fans at the same time when two or more fans are positioned in equipment in 
+a way that creates wind interference. If the fan is exposed to wind from other fans at 
+startup, it might result in fan failure or faulty fan startup. Also, evaluate the influence to 
+individual fans in advance and use them at your own discretion.
+・Never connect or disconnect lead wires, plug cords, or connectors while the power is 
+on. Be sure to connect or disconnect them while holding the frame only after power-off. 
+Otherwise, it might result in fan damage or electrical shock.
+・Do not remove the lead wire of the fan from the frame hook. Doing so might scratch 
+and damage the surface of the lead wire.
+・Do not remove the nameplate. Doing so might result in fan failure or electrical shock.
+・Do not press down hard on the nameplate of the fan. Otherwise, the nameplate might 
+break or come into contact with the shaft, hindering proper operation.
+・The fan might be damaged or burned out if foreign objects or external forces hinder 
+normal fan operation.
+・Do not use the power supply's PWM to control the speed of the fan. Doing so might 
+result in fan malfunction.
+・Do not turn the power on or off on the negative power line. Doing so might damage the 
+fan.
+・Turning the power on and off frequently or turning the power back on before the fan 
+comes to a complete stop might result in fan failure or damage. Before conducting such 
+operations, fully evaluate the equipment in which the fan is embedded.
+・The IP ratings of Splash Proof Fans apply only to the live electric parts and motor coils 
+of the fan in accordance with IEC 60529. The protection does not apply to the non-
+live parts of the fan. If the fan is to be used for a long period of time in an environment 
+subject to dust, water, or condensation, take measures required for the operating 
+environment.
+・Do not wash the fan during maintenance of equipment. Doing so might result in failure 
+of the fan.
+・For DC fans, even if the positive and negative lead wires of the power supply are 
+connected in reverse, the fan will not be affected by the motor protection function. 
+However, when wiring fans with sensors or PWM speed control function, connecting 
+positive and negative leads in reverse may damage the fans.
+Installation (Common to All Fans)
+・Install and secure the fan properly with its weight and vibration during operation taken 
+into account. Failure to do so might result in bodily injury or equipment failure due to 
+the fan or its parts falling off.
+・Ensure that the fan is installed in the right orientation. Failure to do so might result in 
+bodily injury or equipment failure.
+・For the fan to perform to its full capacity, secure air vents and take measures to prevent 
+foreign objects from entering the fan. Failure to do so might result in bodily injury or fan 
+failure.
+・Do not subject the fan to excessive shock. Doing so might result in failure or 
+substandard performance of the fan.
+・Pulling or pinching lead wires might result in damage and stress to the wire. Also, make 
+connections so that the lead wires do not come into contact with the rotating blades. 
+Failure to do so might result in equipment failure or electrical shock.
+・Take proper precautions against static electricity when wiring. Failure to do so might 
+cause failure of the fan or equipment.
+・Take safety measures such as installing a finger guard and displaying a warning symbol 
+if there is any danger of fingers or objects coming into contact with the rotating blades. 
+Failure to do so might result in bodily injury or fan failure.
+・When installing an inlet nozzle, finger guard, filter, or base plate to the fan, ensure that 
+they are positioned correctly according to the Product Specification, catalog, or other 
+specification documents so that they do not come into contact with the rotating blades. 
+Also, use the fan only after checking that the rotating blades do not come into contact 
+with anything. Otherwise, it might result in equipment failure.
+・Please use only genuine SANYO DENKI inlet nozzles and finger guards.
+・Make connections correctly in accordance with the information of the Product 
+Specification, catalog, or the label on the fan. Failure to do so might result in equipment 
+failure or the malfunction, failure, or performance degradation of the fan.
+Installation (Axial Fan and Blower)
+・When mounting the fan with screws, make sure that the screw and base plate will not 
+deform the frame of the fan before mounting. A deformed frame might result in failure 
+or substandard performance of the fan.
+・When mounting the fan with screws, ensure that the screw tightening torque is 
+correct. If the tightening torque exceeds the recommended torque, the fan frame might 
+be deformed or damaged. Choose a ribbed frame model if mounting fans with plastic 
+frames through both sides of the frame with throughscrews. To prevent loose screws, 
+use plain washers or spring washers. For the screwing torque of each fan type, contact 
+SANYO DENKI or a SANYO DENKI distributor.
+・Note that mounting the fan with self-tapping screws might damage the fan frame. 
+If using self-tapping screws, be sure to choose the screw that we recommend and 
+conduct evaluations before using it.
+Installation (Centrifugal Fan)
+・The fan shall be mounted with screws. For the screw size for each fan model, see the 
+Product Specification or catalog.
+・Choose screws with the right length taking into account the fan mounting hole depth 
+and base plate thickness. Failure to do so might result in stripped screw holes and 
+improper fan mounting. For the mounting hole depth of each fan model, see the Product 
+M0011876C
+
+
+PAGE 2
+2
+Specification or catalog.
+・Ensure that the screw tightening torque is correct. If the tightening torque exceeds the 
+recommended torque, the screw hole might be deformed or damaged. Also, to prevent 
+loose screws, use plain washers and spring washers. For the tightening torque for each 
+fan model, see the Product Specification or catalog.
+・For the inlet nozzle and base plate installation dimensions for each fan model, see the 
+Product Specification or catalog.
+Operating Environments
+・Avoid using or storing the fan in the following environments. Otherwise, it might result 
+in fire or the failure or performance degradation of the fan. In environments where 
+flammable or corrosive gas is present, where water or oil splashes, where there is 
+much dust or humidity, where condensation occurs, where exposed to radioactive rays 
+or direct sunlight, where a salty sea breeze blows or seawater splashes, where the 
+fan might be contaminated by such corrosive materials as sulfurous water, sulfurous 
+volcanic ash, organic solvents, acidic and alkali chemicals, or nuclear fuel materials, 
+where subjected to constant vibration, strong shocks, centrifugal force, acceleration, 
+or strong magnetic force, where electromagnetic noise radiation is present, where 
+the electromagnetic noise overlaps into power voltage, or where subjected to rapid 
+environmental fluctuations (temperature, humidity, pressure, etc.).
+Storage
+・The fan should be stored in packaging.
+・Ensure that the fan is stored in the following environments where:
+- the temperature is normal and stable;
+- the relative humidity is 20 to 85% with no sudden changes in humidity and no 
+condensation;
+- not subjected to direct sunlight;
+- not subjected to water, oil, corrosive materials, or other hazardous substances;
+- and not subjected to vibration or shock.
+Maintenance
+・Maintenance and inspections of the fan should be done by technically qualified 
+personnel or someone with sufficient expertise; the personnel shall be assigned at your 
+own discretion. Otherwise, it might result in fire, burns, bodily injury, or electrical shock.
+・Never perform any maintenance or inspections while the fan is in operation. Also note 
+that the blades continue to rotate for some time immediately after operation ceases. 
+Always confirm that all rotating parts have come to a stop before beginning work. 
+Failure to do so might result in bodily injury.
+・Never use gasoline, paint thinner, benzene, or any other organic solvents to clean the 
+fan. Also, avoid placing excessive stresses on the fan. Otherwise, it might result in 
+product deformation or performance degradation.
+2. Operating precautions
+Handling explanations and precautions for the use of fans are described below. Items 
+without fan models are common contents.However, specifications may differ for some 
+model numbers. Please check the catalog or drawing for the product specifications for the 
+model number on the nameplate.
+[1] Temperature conditions
+Operating temperature: 
+-20°C to +70°C / -20°C to +60°C / -10°C to +70°C / -10°C to +60°C
+(Varies for each model / Non condensing)
+Storage temperature: 
+-20°C to +70°C / -30°C to +70°C
+(Varies for each model / Non condensing)
+Rapid change in temperature may cause condensation. Prevent condensation when 
+storing. Condensation may affect lubrication performance and insulation.
+[2] Power specifications
+For the specification of rated voltage and voltage range, please check the catalog or 
+drawing for the model number.
+Use of voltage exceeding the specified range may lead to performance degradation, 
+device failure, or fire hazards. Do not apply voltage that exceeds specifications to the fan.
+An electronic circuit is used for the DC fan.For power supply, use power with ripple less 
+than 5% with low line noise and surge to prevent electronic circuit trouble.
+[3] Connection
+The overview of the connection method is described below.
+●AC fan and ACDC fan
+・Connection to power supply
+Lead wire type: Connect AC power supply at specified voltage to lead wire of fan motor.
+Plug cord type: Connect special plug cord to power supply terminal and connect AC 
+power supply at specified voltage to plug cord wire.
+・Connection to earth ground
+Be sure to connect to earth ground through earth tapping or earth terminal on the fan 
+motor.
+・Sensor lead wire
+AC Fans equipped with a sensor come with a sensor lead wire. For details on sensor 
+specifications, refer to the San Ace DC/ACDC/AC Fan Catalog’s technical material sec-
+tion entitled “Specifications for AC Fan Sensors” or the Product Specification document.
+・Don't connect AC power supply to sensor lead wire. Fan should be broken.
+●DC fan and blowers
+The lead wire from the fan unit is connected to the DC power supply with specified 
+voltage.  The red wire is +, and the black or blue wire is - (GND) in principal.
+・Sensor wire
+In the case of DC fan sensor output specification, a yellow lead wire is attached. 
+Connect this yellow lead wire to the receiving circuit of the sensor. Sensor specifications 
+differ among each model number. Do not let electric currents above the default value 
+flow through the lead wire of the sensor. The fan may become damaged. For details 
+regarding sensor specifications, refer to the enclosed technical information "DC fan 
+sensor specifications".
+・Control wire
+PWM fans come with a brown lead wire. Use the brown lead wire for control connec-
+tions. For detailed information on connections, refer to the San Ace DC/ACDC/AC Fan 
+Catalog’s technical material section entitled “Fans with PWM Control.”
+Specifications for DC fan and blower sensors
+● Pulse sensor (Tach output type) example
+Pulse sensor outputs two pulse waves per revolution of fan, and it is good to detect fan 
+speed. Pulse sensors can be incorporated in all kinds of DC fans. 
+Noise from inside the fan or from external devices may effect sensor output. Contact us 
+for more information.
+Typical standard model: 9RA1212P1K001
+(As the following specifications differ by model no. contact us for further information.)
+Output circuit: Open collector
+Specifications
+VCE=+30 V max.
+Ic=5 mA max. [VOL=VCE (SAT) =0.6 V or less]
+Output waveform
+(Need pull-up resistor)
+In case of steady running If you want detailed specifications that apply when the rotor is 
+locked, please contact SANYO DENKI.
+● Locked rotor sensor (rotation / lock detection type) example
+Locked rotor sensor outputs fan status signals. It is good to check whether the fan is 
+running or locked
+Noise from inside the fan or from external devices may effect sensor output.
+Regarding details of the reverse logic and specifications of lock sensor output signals, 
+please contact SANYO DENKI.
+Lock sensor can not be used in some models. Contact us for more information.
+Typical standard model: 9RA1212K1D001
+(As the following specifications differ by model no. contact us for further information.)
+Output circuit: Open collector
+Specifications
+VCE=+30 V max.
+Ic=5 mA max. [VOL=VCE (SAT)=0.6 V or less]
+AC fan
+AC power
+ Earth 
+DC Fans
+Blowers
+Red
+Connection schematic
+Direct current
+Black or Blue 
+○
+－
+○
+＋
+Inside of DC fan
+Ic=5 mA max.
++30 V max.
+Sensor output
+Resistor
+SENSOR
+T0
+T1
+0 V
+VOL
+VOH
+T2
+T3
+T4
+4N
+60
+T1 to 4 ≒ (1/4) T0
+T1 to 4 ≒ (1/4) T0=      (s)
+N=Fan speed (min-1)
+One revolution
+○
+－
+○
+＋
+Inside of DC fan
+Ic=5 mA max.
++30 V max.
+Sensor output
+Resistor
+SENSOR
+
+
+PAGE 3
+3
+Output waveform
+(Need pull-up resistor)
+Note: The output is completely at Vol with 0.5 s or less after power-up.
+Recommended screw torque
+This shows the recommended values for the screw torque when installing the fans. If the 
+tightening torque is higher than the recommended
+values, the fan can be deformed or damaged.
+Use care when tightening. Also, be sure to always use a fan with a ribbed structure when 
+securing by screws with both flanges.
+Recommended screw torques
+DC fan
+Fan mounting hole
+diameter [mm]
+Nominal screw
+diameter
+Recommended screw torque
+ø3.5 ø3.7
+M3
+0.44 N･m max.
+ø4.3, ø4.5
+M4
+0.78 N･m max.
+ø4.3, ø4.5
+M4
+0.98 N･m max. (ø172 × 51 mm,
+ø172 × 150 × 51 mm, ø200 × 70 mm)
+AC fan
+Fan mounting hole
+diameter [mm]
+Nominal screw
+diameter
+Recommended screw torque
+ø3.5, ø3.7
+M3
+0.44 N･m max.
+ø4.3
+M4
+0.58 N･m max. (120 × 120 mm max.)
+ø4.3, ø4.5
+M4
+0.78 N･m max. (ACDC fan, ø172 mm)
+ø5.5
+M4, M5
+0.78 N･m max. (160 × 160 mm)
+Installation
+There are no limitations on the installation 
+direction of fans or blowers. 
+Fans have symbols on the fan indicating 
+the airflow direction and blade rotation 
+direction. When installing, use these 
+symbols to check the airflow direction.
+Comparison of ribbed and ribless structures
+Regarding plastic frame, we have a option ribbed and ribless about mounting. Please use 
+preferred type up to your application. Please use ribbed fan in case that you hook fan up 
+clamping either side fan mounting hole target. (According to the model, only models with 
+or without ribs are available.)
+Use a fan with a rib structure when using a screw for piercing.
+When securing screws to ribless plastic frame models, use a flange to secure on one 
+side.
+Handling precautions
+The fan motor is equipped with a precision ball bearing. Therefore, please handle the 
+motors carefully in order not to shock the bearings.
+3. Overheating protection function
+If the fan blades are restricted, an overcurrent occurs and leads to a rise in the fan coil 
+temperature. This can result in reduced performance, damage, or a fire. To prevent this 
+from occurring, SANYO DENKI’s fans incorporate an overheating protection function. 
+Refer to the catalog for the types of protection functions.
+●The burnout protective function of the AC fan
+・Impedance protection (60mm sq. 80mm sq. 92mm sq. 120mm sq.)
+This system is used for shading coil-type fans. When the blades are restricted, the 
+current is reduced by the impedance of the coil itself to prevent a temperature rise in 
+the coil. However, if the applied voltage exceeds the specification range, an overcurrent 
+can occur and result in overheating, and so care needs to be taken.
+・Thermal protection (160mm sq. ø172mm)
+This system is used for condenser phase-type fans. A temperature sensor is incorporated 
+in the coil so that if the temperature exceeds the specification temperature, the current 
+is cut off to prevent overheating of the coil.
+   ●The burnout protective function of the DC fan, blower and ACDC fan
+・Current cutoff system
+If the fan blades are restricted, the coil current is cut off at regular cycles to prevent 
+overheating of the coil. When the hindrance is removed, the fan restarts automatically.
+4. Precautions regarding dropping and rollover
+Avoid impact of dropping or rollover to the fan.Precision ball bearings are used for the 
+bearing of the fan.
+When an impact is added, the bearing suffers damage, and may lead to the degradation 
+of product performance, such as extraordinary noise and shortening of life expectancy. 
+Follow the next conditions with extra caution when handling transportation and 
+installation.
+　・The dropping limitation of the product stand-alone: The maximum limit of dropping 
+height is 3 cm.
+　・The external force limitation of the product stand-alone: A weight of 100 g dropped 
+from a height of 3 cm above the product stand-alone is the maximum limit. A force of 
+5 kgf to the fan blade is the maximum limit.
+　・The dropping limitation in a packaged condition: The maximum limit of dropping 
+height is 30 cm.
+5. Other precautions
+・The specification value of the maximum air volume and maximum static pressure that 
+is described in the catalog is a standard value at normal temperature.Please consider 
+enough margins when selecting a fan.
+・When using a fan in the vicinity of a power switching circuit, refer to the San Ace DC/
+ACDC/AC Fan Catalog’s technical material section entitled “Cautions for Use of a Cooling 
+Fan in the Vicinity of a Power Switching Circuit.”
+6. Options
+The following options are available. Please utilize if necessary.
+All-in-one fan packs with a fan and finger guard are available upon request.
+Only this model includes mounting screws and nuts for assembling.
+[1] The finger guard
+This is an option that prevents foreign objects, such as fingers, to make contact with the 
+blade of the fan while in operation.Fixes with the mounting hole of the frame of the fan 
+using a screw. steel types or resin (plastic) types are available.In addition, suction side 
+and discharge side types are available. In the case of installation, please be careful of the 
+direction of airflow.
+Please refer to the catalog for details of model numbers and other descriptions, and 
+apply the correct combination.
+[2] Resin filter kit
+・A filter kit keeps air in the chassis clean by filtering dust from external air when using 
+suction cooling. The filter kit is attached with screws through the fan frame mounting 
+holes along with a finger guard. Some performance values (airflow & static pressure) of 
+the fan motor degrade when a filter kit is attached.
+・Resin filter kits are composed of 3 components: a guard, a filter, and a cover. It is delivered 
+as a finished product, decreasing assembly time for mounting. It can be mounted by 
+inserting screws through the apertures of the cover.
+・The filter and cover can easily be attached or removed from the guard. There is no need 
+for fan removal when performing filter maintenance.
+・Ensure fan is disconnected from power source before exchanging filter.
+・Operating temperature limit is between -10°C to +60°C. (non condensing)
+・The filter will deteriorate with age, and the level of deterioration will vary with usage 
+conditions. Please be aware that the filter has a greater tendency to deteriorate under 
+high temperatures and humidity. For long-term storage, please store within a temperature 
+range of +10°C to +30°C, and a humidity range of 20% to 65%. Product lifespan is two 
+years, including time in storage.
+・Cooling ability decreases with filter contamination from clogging. Filter replacement 
+is recommended after approximately six months of usage. Replace the filter earlier if 
+deterioration or clogging is observed during inspection.
+・When replacing the filter, use only genuine SANYO DENKI filters.
+・Do not water-wash the filter.
+・Avoid use and storage in high temperature or humid conditions, under direct sunlight or 
+exposure to ultraviolet light, or in the presence of corrosive gas.
+VOH
+VOL
+0 V
+Time (s)
+5 or less
+0.5 or less
+3 or less
+Rotor 
+running
+Rotor
+locked
+Rotor 
+running
+Airﬂow direction
+Symbols indicating the fan airﬂow direction
+and blade rotation direction
+Blade rotation direction
+Suction side
+Discharge side
+Rib
+Ribbed
+Ribless
+Securing with flanges
+on both sides
+Securing with a flange
+on one side
+Small pan-head screws(4)
+Hexagonal nuts(4)
+Filter kits
+Chassis
+Fan
+For ﬁxing screws
+Apertures(4 locations)
+
+
+PAGE 4
+4
+[3] Plug cords
+This is a fan option for supplying AC power to an AC Fan or ACDC Fan that has 
+a terminal input connector. The plug end shall be connected to the fan, and 
+the other end shall be connected to a power supply meeting the specification 
+range. The plug cord lineup offers models that conform to international safety 
+standards. Refer to the catalog for detailed information including model num-
+bers, and choose the right model for your fan.
+7. Safety standards
+Our fans conform to various regulations, directives, and safety standards. For the safety 
+standards/regulations/directives each fan supports, refer to the marks the fan bears on its 
+label. If you want to check the standards/regulations/directives a fan supports prior to pur-
+chase, please contact us because it depends on the model.
+DC Fan / AC Fan / ACDC Fan
+Standards/Regulation Applicable countries
+Standards/Directives Number
+UL standards
+U.S.A.
+UL507
+E46810
+CSA standards
+Canada
+CSA STANDARDS 
+C22.2 No.113
+172248
+EN standards
+EU member countries EN60950-1/
+EN62368-1
+Depends on the 
+model number.
+AC Fan / ACDC Fan
+Regulation/Directive Applicable countries Description
+CE Mark
+EU member countries
+Conformance varies by model.
+See the Declaration of Conformity for 
+details.
+UKCA Mark
+United Kingdom 
+(UK)
+Same as above
+PSE (Product 
+Safety Electrical 
+Appliance and 
+Materials)
+Japan
+Classified as "blowers" under the 
+"electric motor-operated appliances" 
+subcategory under the "non-specified 
+electrical appliances" category.
+8. Contact for product-related inquiries
+Japan
+SANYO DENKI CO., LTD.
+3-33-1 Minami-Otsuka, Toshima-ku, Tokyo, 170-8451, Japan
+TEL: +81 3 5927 1020
+URL: https://www.sanyodenki.co.jp/
+East Asia
+SANYO DENKI SHANGHAI CO., LTD.	
+Room2106-2110, Bldg A, Far East International Plaza, No. 319, Xianxia Road, Shanghai, 
+200051, China
+TEL: +86 21 6235 1107
+URL: https://www.sanyodenki.com/shanghai/
+SANYO DENKI ENGINEERING (Shanghai) CO., LTD.
+Area B 1F, Building 8, No. 1199 Ji Di Road, Minhang District, Shanghai, China
+TEL: +86 21 6221 7069
+SANYO DENKI (Shenzhen) CO.,LTD
+04B-07, 11F, Avic Center, No.1018 Huafu Road, Futian District, Shenzhen, 518031, China
+TEL: +86 755 3337 3868
+URL: https://www.sanyodenki.com/shenzhen/
+SANYO DENKI ENGINEERING (Shenzhen) CO., LTD.
+3rd Floor, 11th Building, Niucheng 2nd industrial Area, Niucheng Village, Nanshan, 
+Shenzhen, 518055, China
+TEL: +86 755 8342 5095
+SANYO DENKI (Tianjin）CO., LTD.
+Room AB 16th Floor TEDA Building, No. 256 Jie Fang Nan Road, Hexi District, Tianjin 
+300042 China
+TEL: +86 22 2320 1186 FAX: +86 22 2320 1058
+URL: https://www.sanyodenki.com/tianjin/
+SANYO DENKI (H.K.) CO., LIMITED
+Room 1603, 16/F, South Tower, Concordia Plaza, 1 Science Museum Road, TST East, 
+Kowloon, Hong Kong
+TEL: +852 2312 6250
+URL: https://www.sanyodenki.com/hongkong/
+SANYO DENKI TAIWAN CO., LTD.
+N-711, 7F, Chia Hsin 2nd Bldg., No. 96, Sec.2, Zhongshan N. Rd., Taipei 10449, Taiwan 
+(R.O.C.)
+TEL: +886 2 2511 3938
+URL: https://www.sanyodenki.com/taiwan/
+SANYO DENKI KOREA CO., LTD.
+8F, 39, Sejong-daero, Jung-gu, Seoul, 04513, Korea
+TEL: +82 2 773 5623
+URL: https://www.sanyodenki.com/korea/
+Southeast Asia
+SANYO DENKI (THAILAND) CO., LTD.
+388 Exchange Tower, 25th Floor, Unit 2501-1, Sukhumvit Road, Klongtoey, Klongtoey, 
+Bangkok 10110 Thailand
+TEL: +66 2261 8670
+URL: https://www.sanyodenki.com/thailand/
+SANYO DENKI INDIA PRIVATE LIMITED
+#14 (Old No. 6/3), Avenue Road, Nungambakkam, Chennai - 600034 Tamil Nadu, India
+TEL: +91 44 4203 8472
+URL: https://www.sanyodenki.com/india/
+SANYO DENKI CO.,LTD.　Singapore Branch
+988 Toa Payoh North, #04-08, Singapore 319002
+TEL: +65 6223 1071
+SANYO DENKI CO.,LTD.　Jakarta Representative Office
+Summitmas II 4th Floor, Jl. Jend. Sudirman Kav.61-62, Jakarta 12190, Indonesia
+TEL: +62 21 252 3202
+North America
+SANYO DENKI AMERICA, INC.
+468 Amapola Avenue, Torrance, CA 90501 U.S.A.
+TEL: +1 310 783 5400
+URL: https://www.sanyodenki.com/america/
+Europe
+SANYO DENKI EUROPE S.A.
+11 rue Ferdinand de Lesseps, 95190 Goussainville, France
+TEL: +33 1 48 63 26 61
+URL: https://www.sanyodenki.com/europe/
+SANYO DENKI GERMANY GmbH
+Frankfurter Strasse 80-82 65760 Eschborn, Germany
+TEL: +49 6196 76113 0
+URL: https://www.sanyodenki.com/germany/
+Information identifying the UK importer can be found here
+https://www.sanyodenki.com/europe/en/contacts/distributor/europe/united_kingdom.html
+Speciﬁcations are subject to change without notice.
+https://www.sanyodenki.com/
+2024.6
