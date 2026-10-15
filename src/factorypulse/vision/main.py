@@ -34,21 +34,21 @@ def resultat(future, nom):
 
 def main() -> None:
     
-    PORT_SERIE_PC = "COM3"
     RASPBERRYPI_PORT = 8000
-    RASPBERRYPI_IP = "10.10.19.152"
-    BAUD = 9600
-    
+    RASPBERRYPI_IP = "192.168.50.2"    
  
     url = f"http://{RASPBERRYPI_IP}:{RASPBERRYPI_PORT}/servo"
     session = requests.Session()
 
-    with ProcessPoolExecutor(max_workers=2) as pool, serial.Serial(PORT_SERIE_PC, BAUD, timeout=1) as ser:
+    with ProcessPoolExecutor(max_workers=2) as pool:
 
         
         print("Ctrl+C pour arrêter.")
         
         while True:
+            
+            url = f"http://{RASPBERRYPI_IP}:{RASPBERRYPI_PORT}/servo"
+                      
             
             f_euro = pool.submit(detect_euro, 1)
             f_pays = pool.submit(detect_country_coins, 0)
@@ -60,13 +60,14 @@ def main() -> None:
                 continue
             
             try:
+                            
                 envoye =None
             
                 if type_euro is not None:
                     print("hello poto j'ai détecté un euro")
                     playload_euro = {"result": f_euro}
                     envoye = playload_euro
-                    url+="/resultat1"
+                    url = f"{url}{"/resultat1"}"
                     
                     r = session.post(url, json=playload_euro, timeout=3)
                     r.raise_for_status()
@@ -74,14 +75,14 @@ def main() -> None:
                 if type_pays is not None:
                     playload_pays = {"result": f_pays}
                     envoye = playload_pays
-                    
-                    url+="/resultat2"                    
+                   
+                    url = f"{url}{"/resultat2"}"                   
                     r = session.post(url, json=playload_pays, timeout=3)
                     r.raise_for_status()
                   
                 print(f"Envoyé : {envoye}")
             except requests.RequestException as e:
-                print(f"Échec d'envoi ({e}) — ligne perdue : {ligne}")
+                print(f"Échec d'envoi ({e}) — ligne perdue : ")
                 time.sleep(1) 
 
 if __name__ == "__main__":
