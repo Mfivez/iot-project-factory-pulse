@@ -6,6 +6,7 @@ import csv
 from pathlib import Path
 from factorypulse.vision.detection_euro import detect_euro
 from factorypulse.vision.detection_pays_2euros import detect_country_coins
+from concurrent.futures import ProcessPoolExecutor
 
 
 def inspect_manifest(manifest: Path, images: Path) -> list[dict[str, str | bool]]:
@@ -22,8 +23,11 @@ def inspect_manifest(manifest: Path, images: Path) -> list[dict[str, str | bool]
 
 
 def main() -> None:
-    detect_euro()
-    detect_country_coins()
+     with ProcessPoolExecutor(max_workers=2) as pool:
+        f_euro = pool.submit(detect_euro, 0)            # webcam 0
+        f_pays = pool.submit(detect_country_coins, 1)   # webcam 1
+        print("Type :", f_euro.result())
+        print("Pays :", f_pays.result())
     
     
 
