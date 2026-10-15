@@ -20,6 +20,7 @@ vision = [
     "ultralytics>=8.3",
     "opencv-python>=4.8,<5",
     "streamlit>=1.37",
+    "onnxruntime>=1.31.0",
     "streamlit-webrtc>=0.78.1",
 ]
 dashboard = ["streamlit>=1.35", "pandas>=2.1"]

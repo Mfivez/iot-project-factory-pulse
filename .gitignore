@@ -24,7 +24,6 @@ data/outputs/*
 data/images/*
 !data/images/README.md
 *.pt
-*.onnx
 *.engine
 *.tflite
 runs/
