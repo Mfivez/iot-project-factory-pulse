@@ -1,0 +1,40 @@
+# Fichiers et dossiers exclus du build Docker pour le serveur MCP FactoryPulse
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Caches Python et tests
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+tests/
+
+# Gestion de versions
+.git/
+.github/
+.gitignore
+
+# Données générées et sorties
+data/outputs/
+data/raw/
+
+# Fichiers système et IDE
+.vscode/
+.idea/
+.editorconfig
+*.swp
+*.swo
+
+# Builds et packages locaux
+build/
+dist/
+*.egg-info/
+
+# Documentation volumineuse (README.md est conservé car requis par pyproject.toml)
+docs/
+materials/
+PRESENTATION_*.md
+test_*.py

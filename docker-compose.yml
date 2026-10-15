@@ -1,0 +1,20 @@
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: factorypulse-mcp-server:latest
+    container_name: factorypulse-mcp-server
+    ports:
+      - "8766:8766"
+    environment:
+      - MCP_TRANSPORT=streamable-http
+      - MCP_HOST=0.0.0.0
+      - MCP_PORT=8766
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Montage des fixtures et de la configuration en lecture seule :
+      # permet de modifier ou enrichir les données du labo sans rebuilder l'image
+      - ./config:/app/config:ro
+      - ./data/fixtures:/app/data/fixtures:ro
+    restart: unless-stopped

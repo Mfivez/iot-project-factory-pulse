@@ -1,0 +1,69 @@
+{
+  "provenance": "ai_generated",
+  "generator": "built-in imagegen",
+  "generated_on": "2026-10-13",
+  "purpose": "Images synthétiques pour préparer l'analyse vision FactoryPulse ; aucun résultat YOLO mesuré.",
+  "format_conversion": "PNG vers JPEG, sans recadrage ni redimensionnement.",
+  "images": [
+    {
+      "file": "01_bouteille_verte.jpg",
+      "source_png": "exec-a3e59d34-d306-4145-ad7d-d896e4a175db.png",
+      "edit_reference": null,
+      "prompt": "Use case: product-mockup. Asset type: a single synthetic photorealistic input photograph for a classroom computer-vision inspection exercise, not an annotated output. Square 1024x1024 composition. Scene/backdrop: a plain matte light-grey laboratory tabletop against a plain slightly darker grey wall; the back edge of the tabletop runs horizontally in the upper half of the frame. Camera at tabletop object height, slightly looking down, natural 50mm perspective. Soft diffuse neutral daylight from the left, realistic subtle contact shadows, sharp focus throughout the object. No people, hands, tools, extra props, text, labels, logos, watermarks, captions, detection boxes or collage. One photograph only. Subject: exactly ONE ordinary transparent colorless plastic water bottle, upright, fully visible from its plain grey screw cap to its base, with a familiar narrow neck and broad cylindrical body, subtle plastic ridges, no printed label. Center the bottle, approximately 65 percent of frame height. A single flat matte vivid GREEN circular sticker is attached to the middle of the front of the bottle, facing the camera; the sticker diameter is about one third of the bottle body's visible width. It is the only colored marking in the whole scene. The bottle silhouette and green sticker must be unmistakable.",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "02_tasse_verte.jpg",
+      "source_png": "exec-bfa6a783-dc96-46b1-b9b4-a6c0a1c67975.png",
+      "edit_reference": null,
+      "prompt": "Use case: product-mockup. Asset type: a single synthetic photorealistic input photograph for a classroom computer-vision inspection exercise, not an annotated output. Square 1024x1024 composition. Scene/backdrop: a plain matte light-grey laboratory tabletop against a plain slightly darker grey wall; the back edge of the tabletop runs horizontally in the upper half of the frame. Camera at tabletop object height, slightly looking down, natural 50mm perspective. Soft diffuse neutral daylight from the left, realistic subtle contact shadows, sharp focus throughout the object. No people, hands, tools, extra props, text, labels, logos, watermarks, captions, detection boxes or collage. One photograph only. Subject: exactly ONE ordinary white ceramic coffee mug with one clearly visible curved handle, upright, fully visible, recognizable as a cup/mug, approximately 45 percent of frame height, centered. No saucer, spoon, liquid decoration or printed label. A single flat matte vivid GREEN circular sticker is attached to the middle of the front of the cup, facing the camera; the sticker diameter is about one quarter of the cup body's visible width. It is the only colored marking in the whole scene. Realistic white ceramic texture, clear cup rim and handle.",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "03_bouteille_rouge.jpg",
+      "source_png": "exec-f87da951-faf4-45c5-bb2c-952a2c25de76.png",
+      "edit_reference": "exec-a3e59d34-d306-4145-ad7d-d896e4a175db.png",
+      "prompt": "Use case: precise-object-edit. Input image: edit target, synthetic classroom inspection photograph of one bottle. Change ONLY the green circular sticker on the front of the bottle into a vivid RED circular sticker, keeping exactly the same sticker size, shape, location and matte material. Keep the bottle, cap, water, plastic texture, background, tabletop, reflections, shadow, camera framing and image dimensions unchanged. One bottle only. No green marking remaining. No added objects, text, annotations, bounding boxes, collage or watermark. Photorealistic inspection input image.",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "04_tasse_rouge.jpg",
+      "source_png": "exec-535d916e-a7f3-4f06-b248-ee0f57f58a7e.png",
+      "edit_reference": "exec-bfa6a783-dc96-46b1-b9b4-a6c0a1c67975.png",
+      "prompt": "Use case: precise-object-edit. Input image: edit target, synthetic classroom inspection photograph of one white ceramic mug. Change ONLY the green circular sticker on the front of the mug into a vivid RED circular sticker, keeping exactly the same sticker size, shape, location and matte material. Keep the white mug, rim, handle, ceramic texture, background, tabletop, reflections, shadow, camera framing and image dimensions unchanged. One cup only. No green marking remaining. No added objects, text, annotations, bounding boxes, collage or watermark. Photorealistic inspection input image.",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "05_bouteille_sans_repere.jpg",
+      "source_png": "exec-ac6f9e0e-f9fe-4b2b-9eb0-9a0e9daf0a99.png",
+      "edit_reference": "exec-a3e59d34-d306-4145-ad7d-d896e4a175db.png",
+      "prompt": "Use case: precise-object-edit. Input image: edit target, synthetic classroom inspection photograph of one bottle. Remove ONLY the green circular sticker from the front of the bottle. Reconstruct the natural transparent colorless ridged plastic surface, reflections and visible water where the sticker was, with no residue, outline or colored patch. Keep the bottle, grey cap, water level, bottle geometry, background, tabletop, shadow, camera framing and image dimensions unchanged. Exactly one unlabelled ordinary water bottle and no marker of any color. No added objects, text, annotations, bounding boxes, collage or watermark. Photorealistic inspection input image.",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "06_scene_vide.jpg",
+      "source_png": "exec-4b6721ab-a270-4dc5-9f02-054850e5beed.png",
+      "edit_reference": null,
+      "prompt": "Use case: product-mockup. Asset type: a single synthetic photorealistic input photograph for a classroom computer-vision inspection exercise, not an annotated output. Square 1024x1024 composition. Scene/backdrop: a plain matte light-grey laboratory tabletop against a plain slightly darker grey wall; the back edge of the tabletop runs horizontally in the upper half of the frame. Camera at tabletop object height, slightly looking down, natural 50mm perspective. Soft diffuse neutral daylight from the left, realistic subtle contact shadows, sharp focus throughout the object. No people, hands, tools, extra props, text, labels, logos, watermarks, captions, detection boxes or collage. One photograph only. Subject: EMPTY scene. Only the completely bare neutral grey tabletop and the plain neutral grey wall are visible. No bottle, no cup, no vessel, no sticker, no colored marking, no object of any kind, and no object-shaped shadows. This is the empty negative-control image.",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    }
+  ]
+}

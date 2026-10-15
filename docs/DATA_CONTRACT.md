@@ -8,7 +8,14 @@ Chaque événement contient `event_id`, `timestamp_utc`, `station_id`, `event_ty
 Date ISO 8601 UTC avec Z. Station M01, Q01 ou SERVER. Identifiant d'événement unique ; réimporter le même identifiant ne crée pas une nouvelle pièce. Une réémission conserve le même identifiant. Tous les exemples du kit portent source=simulated. Réserver physical_sensor aux mesures réelles et camera_analysis à une analyse réellement exécutée.
 
 ## M01 / telemetry
-Payload : temperature_c (nombre ou null), vibration_rms_g (nombre >=0 ou null), machine_state (RUNNING/STOPPED/UNKNOWN), data_quality (OK/TEMPERATURE_MISSING/VIBRATION_MISSING/MISSING), alert_level (OK/WARNING/DATA_ISSUE), alert_reason (chaîne ou null).
+Payload : 
+- temperature_c (nombre ou null), 
+- vibration_rms_g (nombre >=0 ou null), 
+- machine_state (RUNNING/STOPPED/UNKNOWN), 
+- data_quality (OK/TEMPERATURE_MISSING/VIBRATION_MISSING/MISSING), 
+- alert_level (OK/WARNING/DATA_ISSUE), 
+- alert_reason (chaîne ou null).
+
 Température en °C. Vibration RMS dynamique en g, non accélération absolue gravité comprise. Pour cet exercice, la valeur RMS est déjà fournie ; le CSV XYZ sert à une extension.
 Règles : température >60 ou vibration >0.20 pendant 3 mesures consécutives espacées au plus de 1.5s -> WARNING. Une condition peut en remplacer une autre si elle persiste à son tour. Retour OK après 3 mesures valides sous les deux seuils. Une donnée manquante -> DATA_ISSUE immédiatement et remise à zéro des compteurs. L'arrêt ne masque pas une donnée manquante.
 Aucune télémétrie n'est produite pour M01 après 09:04:59Z. Ne pas fabriquer des valeurs de capteur pour remplir ce trou.

@@ -1,1 +1,1 @@
-"""FactoryPulse : dashboard."""
+"""Interface de supervision FactoryPulse basée sur Streamlit."""

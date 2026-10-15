@@ -2,18 +2,18 @@
 
 **Monorepo pédagogique Industrie 4.0** : trois équipes développent en parallèle la surveillance machine, la vision et le dashboard. Un module transversal prépare le diagnostic IA en lecture seule.
 
-> **Statut : squelette de départ, pas application industrielle terminée.** Les mesures et inspections fournies dans `data/` sont **synthétiques**. Aucun capteur, modèle YOLO, serveur MCP ni commande moteur n'est connecté dans cette version.
+> **Statut : modules en cours d'intégration.** Le dashboard de replay et les quatre outils de consultation de l'agent sont implémentés. La vision propose des démonstrations webcam YOLO/OpenCV, encore sans export d'inspections JSONL. Les mesures et inspections fournies dans `data/` sont **synthétiques** ; les règles M01, le diagnostic IA, MCP, MQTT et l'acquisition physique restent à développer.
 
 ## 1. Qui développe quoi ?
 
-| Partie | Équipe | Mission |
-|---|---|---|
-| `src/factorypulse/monitoring/` | 1 | Température, vibrations, anomalies, futur Raspberry M01 |
-| `src/factorypulse/vision/` | 2 | YOLO, OpenCV, futur HUSKYLENS, inspection Q01 |
-| `src/factorypulse/dashboard/` | 3 | Streamlit, événements, indicateurs et alertes |
-| `src/factorypulse/agent/` | Transversal | Outils de lecture et futur diagnostic/MCP |
-| `src/factorypulse/shared/` | Commun | Contrat JSONL et utilitaires validés |
-| `src/factorypulse/transport/` | Intégration | MQTT ultérieurement |
+| Partie                         | Équipe      | Mission                                                 |
+| ------------------------------ | ----------- | ------------------------------------------------------- |
+| `src/factorypulse/monitoring/` | 1           | Température, vibrations, anomalies, futur Raspberry M01 |
+| `src/factorypulse/vision/`     | 2           | YOLO, OpenCV, futur HUSKYLENS, inspection Q01           |
+| `src/factorypulse/dashboard/`  | 3           | Streamlit, événements, indicateurs et alertes           |
+| `src/factorypulse/agent/`      | Transversal | Outils de lecture et futur diagnostic/MCP               |
+| `src/factorypulse/shared/`     | Commun      | Contrat JSONL et utilitaires validés                    |
+| `src/factorypulse/transport/`  | Intégration | MQTT ultérieurement                                     |
 
 Chaque dossier contient un **`AGENTS.md`** ; lire celui de la racine puis celui du module pour travailler avec Codex.
 
@@ -55,6 +55,24 @@ python -m factorypulse.vision.main
 
 Ces deux dernières commandes inspectent les **entrées existantes**, elles ne réalisent pas encore l'analyse métier.
 
+Pour les démonstrations vision, avec l'extra `vision` installé et une webcam disponible :
+
+```bash
+python -m factorypulse.vision.main            # UI : choisir caméra ou image
+python -m factorypulse.vision.main --webcam    # YOLO : webcam directement
+python -m factorypulse.vision.main --colors    # OpenCV : rouge et vert
+```
+
+L'UI propose le sélecteur de caméra du navigateur (périphérique choisi par son
+identifiant réel, sans supposer que l'ordre AVFoundation correspond aux index
+OpenCV) et un sélecteur de fichier image. La vidéo passe par WebRTC pour éviter
+les reruns Streamlit périodiques. Autoriser l'accès caméra dans le navigateur.
+Une image fixe produit un seul JPEG annoté dans `data/images/captures/` et une
+seule ligne dans `data/history.jsonl`, avec la source et le nom du fichier
+importé. YOLO peut télécharger ses poids au premier lancement. Ces
+démonstrations ne produisent pas encore les décisions `PASS`/`REJECT`/`UNKNOWN`
+ni `data/outputs/q01.jsonl`.
+
 Pour le dashboard (si les dépendances ont été installées) :
 
 ```bash
@@ -67,7 +85,7 @@ Le dashboard montre **les fixtures de replay**, pas des capteurs en direct. Ne j
 
 - `data/inputs/machine.csv` : 300 mesures synthétiques M01, dont des données manquantes.
 - `data/inputs/acceleration_xyz.csv` : exercice facultatif de calcul RMS à partir des axes.
-- `data/inputs/prises_de_vue.csv` : les **six photos à réaliser** par l'équipe 2 ; aucune image fournie.
+- `data/inputs/prises_de_vue.csv` : les six scènes de l'équipe 2 ; [six images synthétiques de test](data/images/README.md) sont fournies dans `data/images/`.
 - `data/fixtures/m01.jsonl` : exemple de traitement machine.
 - `data/fixtures/q01.jsonl` : 6 inspections uniques + 1 doublon exact volontaire.
 - `data/fixtures/systeme.jsonl` et `logs.jsonl` : santé système et logs simulés.
