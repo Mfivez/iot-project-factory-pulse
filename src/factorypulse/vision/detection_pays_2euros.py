@@ -206,7 +206,7 @@ def draw(frame, coins, names):
     return frame
 
 
-def main():
+def detect_country_coins():
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--model", default=DEFAULT_MODEL, type=Path)
     p.add_argument("--camera", default=0, type=int, help="index de la webcam")
@@ -250,6 +250,12 @@ def main():
         cv2.putText(out, status, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
         cv2.putText(out, status, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
         cv2.imshow("Pays 2 euros", out)
+        
+        if out.conf >= 0.85:
+            cap.release()
+            cv2.destroyAllWindows()
+            return out.label
+        
         key = cv2.waitKey(1) & 0xFF
         if key == ord("q"):
             break
@@ -258,6 +264,3 @@ def main():
     cap.release()
     cv2.destroyAllWindows()
 
-
-if __name__ == "__main__":
-    main()

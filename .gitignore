@@ -25,7 +25,6 @@ data/images/*
 !data/images/README.md
 data/chromadb/*
 *.pt
-*.onnx
 *.engine
 *.tflite
 runs/
