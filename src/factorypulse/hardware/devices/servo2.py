@@ -56,6 +56,6 @@ def _bouger(angle_cible: float) -> None:
         _positionner(SERVO2_ZERO, SERVO2_PAUSE)
 
 
-def tourner_droite():
+def tourner_droite2():
     """Pousse la pièce vers le bas de la pile des pièces de 2 €."""
     _bouger(SERVO2_ANGLE_DROITE)

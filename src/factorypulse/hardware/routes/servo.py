@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 import time
 from devices.servo1 import tourner_gauche, tourner_droite
-from devices.servo2 import tourner_droite
+from devices.servo2 import tourner_droite2
 router = APIRouter(prefix="/servo", tags=["SERVO"])
 
 
@@ -15,7 +15,7 @@ def recevoir_resultat(donnee: ResultatDetection):
     if donnee.result == "euro":
         tourner_gauche()
         time.sleep(10)
-        tourner_droite()
+        tourner_droite2()
         print("doit tourner à gauche")
     elif donnee.result == "piece" or donnee.result == "objet":
         tourner_droite()
