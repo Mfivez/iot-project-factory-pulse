@@ -16,8 +16,6 @@ def recevoir_resultat(donnee: ResultatDetection):
         tourner_gauche()
         time.sleep(10)
         tourner_droite()
-        time.sleep(2)
-        tourner_droite()
         print("doit tourner à gauche")
     elif donnee.result == "piece" or donnee.result == "objet":
         tourner_droite()
