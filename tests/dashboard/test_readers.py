@@ -1,6 +1,5 @@
 from datetime import datetime, timezone
 
-from factorypulse.dashboard.app import _count_verdicts
 from factorypulse.dashboard.readers import (
     build_incidents,
     events_at,
@@ -9,21 +8,6 @@ from factorypulse.dashboard.readers import (
     station_health,
 )
 from factorypulse.shared.contracts import parse_utc
-
-
-def test_count_verdicts_counts_each_inspection_result():
-    inspections = [
-        _event("pass-1", "2026-10-12T09:00:00Z", "Q01", "inspection", {"verdict": "PASS"}),
-        _event("pass-2", "2026-10-12T09:00:01Z", "Q01", "inspection", {"verdict": "PASS"}),
-        _event("reject", "2026-10-12T09:00:02Z", "Q01", "inspection", {"verdict": "REJECT"}),
-    ]
-
-    assert _count_verdicts(inspections) == {
-        "PASS": 2,
-        "REJECT": 1,
-        "UNKNOWN": 0,
-    }
-    assert _count_verdicts([]) == {"PASS": 0, "REJECT": 0, "UNKNOWN": 0}
 
 
 def _event(

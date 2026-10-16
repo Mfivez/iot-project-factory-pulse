@@ -1,0 +1,58 @@
+/* Navigation et cartes compactes inspirées des maquettes IBC. */
+:root { --fp-teal:#147d70; --fp-ink:#172b3a; --fp-muted:#667986; --fp-border:#e3e8ed; }
+[data-testid="stAppViewContainer"] { background:#f4f6f8; }
+[data-testid="stHeader"] { background:transparent; height:0; }
+[data-testid="stToolbar"], [data-testid="stDecoration"] { display:none; }
+.block-container { padding:16px 28px 12px; max-width:1800px; }
+[data-testid="stVerticalBlock"] { gap:10px; }
+h1 { color:var(--fp-ink); font-size:26px !important; letter-spacing:-.7px; font-weight:750 !important; padding:0 !important; }
+h3 { color:var(--fp-ink); font-size:16px !important; padding:0 !important; }
+p { font-size:13px; }
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color:var(--fp-muted) !important; font-size:11px; line-height:1.45; }
+[data-testid="stMetricValue"] { color:var(--fp-ink); font-size:25px; line-height:1.15; }
+[data-testid="stMetricLabel"] p { color:#526b79; font-size:11px; }
+[data-testid="stMetric"] { padding:0; }
+[data-testid="stVerticalBlockBorderWrapper"] > div,
+[data-testid="stVerticalBlock"][data-border="true"] { background:white; border-color:var(--fp-border) !important; border-radius:12px !important; padding:14px !important; }
+[data-testid="stForm"] { padding:0; border:0; }
+[data-testid="stSidebar"] { background:white; border-right:1px solid var(--fp-border); min-width:215px !important; max-width:215px !important; }
+[data-testid="stSidebarUserContent"] { padding:16px !important; }
+[data-testid="stSidebarHeader"] { height:30px; min-height:30px; padding:3px 12px !important; }
+[data-testid="stLogoSpacer"] { display:none; }
+[data-testid="stSidebar"] hr { margin:12px 0; border-color:var(--fp-border); }
+.fp-brand { display:flex; align-items:center; gap:9px; color:var(--fp-ink); font-size:22px; font-weight:750; letter-spacing:-.8px; padding:0 3px 22px; }
+.fp-brand > b { display:grid; place-items:center; background:var(--fp-teal); color:white; border-radius:11px 11px 11px 3px; flex:0 0 34px; height:38px; font:italic 700 28px Georgia; }
+.fp-brand span { color:var(--fp-teal); }
+.fp-brand small { display:block; font-size:10px; letter-spacing:0; font-weight:400; color:var(--fp-muted); margin-top:3px; }
+.fp-sidebar-note { color:#7b8d97; font-size:10px; line-height:2.8; padding:4px 12px; letter-spacing:.3px; }
+.fp-sidebar-note strong { color:var(--fp-teal); margin-right:8px; }
+.fp-sidebar-bottom { position:fixed; bottom:22px; width:182px; border-top:1px solid var(--fp-border); padding:17px 9px 0; font-size:10px; color:var(--fp-muted); line-height:1.9; }
+.fp-sidebar-bottom b { font-weight:550; color:var(--fp-teal); }
+.fp-topbar { display:flex; align-items:center; justify-content:space-between; min-height:32px; padding-bottom:10px; border-bottom:1px solid var(--fp-border); color:var(--fp-muted); font-size:11px; }
+.fp-chip { color:#427d72; background:#e7f3ee; font-size:9px; letter-spacing:.7px; padding:5px 7px; border-radius:5px; font-weight:650; }
+/* Une seule section rendue : aucun contenu masqué pour simuler l'absence de scroll. */
+[data-testid="stRadio"] [role="radiogroup"] { gap:0; }
+[data-testid="stRadio"] label[data-baseweb="radio"] { margin:0; }
+[data-testid="stRadio"] label[data-baseweb="radio"] > div:first-child { display:none; }
+[data-testid="stRadio"] label[data-testid="stRadioOption"] > div > div:first-child { display:none; }
+[data-testid="stSidebar"] [role="radiogroup"], [data-testid="stSidebar"] [role="radiogroup"] > div { width:100% !important; }
+[data-testid="stMain"] [data-testid="stElementContainer"]:has(> [data-testid="stRadio"]) { width:100% !important; }
+[data-testid="stVerticalBlock"]:has(> [data-testid="stElementContainer"] > [data-testid="stMetric"]),
+[data-testid="stVerticalBlock"]:has(> [data-testid="stElementContainer"] .fp-camera-heading) { background:white; border-radius:12px; padding:12px !important; }
+[data-testid="stRadio"] label:focus-within { outline:2px solid #5268d9; outline-offset:-2px; border-radius:4px; }
+[data-testid="stSidebar"] [data-testid="stRadio"] label { padding:11px 12px; border-radius:8px; width:100%; }
+[data-testid="stSidebar"] [data-testid="stRadio"] label p { font-size:13px; color:#526773; }
+[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) { background:#e6f3ee; box-shadow:inset 3px 0 var(--fp-teal); }
+[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) p { color:#0a6a5d; font-weight:650; }
+[data-testid="stMain"] [data-testid="stRadio"] [role="radiogroup"] { border-bottom:1px solid var(--fp-border); gap:20px; width:100%; }
+[data-testid="stMain"] [data-testid="stRadio"] label { padding:9px 1px 10px; border-bottom:2px solid transparent; }
+[data-testid="stMain"] [data-testid="stRadio"] label p { font-size:12px; color:var(--fp-muted); }
+[data-testid="stMain"] [data-testid="stRadio"] label:has(input:checked) { border-bottom-color:var(--fp-teal); }
+[data-testid="stMain"] [data-testid="stRadio"] label:has(input:checked) p { color:var(--fp-teal); font-weight:650; }
+.fp-camera-heading { display:flex; align-items:center; gap:10px; padding-bottom:7px; }
+.fp-camera-number { background:#eaf4f0; color:var(--fp-teal); font-size:11px; font-weight:650; padding:9px; border-radius:8px; }
+.fp-camera-heading strong { font-size:14px; color:var(--fp-ink); }
+.fp-camera-heading small { display:block; color:var(--fp-muted); font-size:10px; margin-top:2px; }
+.fp-camera-heading .fp-chip { margin-left:auto; background:#f1f4f7; color:#748892; }
+@media(max-height:750px) and (min-width:900px) { .block-container { padding-top:9px; } [data-testid="stVerticalBlock"] { gap:8px; } .fp-topbar { min-height:26px; padding-bottom:6px; } }
+@media(max-width:760px) { .block-container { padding:25px 14px 15px; } h1 { font-size:23px !important; } [data-testid="stMain"] [data-testid="stRadio"] [role="radiogroup"] {gap:10px;} }

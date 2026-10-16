@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing:border-box} body {margin:0;font-family:system-ui,-apple-system,sans-serif;color:#dce8e8;background:transparent}
+.viewport {height:286px;border-radius:9px;position:relative;overflow:hidden;background:#10242d}
+.grid {position:absolute;inset:0;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:32px 32px}
+.top {position:absolute;top:15px;left:17px;right:17px;display:flex;justify-content:space-between;z-index:2;font-size:10px;letter-spacing:.13em;color:#92aeb6}
+.tag {display:flex;align-items:center;gap:7px;background:#0c1b22d9;border:1px solid #ffffff12;padding:5px 8px;border-radius:4px;letter-spacing:.04em;color:#c0cecf}
+.dot {width:5px;height:5px;background:#879b9f;border-radius:50%}
+.center {position:absolute;inset:45px 20px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px}
+.icon {border:1px solid #4e69704d;border-radius:16px;width:65px;height:57px;display:grid;place-items:center;color:#83a39e}
+.center strong {font-size:14px;font-weight:500;color:#cfdfdf}.center p {font-size:11px;line-height:1.6;color:#859da6;max-width:260px;margin:0}
+.corner {position:absolute;width:22px;height:22px;border-color:#70988c55;border-style:solid;z-index:1;pointer-events:none}.tl{left:13px;top:13px;border-width:1px 0 0 1px}.br{right:13px;bottom:13px;border-width:0 1px 1px 0}
+#feed {position:absolute;width:100%;height:100%;object-fit:contain;display:none;background:#08171d}
+.footer {display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#6b8289;padding:9px 1px 0;line-height:1.4}
+#retry {background:none;border:0;color:#2b786c;font-size:10px;cursor:pointer;text-decoration:underline;padding:0;white-space:nowrap} #retry:disabled{display:none}
+</style>
+</head>
+<body>
+<div class="viewport">
+ <div class="grid"></div><img id="feed" alt="Flux vidéo du poste de vision">
+ <div class="corner tl"></div><div class="corner br"></div>
+ <div class="top"><span id="camera">POSTE VISION</span><span class="tag"><span class="dot"></span><span id="status">NON CONFIGURÉ</span></span></div>
+ <div class="center" id="placeholder">
+  <div class="icon"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="8" width="19" height="16" rx="4" stroke="currentColor" stroke-width="1.3"/><path d="m22 13 7-4v14l-7-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="12.5" cy="16" r="4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+  <strong id="message">En attente du flux caméra</strong><p id="detail">Configurez une source pour afficher les images de ce poste.</p>
+ </div>
+</div>
+<div class="footer"><span id="note">Aucune image reçue</span><button id="retry" disabled>Réessayer</button></div>
+<script>
+const el = id => document.getElementById(id);
+let source = '', paused = false, timer = null, started = 0, received = false;
+function resizePreview() {
+ let height=300;
+ try {height=Math.max(170,Math.min(650,window.parent.innerHeight-330));} catch (_) {}
+ document.querySelector('.viewport').style.height=(height-32)+'px';
+ window.parent.postMessage({isStreamlitMessage:true,type:'streamlit:setFrameHeight',height},'*');
+}
+function state(status,message,detail,note) {
+ el('status').textContent=status;el('message').textContent=message;
+ el('detail').textContent=detail;el('note').textContent=note;
+}
+function stop() {
+ clearInterval(timer);timer=null;el('feed').removeAttribute('src');
+ el('feed').style.display='none';el('placeholder').style.display='flex';received=false;
+}
+function unavailable() {
+ stop();state('INDISPONIBLE','Flux indisponible','Vérifiez la source et sa connexion, puis réessayez.','Aucune image exploitable');
+ el('retry').disabled=false;
+}
+function start() {
+ stop();el('retry').disabled=true;
+ if(paused) {state('APERÇU SUSPENDU','Aperçu suspendu','Le traitement vision reste indépendant de cet affichage.','Aucune connexion vidéo depuis ce lecteur');return;}
+ if(!source) {state('NON CONFIGURÉ','En attente du flux caméra','Configurez une source pour afficher les images de ce poste.','Aucune image reçue');return;}
+ let address;
+ try {address=new URL(source);if(!['http:','https:'].includes(address.protocol)||address.username||address.password)throw Error();}
+ catch {unavailable();return;}
+ if(window.location.protocol==='https:' && address.protocol==='http:') {
+  state('ADRESSE INCOMPATIBLE','Source HTTP sur une page HTTPS','Utilisez un flux HTTPS ou ouvrez le dashboard local en HTTP.','Connexion bloquée pour éviter un affichage trompeur');return;
+ }
+ state('CONNEXION…','Connexion au poste vision','En attente des premières images.','La source est configurée, la réception reste à vérifier.');
+ started=Date.now();el('feed').src=address.href;
+ timer=setInterval(()=>{
+  if(el('feed').naturalWidth>0 && !received) {
+   received=true;el('feed').style.display='block';el('placeholder').style.display='none';
+   state('IMAGE REÇUE','','','Affichage vidéo · fraîcheur des images non vérifiée');el('retry').disabled=false;
+   clearInterval(timer);timer=null;
+  } else if(!received && Date.now()-started>10000) unavailable();
+ },200);
+}
+el('feed').addEventListener('error',()=>{if(source&&!paused&&el('feed').getAttribute('src'))unavailable();});
+el('retry').addEventListener('click',start);
+window.addEventListener('message',event=>{
+ if(event.source!==window.parent || event.data.type!=='streamlit:render')return;
+ const args=event.data.args||{};
+ el('camera').textContent='CAM '+String(args.camera_id||'');
+ const next=String(args.url||''), nextPaused=Boolean(args.paused);
+ if(next!==source||nextPaused!==paused){source=next;paused=nextPaused;start();}
+ resizePreview();
+});
+window.parent.postMessage({isStreamlitMessage:true,type:'streamlit:componentReady',apiVersion:1},'*');
+window.addEventListener('pagehide',stop);
+try {window.parent.addEventListener('resize',resizePreview); window.addEventListener('pagehide',()=>window.parent.removeEventListener('resize',resizePreview));} catch (_) {}
+</script>
+</body></html>
