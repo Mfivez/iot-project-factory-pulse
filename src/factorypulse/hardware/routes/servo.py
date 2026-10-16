@@ -15,9 +15,8 @@ def recevoir_resultat(donnee: ResultatDetection):
     if donnee.result == "euro":
         tourner_gauche()
         print("doit tourner à gauche")
-    elif donnee.result == "paseuro":
+    elif donnee.result == "piece" or donnee.result == "objet":
         tourner_droite()
-        print("doit tourner à gauche")
     else:
         raise HTTPException(status_code=400, detail="Valeur de result inconnue")
     return {"status": "ok"}
