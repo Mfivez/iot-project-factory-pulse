@@ -38,6 +38,8 @@ import numpy as np
 import onnxruntime as ort
 from PIL import Image
 
+from factorypulse.vision.camera import open_camera
+
 HERE = Path(__file__).parent
 DEFAULT_MODEL = HERE / "modeles" / "pays_2euros.onnx"
 ANGLES = np.linspace(0, 2 * np.pi, 90, endpoint=False)
@@ -206,7 +208,7 @@ def draw(frame, coins, names):
     return frame
 
 
-def detect_country_coins(camera: int =1):
+def detect_country_coins(camera: int | None = None):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--model", default=DEFAULT_MODEL, type=Path)
     p.add_argument("--camera", default=0, type=int, help="index de la webcam")
@@ -214,7 +216,7 @@ def detect_country_coins(camera: int =1):
     for name, default in vars(Settings()).items():
         if not isinstance(default, bool):
             p.add_argument(f"--{name.replace('_', '-')}", default=default, type=type(default))
-    args = p.parse_args(["--camera", str(camera)])
+    args = p.parse_args(None if camera is None else ["--camera", str(camera)])
     s = Settings(**{k: getattr(args, k) for k in vars(Settings()) if hasattr(args, k)})
 
     if args.image:
@@ -236,10 +238,8 @@ def detect_country_coins(camera: int =1):
         return
 
     detector = Pays2EurosDetector(args.model, s)
-    cap = cv2.VideoCapture(args.camera)
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-    if not cap.isOpened():
+    cap = open_camera(args.camera)
+    if cap is None:
         raise SystemExit(f"Impossible d'ouvrir la webcam {args.camera}")
     while True:
         ok, frame = cap.read()
@@ -266,3 +266,6 @@ def detect_country_coins(camera: int =1):
     cap.release()
     cv2.destroyAllWindows()
 
+
+if __name__ == "__main__":
+    detect_country_coins()

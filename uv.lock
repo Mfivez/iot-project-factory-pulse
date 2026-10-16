@@ -757,6 +757,7 @@ dependencies = [
     { name = "mcp" },
     { name = "pytest" },
     { name = "serial" },
+    { name = "streamlit" },
 ]
 
 [package.optional-dependencies]
@@ -798,6 +799,7 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
     { name = "serial", specifier = ">=0.0.97" },
     { name = "smbus2", marker = "extra == 'edge'", specifier = ">=0.4" },
+    { name = "streamlit", specifier = ">=1.65.0" },
     { name = "streamlit", marker = "extra == 'dashboard'", specifier = ">=1.35" },
     { name = "streamlit", marker = "extra == 'vision'", specifier = ">=1.37" },
     { name = "streamlit-webrtc", marker = "extra == 'vision'", specifier = ">=0.78.1" },
