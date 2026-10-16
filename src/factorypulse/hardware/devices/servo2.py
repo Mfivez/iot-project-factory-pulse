@@ -50,7 +50,7 @@ def _positionner(angle: float, duree: float) -> None:
         servo2.ChangeDutyCycle(0)
 
 
-def _bouger(angle_cible: float) -> None:
+def _bouger2(angle_cible: float) -> None:
     with _verrou_servo2:
         _positionner(angle_cible, SERVO2_TEMPS_MOUVEMENT)
         _positionner(SERVO2_ZERO, SERVO2_PAUSE)
@@ -58,4 +58,4 @@ def _bouger(angle_cible: float) -> None:
 
 def tourner_droite2():
     """Pousse la pièce vers le bas de la pile des pièces de 2 €."""
-    _bouger(SERVO2_ANGLE_DROITE)
+    _bouger2(SERVO2_ANGLE_DROITE)
