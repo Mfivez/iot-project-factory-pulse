@@ -1,7 +1,5 @@
 """Point d'entrée de l'API de tri des pièces."""
 from fastapi import FastAPI
-from gpiozero import AngularServo
-
 
 from routes.servo import router as servo_router
 from routes.moteur import router as moteur_router

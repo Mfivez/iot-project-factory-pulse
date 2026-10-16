@@ -2,7 +2,8 @@
 
 ## Prérequis
 
-- Raspberry Pi 3B+ avec Raspberry Pi OS et la bibliothèque Python gpiozero.
+- Raspberry Pi 3B+ avec Raspberry Pi OS et les bibliothèques Python gpiozero
+  (moteur pas-à-pas) et RPi.GPIO (servomoteurs).
 - Servo SG90 et moteurs alimentés par une source 5 V séparée.
 - Un 28BYJ-48 et un module ULN2003 par moteur.
 - Masse commune entre l'alimentation externe et le Raspberry Pi.
