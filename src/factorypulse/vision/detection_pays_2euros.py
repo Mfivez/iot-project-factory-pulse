@@ -206,7 +206,7 @@ def draw(frame, coins, names):
     return frame
 
 
-def detect_country_coins():
+def detect_country_coins(camera: int =1):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--model", default=DEFAULT_MODEL, type=Path)
     p.add_argument("--camera", default=0, type=int, help="index de la webcam")
@@ -214,7 +214,7 @@ def detect_country_coins():
     for name, default in vars(Settings()).items():
         if not isinstance(default, bool):
             p.add_argument(f"--{name.replace('_', '-')}", default=default, type=type(default))
-    args = p.parse_args()
+    args = p.parse_args(["--camera", str(camera)])
     s = Settings(**{k: getattr(args, k) for k in vars(Settings()) if hasattr(args, k)})
 
     if args.image:
@@ -245,16 +245,18 @@ def detect_country_coins():
         ok, frame = cap.read()
         if not ok:
             break
-        out = draw(frame.copy(), detector.detect(frame), detector.model.names)
+        coins = detector.detect(frame)
+        out = draw(frame.copy(), coins, names=detector.model.names)
         status = f"masque {'on' if s.mask else 'off'} [m] | quitter [q]"
         cv2.putText(out, status, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
         cv2.putText(out, status, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
         cv2.imshow("Pays 2 euros", out)
         
-        if out.conf >= 0.85:
-            cap.release()
-            cv2.destroyAllWindows()
-            return out.label
+        for c in coins:
+            if c.conf >= 0.85:
+                cap.release()
+                cv2.destroyAllWindows()
+                return c.label
         
         key = cv2.waitKey(1) & 0xFF
         if key == ord("q"):
