@@ -15,13 +15,14 @@ Usage :
 from __future__ import annotations
 
 import csv
+import cv2
 import multiprocessing as mp
 import queue
 from pathlib import Path
 
 # ---- Paramètres ----
-CAM_EURO = 1                    # index de la caméra du modèle euro
-CAM_PAYS = 0                    # index de la caméra du modèle pays
+CAM_EURO = 1               # index de la caméra du modèle euro
+CAM_PAYS = 2                    # index de la caméra du modèle pays
 RASPBERRYPI_IP = "192.168.50.2"
 RASPBERRYPI_PORT = 8000
 CONF = 0.85                     # confiance minimale pour envoyer un résultat
