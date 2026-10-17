@@ -145,7 +145,9 @@ if __name__ == "__main__":
     if transport == "stdio":
         # stdio signifie que le client MCP lance ce processus et échange avec lui
         # sur stdin/stdout; aucun serveur HTTP ni port réseau n'est ouvert.
-        print("[MCP] Server \"factorypulse-readonly\" (v0.1.0) ready on stdio.", flush=True)
+        # Les messages de log doivent impérativement être envoyés sur stderr pour ne pas polluer le flux JSON-RPC.
+        import sys
+        print('[MCP] Server "factorypulse-readonly" (v0.1.0) ready on stdio.', file=sys.stderr, flush=True)
         mcp.run(transport="stdio")
     elif transport == "streamable-http":
         # Mode TCP/IP: le serveur écoute sur host:port

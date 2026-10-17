@@ -37,5 +37,6 @@ def tech_doc_sources() -> dict[str, Path]:
         "montages": root / "materials" / "montages",
         "essais": root / "materials" / "essais",
         "modeles": root / "materials" / "modeles",
+        "references": root / "materials" / "references",
         "vision": root / "src" / "factorypulse" / "vision",
     }

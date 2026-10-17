@@ -13,6 +13,7 @@ services:
       - MCP_PORT=8766
       - PYTHONUNBUFFERED=1
       - FACTORYPULSE_CHROMA_PATH=/data/chromadb
+      - NVIDIA_API_KEY=${NVIDIA_API_KEY:-}
     volumes:
       # Montage des fixtures et de la configuration en lecture seule :
       # permet de modifier ou enrichir les données du labo sans rebuilder l'image
